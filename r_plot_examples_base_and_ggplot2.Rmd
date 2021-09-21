@@ -1,0 +1,48 @@
+---
+title: "R Plots Implemented with Base R and ggplot2"
+author: "DSA400W Class at Chatham University, Fall 2021"
+date: "9/21/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+This document will explore the implementation of various types of plots that can be produced with base R graphics and/or the ggplot2 package. For each plot type we begin by showing basic plots and then enhance the plots by combining plot types, adding new variables using faceting, color, shape or size, or customizing colors, axes, axis labels, annotations or styles.
+
+## Histogram
+
+## Density Curve
+
+## Bar Chart
+
+## Line Plot ("Time Series Plot")
+
+## Stacked Area Plot
+
+## Boxplot
+
+## Violin Plot
+
+## Strip Plot
+
+## Normal Probability (QQ) Plot
+
+## Mosaic Plot
+
+## Scatterplots
+
+## Bubble Plot
+
+## Diverging Bar Chart
+
+## Diverging Lollipop Chart
+
+## Chloropleth
+
+
+
+
