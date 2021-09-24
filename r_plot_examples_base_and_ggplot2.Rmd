@@ -12,7 +12,9 @@ knit: (function(input_file, encoding) {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
+
 
 ## Overview
 
@@ -75,6 +77,41 @@ text(x = plt,
      labels = paste("n: ", by_class_data$Count, sep=""), 
      cex=1) 
 ```
+
+### Bar plot with data added above the bars (ggplot2)
+
+First, let's read in some data on passengers who were aboard the *Titanic*. For the `ggplot2` example we will use the `tidyverse` approach.
+
+```{r}
+titanic <- read_csv("data/titanic.csv")
+```
+
+Next, calculate survival percentage and class count for each passenger
+class.
+
+```{r}
+survival <- titanic %>%  
+  group_by(Pclass) %>% 
+  summarize(Count = n(),
+            Surv_Pct = mean(Survived))
+```
+
+Make the plot.
+
+```{r}
+ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
+  geom_col(fill = "steelblue") +
+  geom_text(aes(label = paste("n: ", Count, sep="")), vjust = -0.5) +
+  xlab("Passenger Class") +
+  ylab("Survival Percentage") +
+  ggtitle("Survival Percentage by Passenger Class") +
+  scale_y_continuous(limits = c(0, 0.70),
+                     breaks = seq(0, .7, by = 0.10),
+                     labels = paste(seq(0, 70, by = 10), "%", sep=""))  +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) # Centers title
+```
+
 
 ## Line Plot ("Time Series Plot")
 
