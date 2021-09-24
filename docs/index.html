@@ -185,9 +185,9 @@ pre code {
 <h2>Bar Plot</h2>
 <div id="bar-plot-with-data-added-above-the-bars-base-r" class="section level3">
 <h3>Bar plot with data added above the bars (Base R)</h3>
-<p>First, let’s read in some data on passengers on the <em>Titanic</em>.</p>
+<p>First, let’s read in some data on passengers who were aboard the <em>Titanic</em>.</p>
 <pre class="r"><code>titanic &lt;- read.csv(&quot;data/titanic.csv&quot;)</code></pre>
-<p>Next, we calculate survival percentage and class count for each passenger class, using the <code>aggregate()</code> function, and then merge those two results into a data frame.</p>
+<p>Next, calculate survival percentage and class count for each passenger class, using the <code>aggregate()</code> function, and then merge those two results into a data frame.</p>
 <pre class="r"><code># calculate survival percentage by class and count by class.
 surv_pct &lt;- aggregate(Survived ~ Pclass, data = titanic, FUN = mean)
 class_ct &lt;- aggregate(Survived ~ Pclass, data = titanic, FUN = length)
@@ -198,7 +198,7 @@ by_class_data &lt;- merge(surv_pct, class_ct,
                        by = &quot;Pclass&quot;)
 colnames(by_class_data) &lt;- c(&quot;Pclass&quot;, &quot;Surv_Pct&quot;, &quot;Count&quot;)
 #str(by_class_data)</code></pre>
-<p>Now create the barplot. Note that we increase the <code>ylim</code> parameter a bit to leave room for labels above the bars. We also set <code>axes = FALSE</code> so that the default y-axis is not plotted. Note also that we assign the barplot object to a variable. What gets assigned to the variable is the x positions of the midpoints of each of the bars on the plot. We will use those x positions later to position the labels above the bars, since the x position for a text label specifies the center of the label.</p>
+<p>Create the barplot. Note that we increase the <code>ylim</code> parameter a bit to leave room for labels above the bars. We also set <code>axes = FALSE</code> so that the default y-axis is not plotted. Note also that we assign the barplot object to a variable. What gets assigned to the variable is the x positions of the midpoints of each of the bars on the plot. We will use those x positions later to position the labels above the bars, since the x position for a text label specifies the center of the label.</p>
 <p>In the next step we create a custom y-axis with the <code>axis()</code> function. The <code>at</code> parameter specifies the placement of the tick marks on the axis (“axis ticks”) and the <code>labels</code> parameter specifies the tick labels. Use the <code>paste()</code> function to make percentage labels.</p>
 <p>Finally, we create the labels showing the count of passengers in each class and place them right above the bars. The x position comes from the barplot object and the y position is just the height of the bars plus a little extra so that the text labels don’t overlap the bars.</p>
 <pre class="r"><code>plt &lt;- barplot(by_class_data$Surv_Pct, 
