@@ -25,13 +25,13 @@ This document will explore the implementation of various types of plots that can
 ## Bar Plot
 
 ### Bar plot with data added above the bars (Base R)
-First, let's read in some data on passengers on the *Titanic*.
+First, let's read in some data on passengers who were aboard the *Titanic*.
 
 ```{r}
 titanic <- read.csv("data/titanic.csv")
 ```
 
-Next, we calculate survival percentage and class count for each passenger
+Next, calculate survival percentage and class count for each passenger
 class, using the `aggregate()` function, and then merge those two results into a data frame.
 ```{r}
 # calculate survival percentage by class and count by class.
@@ -46,7 +46,7 @@ colnames(by_class_data) <- c("Pclass", "Surv_Pct", "Count")
 #str(by_class_data)
 ```
 
-Now create the barplot. Note that we increase the `ylim` parameter a bit to leave room for labels above the bars. We also set `axes = FALSE` so that the default y-axis is not plotted. Note also that we assign the barplot object to a variable. What gets assigned to the variable is the x positions of the midpoints of each of the bars on the plot. We will use those x positions later to position the labels above the bars, since the x position for a text label specifies the center of the label.
+Create the barplot. Note that we increase the `ylim` parameter a bit to leave room for labels above the bars. We also set `axes = FALSE` so that the default y-axis is not plotted. Note also that we assign the barplot object to a variable. What gets assigned to the variable is the x positions of the midpoints of each of the bars on the plot. We will use those x positions later to position the labels above the bars, since the x position for a text label specifies the center of the label.
 
 In the next step we create a custom y-axis with the `axis()` function. The `at` parameter specifies the placement of the tick marks on the axis ("axis ticks") and the `labels` parameter specifies the tick labels. Use the `paste()` function to make percentage labels.
 
