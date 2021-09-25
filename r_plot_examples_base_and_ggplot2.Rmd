@@ -82,7 +82,7 @@ text(x = plt,
 
 First, let's read in some data on passengers who were aboard the *Titanic*. For the `ggplot2` example we will use the `tidyverse` approach.
 
-```{r}
+```{r message = FALSE, results = "hide"}
 titanic <- read_csv("data/titanic.csv")
 ```
 

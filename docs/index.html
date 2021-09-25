@@ -228,14 +228,6 @@ text(x = plt,
 <h3>Bar plot with data added above the bars (ggplot2)</h3>
 <p>First, let’s read in some data on passengers who were aboard the <em>Titanic</em>. For the <code>ggplot2</code> example we will use the <code>tidyverse</code> approach.</p>
 <pre class="r"><code>titanic &lt;- read_csv(&quot;data/titanic.csv&quot;)</code></pre>
-<pre><code>## Rows: 714 Columns: 7</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (2): Sex, Embarked
-## dbl (5): Survived, Pclass, Age, SibSp, Parch</code></pre>
-<pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>Next, calculate survival percentage and class count for each passenger class.</p>
 <pre class="r"><code>survival &lt;- titanic %&gt;%  
   group_by(Pclass) %&gt;% 
