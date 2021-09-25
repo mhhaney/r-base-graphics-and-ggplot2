@@ -1,0 +1,163 @@
+---
+title: "Base_R_Graphing_Zodda"
+author: "Karl Zodda"
+date: "9/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(vioplot)
+library(ggplot2)
+```
+The `Vioplot` library builds the violin plot as a bloxplot with a rotated density plot on each side. Yo represent multiple groups, use with with function. It should be of note that Base R Violin plots are not recommended and instead should normally use the ggplot2 package. 
+
+I got this basic idea from `http://www.r-graph-gallery.com/94-violin-plot.html`
+```{r}
+# Create data
+treatment <- c(rep("A", 30) , rep("B", 30) , rep("C", 30) )
+value <- c( sample(2:5, 30 , replace=T) , sample(c(1:5,12:17), 30 , replace=T), sample(1:7, 30 , replace=T) )
+data <- data.frame(treatment,value)
+
+# Draw the plot
+with(data , vioplot( 
+  value[treatment=="A"] , value[treatment=="B"], value[treatment=="C"],  
+  col=rgb(0.1,0.4,0.7,0.7) , names=c("A","B","C") 
+))
+
+```
+Now let's create some new data to mess around with. We are going to look at the nba_players.csv file and take the number of points for OKC Thunder, Utah Jazz, and Chicago Bulls. 
+```{r}
+team <- c(nba_players$TEAM[nba_players$TEAM == "OKC"],
+          nba_players$TEAM[nba_players$TEAM == "UTA"],
+          nba_players$TEAM[nba_players$TEAM == "CHI"])
+pts <- c(nba_players$PTS[nba_players$TEAM == "OKC"],
+           nba_players$PTS[nba_players$TEAM == "UTA"],
+           nba_players$PTS[nba_players$TEAM == "CHI"])
+data <- data.frame(team, pts)
+
+```
+Now let's create a basic Plot
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col=rgb(0.1,0.4,0.7,0.7) , names=c("OKC","UTA","CHI") 
+))
+```
+Now we can add Labels
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col=rgb(0.1,0.4,0.7,0.7) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team"
+))
+```
+We can also change the orientation of the graphs using `horizontal = TRUE`
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col=rgb(0.1,0.4,0.7,0.7) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  horizontal = T
+))
+```
+Now we are going to add y limits to make it look a little more compact
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col=rgb(0.1,0.4,0.7,0.7) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27)
+))
+```
+Changing the colour from the BASE R code. If the colour is a vector, then it specifies the colour per vector. 
+
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(255,234,268) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27)
+))
+```
+We can also add border colours
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(255,234,268) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27),
+  border = c(sample(200:900, 3))
+))
+```
+We can also change the fill colour by using the `rectCol=` argument
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(255,234,268) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27),
+  border = c(sample(200:900, 3)),
+  rectCol = c(893)
+))
+```
+Now if I want to overlay the plots to see a comparison we need to establish an xlim to be able to decide where on the graph to make them sit. Then we need to use `at = location` and set them all equal to one another.
+
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(255,234,268) , 
+  names = c("TEAMS", "TEAMS", "TEAMS"),
+  #names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27),
+  xlim = c(0.5,1.5),
+  border = c(sample(200:900, 3)),
+  rectCol = c(893),
+  at = c(1,1,1)
+))
+```
+Now they are overlapped, but what if we want to be able to see all the borders to compare. Well we can use alpha within col to make them transparent for comparison.
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(rgb(1,1,1, alpha = 0), rgb(1,1,1, alpha = 0), rgb(1,1,1, alpha = 0)) , 
+  names = c("TEAMS", "TEAMS", "TEAMS"),#names=c("OKC","UTA","CHI"),
+  #xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27),
+  xlim = c(0.5,1.5),
+  border = c(sample(200:900, 3)),
+  rectCol = c(893),
+  at = c(1,1,1)
+))
+```
+Now we are going to shift Gears to GGPlot2
+
+We are going to use the same nba Data, but now we are going to use the data to create graphs within the GGPlot2 package. 
+
+
+```{r}
+ggplot(data, aes(x= team, y = pts, fill = team)) + 
+  geom_violin(trim = F, show.legend = T) + 
+  geom_boxplot(width = 0.1)
+```
+I added a boxplot ontop of the violin plot to make it look more like the Base R Graphs. 
