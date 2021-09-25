@@ -12,7 +12,9 @@ knit: (function(input_file, encoding) {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
+
 
 ## Overview
 
@@ -22,7 +24,94 @@ This document will explore the implementation of various types of plots that can
 
 ## Density Curve
 
-## Bar Chart
+## Bar Plot
+
+### Bar plot with data added above the bars (Base R)
+First, let's read in some data on passengers who were aboard the *Titanic*.
+
+```{r}
+titanic <- read.csv("data/titanic.csv")
+```
+
+Next, calculate survival percentage and class count for each passenger
+class, using the `aggregate()` function, and then merge those two results into a data frame.
+```{r}
+# calculate survival percentage by class and count by class.
+surv_pct <- aggregate(Survived ~ Pclass, data = titanic, FUN = mean)
+class_ct <- aggregate(Survived ~ Pclass, data = titanic, FUN = length)
+
+# Merge those two results into a single data frame, and specify 
+# column names
+by_class_data <- merge(surv_pct, class_ct,
+                       by = "Pclass")
+colnames(by_class_data) <- c("Pclass", "Surv_Pct", "Count")
+#str(by_class_data)
+```
+
+Create the barplot. Note that we increase the `ylim` parameter a bit to leave room for labels above the bars. We also set `axes = FALSE` so that the default y-axis is not plotted. Note also that we assign the barplot object to a variable. What gets assigned to the variable is the x positions of the midpoints of each of the bars on the plot. We will use those x positions later to position the labels above the bars, since the x position for a text label specifies the center of the label.
+
+In the next step we create a custom y-axis with the `axis()` function. The `at` parameter specifies the placement of the tick marks on the axis ("axis ticks") and the `labels` parameter specifies the tick labels. Use the `paste()` function to make percentage labels.
+
+Finally, we create the labels showing the count of passengers in each class and place them right above the bars. The x position comes from the barplot object and the y position is just the height of the bars plus a little extra so that the text labels don't overlap the bars.
+
+```{r}
+plt <- barplot(by_class_data$Surv_Pct, 
+               names.arg = paste("Class", by_class_data$Pclass),
+               col = 'steelblue',
+               main = "Survival Percentage by Passenger Class",
+               ylab = "Survival Percentage",
+               xlab = "Passenger Class",
+               ylim = c(0.0, 0.75),
+               axes = FALSE
+)
+
+# Add y axis
+axis(2, at = seq(0.0, 0.7, by = 0.1),
+     labels = paste(seq(0, 70, by = 10), "%", sep=""),
+     las = 1,
+     cex.axis = 0.9)
+
+# Add the text of the labels
+text(x = plt, 
+     y = by_class_data$Surv_Pct + 0.04, 
+     labels = paste("n: ", by_class_data$Count, sep=""), 
+     cex=1) 
+```
+
+### Bar plot with data added above the bars (ggplot2)
+
+First, let's read in some data on passengers who were aboard the *Titanic*. For the `ggplot2` example we will use the `tidyverse` approach.
+
+```{r}
+titanic <- read_csv("data/titanic.csv")
+```
+
+Next, calculate survival percentage and class count for each passenger
+class.
+
+```{r}
+survival <- titanic %>%  
+  group_by(Pclass) %>% 
+  summarize(Count = n(),
+            Surv_Pct = mean(Survived))
+```
+
+Make the plot.
+
+```{r}
+ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
+  geom_col(fill = "steelblue") +
+  geom_text(aes(label = paste("n: ", Count, sep="")), vjust = -0.5) +
+  xlab("Passenger Class") +
+  ylab("Survival Percentage") +
+  ggtitle("Survival Percentage by Passenger Class") +
+  scale_y_continuous(limits = c(0, 0.70),
+                     breaks = seq(0, .7, by = 0.10),
+                     labels = paste(seq(0, 70, by = 10), "%", sep=""))  +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) # Centers title
+```
+
 
 ## Line Plot ("Time Series Plot")
 
