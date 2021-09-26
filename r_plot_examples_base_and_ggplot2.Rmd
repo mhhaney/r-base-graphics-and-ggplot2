@@ -129,7 +129,31 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 
 ## Scatterplots
 
-## Bubble Plot
+## Bubble Plot - Ian
+
+```{r}
+ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
+  geom_point()+
+  ggtitle('Miles per Gallon vs Gross Horsepower with Displacement')+
+  labs(size = 'Displacement\n(cu. in.)', x='miles per gallon', y='gross horsepower')+
+  theme_classic()
+```
+
+```{r}
+par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
+
+plot(mtcars$mpg, mtcars$hp, cex = sqrt(mtcars$disp/3.14)/5,
+     pch=16,
+     main = 'Miles per Gallon vs Gross Horsepower with Displacement',
+     xlab = 'miles per gallon',
+     ylab = 'gross horspower')
+legend('right', inset=c(-0.35,0),
+       legend=c('100', '200', '300', '400'),
+       title = 'Displacement\n(cu. in.)',
+       pch=16, ncol=1, pt.cex = sqrt(c(100, 200, 300, 400)/3.14)/5,
+       bty = 'n')
+```
+
 
 ## Diverging Bar Chart
 
