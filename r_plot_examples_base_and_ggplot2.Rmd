@@ -22,12 +22,12 @@ This document will explore the implementation of various types of plots that can
 
 ## Density Curve
 
-Basic Density Curve Using Base R
+### Basic Density Curve Using Base R
 ```{r}
 # get a dataset from R
 # Orange dataset has information about the growth of orange trees
 orange <- Orange
-orange
+head(orange)
 ```
 
 ```{r}
@@ -40,12 +40,7 @@ plot(density(orange$circumference),
 polygon(density(orange$circumference), col=7, border=2)
 ```
 
-Basic Density Curve Using GGPlot2
-```{r}
-#import the libraries
-library(ggplot2)
-library(dplyr)
-```
+### Basic Density Curve Using GGPlot2
 ```{r}
 # create the density plot
 
@@ -56,10 +51,7 @@ orange %>%
 ```
 
 
-#### make a histogram 
-
-
-## Bar Chart
+## Bar Plot
 
 ## Line Plot ("Time Series Plot")
 
