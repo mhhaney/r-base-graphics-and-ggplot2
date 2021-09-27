@@ -267,6 +267,33 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 ## Stacked Area Plot
 
 ## Boxplot
+In the Boxplot section add two basic boxplot examples, one utilizing base R and one utilizing ggplot2. Note that even basic examples should have appopriate titles and axis labels.
+
+Base R:
+```{r}
+# Some data to work with:
+data(ChickWeight)
+```
+```{r}
+head(ChickWeight)
+str(ChickWeight)
+```
+```{r}
+#Boxplot:
+boxplot(ChickWeight$weight ~ ChickWeight$Time,
+        main = "Chick Age versus Chick Weight",
+        xlab = "Chick Age in Days",
+        ylab = "Chick Weight in Grams")
+```
+ggplot2:
+```{r}
+library(ggplot2)
+p <- ggplot(ChickWeight, aes(group=Time, y=weight)) + 
+  geom_boxplot() +
+  labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
+  theme_classic()
+p
+```
 
 ## Violin Plot
 
@@ -389,7 +416,34 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
 ```
 
 ## Diverging Bar Chart
+```{r}
+data(swiss)
+head(swiss)
+str(swiss)
+```
+```{r}
 
+#Data Preparation
+library(ggplot2)
+swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
+swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized mpg
+swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
+swiss <- swiss[order(swiss$Fertility_z), ]  # sort
+swiss$`municipality` <- factor(swiss$`municipality`, levels = swiss$`municipality`)  # convert to factor to retain sorted order in plot.
+
+#Diverging Barplot:
+ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) + 
+  geom_bar(stat='identity', aes(fill=Fertility_type), width=.5) +
+  theme(text = element_text(size=9)) +
+  scale_fill_manual(name="Fertility", 
+                    labels = c("Above Average", "Below Average"), 
+                    values = c("above"="#00ba38", "below"="#f8766d")) + 
+  labs(title= "Divergence in the Average Fertility in Swiss Municipalities",
+       x = "Municipality",
+       y = 'Fertility') + 
+  coord_flip()
+
+```
 ## Diverging Lollipop Chart
 
 ## Chloropleth
