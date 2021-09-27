@@ -12,13 +12,19 @@ knit: (function(input_file, encoding) {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
 ```
-
 
 ## Overview
 
 This document will explore the implementation of various types of plots that can be produced with base R graphics and/or the ggplot2 package. For each plot type we begin by showing basic plots and then enhance the plots by combining plot types, adding new variables using faceting, color, shape or size, or customizing colors, axes, axis labels, annotations or styles.
+
+## Load Libraries
+
+```{r message = FALSE, results = FALSE}
+library(tidyverse)
+library(vioplot)
+```
+
 
 ## Histogram
 
