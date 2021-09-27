@@ -314,7 +314,7 @@ qqnorm(rivers,
 qqline(rivers, col = "red")
 ```
 
-### Basic QQ Plot with Normal Distributoin Reference Line (ggplot2)
+### Basic QQ Plot with Normal Distribution Reference Line (ggplot2)
 
 Here we produce a similar plot using ggplot2. First we need to put the river lengths in a data frame.
 
