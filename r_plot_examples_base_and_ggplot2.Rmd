@@ -24,6 +24,38 @@ This document will explore the implementation of various types of plots that can
 
 ## Density Curve
 
+Basic Density Curve Using Base R
+```{r}
+# get a dataset from R
+# Orange dataset has information about the growth of orange trees
+orange <- Orange
+orange
+```
+
+```{r}
+# create a density plot
+plot(density(orange$circumference),
+     main = "CIRCUMFERENCE OF ORANGE TREES",
+     xlab = "CIRCUMFERENCE",
+     ylab = "DISTRIBUTION")
+
+polygon(density(orange$circumference), col=7, border=2)
+```
+
+Basic Density Curve Using GGPlot2
+```{r}
+#import the libraries
+library(ggplot2)
+library(dplyr)
+```
+```{r}
+# create the density plot
+
+orange %>%
+  ggplot( aes(x = circumference)) +
+  geom_density(fill= 7, color= 2)
+
+```
 ## Bar Plot
 
 ### Bar plot with data added above the bars (Base R)
@@ -111,7 +143,6 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) # Centers title
 ```
-
 
 ## Line Plot ("Time Series Plot")
 
