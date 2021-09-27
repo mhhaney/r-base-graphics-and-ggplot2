@@ -52,7 +52,48 @@ orange %>%
 
 ```
 ## Bar Plot
+###Base R
+```{r}
+### Create a data set to work with
+survey <- c(apple=45, orange=25, honeydew=35, banana=50, watermelon=20, blueberry=15)
 
+survey
+
+### Create a barchart with titles and color
+barplot(survey,
+        main="Favorite Fruit Survey",
+        xlab="Fruit",
+        ylab="Count",
+        col=c("red", "orange", "green", "yellow", "pink", "blue"))
+
+### Add a legend
+legend("topright",
+       legend = c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
+       col = c("red", "orange", "green", "yellow", "pink", "blue"),
+       pch = 19,
+       bty = "n",
+       pt.cex = 2,
+       cex = 1.2)
+
+```
+
+### GGplot2
+```{r}
+# First load ggplot2
+library(ggplot2)
+
+# Use the same data set created in the base r example but make it into a data frame
+survey1 <- data.frame(
+  fruit=c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
+  value=c(45, 25, 35, 50, 20, 15))
+
+# Create the barchart
+ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity") 
+
+# Add color with black outlines
+ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red", "orange", "green", "yellow", "pink", "blue"), color="black") + labs(x="Count", y="Fruit", title="Fruit Survey") + theme(legend.position = "none")
+
+```
 ### Bar plot with data added above the bars (Base R)
 First, let's read in some data on passengers who were aboard the *Titanic*.
 
