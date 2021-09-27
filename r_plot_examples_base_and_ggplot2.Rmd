@@ -274,6 +274,41 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 
 ## Normal Probability (QQ) Plot
 
+A quantile-quantile ("QQ") plot is used to compare an empirical distribution to a theoretical distribution by plotting the observed quantiles vs the theoretical quantiles. They are typically used to evaluate whether or not a variable is normally distributed.
+
+The built-in `rivers` dataset gives the lengths (in miles) of 141 rivers in North America, as compiled by the US Geological Survey. Let's see if the river lengths are normally distributed by creating a normal probability plot of the river lengths.
+
+### Basic QQ Plot with Normal Distributoin Reference Line (Base R)
+
+Here we create a basic QQ plot in base R and add the normal distribution QQ plot as a reference line for comparison.
+```{r}
+qqnorm(rivers,
+       main = "Q-Q Plot of North American River Lengths")
+qqline(rivers, col = "red")
+```
+
+### Basic QQ Plot with Normal Distributoin Reference Line (ggplot2)
+
+Here we produce a similar plot using ggplot2. First we need to put the river lengths in a data frame.
+
+```{r}
+rivers_df <- data.frame(length = rivers)
+```
+
+Now we make the plot. Note that the shape and size of the geom are revised to better match the base R plot.
+
+```{r}
+ggplot(rivers_df, aes(sample = length)) +
+  stat_qq(shape = 1, cex = 2) +
+  stat_qq_line(color = "red") +
+  labs(title = "Q-Q Plot of North American River Lengths",
+       x = "Theoretical Quantiles",
+       y = "Sample Quantiles") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) # Centers title
+```
+
+
 ## Mosaic Plot
 
 ## Scatterplots
