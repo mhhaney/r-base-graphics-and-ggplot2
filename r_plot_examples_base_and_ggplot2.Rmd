@@ -278,15 +278,51 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 
 ## Scatterplots
 
-## Bubble Plot - Ian
+## Bubble Plot
+
+### Base R Bubble Plot
+
+Base R plots require a bit finessing to get just right. 
+
+First of all, I plan to place the legend outside the plot itself so I must first change the margins. This is done with `par()` which can set graphical parameters. Within `par()`, `mar` takes a vector input of 4 numbers determining how far into the pane the plot margins should be, starting at the bottom and continuing clockwise. `xpd` takes a logical value & setting it to TRUE tells R not to clip the legend or any other insertion outside the plot bounds. `inset=c(-0.35,0)` tells R to move the legend away from the plot, outside the margin horizontally. To make the legend look a bit cleaner, use `bty='n'` to remove the box around the legend. 
+
+To set the point size in base plot, use `cex=data$variable`. In this case `cex=mtcars$disp`. For the legend, use `pt.cex=c(n1, n2, n3...nx)` for however many legend items you have. I'm choosing intervals of 100 from 100 to 400. 
 
 ```{r}
-ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
-  geom_point()+
-  ggtitle('Miles per Gallon vs Gross Horsepower with Displacement')+
-  labs(size = 'Displacement\n(cu. in.)', x='miles per gallon', y='gross horsepower')+
-  theme_classic()
+par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
+
+plot(mtcars$mpg, mtcars$hp, cex = mtcars$disp,
+     pch=16,
+     main = 'Miles per Gallon vs Gross Horsepower with Displacement',
+     xlab = 'miles per gallon',
+     ylab = 'gross horspower')
+legend('right', inset=c(-0.35,0),
+       legend=c('100', '200', '300', '400'),
+       title = 'Displacement\n(cu. in.)',
+       pch=16, ncol=1, pt.cex = c(100, 200, 300, 400),
+       bty = 'n')
 ```
+
+Yikes, it seems like the points may be a bit too large. Lets make them all smaller by dividing their values by 100 & take care not to forget about the legend points as well by changing the values for `pt.cex`. 
+
+```{r}
+par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
+
+plot(mtcars$mpg, mtcars$hp, cex = mtcars$disp/100,
+     pch=16,
+     main = 'Miles per Gallon vs Gross Horsepower with Displacement',
+     xlab = 'miles per gallon',
+     ylab = 'gross horspower')
+legend('right', inset=c(-0.35,0),
+       legend=c('100', '200', '300', '400'),
+       title = 'Displacement\n(cu. in.)',
+       pch=16, ncol=1, pt.cex = c(100, 200, 300, 400)/100,
+       bty = 'n')
+```
+
+Better, but the points don't seem to be proportional. It seems that `cex` scales points by altering the radius of a point. This would cause the area of each consecutive point to be exponentially larger than the last when using the formula $A=πr^2$. To correct this and make the point size proportional to the area, rearrange the formula to solve for the radius that produces the desired area. $r=\sqrt{\frac{A}{π}}$
+
+Now the points are proportional in area but still too large, so I divide the areas by 5. 
 
 ```{r}
 par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
@@ -303,6 +339,19 @@ legend('right', inset=c(-0.35,0),
        bty = 'n')
 ```
 
+Now it looks right!
+
+### Ggplot2 Bubble Plot
+
+When I need to make a plot, I usually prefer `ggplot()` over base r for its simplicity. As you can see, I was able to make a clean graph with just 5 lines of code. To show  displacement as a variable point size, you set `size=disp` within the aesthetics of ggplot. Ggplot automatically scales by area & makes the points reasonable sizes as well. Because mtcars is set as the data source, there is no need to reference the data frame for each variable. 
+
+```{r}
+ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
+  geom_point()+
+  ggtitle('Miles per Gallon vs Gross Horsepower with Displacement')+
+  labs(size = 'Displacement\n(cu. in.)', x='miles per gallon', y='gross horsepower')+
+  theme_classic()
+```
 
 ## Diverging Bar Chart
 
