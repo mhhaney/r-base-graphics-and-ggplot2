@@ -22,6 +22,88 @@ This document will explore the implementation of various types of plots that can
 
 ## Histogram
 
+Based on example Histogram from:
+https://statisticsglobe.com/histogram-in-base-r-hist-function
+
+Using the rivers dataset from Base R
+```{r}
+rivers
+```
+
+### Basic Histogram (Base R)
+
+```{r}
+hist(rivers)
+```
+
+Adding titles, changing the color of the histogram, changing the breaks, changing the axis limits
+
+```{r}
+hist(rivers,                                                # Change main title of histogram
+     main = "Length of Rivers in North America", col='blue', breaks=20, xlim=c(0, 5000), ylim=c(0, 120))
+```
+
+Using the Iris dataset to customize a histogram.
+
+```{r}
+iris
+```
+
+Displaying the default histogram for petal width.
+
+```{r}
+hist(iris$Petal.Width)
+```
+
+Customizing the histogram.
+
+```{r}
+hist(iris$Petal.Width,                                                
+     main = "Iris Petal Width Histogram", xlab = " Petal Width", col='pink', breaks=20, xlim=c(0, 3), ylim=c(0, 50))
+```
+
+Re-creating a histogram with ggplot2 based on the following example:
+http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization
+
+Creating the dataset.
+
+```{r}
+set.seed(1234)
+df <- data.frame(
+  sex=factor(rep(c("F", "M"), each=200)),
+  weight=round(c(rnorm(200, mean=55, sd=5), rnorm(200, mean=65, sd=5)))
+  )
+head(df)
+```
+
+Creating a basic histogram.
+
+```{r}
+# Basic histogram
+ggplot(df, aes(x=weight)) + geom_histogram()
+# Change the width of bins
+ggplot(df, aes(x=weight)) + 
+  geom_histogram(binwidth=1)
+# Change colors
+p<-ggplot(df, aes(x=weight)) + 
+  geom_histogram(color="black", fill="white")
+p
+```
+
+Creating a histogram for Iris Dataset on Petal Length using ggplot2 and customizing.
+
+```{r}
+##Basic histogram
+ggplot(iris, aes(x=iris$Petal.Length)) + geom_histogram()
+##Changing the bins
+ggplot(iris, aes(x=iris$Petal.Length)) + 
+  geom_histogram(binwidth=1.5)
+##Changing the colors and adding a title
+s<-ggplot(iris, aes(x=iris$Petal.Length)) + 
+  geom_histogram(color="yellow", fill="red", binwidth=1.5)
+s + ggtitle("Iris Petal Length Histogram") + xlab("Petal Length")
+```
+
 ## Density Curve
 
 ### Basic Density Curve Using Base R
