@@ -296,6 +296,38 @@ p
 ```
 
 ## Violin Plot
+Let's pull the NBA Players data
+
+```{r message = FALSE, results = "hide"}
+nba_players <- read_csv("data/nba_players.csv")
+```
+Pulling data from OKC, UTA, and CHI
+```{r}
+team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
+pts <- c(nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
+data <- data.frame(team, pts)
+```
+
+### Basic Plot with Base R ###
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(255,234,268) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27),
+  border = c(sample(200:900, 3)),
+  rectCol = c(893)
+))
+```
+### Basic Plot with ggplot2 ###
+I did add a boxplot on top of the violin plot to make it resemble the base r graph.
+```{r}
+ggplot(data, aes(x= team, y = pts, fill = team)) + 
+  geom_violin(trim = F, show.legend = T) + 
+  geom_boxplot(width = 0.1)
+```
 
 ## Strip Plot
 
