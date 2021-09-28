@@ -338,6 +338,23 @@ ggplot(data, aes(x= team, y = pts, fill = team)) +
 
 ## Strip Plot
 
+### Strip chart in base R
+#### Use the built-in dataset: iris to create a stripchart for the variable Sepal.Width
+```{r}
+stripchart(iris$Sepal.Width,
+           main= "Sepal Width Distribution",
+           xlab= "Sepal Width", 
+           col= "blue",
+           pch= 10,
+           method= 'jitter')
+
+```
+### Strip chart in ggplot2
+#### Use the same dataset, iris, to create a stripchart for the same variable, Sepal.Width
+```{r}
+ggplot(data = iris) + geom_jitter(aes(x=Sepal.Width, y=0, color='red'), width = 0.05, height = 0, alpha = 0.25)
+```
+
 ## Normal Probability (QQ) Plot
 
 A quantile-quantile ("QQ") plot is used to compare an empirical distribution to a theoretical distribution by plotting the observed quantiles vs the theoretical quantiles. They are typically used to evaluate whether or not a variable is normally distributed.
