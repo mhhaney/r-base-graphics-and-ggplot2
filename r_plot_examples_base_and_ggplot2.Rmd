@@ -24,6 +24,7 @@ This document will explore the implementation of various types of plots that can
 library(tidyverse)
 library(vioplot)
 library(ggmosaic)
+library(scales) # provides alpha() function to set alpha for base R plots
 ```
 
 
@@ -336,23 +337,40 @@ ggplot(data, aes(x= team, y = pts, fill = team)) +
   geom_boxplot(width = 0.1)
 ```
 
-## Strip Plot
+## Strip Chart
 
 ### Strip chart in base R
-#### Use the built-in dataset: iris to create a stripchart for the variable Sepal.Width
-```{r}
-stripchart(iris$Sepal.Width,
-           main= "Sepal Width Distribution",
-           xlab= "Sepal Width", 
-           col= "blue",
-           pch= 10,
-           method= 'jitter')
 
-```
-### Strip chart in ggplot2
-#### Use the same dataset, iris, to create a stripchart for the same variable, Sepal.Width
+#### Use the built-in dataset: iris to create a stripchart for the variable Sepal.Width
+
+Here we can use the `alpha()` function from the `scales` package to set an alpha (transparency) level for the color, ranging from 0 (totally transparent) to 1 (totally translucent). `method - 'jitter'` adds random noise in the y-dimension and the `jitter()` function applied to the variable being plotted adds random noise to the actual values of the variable. `amount = 0` causes that random noise to be z/50 where z is the range of the variable.
+
 ```{r}
-ggplot(data = iris) + geom_jitter(aes(x=Sepal.Width, y=0, color='red'), width = 0.05, height = 0, alpha = 0.25)
+stripchart(jitter(iris$Sepal.Width, amount = 0),
+           main = "Sepal Width Distribution",
+           xlab = "Sepal Width (cm)",
+           col= alpha("blue", 0.5),
+           pch = 19,
+           method= 'jitter')
+```
+
+### Strip chart in ggplot2
+
+With ggplot2's `geom_jitter()` is a shortcut for `geom_point(position = "jitter"). Its `width` and `height` parameters control the amount of random noise in the x and y dimensions, respectively. With ggplot2 we can set `alpha` directly without the use of any helper functions. However, with ggplot2 it is a bit tricky to make a strip chart for just one variable (without a second variable for grouping), as we need to set the y variable, set axis limits, and suppress the axis ticks and labels for the unused axis.
+
+```{r}
+ggplot(data = iris) + 
+  geom_jitter(aes(x=Sepal.Width, y=0), 
+              width = 0.05, 
+              height = 0.2, 
+              color = "blue",
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  scale_y_continuous(limits = c(-1, 1),breaks = NULL, labels = NULL) + 
+  labs(title = "Sepal Width Distribution",
+       y = NULL,
+       x = "Sepal Width (cm)")
 ```
 
 ## Normal Probability (QQ) Plot
