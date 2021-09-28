@@ -23,6 +23,7 @@ This document will explore the implementation of various types of plots that can
 ```{r message = FALSE, results = FALSE}
 library(tidyverse)
 library(vioplot)
+library(ggmosaic)
 ```
 
 
@@ -375,6 +376,70 @@ ggplot(rivers_df, aes(sample = length)) +
 
 
 ## Mosaic Plot
+
+### Mosaic Plot with Base R
+
+First, let's read in some data on passengers who were aboard the *Titanic*.
+
+```{r}
+titanic <- read.csv("data/titanic.csv")
+str(titanic)
+```
+
+Next we will mosaic plot of Titanic ticket class vs embarkment location. First check to see if there is any missing data.
+
+```{r}
+table(titanic$Pclass)
+```
+
+```{r}
+table(titanic$Embarked)
+```
+
+Notice that there are two cases for which blank. We will remove those cases. Also, since `Pclass` is an integer vector it would be best to change it to a factor, and then specify the levels as a character vector. (See `?factor`)
+
+```{r}
+mask <- titanic$Embarked %in% c("C", "Q", "S")
+embarked <- titanic$Embarked[mask]
+class <- titanic$Pclass[mask]
+class <- factor(class, levels = c(1, 2, 3),
+                labels = c("First", "Second", "Third"))
+```
+
+Make the mosaic plot.
+
+```{r}
+mosaicplot(table(class, embarked),
+           main="Passenger Class by Embarkment Site",
+              xlab="Class",ylab="Embarkment Site",
+              col=c(2,3,4))
+```
+
+### Mosaic Plot with ggplot2
+
+Let's make a similar mosaic plot using ggplot2. We need to use the ggmosaic package to do so.
+
+```{r}
+titanic_clean <- titanic %>% 
+  filter(Embarked %in% c("C", "Q", "S")) %>%
+  mutate(
+  Embarked = factor(embarked),
+  Pclass = factor(Pclass)
+)
+
+titanic_m_data <- titanic_clean %>% 
+  count(Embarked, Pclass)
+```
+
+
+```{r}
+  ggplot(data = titanic_m_data) + 
+    geom_mosaic(aes(x = product(Pclass), fill = Embarked, weight = n)) +
+    xlab("Passenger Class") + 
+    ylab("Embarkment Site") + 
+  ggtitle("Passenger Class by Embarkment Site")
+  
+```
 
 ## Scatterplots
 
