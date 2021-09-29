@@ -561,21 +561,21 @@ cases, and deaths. Did the death count rise as cases grew?
 First, we read the data file, pennsylvania-history.csv and store it as covidchart.
 Our x values in the plot function are covidchart$positive, and our yvalue is covidchart$death.
 Our title, as explaieid in main is "Covid Infection and Fatalities." Our x-axis is labeled Infections, for covid infections, and our y axis is labeled fatalities. Note that these fatalities are not explciitly confirmed to be from Covid, but are the overall fatality count in PA over time, each point representing a different count of infection and fatality per day.
-We then draw a regression line based on positive cases and fatalities.
+We then draw a regression line based on positive cases and fatalities. The regression line is colored red and the points are colored grey after the color scheme of the virus itself.
 ```{r}
 covidchart <- read.csv("data/pennsylvania-history.csv")
-plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities")
+plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = grey)
 abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 ```
 
 We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
 
 ### ggplot2
-ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, 
+ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
 ```{r}
-ggplot(data = covidchart, aes(positive, death)) + geom_point() + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = red) + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
 ```                          
-Regressio line to be added
+
 ## Bubble Plot
 
 ### Base R Bubble Plot
