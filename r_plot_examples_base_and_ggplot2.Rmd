@@ -523,7 +523,16 @@ titanic_m_data <- titanic_clean %>%
 ```
 
 ## Scatterplots
-
+###Base R
+Creating a scatterplot in base R is simple. For this example, I used the dataset
+mtcars. The scatterplot will show the relationship between the number of cylinders
+a car has and the car's horsepower.
+```{r}
+data(mtcars)
+plot(mtcars$cyl, mtcars$hp, main = "Horsepower Based on Cylinders", xlab = "Cylinders", ylab = "Horsepower")
+```
+This creates a basic scatterplot showing the relationship between the number of 
+cylinders a car has and its horsepower. We can see that in general, the more cylinders a car has, the more horsepower it possesses.
 ## Bubble Plot
 
 ### Base R Bubble Plot
