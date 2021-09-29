@@ -24,6 +24,7 @@ This document will explore the implementation of various types of plots that can
 library(tidyverse)
 library(vioplot)
 library(ggmosaic)
+library(scales) # provides alpha() function to set alpha for base R plots
 ```
 
 
@@ -336,7 +337,87 @@ ggplot(data, aes(x= team, y = pts, fill = team)) +
   geom_boxplot(width = 0.1)
 ```
 
-## Strip Plot
+## Strip Chart
+
+### Strip chart in base R
+
+#### Use the built-in dataset: iris to create a stripchart for the variable Sepal.Width
+
+Here we can use the `alpha()` function from the `scales` package to set an alpha (transparency) level for the color, ranging from 0 (totally transparent) to 1 (totally translucent). `method - 'jitter'` adds random noise in the y-dimension and the `jitter()` function applied to the variable being plotted adds random noise to the actual values of the variable. `amount = 0` causes that random noise to be z/50 where z is the range of the variable.
+
+```{r}
+stripchart(jitter(iris$Sepal.Width, amount = 0),
+           main = "Sepal Width Distribution",
+           xlab = "Sepal Width (cm)",
+           col= alpha("blue", 0.5),
+           pch = 19,
+           method= 'jitter')
+```
+
+### Strip chart in ggplot2
+
+With ggplot2's `geom_jitter()` is a shortcut for `geom_point(position = "jitter"). Its `width` and `height` parameters control the amount of random noise in the x and y dimensions, respectively. With ggplot2 we can set `alpha` directly without the use of any helper functions. However, with ggplot2 it is a bit tricky to make a strip chart for just one variable (without a second variable for grouping), as we need to set the y variable, set axis limits, and suppress the axis ticks and labels for the unused axis.
+
+```{r}
+ggplot(data = iris) + 
+  geom_jitter(aes(x=Sepal.Width, y=0), 
+              width = 0.05, 
+              height = 0.2, 
+              color = "blue",
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  scale_y_continuous(limits = c(-1, 1),breaks = NULL, labels = NULL) + 
+  labs(title = "Sepal Width Distribution",
+       y = NULL,
+       x = "Sepal Width (cm)")
+```
+
+### Strip Chart with NBA Data, ggplot2
+
+Strip charts are particularly useful with small datasets. The NBA data has a small number of players per team, so let's try to use strip charts to compare the distribution of scoring on NBA teams, similar to the comparisons in the violin plot section.
+
+#### Basic Strip Chart of NBA Scoring with ggplot2
+
+```{r}
+nba_players %>% 
+  filter(TEAM %in% c("OKC", "UTA", "CHI")) %>% 
+  ggplot(aes(x =PTS, y = TEAM)) + 
+    geom_point() +
+    labs(title = "Scoring Distribution on Selected NBA Teams")
+```
+
+#### More Customized Strip Chart of NBA Scoring with ggplot2
+
+```{r}
+top_ten <- nba_players %>% 
+  filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
+  group_by(TEAM) %>% 
+  arrange(desc(PTS), .by_group = TRUE) %>% 
+  mutate(rn = row_number()) %>% 
+  filter(rn <= 10)
+
+top_one <- nba_players %>%
+  filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
+  group_by(TEAM) %>%
+  filter(row_number(desc(PTS)) == 1)
+
+ggplot(data = top_ten, aes(x =PTS, y = TEAM)) + 
+  geom_point() +
+  scale_x_continuous(breaks = seq(5, 30, 5)) +
+  geom_text(aes(label = PLAYER), 
+            data = top_one,
+            nudge_x = -0.25,
+            angle = 90,
+            alpha = 0.5,
+            vjust = "bottom", 
+            hjust = "middle") +
+  labs(title = "Scoring Distribution of Top 10 Scorers") +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  geom_boxplot(alpha = 0,
+               linetype = 3)
+```
 
 ## Normal Probability (QQ) Plot
 
@@ -570,6 +651,37 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
   coord_flip()
 
 ```
+
+## Lollipop Chart
+
+### Lollipop Chart with ggplot2
+
+To make a lollipop chart with ggplot2 you can use `geom_point()` for the circle and `geom_segment()` for the stem.
+
+```{R}
+library(ggplot2)
+
+let <- data.frame(
+  x=LETTERS[1:10],
+  y=runif(10, 2, 9)
+)
+ggplot(let, aes(x=x, y=y)) +
+  geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") +
+  geom_point( size=4, color="blue", 
+              fill=alpha("purple", 0.2), alpha=.8, shape=21, stroke=4) +
+  theme_dark() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.x = element_blank()
+  ) +
+  xlab("Student") +
+  ylab("Hours Spent Studying") +
+  ggtitle("Student Hours of Study (per Week)") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(limits = c(0, 10))
+```
+
 ## Diverging Lollipop Chart
 
 ## Chloropleth
