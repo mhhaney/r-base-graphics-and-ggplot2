@@ -552,16 +552,30 @@ titanic_m_data <- titanic_clean %>%
 ```
 
 ## Scatterplots
-###Base R
+### Base R
 Creating a scatterplot in base R is simple. For this example, I used the dataset
-mtcars. The scatterplot will show the relationship between the number of cylinders
-a car has and the car's horsepower.
+pennsylvania-history, which shows the history of pennsylvania's recorded covid cases
+from January to March 7. The variables of interest are positive, the number of positive
+cases, and deaths. Did the death count rise as cases grew? 
+
+First, we read the data file, pennsylvania-history.csv and store it as covidchart.
+Our x values in the plot function are covidchart$positive, and our yvalue is covidchart$death.
+Our title, as explaieid in main is "Covid Infection and Fatalities." Our x-axis is labeled Infections, for covid infections, and our y axis is labeled fatalities. Note that these fatalities are not explciitly confirmed to be from Covid, but are the overall fatality count in PA over time, each point representing a different count of infection and fatality per day.
+We then draw a regression line based on positive cases and fatalities. The regression line is colored red and the points are colored grey after the color scheme of the virus itself.
 ```{r}
-data(mtcars)
-plot(mtcars$cyl, mtcars$hp, main = "Horsepower Based on Cylinders", xlab = "Cylinders", ylab = "Horsepower")
+covidchart <- read.csv("data/pennsylvania-history.csv")
+plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = grey)
+abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 ```
-This creates a basic scatterplot showing the relationship between the number of 
-cylinders a car has and its horsepower. We can see that in general, the more cylinders a car has, the more horsepower it possesses.
+
+We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
+
+### ggplot2
+ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
+```{r}
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = red) + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+```                          
+
 ## Bubble Plot
 
 ### Base R Bubble Plot
