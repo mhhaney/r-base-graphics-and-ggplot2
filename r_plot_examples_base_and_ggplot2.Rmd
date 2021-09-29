@@ -18,8 +18,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This document will explore the implementation of various types of plots that can be produced with base R graphics and/or the ggplot2 package. For each plot type we begin by showing basic plots and then enhance the plots by combining plot types, adding new variables using faceting, color, shape or size, or customizing colors, axes, axis labels, annotations or styles.
 
-i have been playing squash for 12 years
-I have been playing lacrosse for 10 years
 ## Load Libraries
 
 ```{r message = FALSE, results = FALSE}
