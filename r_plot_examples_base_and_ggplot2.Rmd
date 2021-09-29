@@ -582,17 +582,22 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
   coord_flip()
 
 ```
-## Diverging Lollipop Chart
-  Not sure if I did this correctly but initial attempt
+
+## Lollipop Chart
+
+### Lollipop Chart with ggplot2
+
+To make a lollipop chart with ggplot2 you can use `geom_point()` for the circle and `geom_segment()` for the stem.
+
 ```{R}
 library(ggplot2)
 
 let <- data.frame(
   x=LETTERS[1:10],
-  y=abs(rnorm(20))
+  y=runif(10, 2, 9)
 )
-ggplot(data, aes(x=x, y=y)) +
-  geom_segment( aes(x=x, xend=x, y=.75, yend=y), color="black") +
+ggplot(let, aes(x=x, y=y)) +
+  geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") +
   geom_point( size=4, color="blue", 
               fill=alpha("purple", 0.2), alpha=.8, shape=21, stroke=4) +
   theme_dark() +
@@ -601,10 +606,14 @@ ggplot(data, aes(x=x, y=y)) +
     panel.border = element_blank(),
     axis.ticks.x = element_blank()
   ) +
-  xlab("Student A-J") +
-  ylab("Time spent studying 1.0 = 1 hour") +
-  ggtitle("Student Hours of Studying") +
-  theme(plot.title = element_text(hjust = 0.5))
+  xlab("Student") +
+  ylab("Hours Spent Studying") +
+  ggtitle("Student Hours of Study (per Week)") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(limits = c(0, 10))
+```
+
+## Diverging Lollipop Chart
 
 ## Chloropleth
 
