@@ -542,7 +542,7 @@ abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
 
 ## ggplot2
-ggplot2 requires chaining
+ggplot2 is much the same.
 ```{r}
 ggplot(data = covidchart, aes(positive, death)) + geom_point() + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities")
 ```                          
