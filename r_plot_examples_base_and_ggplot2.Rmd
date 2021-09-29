@@ -273,6 +273,16 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 ## Line Plot ("Time Series Plot")
 
 ## Stacked Area Plot
+Data is total steel produced annually from the 5 largest steel producing countries
+```{r}
+steel <- read.csv("data/steel.csv")
+```
+
+Make the plot. geom_area() is the function that produces the stacked area plot.
+```{r}
+ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
+    geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
+```
 
 ## Boxplot
 In the Boxplot section add two basic boxplot examples, one utilizing base R and one utilizing ggplot2. Note that even basic examples should have appopriate titles and axis labels.
@@ -371,6 +381,25 @@ ggplot(data = iris) +
   labs(title = "Sepal Width Distribution",
        y = NULL,
        x = "Sepal Width (cm)")
+```
+
+### Strip Chart Divided into Groups, ggplot2
+
+This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two variables as parameters. One can be the categorical group, iris species.
+
+```{r}
+ggplot(data = iris) + 
+  geom_jitter(aes(y=Species, x=Sepal.Width, color = Species), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Sepal Width Distribution by Iris Species",
+       x = "Sepal Width (cm)",
+       y = NULL) + 
+  theme_bw() +
+  theme(legend.position = "none")
 ```
 
 ### Strip Chart with NBA Data, ggplot2
