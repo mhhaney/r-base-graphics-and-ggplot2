@@ -273,6 +273,16 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 ## Line Plot ("Time Series Plot")
 
 ## Stacked Area Plot
+Data is total steel produced annually from the 5 largest steel producing countries
+```{r}
+steel <- read.csv("data/steel.csv")
+```
+
+Make the plot. geom_area() is the function that produces the stacked area plot.
+```{r}
+ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
+    geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
+```
 
 ## Boxplot
 In the Boxplot section add two basic boxplot examples, one utilizing base R and one utilizing ggplot2. Note that even basic examples should have appopriate titles and axis labels.
