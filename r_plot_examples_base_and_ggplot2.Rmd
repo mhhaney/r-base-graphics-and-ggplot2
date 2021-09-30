@@ -454,7 +454,7 @@ A quantile-quantile ("QQ") plot is used to compare an empirical distribution to 
 
 The built-in `rivers` dataset gives the lengths (in miles) of 141 rivers in North America, as compiled by the US Geological Survey. Let's see if the river lengths are normally distributed by creating a normal probability plot of the river lengths.
 
-### Basic QQ Plot with Normal Distributoin Reference Line (Base R)
+### Basic QQ Plot with Normal Distribution Reference Line (Base R)
 
 Here we create a basic QQ plot in base R and add the normal distribution QQ plot as a reference line for comparison.
 ```{r}
@@ -564,7 +564,8 @@ Our title, as explaieid in main is "Covid Infection and Fatalities." Our x-axis 
 We then draw a regression line based on positive cases and fatalities. The regression line is colored red and the points are colored grey after the color scheme of the virus itself.
 ```{r}
 covidchart <- read.csv("data/pennsylvania-history.csv")
-plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = grey)
+covidchart <- subset(covidchart, !is.na(positive) & !is.na(death))
+plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = "grey")
 abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 ```
 
@@ -573,7 +574,7 @@ We can see that, yes, positive cases unfortunately have a positive correlation w
 ### ggplot2
 ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
 ```{r}
-ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = red) + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
 ```                          
 
 ## Bubble Plot
