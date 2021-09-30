@@ -411,10 +411,10 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
   scale_x_continuous(breaks = seq(5, 30, 5)) +
   geom_text(aes(label = PLAYER), 
             data = top_one,
-            nudge_x = -0.25,
+            nudge_x = 0.25,
             angle = 90,
             alpha = 0.5,
-            vjust = "bottom", 
+            vjust = "top", 
             hjust = "middle") +
   labs(title = "Scoring Distribution of Top 10 Scorers") +
   theme_bw() +
