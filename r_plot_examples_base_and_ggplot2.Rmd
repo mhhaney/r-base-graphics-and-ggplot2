@@ -47,10 +47,23 @@ hist(iris$Petal.Width,
      main = "Iris Petal Width Histogram", xlab = "Petal Width", col='pink', breaks=20, xlim=c(0, 2.9), ylim=c(0, 40))
 ```
 
+### Creating Histograms for each Species on Petal Width using Base R
+
+```{r}
+#Subsetting the different species
+set <- iris$Sepal.Width[iris$Species == "setosa"]
+ver <- iris$Sepal.Width[iris$Species == "versicolor"]
+vir <- iris$Sepal.Width[iris$Species == "virginica"]
+par(mfrow = c(3, 1))
+hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.5, 6.5), ylim=c(0, 50))
+hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.75, 5.5), ylim=c(0, 50))
+hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.5, 5.5), ylim=c(0, 50))
+```
+
 ### Basic Histogram using GGPlot2
 
 ```{r}
-ggplot(iris, aes(x=Petal.Length)) + 
+ggplot(iris, aes(x=Petal.Width)) + 
   geom_histogram()
 ```
 
@@ -74,6 +87,14 @@ ggplot(iris, aes(x=Petal.Width)) +
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + 
   ylab("Frequency")
+```
+
+### Creating Histograms for each Species on Petal Width using GGPlot2
+
+```{r}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(binwidth=1.5, color="blue", fill="orange") + ggtitle("Iris Petal Width Histogram") + xlab("Petal Width") + ylab("Frequency") + 
+  facet_grid(. ~ Species)
 ```
 
 ## Density Curve
