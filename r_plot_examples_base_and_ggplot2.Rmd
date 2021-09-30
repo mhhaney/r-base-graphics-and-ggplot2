@@ -273,6 +273,16 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
 ## Line Plot ("Time Series Plot")
 
 ## Stacked Area Plot
+Data is total steel produced annually from the 5 largest steel producing countries
+```{r}
+steel <- read.csv("data/steel.csv")
+```
+
+Make the plot. geom_area() is the function that produces the stacked area plot.
+```{r}
+ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
+    geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
+```
 
 ## Boxplot
 In the Boxplot section add two basic boxplot examples, one utilizing base R and one utilizing ggplot2. Note that even basic examples should have appopriate titles and axis labels.
@@ -373,13 +383,78 @@ ggplot(data = iris) +
        x = "Sepal Width (cm)")
 ```
 
+### Strip Chart Divided into Groups, ggplot2
+
+This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two variables as parameters. One can be the categorical group, iris species.
+
+```{r}
+ggplot(data = iris) + 
+  geom_jitter(aes(y=Species, x=Sepal.Width, color = Species), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Sepal Width Distribution by Iris Species",
+       x = "Sepal Width (cm)",
+       y = NULL) + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+### Strip Chart with NBA Data, ggplot2
+
+Strip charts are particularly useful with small datasets. The NBA data has a small number of players per team, so let's try to use strip charts to compare the distribution of scoring on NBA teams, similar to the comparisons in the violin plot section.
+
+#### Basic Strip Chart of NBA Scoring with ggplot2
+
+```{r}
+nba_players %>% 
+  filter(TEAM %in% c("OKC", "UTA", "CHI")) %>% 
+  ggplot(aes(x =PTS, y = TEAM)) + 
+    geom_point() +
+    labs(title = "Scoring Distribution on Selected NBA Teams")
+```
+
+#### More Customized Strip Chart of NBA Scoring with ggplot2
+
+```{r}
+top_ten <- nba_players %>% 
+  filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
+  group_by(TEAM) %>% 
+  arrange(desc(PTS), .by_group = TRUE) %>% 
+  mutate(rn = row_number()) %>% 
+  filter(rn <= 10)
+
+top_one <- nba_players %>%
+  filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
+  group_by(TEAM) %>%
+  filter(row_number(desc(PTS)) == 1)
+
+ggplot(data = top_ten, aes(x =PTS, y = TEAM)) + 
+  geom_point() +
+  scale_x_continuous(breaks = seq(5, 30, 5)) +
+  geom_text(aes(label = PLAYER), 
+            data = top_one,
+            nudge_x = -0.25,
+            angle = 90,
+            alpha = 0.5,
+            vjust = "bottom", 
+            hjust = "middle") +
+  labs(title = "Scoring Distribution of Top 10 Scorers") +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  geom_boxplot(alpha = 0,
+               linetype = 3)
+```
+
 ## Normal Probability (QQ) Plot
 
 A quantile-quantile ("QQ") plot is used to compare an empirical distribution to a theoretical distribution by plotting the observed quantiles vs the theoretical quantiles. They are typically used to evaluate whether or not a variable is normally distributed.
 
 The built-in `rivers` dataset gives the lengths (in miles) of 141 rivers in North America, as compiled by the US Geological Survey. Let's see if the river lengths are normally distributed by creating a normal probability plot of the river lengths.
 
-### Basic QQ Plot with Normal Distributoin Reference Line (Base R)
+### Basic QQ Plot with Normal Distribution Reference Line (Base R)
 
 Here we create a basic QQ plot in base R and add the normal distribution QQ plot as a reference line for comparison.
 ```{r}
@@ -477,6 +552,30 @@ titanic_m_data <- titanic_clean %>%
 ```
 
 ## Scatterplots
+### Base R
+Creating a scatterplot in base R is simple. For this example, I used the dataset
+pennsylvania-history, which shows the history of pennsylvania's recorded covid cases
+from January to March 7. The variables of interest are positive, the number of positive
+cases, and deaths. Did the death count rise as cases grew? 
+
+First, we read the data file, pennsylvania-history.csv and store it as covidchart.
+Our x values in the plot function are covidchart$positive, and our yvalue is covidchart$death.
+Our title, as explaieid in main is "Covid Infection and Fatalities." Our x-axis is labeled Infections, for covid infections, and our y axis is labeled fatalities. Note that these fatalities are not explciitly confirmed to be from Covid, but are the overall fatality count in PA over time, each point representing a different count of infection and fatality per day.
+We then draw a regression line based on positive cases and fatalities. The regression line is colored red and the points are colored grey after the color scheme of the virus itself.
+```{r}
+covidchart <- read.csv("data/pennsylvania-history.csv")
+covidchart <- subset(covidchart, !is.na(positive) & !is.na(death))
+plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = "grey")
+abline(lm(covidchart$death ~ covidchart$positive), col = "red")
+```
+
+We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
+
+### ggplot2
+ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
+```{r}
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+```                          
 
 ## Bubble Plot
 
@@ -600,7 +699,7 @@ ggplot(let, aes(x=x, y=y)) +
   geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") +
   geom_point( size=4, color="blue", 
               fill=alpha("purple", 0.2), alpha=.8, shape=21, stroke=4) +
-  theme_dark() +
+  theme_gray() +
   theme(
     panel.grid.major.x = element_blank(),
     panel.border = element_blank(),
@@ -614,6 +713,58 @@ ggplot(let, aes(x=x, y=y)) +
 ```
 
 ## Diverging Lollipop Chart
+
+Use the state data that comes with R. Let's look at state life expectancy. First, prepare the data.
+
+```{r}
+state_df <- data.frame(state.x77, Region=state.region, Division=state.division)
+state_df <- rownames_to_column(state_df, var="State")
+state_df$Life.Exp.Z <- 
+  (state_df$Life.Exp - mean(state_df$Life.Exp))/sd(state_df$Life.Exp)
+state_df$Above.Avg <- ifelse(state_df$Life.Exp.Z >= 0, "yes", "no")
+state_df <- state_df[order(state_df$Life.Exp.Z), ]
+state_df$State <- factor(state_df$State, levels = state_df$State)
+```
+
+Next create a simple diverging lollipop chart to highlight the difference of each state mean life expectancy from the mean state mean life expectancy.
+
+```{r, fig.width=6.5, fig.height=7.5}
+ggplot(state_df, aes(x=State, y=Life.Exp)) + 
+  geom_point(stat='identity', fill="black", size=2)  +
+  geom_segment(aes(y = mean(Life.Exp), 
+                   x = State, 
+                   yend = Life.Exp, 
+                   xend = State), 
+               color = "black") +
+  labs(title="State Life Expectancy", 
+       subtitle="Deviation from Mean State Life Expectancy",
+       y = "Life Expectancy (Years)",
+       x = NULL) + 
+  scale_y_continuous(breaks = seq(68, 74, 1)) +
+  coord_flip()
+```
+
+Now let's try to view a subset. With a smaller amount of data we can add the life expectancies to the dots.
+
+```{r}
+ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=round(Life.Exp, 1))) + 
+  geom_hline(yintercept = 0, color = "darkgray") +
+  geom_point(stat='identity', aes(col=Above.Avg), size=6)  +
+  geom_text(color="white", size=2.2) +
+  labs(y = "Standard Deviations from Mean State Life Expectancy") +
+  geom_text(aes(x = "West Virginia", 
+                y = -0.1, 
+                label = "Mean State Life Expectancy"),
+            angle = 90,
+            color = "darkgray") +
+  labs(title="Life Expectancy in the Southern States", 
+       subtitle="Compared to Average State Life Expectancy") + 
+  coord_flip() +
+  theme_bw() +
+  theme(axis.title.y=element_blank()) +
+  theme(legend.position = "none")
+```
+
 
 ## Chloropleth
 
