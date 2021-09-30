@@ -30,15 +30,10 @@ library(scales) # provides alpha() function to set alpha for base R plots
 
 ## Histogram
 
+### Basic Histogram (Base R)
+
 Based on example Histogram from:
 https://statisticsglobe.com/histogram-in-base-r-hist-function
-
-Using the rivers dataset from Base R
-```{r}
-rivers
-```
-
-### Basic Histogram (Base R)
 
 ```{r}
 hist(rivers)
@@ -47,30 +42,18 @@ hist(rivers)
 Adding titles, changing the color of the histogram, changing the breaks, changing the axis limits
 
 ```{r}
-hist(rivers,                                                # Change main title of histogram
-     main = "Length of Rivers in North America", col='blue', breaks=20, xlim=c(0, 5000), ylim=c(0, 120))
+hist(rivers,                                                
+     main = "Length of Rivers in North America", col='blue', breaks=20, xlim=c(0, 4000), ylim=c(0, 80))
 ```
 
-Using the Iris dataset to customize a histogram.
-
-```{r}
-iris
-```
-
-Displaying the default histogram for petal width.
-
-```{r}
-hist(iris$Petal.Width)
-```
-
-Customizing the histogram.
+Using the Iris dataset, display a customized histogram for petal width.
 
 ```{r}
 hist(iris$Petal.Width,                                                
-     main = "Iris Petal Width Histogram", xlab = " Petal Width", col='pink', breaks=20, xlim=c(0, 3), ylim=c(0, 50))
+     main = "Iris Petal Width Histogram", xlab = " Petal Width", col='pink', breaks=20, xlim=c(0, 2.9), ylim=c(0, 40))
 ```
 
-Re-creating a histogram with ggplot2 based on the following example:
+Demonstrating a histogram with ggplot2 based on the following example:
 http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization
 
 Creating the dataset.
@@ -81,7 +64,6 @@ df <- data.frame(
   sex=factor(rep(c("F", "M"), each=200)),
   weight=round(c(rnorm(200, mean=55, sd=5), rnorm(200, mean=65, sd=5)))
   )
-head(df)
 ```
 
 Creating a basic histogram.
@@ -119,7 +101,6 @@ s + ggtitle("Iris Petal Length Histogram") + xlab("Petal Length")
 # get a dataset from R
 # Orange dataset has information about the growth of orange trees
 orange <- Orange
-head(orange)
 ```
 
 ```{r}
@@ -146,8 +127,6 @@ orange %>%
 ```{r}
 ### Create a data set to work with
 survey <- c(apple=45, orange=25, honeydew=35, banana=50, watermelon=20, blueberry=15)
-
-survey
 
 ### Create a barchart with titles and color
 barplot(survey,
@@ -291,10 +270,6 @@ Base R:
 ```{r}
 # Some data to work with:
 data(ChickWeight)
-```
-```{r}
-head(ChickWeight)
-str(ChickWeight)
 ```
 ```{r}
 #Boxplot:
@@ -493,7 +468,6 @@ First, let's read in some data on passengers who were aboard the *Titanic*.
 
 ```{r}
 titanic <- read.csv("data/titanic.csv")
-str(titanic)
 ```
 
 Next we will mosaic plot of Titanic ticket class vs embarkment location. First check to see if there is any missing data.
@@ -531,7 +505,7 @@ Let's make a similar mosaic plot using ggplot2. We need to use the ggmosaic pack
 
 ```{r}
 titanic_clean <- titanic %>% 
-  filter(Embarked %in% c("C", "Q", "S")) %>%
+  filter(Embarked %in% c("C", "Q", "S")) %>%  # Removes cases with missing data
   mutate(
   Embarked = factor(embarked),
   Pclass = factor(Pclass)
@@ -655,9 +629,8 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
 ## Diverging Bar Chart
 ```{r}
 data(swiss)
-head(swiss)
-str(swiss)
 ```
+
 ```{r}
 
 #Data Preparation
@@ -714,7 +687,7 @@ ggplot(let, aes(x=x, y=y)) +
 
 ## Diverging Lollipop Chart
 
-Use the state data that comes with R. Let's look at state life expectancy. First, prepare the data.
+Use the state data that comes with R. Let's look at state life expectancy. First, prepare the data that we will use for a couple examples.
 
 ```{r}
 state_df <- data.frame(state.x77, Region=state.region, Division=state.division)
@@ -726,7 +699,7 @@ state_df <- state_df[order(state_df$Life.Exp.Z), ]
 state_df$State <- factor(state_df$State, levels = state_df$State)
 ```
 
-Next create a simple diverging lollipop chart to highlight the difference of each state mean life expectancy from the mean state mean life expectancy.
+Next create a simple diverging lollipop chart to highlight the difference of each state's mean life expectancy from the mean state mean life expectancy.
 
 ```{r, fig.width=6.5, fig.height=7.5}
 ggplot(state_df, aes(x=State, y=Life.Exp)) + 
@@ -744,7 +717,7 @@ ggplot(state_df, aes(x=State, y=Life.Exp)) +
   coord_flip()
 ```
 
-Now let's try to view a subset. With a smaller amount of data we can add the life expectancies to the dots.
+Now let's try to view a subset. With a smaller amount of data we can add the life expectancies as labels on the dots.
 
 ```{r}
 ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=round(Life.Exp, 1))) + 
@@ -753,7 +726,7 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
   geom_text(color="white", size=2.2) +
   labs(y = "Standard Deviations from Mean State Life Expectancy") +
   geom_text(aes(x = "West Virginia", 
-                y = -0.1, 
+                y = -0.05, 
                 label = "Mean State Life Expectancy"),
             angle = 90,
             color = "darkgray") +
