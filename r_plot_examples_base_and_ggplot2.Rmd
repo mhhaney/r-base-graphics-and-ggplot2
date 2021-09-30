@@ -602,8 +602,13 @@ To set the color of the plot to the first color in the "Bl" palette we made with
 ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
 ```{r}
 ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
-```                          
-
+```        
+### ColorBrewer in ggplot2
+In order to use colorbrewer in ggplot2, you have to first save your ggplot in a variable, and then append the function scale_color_brewer() to it, with the argument pallete =."palletename" inside the function. Like so:
+```{r}
+covid <- ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+covid + scale_color_brewer(palette = "Greens")
+```
 ## Bubble Plot
 
 ### Base R Bubble Plot
