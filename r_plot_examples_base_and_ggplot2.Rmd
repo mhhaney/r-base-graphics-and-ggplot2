@@ -148,8 +148,7 @@ legend("topright",
 
 ### GGplot2
 ```{r}
-# First load ggplot2
-library(ggplot2)
+
 
 # Use the same data set created in the base r example but make it into a data frame
 survey1 <- data.frame(
@@ -280,7 +279,6 @@ boxplot(ChickWeight$weight ~ ChickWeight$Time,
 ```
 ggplot2:
 ```{r}
-library(ggplot2)
 p <- ggplot(ChickWeight, aes(group=Time, y=weight)) + 
   geom_boxplot() +
   labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
@@ -634,7 +632,6 @@ data(swiss)
 ```{r}
 
 #Data Preparation
-library(ggplot2)
 swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
 swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized mpg
 swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
@@ -662,7 +659,6 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
 To make a lollipop chart with ggplot2 you can use `geom_point()` for the circle and `geom_segment()` for the stem.
 
 ```{R}
-library(ggplot2)
 
 let <- data.frame(
   x=LETTERS[1:10],
