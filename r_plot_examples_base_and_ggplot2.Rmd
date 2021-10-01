@@ -615,7 +615,7 @@ covid + scale_color_brewer(palette = "Pastel1")
 ```
 Alternatively, you could append the scale_color_brewer function to the ggplot function
 ```{r}
-ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(formula = y ~ x, method = lm) + scale_color_brewer(palette = "Pastel1")
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(formula = y ~ x, method = lm) + scale_colour_brewer(palette = "Pastel1")
 ```
 ## Bubble Plot
 
