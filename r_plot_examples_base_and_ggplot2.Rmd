@@ -580,16 +580,16 @@ Then, execute this:
 ```{r}
 display.brewer.all()
 ```
-to see all the available palletes. To view a single pallete, type
+to see all the available palettes. To view a single palette, type
 ```{r}
 display.brewer.pal(n, name)
 ```
-name denotes the pallete you want to display, while n denotes how many colors are in that pallete. For example, display.brewer.pal(3, RdYlBlu shows you the first three colors in the RdYlBl (red, yellow, blue) pallete. 
+name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, display.brewer.pal(3, RdYlBlu shows you the first three colors in the RdYlBl (red, yellow, blue) palette. 
 
 ```{r}
 brewer.pal(n, name)
 ```
-returns the hex codes of the n colors in the name pallete, and can be assigned as a vector. 
+returns the hex codes of the n colors in the name palette, and can be assigned as a vector. 
 ```{r}
 Bl <- brewer.pal(9, Blues)
 ```
@@ -604,10 +604,14 @@ ggplot2 is much the same. we set covidchart as the source of our data and positi
 ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
 ```        
 ### ColorBrewer in ggplot2
-In order to use colorbrewer in ggplot2, you have to first save your ggplot in a variable, and then append the function scale_color_brewer() to it, with the argument pallete =."palletename" inside the function. Like so:
+In order to use colorbrewer in ggplot2, you have to first save your ggplot in a variable, and then append the function scale_color_brewer() to it, with the argument palette =."palettename" inside the function. Like so:
 ```{r}
 covid <- ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
 covid + scale_color_brewer(palette = "Greens")
+```
+Alternatively, you could append the scale_color_brewer function to the ggplot function
+```{r}
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm) + scale_color_brewer(palette = "Greens")
 ```
 ## Bubble Plot
 
