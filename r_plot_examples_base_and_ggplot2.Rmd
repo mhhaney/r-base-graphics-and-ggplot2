@@ -259,6 +259,12 @@ Data is total steel produced annually from the 5 largest steel producing countri
 ```{r}
 steel <- read.csv("data/steel.csv")
 ```
+## Segmented Stacked Bar Plot
+
+```{r}
+ggplot(steel, aes(fill=Country, y=Steel, x=year)) + 
+    geom_bar(position="fill", stat="identity") + ggtitle("Share of Steel Produced Annually") + ylab("% of Steel Produced") + xlab("Year")
+```
 
 Make the plot. geom_area() is the function that produces the stacked area plot.
 ```{r}
