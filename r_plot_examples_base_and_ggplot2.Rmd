@@ -586,7 +586,7 @@ display.brewer.pal(n, name)
 
 name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, 
 ```{r}
-display.brewer.pal(3, Pastel1)
+display.brewer.pal(3, "Pastel1")
 ```
 shows you the first three colors in the Pastel1 palette. 
 
@@ -595,7 +595,7 @@ brewer.pal(n, name)
 
 returns the hex codes of the n colors in the name palette, and can be assigned as a vector, your artist's palette Here, we create a palette of all 9 colors in Pastel1 palette. 
 ```{r}
-Past <- brewer.pal(9, Pastel1)
+Past <- brewer.pal(9, "Pastel1")
 ```
 From there, go back to your plot's color argument and type something like
 ```{r}
@@ -610,12 +610,12 @@ ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + l
 ### ColorBrewer in ggplot2
 In order to use colorbrewer in ggplot2, you have to first save your ggplot in a variable, and then append the function scale_color_brewer() to it, with the argument palette =."palettename" inside the function. Like so:
 ```{r}
-covid <- ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+covid <- ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(formula = y ~ x, method = lm)
 covid + scale_color_brewer(palette = "Pastel1")
 ```
 Alternatively, you could append the scale_color_brewer function to the ggplot function
 ```{r}
-ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm) + scale_color_brewer(palette = "Pastel1")
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(formula = y ~ x, method = lm) + scale_color_brewer(palette = "Pastel1")
 ```
 ## Bubble Plot
 
