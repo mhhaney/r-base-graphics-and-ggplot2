@@ -424,6 +424,50 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
                linetype = 3)
 ```
 
+## Strip Plot showing the distribution of a numberic variable by a categorical variable
+```{r}
+#This example is similar to the one that Dr. Haney did above, this time with a different dataset with new variables.
+data(chickwts)
+str(chickwts)
+
+```
+
+```{r}
+#in ggplot2:
+ggplot(data = chickwts) + 
+  geom_jitter(aes(y=feed, x=weight, color = feed), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Chick Weight by Feed Type",
+       x = "Chick Weight in Grams",
+       y = "Feed Type") + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+```{r}
+# A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
+data(CO2)
+str(CO2)
+```
+```{r}
+ggplot(data = CO2) + 
+  geom_jitter(aes(y=Treatment, x=uptake, color = Treatment), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Carbon Dioxide Uptake in Grass Plants by Treatment Type",
+       x = "Carbon Dioxide Uptake",
+       y = "Treatment Type") + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+
 ## Normal Probability (QQ) Plot
 
 A quantile-quantile ("QQ") plot is used to compare an empirical distribution to a theoretical distribution by plotting the observed quantiles vs the theoretical quantiles. They are typically used to evaluate whether or not a variable is normally distributed.
