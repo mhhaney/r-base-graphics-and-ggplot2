@@ -365,10 +365,17 @@ This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two 
 
 ```{r}
 ggplot(data = iris) + 
+
+### Add Boxplot on top of the strip plot for iris species. - used https://www.youtube.com/watch?v=mbvU8fF4eGM&t=613s as a reference
+
+  geom_boxplot(mapping = aes(x = iris$Sepal.Width, y = iris$Species, fill = iris$Species),
+               alpha = 0.25,
+               width = 0.5,
+               show.legend = FALSE) +
+               
   geom_jitter(aes(y=Species, x=Sepal.Width, color = Species), 
               width = 0.05, 
-              height = 0.2, 
-              alpha = 0.5,
+              height = 0.2,
               pch = 19,
               cex = 2) +
   labs(title = "Sepal Width Distribution by Iris Species",
