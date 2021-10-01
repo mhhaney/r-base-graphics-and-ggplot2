@@ -345,7 +345,8 @@ This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two 
 ```{r}
 ggplot(data = iris) + 
 
-### Add Boxplot on top of the strip plot for iris species
+###** Add Boxplot on top of the strip plot for iris species**
+
   geom_boxplot(mapping = aes(x = iris$Sepal.Width, y = iris$Species, fill = iris$Species),
                alpha = 0.25,
                width = 0.5,
