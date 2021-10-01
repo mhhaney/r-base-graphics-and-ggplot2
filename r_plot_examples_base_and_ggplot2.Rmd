@@ -25,6 +25,7 @@ library(tidyverse)
 library(vioplot)
 library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
+library(RColorBrewer)
 ```
 
 
@@ -598,10 +599,8 @@ abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
 
 ## Rcolorbrewer in Base R
-Another way to color your plot is by using rcolorbrewer. We first have to load rcolorbrewer like so:
-```{r}
-library(RColorBrewer)
-```
+Another way to color your plot is by using rcolorbrewer. We first have to load rcolorbrewer
+
 Then, execute this:
 ```{r}
 display.brewer.all()
