@@ -28,7 +28,6 @@ library(scales) # provides alpha() function to set alpha for base R plots
 library(RColorBrewer)
 ```
 
-
 ## Histogram
 
 ### Basic Histogram (Base R)
@@ -50,20 +49,20 @@ hist(iris$Petal.Width,
 
 ### Creating Histograms for each Species on Petal Width using Base R
 
-```{r}
+```{r, fig.height = 7, fig.width = 5}
 #Subsetting the different species
 set <- iris$Sepal.Width[iris$Species == "setosa"]
 ver <- iris$Sepal.Width[iris$Species == "versicolor"]
 vir <- iris$Sepal.Width[iris$Species == "virginica"]
 par(mfrow = c(3, 1))
-hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.5, 6.5), ylim=c(0, 50))
-hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.75, 5.5), ylim=c(0, 50))
-hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.5, 5.5), ylim=c(0, 50))
+hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
+hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
+hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 5.5))
 ```
 
 ### Basic Histogram using GGPlot2
 
-```{r}
+```{r, message=FALSE}
 ggplot(iris, aes(x=Petal.Width)) + 
   geom_histogram()
 ```
@@ -72,9 +71,9 @@ ggplot(iris, aes(x=Petal.Width)) +
 
 Changing the bins, color, outline color, adding title, and adding x and y labels
 
-```{r}
+```{r, message = FALSE}
 ggplot(iris, aes(x=Petal.Width)) + 
-  geom_histogram(binwidth=1.5, color="Blue", fill="orange") + 
+  geom_histogram(color="Blue", fill="orange", bins = 20) + 
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + 
   ylab("Frequency")
@@ -84,7 +83,7 @@ ggplot(iris, aes(x=Petal.Width)) +
 
 ```{r}
 ggplot(iris, aes(x=Petal.Width)) + 
-  geom_histogram(binwidth=1.5, color="yellow", aes(fill=Species)) + 
+  geom_histogram(color="yellow", aes(fill=Species), bins = 20) + 
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + 
   ylab("Frequency")
@@ -94,7 +93,9 @@ ggplot(iris, aes(x=Petal.Width)) +
 
 ```{r}
 ggplot(iris, aes(x=Petal.Width)) + 
-  geom_histogram(binwidth=1.5, color="blue", fill="orange") + ggtitle("Iris Petal Width Histogram") + xlab("Petal Width") + ylab("Frequency") + 
+  geom_histogram(color="blue", fill="orange", bins = 20) + 
+  ggtitle("Iris Petal Width Histogram") + 
+  xlab("Petal Width") + ylab("Frequency") + 
   facet_grid(. ~ Species)
 ```
 
@@ -126,7 +127,7 @@ orange %>%
   geom_density(fill= 7, color= 2)
 
 ```
-### Adding a Density Plot to the Customized Histogram
+### Adding a Density Plot to a Histogram
 Use the same histogram created in the "Customized Histogram Using Base R" section and overlay a density curve on it.
 ```{r}
 x <- iris$Petal.Width
@@ -160,8 +161,6 @@ legend("topright",
 
 ### GGplot2
 ```{r}
-
-
 # Use the same data set created in the base r example but make it into a data frame
 survey1 <- data.frame(
   fruit=c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
@@ -169,7 +168,9 @@ survey1 <- data.frame(
 
 # Create the barchart
 ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity") 
+```
 
+```{r}
 # Add color with black outlines
 ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red", "orange", "green", "yellow", "pink", "blue"), color="black") + labs(x="Count", y="Fruit", title="Fruit Survey") + theme(legend.position = "none")
 
@@ -267,17 +268,18 @@ Data is total steel produced annually from the 5 largest steel producing countri
 ```{r}
 steel <- read.csv("data/steel.csv")
 ```
-## Segmented Stacked Bar Plot
-
-```{r}
-ggplot(steel, aes(fill=Country, y=Steel, x=year)) + 
-    geom_bar(position="fill", stat="identity") + ggtitle("Share of Steel Produced Annually") + ylab("% of Steel Produced") + xlab("Year")
-```
 
 Make the plot. geom_area() is the function that produces the stacked area plot.
 ```{r}
 ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
     geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
+```
+
+## Segmented Stacked Bar Plot
+
+```{r}
+ggplot(steel, aes(fill=Country, y=Steel, x=year)) + 
+    geom_bar(position="fill", stat="identity") + ggtitle("Share of Steel Produced Annually") + ylab("% of Steel Produced") + xlab("Year")
 ```
 
 ## Boxplot
@@ -357,7 +359,7 @@ stripchart(jitter(iris$Sepal.Width, amount = 0),
 
 ### Strip chart in ggplot2
 
-With ggplot2's `geom_jitter()` is a shortcut for `geom_point(position = "jitter"). Its `width` and `height` parameters control the amount of random noise in the x and y dimensions, respectively. With ggplot2 we can set `alpha` directly without the use of any helper functions. However, with ggplot2 it is a bit tricky to make a strip chart for just one variable (without a second variable for grouping), as we need to set the y variable, set axis limits, and suppress the axis ticks and labels for the unused axis.
+With ggplot2's `geom_jitter()` is a shortcut for `geom_point(position = "jitter")`. Its `width` and `height` parameters control the amount of random noise in the x and y dimensions, respectively. With ggplot2 we can set `alpha` directly without the use of any helper functions. However, with ggplot2 it is a bit tricky to make a strip chart for just one variable (without a second variable for grouping), as we need to set the y variable, set axis limits, and suppress the axis ticks and labels for the unused axis.
 
 ```{r}
 ggplot(data = iris) + 
@@ -383,7 +385,7 @@ ggplot(data = iris) +
 
 ### Add Boxplot on top of the strip plot for iris species. - used https://www.youtube.com/watch?v=mbvU8fF4eGM&t=613s as a reference
 
-  geom_boxplot(mapping = aes(x = iris$Sepal.Width, y = iris$Species, fill = iris$Species),
+  geom_boxplot(mapping = aes(x = Sepal.Width, y = Species, fill = Species),
                alpha = 0.25,
                width = 0.5,
                show.legend = FALSE) +
@@ -447,12 +449,8 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
 ```
 
 ## Strip Plot showing the distribution of a numberic variable by a categorical variable
-```{r}
-#This example is similar to the one that Dr. Haney did above, this time with a different dataset with new variables.
-data(chickwts)
-str(chickwts)
 
-```
+This example shows a strip plot to compare chick weights with different types of feed. 
 
 ```{r}
 #in ggplot2:
@@ -469,11 +467,9 @@ ggplot(data = chickwts) +
   theme_bw() +
   theme(legend.position = "none")
 ```
-```{r}
-# A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
-data(CO2)
-str(CO2)
-```
+
+A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
+
 ```{r}
 ggplot(data = CO2) + 
   geom_jitter(aes(y=Treatment, x=uptake, color = Treatment), 
@@ -499,6 +495,7 @@ The built-in `rivers` dataset gives the lengths (in miles) of 141 rivers in Nort
 ### Basic QQ Plot with Normal Distribution Reference Line (Base R)
 
 Here we create a basic QQ plot in base R and add the normal distribution QQ plot as a reference line for comparison.
+
 ```{r}
 qqnorm(rivers,
        main = "Q-Q Plot of North American River Lengths")
@@ -593,7 +590,8 @@ titanic_m_data <- titanic_clean %>%
 ```
 
 ## Scatterplots
-### Base R
+
+### Scatterplots in Base R
 Creating a scatterplot in base R is simple. For this example, I used the dataset
 pennsylvania-history, which shows the history of pennsylvania's recorded covid cases
 from January to March 7. The variables of interest are positive, the number of positive
@@ -612,72 +610,67 @@ abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 
 We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
 
-## Rcolorbrewer in Base R
+## RColorBrewer in Base R
 Another way to color your plot is by using rcolorbrewer. We first have to load rcolorbrewer. Note that we will be using an example barplot instead of a scatterplot.
 
 ```{r}
 dummy <- data.frame(colno = c("col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8", "col9"), colcount = c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+```
 
-Then, execute this:
+Then, execute this to see all the available palettes. 
 
-```{r}
+```{r, fig.height = 8, fig.width = 7}
 display.brewer.all()
 ```
-to see all the available palettes. To view a single palette, type
+
+To view a single palette, type
 
 display.brewer.pal(n, name)
 
-name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, 
+name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, the following code shows you the first four colors in the Pastel1 palette. 
 
 ```{r}
-display.brewer.pal(3, "Pastel1")
+display.brewer.pal(4, "Pastel1")
 ```
-
-shows you the first three colors in the Pastel1 palette. 
 
 brewer.pal(n, name)
 
-returns the hex codes of the n colors in the name palette, and can be assigned as a vector, your artist's palette Here, we create a palette of all 9 colors in Pastel1 palette. 
+returns the hex codes of the n colors in the named palette as a vector. Here we create a palette of all 9 colors in Pastel1 palette. 
 
 ```{r}
 Past <- brewer.pal(9, "Pastel1")
 ```
 
-From there, go back to your plot's color argument and type something like
+From there, go back to your plot's color argument and use the following code to set the colors of the bars to the first color in the "Past" palette we made with RColorBrewer in the code chunk above. 
 
 ```{r}
-barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab = "count", ylim = (0,9), col = Past[1])
+barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab = "count", ylim = c(0,9), col = Past[1])
 ```
-
-To set the color of the bars to the first color in the "Past" palette we made with colorbrewer. Alternatively, you could type
+Alternatively, you could use the following code use every color in the palette to color the bars.
 
 ```{r}
-barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab - "count", ylim = (0,9), col = Past)
+barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab = "count", ylim = c(0,9), col = Past)
 ```
 
-To use every color in the palette to color the plot.
-
-### ggplot2
+### Scatterplots with ggplot2
 
 ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
 
-```{r}
+```{r, message = FALSE, warning = FALSE}
 ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
 ``` 
 
-### ColorBrewer in ggplot2
+### ColorBrewer with ggplot2
 
-In order to use colorbrewer in a barplot in ggplot2, you have to first save your barplot in a variable, and then append the function scale_fill_brewer() to it, with the argument palette =."palettename" inside the function. Don't forget to add code setting "fill" equal to your x variables (i.e. your bars), otherwise you'll get a plain grey bar graph. Done correctly, code should look like this:
+In order to use an RColorBrewer palette in a barplot in ggplot2, you have to first save your barplot in a variable, and then append the function scale_fill_brewer() to it, with the argument palette ="palettename" inside the function. Don't forget to add code setting "fill" equal to your x variables (i.e. your bars), otherwise you'll get a plain grey bar graph. Done correctly, code should look like this:
 
 ```{r}
-dummyplot <- ggplot(data = dummy, aes(x = colno, y = colcount, fill = colno)) + geom_bar(stat = "identity") + labs(x = "ColorNumber", y = "ColorCount", title = "Color Dummy Data")
-dummyplot + scale_fill_brewer(palette = "Pastel1")
+ggplot(data = dummy, aes(x = colno, y = colcount, fill = colno)) + 
+  geom_bar(stat = "identity") + 
+  labs(x = "ColorNumber", y = "ColorCount", title = "Color Dummy Data") +
+  scale_fill_brewer(palette = "Pastel1")
 ```
 
-Alternatively, you could append the scale_fill_brewer function to the ggplot function
-```{r}
-ggplot(data = dummy, aes(x = colno, y = colcount, fill = colno)) + geom_bar(stat = "identity") + labs(x = "ColorNumber", y = "ColorCount", title = "Color Dummy Data") + scale_fill_brewer(palette = "Pastel1")
-```
 ## Bubble Plot
 
 ### Base R Bubble Plot
@@ -762,7 +755,7 @@ data(swiss)
 
 #Data Preparation
 swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
-swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized mpg
+swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility
 swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
 swiss <- swiss[order(swiss$Fertility_z), ]  # sort
 swiss$`municipality` <- factor(swiss$`municipality`, levels = swiss$`municipality`)  # convert to factor to retain sorted order in plot.
