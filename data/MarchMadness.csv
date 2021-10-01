@@ -1,0 +1,2143 @@
+,Year,Round,Region Number,Region Name,Seed,Score,Team,Team.1,Score.1,Seed.1,Pointdiff,Winner,Champs,MM19,,Seed,Matchup,Champs
+0,1985,1,1,West,1,83,St Johns,Southern,59,16,24,1,0,No,,1,16,0
+1,1985,1,1,West,2,81,VCU,Marshall,65,15,16,1,0,Yes (1),,2,15,0
+2,1985,1,1,West,3,65,NC State,Nevada,56,14,9,1,0,Yes (2),,3,14,0
+3,1985,1,1,West,4,85,UNLV,San Diego St,80,13,5,1,0,No,,4,13,0
+4,1985,1,1,West,5,58,Washington,Kentucky,65,12,7,2,0,Yes (1),,5,12,0
+5,1985,1,1,West,6,75,Tulsa,UTEP,79,11,4,2,0,No,,6,11,0
+6,1985,1,1,West,7,50,Alabama,Arizona,41,10,9,1,0,Yes (2),,7,10,0
+7,1985,1,1,West,8,54,Iowa,Arkansas,63,9,9,2,0,Yes (1),,8,9,0
+8,1985,1,2,East,1,68,Georgetown,Lehigh,43,16,25,1,0,No,,1,16,0
+9,1985,1,2,East,2,65,Georgia Tech,Mercer,58,15,7,1,0,No,,2,15,0
+10,1985,1,2,East,3,76,Illinois,Northeastern,57,14,19,1,0,Yes (2),,3,14,0
+11,1985,1,2,East,4,59,Loyola Illinois,Iona,58,13,1,1,0,Yes (2),,4,13,0
+12,1985,1,2,East,5,85,SMU,Old Dominion,68,12,17,1,0,Yes (2),,5,12,0
+13,1985,1,2,East,6,67,Georgia,Wichita St,59,11,8,1,0,No,,6,11,0
+14,1985,1,2,East,7,70,Syracuse,DePaul,65,10,5,1,0,Yes (1),,7,10,0
+15,1985,1,2,East,8,60,Temple,Virginia Tech,57,9,3,1,0,Yes (2),,8,9,0
+16,1985,1,3,Midwest,1,96,Oklahoma,North Carolina A&T,83,16,13,1,0,Yes (1),,1,16,0
+17,1985,1,3,Midwest,2,67,Memphis,Pennsylvania,55,15,12,1,0,No,,2,15,0
+18,1985,1,3,Midwest,3,75,Duke,Pepperdine,62,14,13,1,0,Yes (1),,3,14,0
+19,1985,1,3,Midwest,4,75,Ohio St,Iowa St,64,13,11,1,0,Yes (1),,4,13,0
+20,1985,1,3,Midwest,5,78,Louisiana Tech,Pittsburgh,54,12,24,1,0,No,,5,12,0
+21,1985,1,3,Midwest,6,53,Texas Tech,Boston College,55,11,2,2,0,Yes (1),,6,11,0
+22,1985,1,3,Midwest,7,70,UAB,Michigan St,68,10,2,1,0,Yes (2),,7,10,0
+23,1985,1,3,Midwest,8,55,USC,Illinois St,58,9,3,2,0,No,,8,9,0
+24,1985,1,4,Southeast,1,59,Michigan,Fairleigh Dickinson,55,16,4,1,0,Yes (1),,1,16,0
+25,1985,1,4,Southeast,2,76,North Carolina,Middle Tennessee St,57,15,19,1,0,Yes (1),,2,15,0
+26,1985,1,4,Southeast,3,49,Kansas,Ohio,38,14,11,1,0,Yes (1),,3,14,0
+27,1985,1,4,Southeast,4,55,LSU,Navy,78,13,23,2,0,Yes (1),,4,13,0
+28,1985,1,4,Southeast,5,69,Maryland,Miami Ohio,68,12,1,1,0,Yes (1),,5,12,0
+29,1985,1,4,Southeast,6,58,Purdue,Auburn,59,11,1,2,0,Yes (1),,6,11,0
+30,1985,1,4,Southeast,7,79,Notre Dame,Oregon St,70,10,9,1,0,No,,7,10,0
+31,1985,1,4,Southeast,8,51,Villanova,Dayton,49,9,2,1,0,Yes (1),,8,9,0
+32,1985,2,1,West,1,68,St Johns,Arkansas,65,9,3,1,0,No,,1,9,0
+33,1985,2,1,West,2,59,VCU,Alabama,63,7,4,2,0,Yes (1),,2,7,0
+34,1985,2,1,West,3,86,NC State,UTEP,73,11,13,1,0,No,,3,11,0
+35,1985,2,1,West,4,61,UNLV,Kentucky,64,12,3,2,0,Yes (2),,4,12,0
+36,1985,2,2,East,1,63,Georgetown,Temple,46,8,17,1,0,No,,1,8,0
+37,1985,2,2,East,2,70,Georgia Tech,Syracuse,53,7,17,1,0,Yes (2),,2,7,0
+38,1985,2,2,East,3,74,Illinois,Georgia,58,6,16,1,0,No,,3,6,0
+39,1985,2,2,East,4,70,Loyola Illinois,SMU,57,5,13,1,0,No,,4,5,0
+40,1985,2,3,Midwest,1,75,Oklahoma,Illinois St,69,9,6,1,0,Yes (1),,1,9,0
+41,1985,2,3,Midwest,2,67,Memphis,UAB,66,7,1,1,0,No,,2,7,0
+42,1985,2,3,Midwest,3,73,Duke,Boston College,74,11,1,2,0,Yes (1),,3,11,0
+43,1985,2,3,Midwest,4,67,Ohio St,Louisiana Tech,79,5,12,2,0,Yes (1),,4,5,0
+44,1985,2,4,Southeast,1,55,Michigan,Villanova,59,8,4,2,0,Yes (1),,1,8,0
+45,1985,2,4,Southeast,2,60,North Carolina,Notre Dame,58,7,2,1,0,Yes (1),,2,7,0
+46,1985,2,4,Southeast,3,64,Kansas,Auburn,66,11,2,2,0,Yes (1),,3,11,0
+47,1985,2,4,Southeast,13,59,Navy,Maryland,64,5,5,2,0,Yes (2),,13,5,0
+48,1985,3,1,West,1,86,St Johns,Kentucky,70,12,16,1,0,Yes (2),,1,12,0
+49,1985,3,1,West,7,55,Alabama,NC State,61,3,6,2,0,No,,7,3,0
+50,1985,3,2,East,1,65,Georgetown,Loyola Illinois,53,4,12,1,0,No,,1,4,0
+51,1985,3,2,East,2,61,Georgia Tech,Illinois,53,3,8,1,0,No,,2,3,0
+52,1985,3,3,Midwest,1,86,Oklahoma,Louisiana Tech,84,5,2,1,0,Yes (1),,1,5,0
+53,1985,3,3,Midwest,2,59,Memphis,Boston College,57,11,2,1,0,No,,2,11,0
+54,1985,3,4,Southeast,8,46,Villanova,Maryland,43,5,3,1,0,Yes (1),,8,5,0
+55,1985,3,4,Southeast,2,62,North Carolina,Auburn,56,11,6,1,0,Yes (1),,2,11,0
+56,1985,4,1,West,1,69,St Johns,NC State,60,3,9,1,0,No,,1,3,0
+57,1985,4,2,East,1,60,Georgetown,Georgia Tech,54,2,6,1,0,No,,1,2,0
+58,1985,4,3,Midwest,1,61,Oklahoma,Memphis,63,2,2,2,0,Yes (1),,1,2,0
+59,1985,4,4,Southeast,8,56,Villanova,North Carolina,44,2,12,1,0,Yes (1),,8,2,0
+60,1985,5,1,Final Four,1,59,St Johns,Georgetown,77,1,18,2,0,No,,1,1,0
+61,1985,5,2,Final Four,2,45,Memphis,Villanova,52,8,7,2,0,Yes (2),,2,8,0
+62,1985,6,1,Championship,1,64,Georgetown,Villanova,66,8,2,3,8,Yes (2),,1,8,8
+63,1986,1,1,Southeast,1,75,Kentucky,Davidson,55,16,20,1,0,Yes (1),,1,16,0
+64,1986,1,1,Southeast,2,68,Georgia Tech,Marist,53,15,15,1,0,No,,2,15,0
+65,1986,1,1,Southeast,3,95,Memphis,Ball St,63,14,32,1,0,No,,3,14,0
+66,1986,1,1,Southeast,4,75,Illinois,Fairfield,51,13,24,1,0,No,,4,13,0
+67,1986,1,1,Southeast,5,97,Alabama,Xavier,80,12,17,1,0,No,,5,12,0
+68,1986,1,1,Southeast,6,87,Purdue,LSU,94,11,7,2,0,Yes (1),,6,11,0
+69,1986,1,1,Southeast,7,62,Virginia Tech,Villanova,71,10,9,2,0,Yes (1),,7,10,0
+70,1986,1,1,Southeast,8,67,Western Kentucky,Nebraska,59,9,8,1,0,No,,8,9,0
+71,1986,1,2,West,1,83,St Johns,Montana St,74,16,9,1,0,No,,1,16,0
+72,1986,1,2,West,2,93,Louisville,Drexel,73,15,20,1,0,Yes (1),,2,15,0
+73,1986,1,2,West,3,84,North Carolina,Utah,72,14,12,1,0,Yes (1),,3,14,0
+74,1986,1,2,West,4,74,UNLV,Louisiana Monroe,51,13,23,1,0,No,,4,13,0
+75,1986,1,2,West,5,69,Maryland,Pepperdine,64,12,5,1,0,Yes (1),,5,12,0
+76,1986,1,2,West,6,66,UAB,Missouri,64,11,2,1,0,No,,6,11,0
+77,1986,1,2,West,7,83,Bradley,UTEP,65,10,18,1,0,Yes (1),,7,10,0
+78,1986,1,2,West,8,73,Auburn,Arizona,63,9,10,1,0,Yes (1),,8,9,0
+79,1986,1,3,East,1,85,Duke,Mississippi Valley St,78,16,7,1,0,Yes (1),,1,16,0
+80,1986,1,3,East,2,101,Syracuse,Brown,52,15,49,1,0,Yes (1),,2,15,0
+81,1986,1,3,East,3,79,Indiana,Cleveland St,83,14,4,2,0,No,,3,14,0
+82,1986,1,3,East,4,80,Oklahoma,Northeastern,74,13,6,1,0,Yes (1),,4,13,0
+83,1986,1,3,East,5,68,Virginia,DePaul,72,12,4,2,0,Yes (1),,5,12,0
+84,1986,1,3,East,6,60,St Josephs,Richmond,59,11,1,1,0,No,,6,11,0
+85,1986,1,3,East,7,87,Navy,Tulsa,68,10,19,1,0,No,,7,10,0
+86,1986,1,3,East,8,72,Old Dominion,West Virginia,64,9,8,1,0,Yes (1),,8,9,0
+87,1986,1,4,Midwest,1,71,Kansas,North Carolina A&T,46,16,25,1,0,Yes (1),,1,16,0
+88,1986,1,4,Midwest,2,70,Michigan,Akron,64,15,6,1,0,Yes (1),,2,15,0
+89,1986,1,4,Midwest,3,83,Notre Dame,Arkansas Little Rock,90,14,7,2,0,No,,3,14,0
+90,1986,1,4,Midwest,4,70,Georgetown,Texas Tech,64,13,6,1,0,Yes (2),,4,13,0
+91,1986,1,4,Midwest,5,72,Michigan St,Washington,70,12,2,1,0,Yes (1),,5,12,0
+92,1986,1,4,Midwest,6,66,NC State,Iowa,64,11,2,1,0,Yes (2),,6,11,0
+93,1986,1,4,Midwest,7,81,Iowa St,Miami Ohio,79,10,2,1,0,Yes (1),,7,10,0
+94,1986,1,4,Midwest,8,50,Jacksonville,Temple,61,9,11,2,0,No,,8,9,0
+95,1986,2,1,Southeast,1,71,Kentucky,Western Kentucky,64,8,7,1,0,Yes (1),,1,8,0
+96,1986,2,1,Southeast,2,66,Georgia Tech,Villanova,61,10,5,1,0,Yes (2),,2,10,0
+97,1986,2,1,Southeast,3,81,Memphis,LSU,83,11,2,2,0,Yes (2),,3,11,0
+98,1986,2,1,Southeast,4,56,Illinois,Alabama,58,5,2,2,0,No,,4,5,0
+99,1986,2,2,West,1,65,St Johns,Auburn,81,8,16,2,0,Yes (2),,1,8,0
+100,1986,2,2,West,2,82,Louisville,Bradley,68,7,14,1,0,Yes (1),,2,7,0
+101,1986,2,2,West,3,77,North Carolina,UAB,59,6,18,1,0,Yes (1),,3,6,0
+102,1986,2,2,West,4,70,UNLV,Maryland,64,5,6,1,0,Yes (2),,4,5,0
+103,1986,2,3,East,1,89,Duke,Old Dominion,61,8,28,1,0,Yes (1),,1,8,0
+104,1986,2,3,East,2,85,Syracuse,Navy,97,7,12,2,0,Yes (1),,2,7,0
+105,1986,2,3,East,14,75,Cleveland St,St Josephs,69,6,6,1,0,No,,14,6,0
+106,1986,2,3,East,4,69,Oklahoma,DePaul,74,12,5,2,0,Yes (1),,4,12,0
+107,1986,2,4,Midwest,1,65,Kansas,Temple,43,9,22,1,0,Yes (1),,1,9,0
+108,1986,2,4,Midwest,2,69,Michigan,Iowa St,72,7,3,2,0,Yes (1),,2,7,0
+109,1986,2,4,Midwest,14,66,Arkansas Little Rock,NC State,80,6,14,2,0,No,,14,6,0
+110,1986,2,4,Midwest,4,68,Georgetown,Michigan St,80,5,12,2,0,Yes (2),,4,5,0
+111,1986,3,1,Southeast,1,68,Kentucky,Alabama,63,5,5,1,0,Yes (1),,1,5,0
+112,1986,3,1,Southeast,2,64,Georgia Tech,LSU,70,11,6,2,0,Yes (2),,2,11,0
+113,1986,3,2,West,8,70,Auburn,UNLV,63,4,7,1,0,Yes (1),,8,4,0
+114,1986,3,2,West,2,94,Louisville,North Carolina,79,3,15,1,0,Yes (1),,2,3,0
+115,1986,3,3,East,1,74,Duke,DePaul,67,12,7,1,0,Yes (1),,1,12,0
+116,1986,3,3,East,7,71,Navy,Cleveland St,70,14,1,1,0,No,,7,14,0
+117,1986,3,4,Midwest,1,96,Kansas,Michigan St,86,5,10,1,0,Yes (1),,1,5,0
+118,1986,3,4,Midwest,7,66,Iowa St,NC State,70,6,4,2,0,Yes (1),,7,6,0
+119,1986,4,1,Southeast,1,57,Kentucky,LSU,59,11,2,2,0,Yes (1),,1,11,0
+120,1986,4,2,West,8,76,Auburn,Louisville,84,2,8,2,0,Yes (1),,8,2,0
+121,1986,4,3,East,1,71,Duke,Navy,50,7,21,1,0,Yes (1),,1,7,0
+122,1986,4,4,Midwest,1,75,Kansas,NC State,67,6,8,1,0,Yes (1),,1,6,0
+123,1986,5,1,Final Four,11,77,LSU,Louisville,88,2,11,2,0,Yes (1),,11,2,0
+124,1986,5,2,Final Four,1,71,Duke,Kansas,67,1,4,1,0,Yes (1),,1,1,0
+125,1986,6,1,Championship,2,72,Louisville,Duke,69,1,3,4,2,Yes (1),,2,1,2
+126,1987,1,1,West,1,95,UNLV,Idaho St,70,16,25,1,0,No,,1,16,0
+127,1987,1,1,West,2,99,Iowa,Santa Clara,76,15,23,1,0,Yes (1),,2,15,0
+128,1987,1,1,West,3,93,Pittsburgh,Marist,68,14,25,1,0,No,,3,14,0
+129,1987,1,1,West,4,92,UCLA,Central Michigan,73,13,19,1,0,No,,4,13,0
+130,1987,1,1,West,5,60,Virginia,Wyoming,64,12,4,2,0,Yes (1),,5,12,0
+131,1987,1,1,West,6,74,Oklahoma,Tulsa,69,11,5,1,0,Yes (1),,6,11,0
+132,1987,1,1,West,7,98,UTEP,Arizona,91,10,7,1,0,Yes (2),,7,10,0
+133,1987,1,1,West,8,79,Georgia,Kansas St,82,9,3,2,0,Yes (2),,8,9,0
+134,1987,1,2,Midwest,1,92,Indiana,Fairfield,58,16,34,1,0,No,,1,16,0
+135,1987,1,2,Midwest,2,75,Temple,Southern,56,15,19,1,0,No,,2,15,0
+136,1987,1,2,Midwest,3,76,DePaul,Louisiana Tech,62,14,14,1,0,No,,3,14,0
+137,1987,1,2,Midwest,4,69,Missouri,Xavier,70,13,1,2,0,No,,4,13,0
+138,1987,1,2,Midwest,5,58,Duke,Texas A&M,51,12,7,1,0,Yes (1),,5,12,0
+139,1987,1,2,Midwest,6,57,St Johns,Wichita St,55,11,2,1,0,No,,6,11,0
+140,1987,1,2,Midwest,7,79,Georgia Tech,LSU,85,10,6,2,0,Yes (2),,7,10,0
+141,1987,1,2,Midwest,8,62,Auburn,San Diego,61,9,1,1,0,Yes (1),,8,9,0
+142,1987,1,3,Southeast,1,75,Georgetown,Bucknell,53,16,22,1,0,No,,1,16,0
+143,1987,1,3,Southeast,2,88,Alabama,North Carolina A&T,71,15,17,1,0,No,,2,15,0
+144,1987,1,3,Southeast,3,67,Illinois,Austin Peay,68,14,1,2,0,No,,3,14,0
+145,1987,1,3,Southeast,4,60,Clemson,Southwest Missouri St,65,13,5,2,0,No,,4,13,0
+146,1987,1,3,Southeast,5,66,Kansas,Houston,55,12,11,1,0,Yes (1),,5,12,0
+147,1987,1,3,Southeast,6,90,Providence,UAB,68,11,22,1,0,No,,6,11,0
+148,1987,1,3,Southeast,7,83,New Orleans,BYU,79,10,4,1,0,No,,7,10,0
+149,1987,1,3,Southeast,8,77,Kentucky,Ohio St,91,9,14,2,0,Yes (1),,8,9,0
+150,1987,1,4,East,1,113,North Carolina,Pennsylvania,82,16,31,1,0,Yes (1),,1,16,0
+151,1987,1,4,East,2,79,Syracuse,Georgia Southern,73,15,6,1,0,Yes (1),,2,15,0
+152,1987,1,4,East,3,104,Purdue,Northeastern,95,14,9,1,0,Yes (1),,3,14,0
+153,1987,1,4,East,4,76,TCU,Marshall,60,13,16,1,0,No,,4,13,0
+154,1987,1,4,East,5,84,Notre Dame,Middle Tennessee St,71,12,13,1,0,No,,5,12,0
+155,1987,1,4,East,6,82,Florida,NC State,70,11,12,1,0,Yes (1),,6,11,0
+156,1987,1,4,East,7,62,West Virginia,Western Kentucky,64,10,2,2,0,No,,7,10,0
+157,1987,1,4,East,8,82,Navy,Michigan,97,9,15,2,0,Yes (2),,8,9,0
+158,1987,2,1,West,1,80,UNLV,Kansas St,61,9,19,1,0,Yes (2),,1,9,0
+159,1987,2,1,West,2,84,Iowa,UTEP,82,7,2,1,0,Yes (1),,2,7,0
+160,1987,2,1,West,3,93,Pittsburgh,Oklahoma,96,6,3,2,0,Yes (2),,3,6,0
+161,1987,2,1,West,4,68,UCLA,Wyoming,78,12,10,2,0,No,,4,12,0
+162,1987,2,2,Midwest,1,107,Indiana,Auburn,90,8,17,1,0,Yes (2),,1,8,0
+163,1987,2,2,Midwest,2,62,Temple,LSU,72,10,10,2,0,Yes (2),,2,10,0
+164,1987,2,2,Midwest,3,83,DePaul,St Johns,75,6,8,1,0,No,,3,6,0
+165,1987,2,2,Midwest,13,60,Xavier,Duke,65,5,5,2,0,Yes (2),,13,5,0
+166,1987,2,3,Southeast,1,82,Georgetown,Ohio St,79,9,3,1,0,Yes (2),,1,9,0
+167,1987,2,3,Southeast,2,101,Alabama,New Orleans,76,7,25,1,0,No,,2,7,0
+168,1987,2,3,Southeast,14,87,Austin Peay,Providence,90,6,3,2,0,No,,14,6,0
+169,1987,2,3,Southeast,13,63,Southwest Missouri St,Kansas,67,5,4,2,0,Yes (2),,13,5,0
+170,1987,2,4,East,1,109,North Carolina,Michigan,97,9,12,1,0,Yes (1),,1,9,0
+171,1987,2,4,East,2,104,Syracuse,Western Kentucky,86,10,18,1,0,Yes (1),,2,10,0
+172,1987,2,4,East,3,66,Purdue,Florida,85,6,19,2,0,Yes (1),,3,6,0
+173,1987,2,4,East,4,57,TCU,Notre Dame,58,5,1,2,0,No,,4,5,0
+174,1987,3,1,West,1,92,UNLV,Wyoming,78,12,14,1,0,No,,1,12,0
+175,1987,3,1,West,2,93,Iowa,Oklahoma,91,6,2,1,0,Yes (1),,2,6,0
+176,1987,3,2,Midwest,1,88,Indiana,Duke,82,5,6,1,0,Yes (2),,1,5,0
+177,1987,3,2,Midwest,10,63,LSU,DePaul,58,3,5,1,0,Yes (1),,10,3,0
+178,1987,3,3,Southeast,1,70,Georgetown,Kansas,57,5,13,1,0,Yes (2),,1,5,0
+179,1987,3,3,Southeast,2,82,Alabama,Providence,103,6,21,2,0,No,,2,6,0
+180,1987,3,4,East,1,74,North Carolina,Notre Dame,68,5,6,1,0,Yes (1),,1,5,0
+181,1987,3,4,East,2,87,Syracuse,Florida,81,6,6,1,0,Yes (1),,2,6,0
+182,1987,4,1,West,1,84,UNLV,Iowa,81,2,3,1,0,Yes (2),,1,2,0
+183,1987,4,2,Midwest,1,77,Indiana,LSU,76,10,1,1,0,Yes (2),,1,10,0
+184,1987,4,3,Southeast,1,73,Georgetown,Providence,88,6,15,2,0,No,,1,6,0
+185,1987,4,4,East,1,75,North Carolina,Syracuse,79,2,4,2,0,Yes (1),,1,2,0
+186,1987,5,1,Final Four,1,93,UNLV,Indiana,97,1,4,2,0,No,,1,1,0
+187,1987,5,2,Final Four,6,63,Providence,Syracuse,67,2,4,2,0,Yes (2),,6,2,0
+188,1987,6,1,Championship,1,74,Indiana,Syracuse,73,2,1,4,1,Yes (2),,1,2,1
+189,1988,1,1,Midwest,1,94,Purdue,Fairleigh Dickinson,79,16,15,1,0,Yes (1),,1,16,0
+190,1988,1,1,Midwest,2,108,Pittsburgh,Eastern Michigan,90,15,18,1,0,No,,2,15,0
+191,1988,1,1,Midwest,3,75,NC State,Murray St,78,14,3,2,0,No,,3,14,0
+192,1988,1,1,Midwest,4,66,Kansas St,La Salle,53,13,13,1,0,Yes (1),,4,13,0
+193,1988,1,1,Midwest,5,83,DePaul,Wichita St,62,12,21,1,0,No,,5,12,0
+194,1988,1,1,Midwest,6,85,Kansas,Xavier,72,11,13,1,0,Yes (1),,6,11,0
+195,1988,1,1,Midwest,7,80,Vanderbilt,Utah St,77,10,3,1,0,Yes (2),,7,10,0
+196,1988,1,1,Midwest,8,60,Baylor,Memphis,75,9,15,2,0,Yes (1),,8,9,0
+197,1988,1,2,East,1,87,Temple,Lehigh,73,16,14,1,0,No,,1,16,0
+198,1988,1,2,East,2,85,Duke,Boston University,69,15,16,1,0,Yes (1),,2,15,0
+199,1988,1,2,East,3,69,Syracuse,North Carolina A&T,55,14,14,1,0,Yes (1),,3,14,0
+200,1988,1,2,East,4,69,Indiana,Richmond,72,13,3,2,0,No,,4,13,0
+201,1988,1,2,East,5,90,Georgia Tech,Iowa St,78,12,12,1,0,Yes (2),,5,12,0
+202,1988,1,2,East,6,80,Missouri,Rhode Island,87,11,7,2,0,No,,6,11,0
+203,1988,1,2,East,7,83,SMU,Notre Dame,75,10,8,1,0,No,,7,10,0
+204,1988,1,2,East,8,66,Georgetown,LSU,63,9,3,1,0,Yes (2),,8,9,0
+205,1988,1,3,West,1,90,Arizona,Cornell,50,16,40,1,0,Yes (1),,1,16,0
+206,1988,1,3,West,2,83,North Carolina,North Texas St,65,15,18,1,0,Yes (1),,2,15,0
+207,1988,1,3,West,3,63,Michigan,Boise St,58,14,5,1,0,Yes (1),,3,14,0
+208,1988,1,3,West,4,54,UNLV,Southwest Missouri St,50,13,4,1,0,No,,4,13,0
+209,1988,1,3,West,5,102,Iowa,Florida St,98,12,4,1,0,Yes (1),,5,12,0
+210,1988,1,3,West,6,62,Florida,St Johns,59,11,3,1,0,Yes (1),,6,11,0
+211,1988,1,3,West,7,115,Wyoming,Loyola Marymount,119,10,4,2,0,No,,7,10,0
+212,1988,1,3,West,8,80,Seton Hall,UTEP,64,9,16,1,0,Yes (1),,8,9,0
+213,1988,1,4,Southeast,1,94,Oklahoma,Chattanooga,66,16,28,1,0,Yes (1),,1,16,0
+214,1988,1,4,Southeast,2,99,Kentucky,Southern,84,15,15,1,0,Yes (1),,2,15,0
+215,1988,1,4,Southeast,3,81,Illinois,Texas San Antonio,72,14,9,1,0,No,,3,14,0
+216,1988,1,4,Southeast,4,98,BYU,Charlotte,92,13,6,1,0,No,,4,13,0
+217,1988,1,4,Southeast,5,70,Louisville,Oregon St,61,12,9,1,0,Yes (1),,5,12,0
+218,1988,1,4,Southeast,6,82,Villanova,Arkansas,74,11,8,1,0,Yes (1),,6,11,0
+219,1988,1,4,Southeast,7,92,Maryland,Santa Barbara,82,10,10,1,0,Yes (1),,7,10,0
+220,1988,1,4,Southeast,8,90,Auburn,Bradley,86,9,4,1,0,Yes (1),,8,9,0
+221,1988,2,1,Midwest,1,100,Purdue,Memphis,73,9,27,1,0,Yes (1),,1,9,0
+222,1988,2,1,Midwest,2,74,Pittsburgh,Vanderbilt,80,7,6,2,0,No,,2,7,0
+223,1988,2,1,Midwest,14,58,Murray St,Kansas,61,6,3,2,0,Yes (2),,14,6,0
+224,1988,2,1,Midwest,4,66,Kansas St,DePaul,58,5,8,1,0,Yes (1),,4,5,0
+225,1988,2,2,East,1,74,Temple,Georgetown,53,8,21,1,0,No,,1,8,0
+226,1988,2,2,East,2,94,Duke,SMU,79,7,15,1,0,Yes (1),,2,7,0
+227,1988,2,2,East,3,94,Syracuse,Rhode Island,97,11,3,2,0,Yes (1),,3,11,0
+228,1988,2,2,East,13,59,Richmond,Georgia Tech,55,5,4,1,0,No,,13,5,0
+229,1988,2,3,West,1,84,Arizona,Seton Hall,55,8,29,1,0,Yes (1),,1,8,0
+230,1988,2,3,West,2,123,North Carolina,Loyola Marymount,97,10,26,1,0,Yes (1),,2,10,0
+231,1988,2,3,West,3,108,Michigan,Florida,85,6,23,1,0,Yes (1),,3,6,0
+232,1988,2,3,West,4,85,UNLV,Iowa,104,5,19,2,0,Yes (2),,4,5,0
+233,1988,2,4,Southeast,1,107,Oklahoma,Auburn,87,8,20,1,0,Yes (1),,1,8,0
+234,1988,2,4,Southeast,2,90,Kentucky,Maryland,81,7,9,1,0,Yes (1),,2,7,0
+235,1988,2,4,Southeast,3,63,Illinois,Villanova,66,6,3,2,0,Yes (2),,3,6,0
+236,1988,2,4,Southeast,4,76,BYU,Louisville,97,5,21,2,0,Yes (2),,4,5,0
+237,1988,3,1,Midwest,1,70,Purdue,Kansas St,73,4,3,2,0,Yes (1),,1,4,0
+238,1988,3,1,Midwest,7,64,Vanderbilt,Kansas,77,6,13,2,0,Yes (2),,7,6,0
+239,1988,3,2,East,1,69,Temple,Richmond,47,13,22,1,0,No,,1,13,0
+240,1988,3,2,East,2,73,Duke,Rhode Island,72,11,1,1,0,Yes (1),,2,11,0
+241,1988,3,3,West,1,99,Arizona,Iowa,79,5,20,1,0,Yes (1),,1,5,0
+242,1988,3,3,West,2,78,North Carolina,Michigan,69,3,9,1,0,Yes (1),,2,3,0
+243,1988,3,4,Southeast,1,108,Oklahoma,Louisville,98,5,10,1,0,Yes (1),,1,5,0
+244,1988,3,4,Southeast,2,74,Kentucky,Villanova,80,6,6,2,0,Yes (1),,2,6,0
+245,1988,4,1,Midwest,4,58,Kansas St,Kansas,71,6,13,2,0,Yes (1),,4,6,0
+246,1988,4,2,East,1,53,Temple,Duke,63,2,10,2,0,Yes (2),,1,2,0
+247,1988,4,3,West,1,70,Arizona,North Carolina,52,2,18,1,0,Yes (1),,1,2,0
+248,1988,4,4,Southeast,1,78,Oklahoma,Villanova,59,6,19,1,0,Yes (1),,1,6,0
+249,1988,5,1,Final Four,6,66,Kansas,Duke,59,2,7,1,0,Yes (1),,6,2,0
+250,1988,5,2,Final Four,1,78,Arizona,Oklahoma,86,1,8,2,0,Yes (1),,1,1,0
+251,1988,6,1,Championship,6,83,Kansas,Oklahoma,79,1,4,4,6,Yes (1),,6,1,6
+252,1989,1,1,Midwest,1,77,Illinois,McNeese St,71,16,6,1,0,No,,1,16,0
+253,1989,1,1,Midwest,2,104,Syracuse,Bucknell,81,15,23,1,0,Yes (1),,2,15,0
+254,1989,1,1,Midwest,3,85,Missouri,Creighton,69,14,16,1,0,No,,3,14,0
+255,1989,1,1,Midwest,4,76,Louisville,Arkansas Little Rock,71,13,5,1,0,Yes (1),,4,13,0
+256,1989,1,1,Midwest,5,120,Arkansas,Loyola Marymount,101,12,19,1,0,No,,5,12,0
+257,1989,1,1,Midwest,6,70,Georgia Tech,Texas,76,11,6,2,0,No,,6,11,0
+258,1989,1,1,Midwest,7,46,Florida,Colorado St,68,10,22,2,0,Yes (1),,7,10,0
+259,1989,1,1,Midwest,8,64,Pittsburgh,Ball St,68,9,4,2,0,No,,8,9,0
+260,1989,1,2,Southeast,1,72,Oklahoma,East Tennessee St,71,16,1,1,0,Yes (1),,1,16,0
+261,1989,1,2,Southeast,2,93,North Carolina,Southern,79,15,14,1,0,Yes (1),,2,15,0
+262,1989,1,2,Southeast,3,93,Michigan,Xavier,87,14,6,1,0,Yes (1),,3,14,0
+263,1989,1,2,Southeast,4,83,Florida St,Middle Tennessee St,97,13,14,2,0,No,,4,13,0
+264,1989,1,2,Southeast,5,100,Virginia,Providence,97,12,3,1,0,Yes (1),,5,12,0
+265,1989,1,2,Southeast,6,84,Alabama,South Alabama,86,11,2,2,0,No,,6,11,0
+266,1989,1,2,Southeast,7,84,UCLA,Iowa St,74,10,10,1,0,Yes (2),,7,10,0
+267,1989,1,2,Southeast,8,74,La Salle,Louisiana Tech,83,9,9,2,0,No,,8,9,0
+268,1989,1,3,East,1,50,Georgetown,Princeton,49,16,1,1,0,No,,1,16,0
+269,1989,1,3,East,2,90,Duke,South Carolina St,69,15,21,1,0,Yes (1),,2,15,0
+270,1989,1,3,East,3,78,Stanford,Siena,80,14,2,2,0,No,,3,14,0
+271,1989,1,3,East,4,87,Iowa,Rutgers,73,13,14,1,0,Yes (1),,4,13,0
+272,1989,1,3,East,5,81,NC State,South Carolina,66,12,15,1,0,No,,5,12,0
+273,1989,1,3,East,6,75,Kansas St,Minnesota,86,11,11,2,0,Yes (1),,6,11,0
+274,1989,1,3,East,7,84,West Virginia,Tennessee,68,10,16,1,0,Yes (2),,7,10,0
+275,1989,1,3,East,8,65,Vanderbilt,Notre Dame,81,9,16,2,0,No,,8,9,0
+276,1989,1,4,West,1,94,Arizona,Robert Morris,60,16,34,1,0,Yes (1),,1,16,0
+277,1989,1,4,West,2,99,Indiana,George Mason,85,15,14,1,0,No,,2,15,0
+278,1989,1,4,West,3,60,Seton Hall,Southwest Missouri St,51,14,9,1,0,Yes (1),,3,14,0
+279,1989,1,4,West,4,68,UNLV,Idaho,56,13,12,1,0,No,,4,13,0
+280,1989,1,4,West,5,63,Memphis,DePaul,66,12,3,2,0,No,,5,12,0
+281,1989,1,4,West,6,90,Oregon St,Evansville,94,11,4,2,0,No,,6,11,0
+282,1989,1,4,West,7,85,UTEP,LSU,74,10,11,1,0,Yes (2),,7,10,0
+283,1989,1,4,West,8,70,St Marys,Clemson,80,9,10,2,0,Yes (1),,8,9,0
+284,1989,2,1,Midwest,1,72,Illinois,Ball St,60,9,12,1,0,No,,1,9,0
+285,1989,2,1,Midwest,2,65,Syracuse,Colorado St,50,10,15,1,0,Yes (1),,2,10,0
+286,1989,2,1,Midwest,3,108,Missouri,Texas,89,11,19,1,0,No,,3,11,0
+287,1989,2,1,Midwest,4,93,Louisville,Arkansas,84,5,9,1,0,Yes (1),,4,5,0
+288,1989,2,2,Southeast,1,124,Oklahoma,Louisiana Tech,81,9,43,1,0,Yes (1),,1,9,0
+289,1989,2,2,Southeast,2,88,North Carolina,UCLA,81,7,7,1,0,Yes (1),,2,7,0
+290,1989,2,2,Southeast,3,91,Michigan,South Alabama,82,11,9,1,0,Yes (1),,3,11,0
+291,1989,2,2,Southeast,13,88,Middle Tennessee St,Virginia,104,5,16,2,0,Yes (2),,13,5,0
+292,1989,2,3,East,1,81,Georgetown,Notre Dame,74,9,7,1,0,No,,1,9,0
+293,1989,2,3,East,2,70,Duke,West Virginia,63,7,7,1,0,Yes (1),,2,7,0
+294,1989,2,3,East,14,67,Siena,Minnesota,80,11,13,2,0,Yes (2),,14,11,0
+295,1989,2,3,East,4,96,Iowa,NC State,102,5,6,2,0,Yes (1),,4,5,0
+296,1989,2,4,West,1,94,Arizona,Clemson,68,9,26,1,0,Yes (1),,1,9,0
+297,1989,2,4,West,2,92,Indiana,UTEP,69,7,23,1,0,No,,2,7,0
+298,1989,2,4,West,3,87,Seton Hall,Evansville,73,11,14,1,0,Yes (1),,3,11,0
+299,1989,2,4,West,4,85,UNLV,DePaul,70,12,15,1,0,No,,4,12,0
+300,1989,3,1,Midwest,1,83,Illinois,Louisville,69,4,14,1,0,Yes (2),,1,4,0
+301,1989,3,1,Midwest,2,83,Syracuse,Missouri,80,3,3,1,0,Yes (1),,2,3,0
+302,1989,3,2,Southeast,1,80,Oklahoma,Virginia,86,5,6,2,0,Yes (1),,1,5,0
+303,1989,3,2,Southeast,2,87,North Carolina,Michigan,92,3,5,2,0,Yes (1),,2,3,0
+304,1989,3,3,East,1,69,Georgetown,NC State,61,5,8,1,0,No,,1,5,0
+305,1989,3,3,East,2,87,Duke,Minnesota,70,11,17,1,0,Yes (1),,2,11,0
+306,1989,3,4,West,1,67,Arizona,UNLV,68,4,1,2,0,Yes (1),,1,4,0
+307,1989,3,4,West,2,65,Indiana,Seton Hall,78,3,13,2,0,Yes (2),,2,3,0
+308,1989,4,1,Midwest,1,89,Illinois,Syracuse,86,2,3,1,0,Yes (2),,1,2,0
+309,1989,4,2,Southeast,5,65,Virginia,Michigan,102,3,37,2,0,Yes (1),,5,3,0
+310,1989,4,3,East,1,77,Georgetown,Duke,85,2,8,2,0,Yes (2),,1,2,0
+311,1989,4,4,West,4,61,UNLV,Seton Hall,84,3,23,2,0,Yes (2),,4,3,0
+312,1989,5,1,Final Four,1,81,Illinois,Michigan,83,3,2,2,0,Yes (2),,1,3,0
+313,1989,5,2,Final Four,2,78,Duke,Seton Hall,95,3,17,2,0,Yes (1),,2,3,0
+314,1989,6,1,Championship,3,80,Michigan,Seton Hall,79,3,1,4,3,Yes (1),,3,3,3
+315,1990,1,1,Southeast,1,75,Michigan St,Murray St,71,16,4,1,0,Yes (1),,1,16,0
+316,1990,1,1,Southeast,2,70,Syracuse,Coppin St,48,15,22,1,0,Yes (1),,2,15,0
+317,1990,1,1,Southeast,3,71,Missouri,Northern Iowa,74,14,3,2,0,No,,3,14,0
+318,1990,1,1,Southeast,4,99,Georgia Tech,East Tennessee St,83,13,16,1,0,No,,4,13,0
+319,1990,1,1,Southeast,5,70,LSU,Villanova,63,12,7,1,0,Yes (1),,5,12,0
+320,1990,1,1,Southeast,6,64,Minnesota,UTEP,61,11,3,1,0,Yes (1),,6,11,0
+321,1990,1,1,Southeast,7,75,Virginia,Notre Dame,67,10,8,1,0,Yes (1),,7,10,0
+322,1990,1,1,Southeast,8,66,Houston,Santa Barbara,70,9,4,2,0,Yes (1),,8,9,0
+323,1990,1,2,West,1,102,UNLV,Arkansas Little Rock,72,16,30,1,0,No,,1,16,0
+324,1990,1,2,West,2,79,Arizona,South Florida,67,15,12,1,0,Yes (1),,2,15,0
+325,1990,1,2,West,3,76,Michigan,Illinois St,70,14,6,1,0,Yes (1),,3,14,0
+326,1990,1,2,West,4,78,Louisville,Idaho,59,13,19,1,0,Yes (1),,4,13,0
+327,1990,1,2,West,5,53,Oregon St,Ball St,54,12,1,2,0,No,,5,12,0
+328,1990,1,2,West,6,92,New Mexico St,Loyola Marymount,111,11,19,2,0,Yes (1),,6,11,0
+329,1990,1,2,West,7,71,Alabama,Colorado St,54,10,17,1,0,No,,7,10,0
+330,1990,1,2,West,8,84,Ohio St,Providence,83,9,1,1,0,Yes (1),,8,9,0
+331,1990,1,3,East,1,76,Connecticut,Boston University,52,16,24,1,0,No,,1,16,0
+332,1990,1,3,East,2,79,Kansas,Robert Morris,71,15,8,1,0,Yes (1),,2,15,0
+333,1990,1,3,East,3,81,Duke,Richmond,46,14,35,1,0,Yes (1),,3,14,0
+334,1990,1,3,East,4,79,La Salle,Southern Mississippi,63,13,16,1,0,No,,4,13,0
+335,1990,1,3,East,5,49,Clemson,BYU,47,12,2,1,0,No,,5,12,0
+336,1990,1,3,East,6,81,St Johns,Temple,65,11,16,1,0,No,,6,11,0
+337,1990,1,3,East,7,68,UCLA,UAB,56,10,12,1,0,No,,7,10,0
+338,1990,1,3,East,8,63,Indiana,California,65,9,2,2,0,No,,8,9,0
+339,1990,1,4,Midwest,1,77,Oklahoma,Towson,68,16,9,1,0,Yes (1),,1,16,0
+340,1990,1,4,Midwest,2,75,Purdue,Louisiana Monroe,63,15,12,1,0,Yes (1),,2,15,0
+341,1990,1,4,Midwest,3,70,Georgetown,Texas Southern,52,14,18,1,0,No,,3,14,0
+342,1990,1,4,Midwest,4,68,Arkansas,Princeton,64,13,4,1,0,No,,4,13,0
+343,1990,1,4,Midwest,5,86,Illinois,Dayton,88,12,2,2,0,No,,5,12,0
+344,1990,1,4,Midwest,6,87,Xavier,Kansas St,79,11,8,1,0,Yes (2),,6,11,0
+345,1990,1,4,Midwest,7,88,Georgia,Texas,100,10,12,2,0,No,,7,10,0
+346,1990,1,4,Midwest,8,83,North Carolina,Southwest Missouri St,70,9,13,1,0,Yes (1),,8,9,0
+347,1990,2,1,Southeast,1,62,Michigan St,Santa Barbara,58,9,4,1,0,Yes (1),,1,9,0
+348,1990,2,1,Southeast,2,63,Syracuse,Virginia,61,7,2,1,0,Yes (1),,2,7,0
+349,1990,2,1,Southeast,14,78,Northern Iowa,Minnesota,81,6,3,2,0,Yes (2),,14,6,0
+350,1990,2,1,Southeast,4,94,Georgia Tech,LSU,91,5,3,1,0,Yes (2),,4,5,0
+351,1990,2,2,West,1,76,UNLV,Ohio St,65,8,11,1,0,Yes (2),,1,8,0
+352,1990,2,2,West,2,55,Arizona,Alabama,77,7,22,2,0,Yes (1),,2,7,0
+353,1990,2,2,West,3,115,Michigan,Loyola Marymount,149,11,34,2,0,Yes (1),,3,11,0
+354,1990,2,2,West,4,60,Louisville,Ball St,62,12,2,2,0,Yes (1),,4,12,0
+355,1990,2,3,East,1,74,Connecticut,California,54,9,20,1,0,No,,1,9,0
+356,1990,2,3,East,2,70,Kansas,UCLA,71,7,1,2,0,Yes (1),,2,7,0
+357,1990,2,3,East,3,76,Duke,St Johns,72,6,4,1,0,Yes (1),,3,6,0
+358,1990,2,3,East,4,75,La Salle,Clemson,79,5,4,2,0,No,,4,5,0
+359,1990,2,4,Midwest,1,77,Oklahoma,North Carolina,79,8,2,2,0,Yes (1),,1,8,0
+360,1990,2,4,Midwest,2,72,Purdue,Texas,73,10,1,2,0,Yes (1),,2,10,0
+361,1990,2,4,Midwest,3,71,Georgetown,Xavier,74,6,3,2,0,No,,3,6,0
+362,1990,2,4,Midwest,4,86,Arkansas,Dayton,84,12,2,1,0,No,,4,12,0
+363,1990,3,1,Southeast,1,80,Michigan St,Georgia Tech,81,4,1,2,0,Yes (1),,1,4,0
+364,1990,3,1,Southeast,2,75,Syracuse,Minnesota,82,6,7,2,0,Yes (1),,2,6,0
+365,1990,3,2,West,1,69,UNLV,Ball St,67,12,2,1,0,No,,1,12,0
+366,1990,3,2,West,7,60,Alabama,Loyola Marymount,62,11,2,2,0,No,,7,11,0
+367,1990,3,3,East,1,71,Connecticut,Clemson,70,5,1,1,0,No,,1,5,0
+368,1990,3,3,East,7,81,UCLA,Duke,90,3,9,2,0,Yes (2),,7,3,0
+369,1990,3,4,Midwest,8,73,North Carolina,Arkansas,96,4,23,2,0,Yes (1),,8,4,0
+370,1990,3,4,Midwest,10,102,Texas,Xavier,89,6,13,1,0,No,,10,6,0
+371,1990,4,1,Southeast,4,93,Georgia Tech,Minnesota,91,6,2,1,0,Yes (2),,4,6,0
+372,1990,4,2,West,1,131,UNLV,Loyola Marymount,101,11,30,1,0,No,,1,11,0
+373,1990,4,3,East,1,78,Connecticut,Duke,79,3,1,2,0,Yes (2),,1,3,0
+374,1990,4,4,Midwest,4,88,Arkansas,Texas,85,10,3,1,0,No,,4,10,0
+375,1990,5,1,Final Four,4,81,Georgia Tech,UNLV,90,1,9,2,0,No,,4,1,0
+376,1990,5,2,Final Four,3,97,Duke,Arkansas,83,4,14,1,0,Yes (1),,3,4,0
+377,1990,6,1,Championship,1,103,UNLV,Duke,73,3,30,4,1,Yes (2),,1,3,1
+378,1991,1,1,West,1,99,UNLV,Montana,65,16,34,1,0,Yes (2),,1,16,0
+379,1991,1,1,West,2,93,Arizona,St Francis,80,15,13,1,0,Yes (1),,2,15,0
+380,1991,1,1,West,3,71,Seton Hall,Pepperdine,51,14,20,1,0,Yes (1),,3,14,0
+381,1991,1,1,West,4,82,Utah,South Alabama,72,13,10,1,0,No,,4,13,0
+382,1991,1,1,West,5,60,Michigan St,Wisconsin Green Bay,58,12,2,1,0,Yes (1),,5,12,0
+383,1991,1,1,West,6,56,New Mexico St,Creighton,64,11,8,2,0,Yes (1),,6,11,0
+384,1991,1,1,West,7,48,Virginia,BYU,61,10,13,2,0,Yes (1),,7,10,0
+385,1991,1,1,West,8,70,Georgetown,Vanderbilt,60,9,10,1,0,No,,8,9,0
+386,1991,1,2,Midwest,1,97,Ohio St,Towson,86,16,11,1,0,Yes (1),,1,16,0
+387,1991,1,2,Midwest,2,102,Duke,Louisiana Monroe,73,15,29,1,0,Yes (1),,2,15,0
+388,1991,1,2,Midwest,3,84,Nebraska,Xavier,89,14,5,2,0,No,,3,14,0
+389,1991,1,2,Midwest,4,75,St Johns,Northern Illinois,68,13,7,1,0,No,,4,13,0
+390,1991,1,2,Midwest,5,73,Texas,St Peters,65,12,8,1,0,No,,5,12,0
+391,1991,1,2,Midwest,6,62,LSU,Connecticut,79,11,17,2,0,Yes (1),,6,11,0
+392,1991,1,2,Midwest,7,76,Iowa,East Tennessee St,73,10,3,1,0,Yes (1),,7,10,0
+393,1991,1,2,Midwest,8,87,Georgia Tech,DePaul,70,9,17,1,0,No,,8,9,0
+394,1991,1,3,East,1,101,North Carolina,Northeastern,66,16,35,1,0,Yes (1),,1,16,0
+395,1991,1,3,East,2,69,Syracuse,Richmond,73,15,4,2,0,Yes (1),,2,15,0
+396,1991,1,3,East,3,67,Oklahoma St,New Mexico,54,14,13,1,0,No,,3,14,0
+397,1991,1,3,East,4,69,UCLA,Penn St,74,13,5,2,0,No,,4,13,0
+398,1991,1,3,East,5,56,Mississippi St,Eastern Michigan,76,12,20,2,0,Yes (1),,5,12,0
+399,1991,1,3,East,6,114,NC State,Southern Mississippi,85,11,29,1,0,No,,6,11,0
+400,1991,1,3,East,7,63,Purdue,Temple,80,10,17,2,0,Yes (1),,7,10,0
+401,1991,1,3,East,8,48,Princeton,Villanova,50,9,2,2,0,Yes (2),,8,9,0
+402,1991,1,4,Southeast,1,117,Arkansas,Georgia St,76,16,41,1,0,Yes (2),,1,16,0
+403,1991,1,4,Southeast,2,79,Indiana,Coastal Carolina,69,15,10,1,0,No,,2,15,0
+404,1991,1,4,Southeast,3,55,Kansas,New Orleans,49,14,6,1,0,Yes (1),,3,14,0
+405,1991,1,4,Southeast,4,89,Alabama,Murray St,79,13,10,1,0,No,,4,13,0
+406,1991,1,4,Southeast,5,71,Wake Forest,Louisiana Tech,65,12,6,1,0,No,,5,12,0
+407,1991,1,4,Southeast,6,76,Pittsburgh,Georgia,68,11,8,1,0,No,,6,11,0
+408,1991,1,4,Southeast,7,75,Florida St,USC,72,10,3,1,0,No,,7,10,0
+409,1991,1,4,Southeast,8,79,Arizona St,Rutgers,76,9,3,1,0,No,,8,9,0
+410,1991,2,1,West,1,62,UNLV,Georgetown,54,8,8,1,0,No,,1,8,0
+411,1991,2,1,West,2,76,Arizona,BYU,61,10,15,1,0,Yes (1),,2,10,0
+412,1991,2,1,West,3,81,Seton Hall,Creighton,69,11,12,1,0,Yes (1),,3,11,0
+413,1991,2,1,West,4,85,Utah,Michigan St,84,5,1,1,0,Yes (2),,4,5,0
+414,1991,2,2,Midwest,1,65,Ohio St,Georgia Tech,61,8,4,1,0,Yes (1),,1,8,0
+415,1991,2,2,Midwest,2,85,Duke,Iowa,70,7,15,1,0,Yes (1),,2,7,0
+416,1991,2,2,Midwest,14,50,Xavier,Connecticut,66,11,16,2,0,No,,14,11,0
+417,1991,2,2,Midwest,4,84,St Johns,Texas,76,5,8,1,0,No,,4,5,0
+418,1991,2,3,East,1,84,North Carolina,Villanova,69,9,15,1,0,Yes (1),,1,9,0
+419,1991,2,3,East,15,64,Richmond,Temple,77,10,13,2,0,No,,15,10,0
+420,1991,2,3,East,3,73,Oklahoma St,NC State,64,6,9,1,0,No,,3,6,0
+421,1991,2,3,East,13,68,Penn St,Eastern Michigan,71,12,3,2,0,No,,13,12,0
+422,1991,2,4,Southeast,1,97,Arkansas,Arizona St,90,8,7,1,0,No,,1,8,0
+423,1991,2,4,Southeast,2,82,Indiana,Florida St,60,7,22,1,0,No,,2,7,0
+424,1991,2,4,Southeast,3,77,Kansas,Pittsburgh,66,6,11,1,0,Yes (1),,3,6,0
+425,1991,2,4,Southeast,4,96,Alabama,Wake Forest,88,5,8,1,0,No,,4,5,0
+426,1991,3,1,West,1,83,UNLV,Utah,66,4,17,1,0,No,,1,4,0
+427,1991,3,1,West,2,77,Arizona,Seton Hall,81,3,4,2,0,Yes (1),,2,3,0
+428,1991,3,2,Midwest,1,74,Ohio St,St Johns,91,4,17,2,0,Yes (1),,1,4,0
+429,1991,3,2,Midwest,2,81,Duke,Connecticut,67,11,14,1,0,Yes (1),,2,11,0
+430,1991,3,3,East,1,93,North Carolina,Eastern Michigan,67,12,26,1,0,Yes (1),,1,12,0
+431,1991,3,3,East,10,72,Temple,Oklahoma St,63,3,9,1,0,No,,10,3,0
+432,1991,3,4,Southeast,1,93,Arkansas,Alabama,70,4,23,1,0,No,,1,4,0
+433,1991,3,4,Southeast,2,65,Indiana,Kansas,83,3,18,2,0,Yes (2),,2,3,0
+434,1991,4,1,West,1,77,UNLV,Seton Hall,65,3,12,1,0,Yes (2),,1,3,0
+435,1991,4,2,Midwest,4,61,St Johns,Duke,78,2,17,2,0,Yes (2),,4,2,0
+436,1991,4,3,East,1,75,North Carolina,Temple,72,10,3,1,0,Yes (1),,1,10,0
+437,1991,4,4,Southeast,1,81,Arkansas,Kansas,93,3,12,2,0,Yes (2),,1,3,0
+438,1991,5,1,Final Four,1,77,UNLV,Duke,79,2,2,2,0,Yes (2),,1,2,0
+439,1991,5,2,Final Four,1,73,North Carolina,Kansas,79,3,6,2,0,Yes (1),,1,3,0
+440,1991,6,1,Championship,2,72,Duke,Kansas,65,3,7,4,2,Yes (1),,2,3,2
+441,1992,1,1,Midwest,1,100,Kansas,Howard,67,16,33,1,0,Yes (1),,1,16,0
+442,1992,1,1,Midwest,2,84,USC,Louisiana Monroe,54,15,30,1,0,No,,2,15,0
+443,1992,1,1,Midwest,3,80,Arkansas,Murray St,69,14,11,1,0,No,,3,14,0
+444,1992,1,1,Midwest,4,85,Cincinnati,Delaware,47,13,38,1,0,Yes (1),,4,13,0
+445,1992,1,1,Midwest,5,61,Michigan St,Southwest Missouri St,54,12,7,1,0,Yes (1),,5,12,0
+446,1992,1,1,Midwest,6,80,Memphis,Pepperdine,70,11,10,1,0,No,,6,11,0
+447,1992,1,1,Midwest,7,65,Georgia Tech,Houston,60,10,5,1,0,Yes (2),,7,10,0
+448,1992,1,1,Midwest,8,50,Evansville,UTEP,55,9,5,2,0,No,,8,9,0
+449,1992,1,2,Southeast,1,83,Ohio St,Mississippi Valley St,56,16,27,1,0,Yes (1),,1,16,0
+450,1992,1,2,Southeast,2,100,Oklahoma St,Georgia Southern,73,15,27,1,0,No,,2,15,0
+451,1992,1,2,Southeast,3,80,Arizona,East Tennessee St,87,14,7,2,0,Yes (1),,3,14,0
+452,1992,1,2,Southeast,4,68,North Carolina,Miami Ohio,63,13,5,1,0,Yes (1),,4,13,0
+453,1992,1,2,Southeast,5,80,Alabama,Stanford,75,12,5,1,0,No,,5,12,0
+454,1992,1,2,Southeast,6,73,Michigan,Temple,66,11,7,1,0,Yes (1),,6,11,0
+455,1992,1,2,Southeast,7,57,St Johns,Tulane,61,10,4,2,0,No,,7,10,0
+456,1992,1,2,Southeast,8,65,Nebraska,Connecticut,86,9,21,2,0,No,,8,9,0
+457,1992,1,3,East,1,82,Duke,Campbell,56,16,26,1,0,Yes (1),,1,16,0
+458,1992,1,3,East,2,88,Kentucky,Old Dominion,69,15,19,1,0,Yes (1),,2,15,0
+459,1992,1,3,East,3,85,Massachusetts,Fordham,58,14,27,1,0,No,,3,14,0
+460,1992,1,3,East,4,78,Seton Hall,La Salle,76,13,2,1,0,Yes (1),,4,13,0
+461,1992,1,3,East,5,89,Missouri,West Virginia,78,12,11,1,0,No,,5,12,0
+462,1992,1,3,East,6,51,Syracuse,Princeton,43,11,8,1,0,Yes (1),,6,11,0
+463,1992,1,3,East,7,74,Charlotte,Iowa St,76,10,2,2,0,Yes (2),,7,10,0
+464,1992,1,3,East,8,92,Texas,Iowa,98,9,6,2,0,Yes (2),,8,9,0
+465,1992,1,4,West,1,73,UCLA,Robert Morris,53,16,20,1,0,No,,1,16,0
+466,1992,1,4,West,2,94,Indiana,Eastern Illinois,55,15,39,1,0,No,,2,15,0
+467,1992,1,4,West,3,78,Florida St,Montana,68,14,10,1,0,Yes (2),,3,14,0
+468,1992,1,4,West,4,83,Oklahoma,Louisiana Lafayette,87,13,4,2,0,Yes (1),,4,13,0
+469,1992,1,4,West,5,73,DePaul,New Mexico St,81,12,8,2,0,Yes (2),,5,12,0
+470,1992,1,4,West,6,75,Georgetown,South Florida,60,11,15,1,0,No,,6,11,0
+471,1992,1,4,West,7,94,LSU,BYU,83,10,11,1,0,Yes (1),,7,10,0
+472,1992,1,4,West,8,81,Louisville,Wake Forest,58,9,23,1,0,Yes (1),,8,9,0
+473,1992,2,1,Midwest,1,60,Kansas,UTEP,66,9,6,2,0,Yes (1),,1,9,0
+474,1992,2,1,Midwest,2,78,USC,Georgia Tech,79,7,1,2,0,No,,2,7,0
+475,1992,2,1,Midwest,3,80,Arkansas,Memphis,82,6,2,2,0,No,,3,6,0
+476,1992,2,1,Midwest,4,77,Cincinnati,Michigan St,65,5,12,1,0,Yes (1),,4,5,0
+477,1992,2,2,Southeast,1,78,Ohio St,Connecticut,55,9,23,1,0,Yes (1),,1,9,0
+478,1992,2,2,Southeast,2,87,Oklahoma St,Tulane,71,10,16,1,0,No,,2,10,0
+479,1992,2,2,Southeast,14,90,East Tennessee St,Michigan,102,6,12,2,0,Yes (2),,14,6,0
+480,1992,2,2,Southeast,4,64,North Carolina,Alabama,55,5,9,1,0,Yes (1),,4,5,0
+481,1992,2,3,East,1,75,Duke,Iowa,62,9,13,1,0,Yes (1),,1,9,0
+482,1992,2,3,East,2,106,Kentucky,Iowa St,98,10,8,1,0,Yes (1),,2,10,0
+483,1992,2,3,East,3,77,Massachusetts,Syracuse,71,6,6,1,0,Yes (2),,3,6,0
+484,1992,2,3,East,4,88,Seton Hall,Missouri,71,5,17,1,0,Yes (1),,4,5,0
+485,1992,2,4,West,1,85,UCLA,Louisville,69,8,16,1,0,Yes (2),,1,8,0
+486,1992,2,4,West,2,89,Indiana,LSU,79,7,10,1,0,Yes (2),,2,7,0
+487,1992,2,4,West,3,78,Florida St,Georgetown,68,6,10,1,0,No,,3,6,0
+488,1992,2,4,West,13,73,Louisiana Lafayette,New Mexico St,81,12,8,2,0,Yes (2),,13,12,0
+489,1992,3,1,Midwest,9,67,UTEP,Cincinnati,69,4,2,2,0,Yes (2),,9,4,0
+490,1992,3,1,Midwest,7,79,Georgia Tech,Memphis,83,6,4,2,0,No,,7,6,0
+491,1992,3,2,Southeast,1,80,Ohio St,North Carolina,73,4,7,1,0,Yes (1),,1,4,0
+492,1992,3,2,Southeast,2,72,Oklahoma St,Michigan,75,6,3,2,0,Yes (2),,2,6,0
+493,1992,3,3,East,1,81,Duke,Seton Hall,69,4,12,1,0,Yes (1),,1,4,0
+494,1992,3,3,East,2,87,Kentucky,Massachusetts,77,3,10,1,0,Yes (1),,2,3,0
+495,1992,3,4,West,1,85,UCLA,New Mexico St,78,12,7,1,0,Yes (2),,1,12,0
+496,1992,3,4,West,2,85,Indiana,Florida St,74,3,11,1,0,No,,2,3,0
+497,1992,4,1,Midwest,4,88,Cincinnati,Memphis,57,6,31,1,0,Yes (1),,4,6,0
+498,1992,4,2,Southeast,1,71,Ohio St,Michigan,75,6,4,2,0,Yes (1),,1,6,0
+499,1992,4,3,East,1,104,Duke,Kentucky,103,2,1,1,0,Yes (1),,1,2,0
+500,1992,4,4,West,1,79,UCLA,Indiana,106,2,27,2,0,No,,1,2,0
+501,1992,5,1,Final Four,4,72,Cincinnati,Michigan,76,6,4,2,0,Yes (1),,4,6,0
+502,1992,5,2,Final Four,1,81,Duke,Indiana,78,2,3,1,0,Yes (1),,1,2,0
+503,1992,6,1,Championship,6,51,Michigan,Duke,71,1,20,3,1,Yes (1),,6,1,1
+504,1993,1,1,Southeast,1,96,Kentucky,Rider,52,16,44,1,0,Yes (1),,1,16,0
+505,1993,1,1,Southeast,2,81,Seton Hall,Tennessee St,59,15,22,1,0,Yes (1),,2,15,0
+506,1993,1,1,Southeast,3,82,Florida St,Evansville,70,14,12,1,0,No,,3,14,0
+507,1993,1,1,Southeast,4,82,Iowa,Louisiana Monroe,69,13,13,1,0,Yes (1),,4,13,0
+508,1993,1,1,Southeast,5,81,Wake Forest,Chattanooga,58,12,23,1,0,No,,5,12,0
+509,1993,1,1,Southeast,6,53,Kansas St,Tulane,55,11,2,2,0,Yes (1),,6,11,0
+510,1993,1,1,Southeast,7,55,Western Kentucky,Memphis,52,10,3,1,0,No,,7,10,0
+511,1993,1,1,Southeast,8,86,Utah,Pittsburgh,85,9,1,1,0,No,,8,9,0
+512,1993,1,2,West,1,84,Michigan,Coastal Carolina,53,16,31,1,0,Yes (1),,1,16,0
+513,1993,1,2,West,2,61,Arizona,Santa Clara,64,15,3,2,0,Yes (1),,2,15,0
+514,1993,1,2,West,3,92,Vanderbilt,Boise St,72,14,20,1,0,No,,3,14,0
+515,1993,1,2,West,4,78,Georgia Tech,Southern,93,13,15,2,0,No,,4,13,0
+516,1993,1,2,West,5,68,New Mexico,George Washington,82,12,14,2,0,No,,5,12,0
+517,1993,1,2,West,6,75,Illinois,Long Beach St,72,11,3,1,0,No,,6,11,0
+518,1993,1,2,West,7,75,Temple,Missouri,61,10,14,1,0,No,,7,10,0
+519,1993,1,2,West,8,70,Iowa St,UCLA,81,9,11,2,0,Yes (1),,8,9,0
+520,1993,1,3,East,1,85,North Carolina,East Carolina,65,16,20,1,0,Yes (1),,1,16,0
+521,1993,1,3,East,2,93,Cincinnati,Coppin St,66,15,27,1,0,Yes (1),,2,15,0
+522,1993,1,3,East,3,54,Massachusetts,Pennsylvania,50,14,4,1,0,No,,3,14,0
+523,1993,1,3,East,4,94,Arkansas,Holy Cross,64,13,30,1,0,No,,4,13,0
+524,1993,1,3,East,5,85,St Johns,Texas Tech,67,12,18,1,0,Yes (2),,5,12,0
+525,1993,1,3,East,6,78,Virginia,Manhattan,66,11,12,1,0,Yes (1),,6,11,0
+526,1993,1,3,East,7,93,New Mexico St,Nebraska,79,10,14,1,0,Yes (1),,7,10,0
+527,1993,1,3,East,8,74,Rhode Island,Purdue,68,9,6,1,0,Yes (2),,8,9,0
+528,1993,1,4,Midwest,1,97,Indiana,Wright St,54,16,43,1,0,No,,1,16,0
+529,1993,1,4,Midwest,2,94,Kansas,Ball St,72,15,22,1,0,Yes (1),,2,15,0
+530,1993,1,4,Midwest,3,105,Duke,Southern Illinois,70,14,35,1,0,Yes (1),,3,14,0
+531,1993,1,4,Midwest,4,76,Louisville,Delaware,70,13,6,1,0,Yes (1),,4,13,0
+532,1993,1,4,Midwest,5,74,Oklahoma St,Marquette,62,12,12,1,0,Yes (2),,5,12,0
+533,1993,1,4,Midwest,6,66,California,LSU,64,11,2,1,0,Yes (2),,6,11,0
+534,1993,1,4,Midwest,7,80,BYU,SMU,71,10,9,1,0,No,,7,10,0
+535,1993,1,4,Midwest,8,55,New Orleans,Xavier,73,9,18,2,0,No,,8,9,0
+536,1993,2,1,Southeast,1,83,Kentucky,Utah,62,8,21,1,0,Yes (1),,1,8,0
+537,1993,2,1,Southeast,2,68,Seton Hall,Western Kentucky,72,7,4,2,0,Yes (1),,2,7,0
+538,1993,2,1,Southeast,3,94,Florida St,Tulane,63,11,31,1,0,No,,3,11,0
+539,1993,2,1,Southeast,4,78,Iowa,Wake Forest,84,5,6,2,0,Yes (1),,4,5,0
+540,1993,2,2,West,1,86,Michigan,UCLA,84,9,2,1,0,Yes (1),,1,9,0
+541,1993,2,2,West,15,57,Santa Clara,Temple,68,7,11,2,0,No,,15,7,0
+542,1993,2,2,West,3,85,Vanderbilt,Illinois,68,6,17,1,0,No,,3,6,0
+543,1993,2,2,West,13,80,Southern,George Washington,90,12,10,2,0,No,,13,12,0
+544,1993,2,3,East,1,112,North Carolina,Rhode Island,67,8,45,1,0,Yes (1),,1,8,0
+545,1993,2,3,East,2,92,Cincinnati,New Mexico St,55,7,37,1,0,Yes (1),,2,7,0
+546,1993,2,3,East,3,56,Massachusetts,Virginia,71,6,15,2,0,Yes (2),,3,6,0
+547,1993,2,3,East,4,80,Arkansas,St Johns,74,5,6,1,0,No,,4,5,0
+548,1993,2,4,Midwest,1,73,Indiana,Xavier,70,9,3,1,0,No,,1,9,0
+549,1993,2,4,Midwest,2,90,Kansas,BYU,76,7,14,1,0,Yes (1),,2,7,0
+550,1993,2,4,Midwest,3,77,Duke,California,82,6,5,2,0,Yes (1),,3,6,0
+551,1993,2,4,Midwest,4,78,Louisville,Oklahoma St,63,5,15,1,0,Yes (1),,4,5,0
+552,1993,3,1,Southeast,1,103,Kentucky,Wake Forest,69,5,34,1,0,Yes (1),,1,5,0
+553,1993,3,1,Southeast,7,78,Western Kentucky,Florida St,81,3,3,2,0,No,,7,3,0
+554,1993,3,2,West,1,72,Michigan,George Washington,64,12,8,1,0,Yes (1),,1,12,0
+555,1993,3,2,West,7,67,Temple,Vanderbilt,59,3,8,1,0,No,,7,3,0
+556,1993,3,3,East,1,80,North Carolina,Arkansas,74,4,6,1,0,Yes (1),,1,4,0
+557,1993,3,3,East,2,71,Cincinnati,Virginia,54,6,17,1,0,Yes (1),,2,6,0
+558,1993,3,4,Midwest,1,82,Indiana,Louisville,69,4,13,1,0,Yes (2),,1,4,0
+559,1993,3,4,Midwest,2,93,Kansas,California,76,6,17,1,0,Yes (1),,2,6,0
+560,1993,4,1,Southeast,1,106,Kentucky,Florida St,81,3,25,1,0,Yes (1),,1,3,0
+561,1993,4,2,West,1,77,Michigan,Temple,72,7,5,1,0,Yes (1),,1,7,0
+562,1993,4,3,East,1,75,North Carolina,Cincinnati,68,2,7,1,0,Yes (1),,1,2,0
+563,1993,4,4,Midwest,1,77,Indiana,Kansas,83,2,6,2,0,Yes (2),,1,2,0
+564,1993,5,1,Final Four,1,78,Kentucky,Michigan,81,1,3,2,0,Yes (1),,1,1,0
+565,1993,5,2,Final Four,1,78,North Carolina,Kansas,68,2,10,1,0,Yes (1),,1,2,0
+566,1993,6,1,Championship,1,71,Michigan,North Carolina,77,1,6,3,1,Yes (1),,1,1,1
+567,1994,1,1,West,1,76,Missouri,Navy,53,16,23,1,0,No,,1,16,0
+568,1994,1,1,West,2,81,Arizona,Loyola Maryland,55,15,26,1,0,Yes (1),,2,15,0
+569,1994,1,1,West,3,67,Louisville,Boise St,58,14,9,1,0,Yes (1),,3,14,0
+570,1994,1,1,West,4,92,Syracuse,Hawaii,78,13,14,1,0,Yes (1),,4,13,0
+571,1994,1,1,West,5,57,California,Wisconsin Green Bay,61,12,4,2,0,No,,5,12,0
+572,1994,1,1,West,6,74,Minnesota,Southern Illinois,60,11,14,1,0,Yes (1),,6,11,0
+573,1994,1,1,West,7,57,Virginia,New Mexico,54,10,3,1,0,Yes (1),,7,10,0
+574,1994,1,1,West,8,72,Cincinnati,Wisconsin,80,9,8,2,0,Yes (1),,8,9,0
+575,1994,1,2,Midwest,1,94,Arkansas,North Carolina A&T,79,16,15,1,0,No,,1,16,0
+576,1994,1,2,Midwest,2,78,Massachusetts,Southwest Texas St,60,15,18,1,0,No,,2,15,0
+577,1994,1,2,Midwest,3,78,Michigan,Pepperdine,74,14,4,1,0,Yes (1),,3,14,0
+578,1994,1,2,Midwest,4,65,Oklahoma St,New Mexico St,55,13,10,1,0,Yes (2),,4,13,0
+579,1994,1,2,Midwest,5,102,UCLA,Tulsa,112,12,10,2,0,No,,5,12,0
+580,1994,1,2,Midwest,6,91,Texas,Western Kentucky,77,11,14,1,0,No,,6,11,0
+581,1994,1,2,Midwest,7,66,St Louis,Maryland,74,10,8,2,0,Yes (1),,7,10,0
+582,1994,1,2,Midwest,8,77,Illinois,Georgetown,84,9,7,2,0,No,,8,9,0
+583,1994,1,3,East,1,71,North Carolina,Liberty,51,16,20,1,0,Yes (1),,1,16,0
+584,1994,1,3,East,2,64,Connecticut,Rider,46,15,18,1,0,No,,2,15,0
+585,1994,1,3,East,3,64,Florida,James Madison,62,14,2,1,0,Yes (1),,3,14,0
+586,1994,1,3,East,4,61,Temple,Drexel,39,13,22,1,0,No,,4,13,0
+587,1994,1,3,East,5,84,Indiana,Ohio,72,12,12,1,0,No,,5,12,0
+588,1994,1,3,East,6,80,Nebraska,Pennsylvania,90,11,10,2,0,No,,6,11,0
+589,1994,1,3,East,7,46,UAB,George Washington,51,10,5,2,0,No,,7,10,0
+590,1994,1,3,East,8,64,Washington St,Boston College,67,9,3,2,0,No,,8,9,0
+591,1994,1,4,Southeast,1,98,Purdue,Central Florida,67,16,31,1,0,Yes (1),,1,16,0
+592,1994,1,4,Southeast,2,82,Duke,Texas Southern,70,15,12,1,0,Yes (1),,2,15,0
+593,1994,1,4,Southeast,3,83,Kentucky,Tennessee St,70,14,13,1,0,Yes (1),,3,14,0
+594,1994,1,4,Southeast,4,102,Kansas,Chattanooga,73,13,29,1,0,Yes (1),,4,13,0
+595,1994,1,4,Southeast,5,68,Wake Forest,College of Charleston,58,12,10,1,0,No,,5,12,0
+596,1994,1,4,Southeast,6,81,Marquette,Louisiana Lafayette,59,11,22,1,0,Yes (1),,6,11,0
+597,1994,1,4,Southeast,7,84,Michigan St,Seton Hall,73,10,11,1,0,Yes (1),,7,10,0
+598,1994,1,4,Southeast,8,70,Providence,Alabama,76,9,6,2,0,No,,8,9,0
+599,1994,2,1,West,1,109,Missouri,Wisconsin,96,9,13,1,0,Yes (2),,1,9,0
+600,1994,2,1,West,2,71,Arizona,Virginia,58,7,13,1,0,Yes (1),,2,7,0
+601,1994,2,1,West,3,60,Louisville,Minnesota,55,6,5,1,0,Yes (1),,3,6,0
+602,1994,2,1,West,4,64,Syracuse,Wisconsin Green Bay,59,12,5,1,0,Yes (1),,4,12,0
+603,1994,2,2,Midwest,1,85,Arkansas,Georgetown,73,9,12,1,0,No,,1,9,0
+604,1994,2,2,Midwest,2,87,Massachusetts,Maryland,95,10,8,2,0,Yes (2),,2,10,0
+605,1994,2,2,Midwest,3,84,Michigan,Texas,79,6,5,1,0,Yes (1),,3,6,0
+606,1994,2,2,Midwest,4,80,Oklahoma St,Tulsa,82,12,2,2,0,No,,4,12,0
+607,1994,2,3,East,1,72,North Carolina,Boston College,75,9,3,2,0,Yes (1),,1,9,0
+608,1994,2,3,East,2,75,Connecticut,George Washington,63,10,12,1,0,No,,2,10,0
+609,1994,2,3,East,3,70,Florida,Pennsylvania,58,11,12,1,0,Yes (1),,3,11,0
+610,1994,2,3,East,4,58,Temple,Indiana,67,5,9,2,0,No,,4,5,0
+611,1994,2,4,Southeast,1,83,Purdue,Alabama,73,9,10,1,0,Yes (1),,1,9,0
+612,1994,2,4,Southeast,2,85,Duke,Michigan St,74,7,11,1,0,Yes (1),,2,7,0
+613,1994,2,4,Southeast,3,63,Kentucky,Marquette,75,6,12,2,0,Yes (1),,3,6,0
+614,1994,2,4,Southeast,4,69,Kansas,Wake Forest,58,5,11,1,0,Yes (1),,4,5,0
+615,1994,3,1,West,1,98,Missouri,Syracuse,88,4,10,1,0,Yes (2),,1,4,0
+616,1994,3,1,West,2,82,Arizona,Louisville,70,3,12,1,0,Yes (1),,2,3,0
+617,1994,3,2,Midwest,1,103,Arkansas,Tulsa,84,12,19,1,0,No,,1,12,0
+618,1994,3,2,Midwest,10,71,Maryland,Michigan,78,3,7,2,0,Yes (1),,10,3,0
+619,1994,3,3,East,9,77,Boston College,Indiana,68,5,9,1,0,No,,9,5,0
+620,1994,3,3,East,2,60,Connecticut,Florida,69,3,9,2,0,Yes (2),,2,3,0
+621,1994,3,4,Southeast,1,83,Purdue,Kansas,78,4,5,1,0,Yes (1),,1,4,0
+622,1994,3,4,Southeast,2,59,Duke,Marquette,49,6,10,1,0,Yes (1),,2,6,0
+623,1994,4,1,West,1,72,Missouri,Arizona,82,2,10,2,0,Yes (2),,1,2,0
+624,1994,4,2,Midwest,1,76,Arkansas,Michigan,68,3,8,1,0,Yes (2),,1,3,0
+625,1994,4,3,East,9,65,Boston College,Florida,74,3,9,2,0,Yes (2),,9,3,0
+626,1994,4,4,Southeast,1,60,Purdue,Duke,69,2,9,2,0,Yes (1),,1,2,0
+627,1994,5,1,Final Four,2,82,Arizona,Arkansas,91,1,9,2,0,Yes (1),,2,1,0
+628,1994,5,2,Final Four,3,65,Florida,Duke,70,2,5,2,0,Yes (1),,3,2,0
+629,1994,6,1,Championship,1,76,Arkansas,Duke,72,2,4,4,1,Yes (2),,1,2,1
+630,1995,1,1,Midwest,1,82,Kansas,Colgate,68,16,14,1,0,Yes (1),,1,16,0
+631,1995,1,1,Midwest,2,79,Arkansas,Texas Southern,78,15,1,1,0,No,,2,15,0
+632,1995,1,1,Midwest,3,49,Purdue,Wisconsin Green Bay,48,14,1,1,0,Yes (1),,3,14,0
+633,1995,1,1,Midwest,4,96,Virginia,Nicholls St,72,13,24,1,0,Yes (1),,4,13,0
+634,1995,1,1,Midwest,5,62,Arizona,Miami Ohio,71,12,9,2,0,Yes (1),,5,12,0
+635,1995,1,1,Midwest,6,77,Memphis,Louisville,56,11,21,1,0,Yes (2),,6,11,0
+636,1995,1,1,Midwest,7,96,Syracuse,Southern Illinois,92,10,4,1,0,Yes (1),,7,10,0
+637,1995,1,1,Midwest,8,82,Western Kentucky,Michigan,76,9,6,1,0,Yes (2),,8,9,0
+638,1995,1,2,Southeast,1,113,Kentucky,Mount St Marys,67,16,46,1,0,Yes (1),,1,16,0
+639,1995,1,2,Southeast,2,80,North Carolina,Murray St,70,15,10,1,0,Yes (1),,2,15,0
+640,1995,1,2,Southeast,3,72,Michigan St,Weber St,79,14,7,2,0,Yes (1),,3,14,0
+641,1995,1,2,Southeast,4,67,Oklahoma,Manhattan,77,13,10,2,0,Yes (1),,4,13,0
+642,1995,1,2,Southeast,5,81,Arizona St,Ball St,66,12,15,1,0,No,,5,12,0
+643,1995,1,2,Southeast,6,68,Georgetown,Xavier,63,11,5,1,0,No,,6,11,0
+644,1995,1,2,Southeast,7,64,Iowa St,Florida,61,10,3,1,0,Yes (1),,7,10,0
+645,1995,1,2,Southeast,8,70,BYU,Tulane,76,9,6,2,0,No,,8,9,0
+646,1995,1,3,East,1,79,Wake Forest,North Carolina A&T,47,16,32,1,0,No,,1,16,0
+647,1995,1,3,East,2,68,Massachusetts,St Peters,51,15,17,1,0,No,,2,15,0
+648,1995,1,3,East,3,81,Villanova,Old Dominion,89,14,8,2,0,Yes (1),,3,14,0
+649,1995,1,3,East,4,73,Oklahoma St,Drexel,49,13,24,1,0,No,,4,13,0
+650,1995,1,3,East,5,91,Alabama,Pennsylvania,85,12,6,1,0,No,,5,12,0
+651,1995,1,3,East,6,68,Tulsa,Illinois,62,11,6,1,0,No,,6,11,0
+652,1995,1,3,East,7,68,Charlotte,Stanford,70,10,2,2,0,No,,7,10,0
+653,1995,1,3,East,8,61,Minnesota,St Louis,64,9,3,2,0,Yes (1),,8,9,0
+654,1995,1,4,West,1,92,UCLA,Florida International,56,16,36,1,0,No,,1,16,0
+655,1995,1,4,West,2,100,Connecticut,Chattanooga,71,15,29,1,0,No,,2,15,0
+656,1995,1,4,West,3,87,Maryland,Gonzaga,63,14,24,1,0,Yes (1),,3,14,0
+657,1995,1,4,West,4,76,Utah,Long Beach St,64,13,12,1,0,No,,4,13,0
+658,1995,1,4,West,5,75,Mississippi St,Santa Clara,67,12,8,1,0,Yes (1),,5,12,0
+659,1995,1,4,West,6,73,Oregon,Texas,90,11,17,2,0,Yes (1),,6,11,0
+660,1995,1,4,West,7,77,Cincinnati,Temple,71,10,6,1,0,Yes (1),,7,10,0
+661,1995,1,4,West,8,65,Missouri,Indiana,60,9,5,1,0,No,,8,9,0
+662,1995,2,1,Midwest,1,75,Kansas,Western Kentucky,70,8,5,1,0,Yes (1),,1,8,0
+663,1995,2,1,Midwest,2,96,Arkansas,Syracuse,94,7,2,1,0,Yes (2),,2,7,0
+664,1995,2,1,Midwest,3,73,Purdue,Memphis,75,6,2,2,0,Yes (1),,3,6,0
+665,1995,2,1,Midwest,4,60,Virginia,Miami Ohio,54,12,6,1,0,Yes (1),,4,12,0
+666,1995,2,2,Southeast,1,82,Kentucky,Tulane,60,9,22,1,0,Yes (1),,1,9,0
+667,1995,2,2,Southeast,2,73,North Carolina,Iowa St,51,7,22,1,0,Yes (1),,2,7,0
+668,1995,2,2,Southeast,14,51,Weber St,Georgetown,53,6,2,2,0,No,,14,6,0
+669,1995,2,2,Southeast,13,54,Manhattan,Arizona St,64,5,10,2,0,No,,13,5,0
+670,1995,2,3,East,1,64,Wake Forest,St Louis,59,9,5,1,0,Yes (2),,1,9,0
+671,1995,2,3,East,2,75,Massachusetts,Stanford,53,10,22,1,0,No,,2,10,0
+672,1995,2,3,East,14,52,Old Dominion,Tulsa,64,6,12,2,0,Yes (1),,14,6,0
+673,1995,2,3,East,4,66,Oklahoma St,Alabama,52,5,14,1,0,No,,4,5,0
+674,1995,2,4,West,1,75,UCLA,Missouri,74,8,1,1,0,No,,1,8,0
+675,1995,2,4,West,2,96,Connecticut,Cincinnati,91,7,5,1,0,Yes (2),,2,7,0
+676,1995,2,4,West,3,82,Maryland,Texas,68,11,14,1,0,Yes (1),,3,11,0
+677,1995,2,4,West,4,64,Utah,Mississippi St,78,5,14,2,0,Yes (2),,4,5,0
+678,1995,3,1,Midwest,1,58,Kansas,Virginia,67,4,9,2,0,Yes (1),,1,4,0
+679,1995,3,1,Midwest,2,96,Arkansas,Memphis,91,6,5,1,0,No,,2,6,0
+680,1995,3,2,Southeast,1,97,Kentucky,Arizona St,73,5,24,1,0,Yes (1),,1,5,0
+681,1995,3,2,Southeast,2,74,North Carolina,Georgetown,64,6,10,1,0,Yes (1),,2,6,0
+682,1995,3,3,East,1,66,Wake Forest,Oklahoma St,71,4,5,2,0,No,,1,4,0
+683,1995,3,3,East,2,76,Massachusetts,Tulsa,51,6,25,1,0,No,,2,6,0
+684,1995,3,4,West,1,86,UCLA,Mississippi St,67,5,19,1,0,Yes (2),,1,5,0
+685,1995,3,4,West,2,99,Connecticut,Maryland,89,3,10,1,0,Yes (2),,2,3,0
+686,1995,4,1,Midwest,4,61,Virginia,Arkansas,68,2,7,2,0,Yes (1),,4,2,0
+687,1995,4,2,Southeast,1,61,Kentucky,North Carolina,74,2,13,2,0,Yes (1),,1,2,0
+688,1995,4,3,East,4,68,Oklahoma St,Massachusetts,54,2,14,1,0,No,,4,2,0
+689,1995,4,4,West,1,102,UCLA,Connecticut,96,2,6,1,0,No,,1,2,0
+690,1995,5,1,Final Four,2,75,Arkansas,North Carolina,68,2,7,1,0,Yes (2),,2,2,0
+691,1995,5,2,Final Four,4,61,Oklahoma St,UCLA,74,1,13,2,0,No,,4,1,0
+692,1995,6,1,Championship,2,78,Arkansas,UCLA,89,1,11,3,1,No,,2,1,1
+693,1996,1,1,Southeast,1,68,Connecticut,Colgate,59,16,9,1,0,Yes (2),,1,16,0
+694,1996,1,1,Southeast,2,66,Cincinnati,UNC Greensboro,61,15,5,1,0,Yes (1),,2,15,0
+695,1996,1,1,Southeast,3,90,Georgia Tech,Austin Peay,79,14,11,1,0,No,,3,14,0
+696,1996,1,1,Southeast,4,41,UCLA,Princeton,43,13,2,2,0,No,,4,13,0
+697,1996,1,1,Southeast,5,58,Mississippi St,VCU,51,12,7,1,0,Yes (1),,5,12,0
+698,1996,1,1,Southeast,6,51,Indiana,Boston College,64,11,13,2,0,No,,6,11,0
+699,1996,1,1,Southeast,7,61,Temple,Oklahoma,43,10,18,1,0,Yes (2),,7,10,0
+700,1996,1,1,Southeast,8,60,Duke,Eastern Michigan,75,9,15,2,0,Yes (1),,8,9,0
+701,1996,1,2,West,1,73,Purdue,Western Carolina,71,16,2,1,0,Yes (1),,1,16,0
+702,1996,1,2,West,2,92,Kansas,South Carolina St,54,15,38,1,0,Yes (1),,2,15,0
+703,1996,1,2,West,3,90,Arizona,Valparaiso,51,14,39,1,0,Yes (1),,3,14,0
+704,1996,1,2,West,4,88,Syracuse,Montana St,55,13,33,1,0,Yes (1),,4,13,0
+705,1996,1,2,West,5,63,Memphis,Drexel,75,12,12,2,0,No,,5,12,0
+706,1996,1,2,West,6,81,Iowa,George Washington,79,11,2,1,0,Yes (1),,6,11,0
+707,1996,1,2,West,7,79,Maryland,Santa Clara,91,10,12,2,0,Yes (1),,7,10,0
+708,1996,1,2,West,8,81,Georgia,Clemson,74,9,7,1,0,No,,8,9,0
+709,1996,1,3,East,1,92,Massachusetts,Central Florida,70,16,22,1,0,Yes (2),,1,16,0
+710,1996,1,3,East,2,93,Georgetown,Mississippi Valley St,56,15,37,1,0,No,,2,15,0
+711,1996,1,3,East,3,74,Texas Tech,Northern Illinois,73,14,1,1,0,Yes (1),,3,14,0
+712,1996,1,3,East,4,68,Marquette,Monmouth,44,13,24,1,0,Yes (1),,4,13,0
+713,1996,1,3,East,5,80,Penn St,Arkansas,86,12,6,2,0,No,,5,12,0
+714,1996,1,3,East,6,86,North Carolina,New Orleans,62,11,24,1,0,Yes (1),,6,11,0
+715,1996,1,3,East,7,69,New Mexico,Kansas St,48,10,21,1,0,Yes (2),,7,10,0
+716,1996,1,3,East,8,58,Bradley,Stanford,66,9,8,2,0,Yes (1),,8,9,0
+717,1996,1,4,Midwest,1,110,Kentucky,San Jose St,72,16,38,1,0,Yes (1),,1,16,0
+718,1996,1,4,Midwest,2,62,Wake Forest,Louisiana Monroe,50,15,12,1,0,No,,2,15,0
+719,1996,1,4,Midwest,3,92,Villanova,Portland,58,14,34,1,0,Yes (1),,3,14,0
+720,1996,1,4,Midwest,4,73,Utah,Canisius,67,13,6,1,0,No,,4,13,0
+721,1996,1,4,Midwest,5,74,Iowa St,California,64,12,10,1,0,Yes (1),,5,12,0
+722,1996,1,4,Midwest,6,82,Louisville,Tulsa,80,11,2,1,0,Yes (1),,6,11,0
+723,1996,1,4,Midwest,7,76,Michigan,Texas,80,10,4,2,0,Yes (1),,7,10,0
+724,1996,1,4,Midwest,8,48,Wisconsin Green Bay,Virginia Tech,61,9,13,2,0,Yes (2),,8,9,0
+725,1996,2,1,Southeast,1,95,Connecticut,Eastern Michigan,81,9,14,1,0,No,,1,9,0
+726,1996,2,1,Southeast,2,78,Cincinnati,Temple,65,7,13,1,0,Yes (1),,2,7,0
+727,1996,2,1,Southeast,3,103,Georgia Tech,Boston College,89,11,14,1,0,No,,3,11,0
+728,1996,2,1,Southeast,13,41,Princeton,Mississippi St,63,5,22,2,0,Yes (2),,13,5,0
+729,1996,2,2,West,1,69,Purdue,Georgia,76,8,7,2,0,Yes (1),,1,8,0
+730,1996,2,2,West,2,76,Kansas,Santa Clara,51,10,25,1,0,Yes (1),,2,10,0
+731,1996,2,2,West,3,87,Arizona,Iowa,73,6,14,1,0,Yes (1),,3,6,0
+732,1996,2,2,West,4,69,Syracuse,Drexel,58,12,11,1,0,Yes (1),,4,12,0
+733,1996,2,3,East,1,79,Massachusetts,Stanford,74,9,5,1,0,No,,1,9,0
+734,1996,2,3,East,2,73,Georgetown,New Mexico,62,7,11,1,0,No,,2,7,0
+735,1996,2,3,East,3,92,Texas Tech,North Carolina,73,6,19,1,0,Yes (1),,3,6,0
+736,1996,2,3,East,4,56,Marquette,Arkansas,65,12,9,2,0,Yes (1),,4,12,0
+737,1996,2,4,Midwest,1,84,Kentucky,Virginia Tech,60,9,24,1,0,Yes (1),,1,9,0
+738,1996,2,4,Midwest,2,65,Wake Forest,Texas,62,10,3,1,0,No,,2,10,0
+739,1996,2,4,Midwest,3,64,Villanova,Louisville,68,6,4,2,0,Yes (1),,3,6,0
+740,1996,2,4,Midwest,4,74,Utah,Iowa St,64,5,10,1,0,Yes (2),,4,5,0
+741,1996,3,1,Southeast,1,55,Connecticut,Mississippi St,60,5,5,2,0,Yes (2),,1,5,0
+742,1996,3,1,Southeast,2,87,Cincinnati,Georgia Tech,70,3,17,1,0,Yes (1),,2,3,0
+743,1996,3,2,West,8,81,Georgia,Syracuse,83,4,2,2,0,Yes (2),,8,4,0
+744,1996,3,2,West,2,83,Kansas,Arizona,80,3,3,1,0,Yes (1),,2,3,0
+745,1996,3,3,East,1,79,Massachusetts,Arkansas,63,12,16,1,0,No,,1,12,0
+746,1996,3,3,East,2,98,Georgetown,Texas Tech,90,3,8,1,0,Yes (2),,2,3,0
+747,1996,3,4,Midwest,1,101,Kentucky,Utah,70,4,31,1,0,Yes (1),,1,4,0
+748,1996,3,4,Midwest,2,60,Wake Forest,Louisville,59,6,1,1,0,Yes (2),,2,6,0
+749,1996,4,1,Southeast,5,73,Mississippi St,Cincinnati,63,2,10,1,0,Yes (1),,5,2,0
+750,1996,4,2,West,4,60,Syracuse,Kansas,57,2,3,1,0,Yes (1),,4,2,0
+751,1996,4,3,East,1,86,Massachusetts,Georgetown,62,2,24,1,0,No,,1,2,0
+752,1996,4,4,Midwest,1,83,Kentucky,Wake Forest,63,2,20,1,0,Yes (1),,1,2,0
+753,1996,5,1,Final Four,5,69,Mississippi St,Syracuse,77,4,8,2,0,Yes (1),,5,4,0
+754,1996,5,2,Final Four,1,74,Massachusetts,Kentucky,81,1,7,2,0,Yes (2),,1,1,0
+755,1996,6,1,Championship,4,67,Syracuse,Kentucky,76,1,9,3,1,Yes (1),,4,1,1
+756,1997,1,1,West,1,92,Kentucky,Montana,54,16,38,1,0,Yes (1),,1,16,0
+757,1997,1,1,West,2,75,Utah,Navy,61,15,14,1,0,No,,2,15,0
+758,1997,1,1,West,3,68,Wake Forest,St Marys,46,14,22,1,0,Yes (2),,3,14,0
+759,1997,1,1,West,4,75,St Josephs,Pacific,65,13,10,1,0,No,,4,13,0
+760,1997,1,1,West,5,73,Boston College,Valparaiso,66,12,7,1,0,No,,5,12,0
+761,1997,1,1,West,6,80,Stanford,Oklahoma,67,11,13,1,0,Yes (2),,6,11,0
+762,1997,1,1,West,7,79,Charlotte,Georgetown,67,10,12,1,0,No,,7,10,0
+763,1997,1,1,West,8,73,Iowa,Virginia,60,9,13,1,0,Yes (1),,8,9,0
+764,1997,1,2,Midwest,1,78,Minnesota,Southwest Texas St,46,16,32,1,0,Yes (1),,1,16,0
+765,1997,1,2,Midwest,2,109,UCLA,Charleston Southern,75,15,34,1,0,No,,2,15,0
+766,1997,1,2,Midwest,3,86,Cincinnati,Butler,69,14,17,1,0,Yes (1),,3,14,0
+767,1997,1,2,Midwest,4,68,Clemson,Miami Ohio,56,13,12,1,0,No,,4,13,0
+768,1997,1,2,Midwest,5,81,Tulsa,Boston University,58,12,23,1,0,No,,5,12,0
+769,1997,1,2,Midwest,6,69,Iowa St,Illinois St,57,11,12,1,0,Yes (1),,6,11,0
+770,1997,1,2,Midwest,7,80,Xavier,Vanderbilt,68,10,12,1,0,No,,7,10,0
+771,1997,1,2,Midwest,8,40,Ole Miss,Temple,62,9,22,2,0,No,,8,9,0
+772,1997,1,3,East,1,82,North Carolina,Fairfield,74,16,8,1,0,Yes (1),,1,16,0
+773,1997,1,3,East,2,65,South Carolina,Coppin St,78,15,13,2,0,No,,2,15,0
+774,1997,1,3,East,3,59,New Mexico,Old Dominion,55,14,4,1,0,Yes (2),,3,14,0
+775,1997,1,3,East,4,101,Villanova,Long Island Brooklyn,91,13,10,1,0,Yes (1),,4,13,0
+776,1997,1,3,East,5,55,California,Princeton,52,12,3,1,0,No,,5,12,0
+777,1997,1,3,East,6,65,Louisville,Massachusetts,57,11,8,1,0,Yes (1),,6,11,0
+778,1997,1,3,East,7,58,Wisconsin,Texas,71,10,13,2,0,Yes (1),,7,10,0
+779,1997,1,3,East,8,62,Indiana,Colorado,80,9,18,2,0,No,,8,9,0
+780,1997,1,4,Southeast,1,78,Kansas,Jackson St,64,16,14,1,0,Yes (1),,1,16,0
+781,1997,1,4,Southeast,2,71,Duke,Murray St,68,15,3,1,0,Yes (1),,2,15,0
+782,1997,1,4,Southeast,3,70,Georgia,Chattanooga,73,14,3,2,0,No,,3,14,0
+783,1997,1,4,Southeast,4,65,Arizona,South Alabama,57,13,8,1,0,Yes (1),,4,13,0
+784,1997,1,4,Southeast,5,66,Maryland,College of Charleston,75,12,9,2,0,Yes (1),,5,12,0
+785,1997,1,4,Southeast,6,90,Illinois,USC,77,11,13,1,0,No,,6,11,0
+786,1997,1,4,Southeast,7,59,Marquette,Providence,81,10,22,2,0,Yes (1),,7,10,0
+787,1997,1,4,Southeast,8,83,Purdue,Rhode Island,76,9,7,1,0,Yes (1),,8,9,0
+788,1997,2,1,West,1,75,Kentucky,Iowa,69,8,6,1,0,Yes (1),,1,8,0
+789,1997,2,1,West,2,77,Utah,Charlotte,58,7,19,1,0,No,,2,7,0
+790,1997,2,1,West,3,66,Wake Forest,Stanford,72,6,6,2,0,No,,3,6,0
+791,1997,2,1,West,4,81,St Josephs,Boston College,77,5,4,1,0,No,,4,5,0
+792,1997,2,2,Midwest,1,76,Minnesota,Temple,57,9,19,1,0,Yes (1),,1,9,0
+793,1997,2,2,Midwest,2,96,UCLA,Xavier,83,7,13,1,0,No,,2,7,0
+794,1997,2,2,Midwest,3,66,Cincinnati,Iowa St,67,6,1,2,0,Yes (1),,3,6,0
+795,1997,2,2,Midwest,4,65,Clemson,Tulsa,59,5,6,1,0,No,,4,5,0
+796,1997,2,3,East,1,73,North Carolina,Colorado,56,9,17,1,0,Yes (1),,1,9,0
+797,1997,2,3,East,15,81,Coppin St,Texas,82,10,1,2,0,No,,15,10,0
+798,1997,2,3,East,3,63,New Mexico,Louisville,64,6,1,2,0,Yes (2),,3,6,0
+799,1997,2,3,East,4,68,Villanova,California,75,5,7,2,0,Yes (1),,4,5,0
+800,1997,2,4,Southeast,1,75,Kansas,Purdue,61,8,14,1,0,Yes (1),,1,8,0
+801,1997,2,4,Southeast,2,87,Duke,Providence,98,10,11,2,0,Yes (1),,2,10,0
+802,1997,2,4,Southeast,14,75,Chattanooga,Illinois,63,6,12,1,0,No,,14,6,0
+803,1997,2,4,Southeast,4,73,Arizona,College of Charleston,69,12,4,1,0,Yes (1),,4,12,0
+804,1997,3,1,West,1,83,Kentucky,St Josephs,68,4,15,1,0,Yes (1),,1,4,0
+805,1997,3,1,West,2,82,Utah,Stanford,77,6,5,1,0,No,,2,6,0
+806,1997,3,2,Midwest,1,90,Minnesota,Clemson,84,4,6,1,0,Yes (1),,1,4,0
+807,1997,3,2,Midwest,2,74,UCLA,Iowa St,73,6,1,1,0,Yes (2),,2,6,0
+808,1997,3,3,East,1,63,North Carolina,California,57,5,6,1,0,Yes (1),,1,5,0
+809,1997,3,3,East,10,63,Texas,Louisville,78,6,15,2,0,Yes (2),,10,6,0
+810,1997,3,4,Southeast,1,82,Kansas,Arizona,85,4,3,2,0,Yes (1),,1,4,0
+811,1997,3,4,Southeast,10,71,Providence,Chattanooga,65,14,6,1,0,No,,10,14,0
+812,1997,4,1,West,1,72,Kentucky,Utah,59,2,13,1,0,Yes (1),,1,2,0
+813,1997,4,2,Midwest,1,80,Minnesota,UCLA,72,2,8,1,0,Yes (1),,1,2,0
+814,1997,4,3,East,1,97,North Carolina,Louisville,74,6,23,1,0,Yes (1),,1,6,0
+815,1997,4,4,Southeast,4,96,Arizona,Providence,92,10,4,1,0,Yes (1),,4,10,0
+816,1997,5,1,Final Four,1,78,Kentucky,Minnesota,69,1,9,1,0,Yes (1),,1,1,0
+817,1997,5,2,Final Four,1,58,North Carolina,Arizona,66,4,8,2,0,Yes (1),,1,4,0
+818,1997,6,1,Championship,1,79,Kentucky,Arizona,84,4,5,3,4,Yes (1),,1,4,4
+819,1998,1,1,East,1,88,North Carolina,Navy,52,16,36,1,0,Yes (1),,1,16,0
+820,1998,1,1,East,2,93,Connecticut,Fairleigh Dickinson,85,15,8,1,0,No,,2,15,0
+821,1998,1,1,East,3,61,South Carolina,Richmond,62,14,1,2,0,No,,3,14,0
+822,1998,1,1,East,4,83,Michigan St,Eastern Michigan,71,13,12,1,0,Yes (1),,4,13,0
+823,1998,1,1,East,5,69,Princeton,UNLV,57,12,12,1,0,No,,5,12,0
+824,1998,1,1,East,6,68,Xavier,Washington,69,11,1,2,0,Yes (2),,6,11,0
+825,1998,1,1,East,7,94,Indiana,Oklahoma,87,10,7,1,0,Yes (2),,7,10,0
+826,1998,1,1,East,8,77,Charlotte,Illinois Chicago,62,9,15,1,0,No,,8,9,0
+827,1998,1,2,West,1,99,Arizona,Nicholls St,60,16,39,1,0,Yes (1),,1,16,0
+828,1998,1,2,West,2,65,Cincinnati,Northern Arizona,62,15,3,1,0,Yes (1),,2,15,0
+829,1998,1,2,West,3,85,Utah,San Francisco,68,14,17,1,0,No,,3,14,0
+830,1998,1,2,West,4,82,Maryland,Utah St,68,13,14,1,0,Yes (1),,4,13,0
+831,1998,1,2,West,5,64,Illinois,South Alabama,51,12,13,1,0,No,,5,12,0
+832,1998,1,2,West,6,74,Arkansas,Nebraska,65,11,9,1,0,No,,6,11,0
+833,1998,1,2,West,7,52,Temple,West Virginia,82,10,30,2,0,No,,7,10,0
+834,1998,1,2,West,8,81,Tennessee,Illinois St,82,9,1,2,0,Yes (1),,8,9,0
+835,1998,1,3,Midwest,1,110,Kansas,Prairie View,52,16,58,1,0,Yes (1),,1,16,0
+836,1998,1,3,Midwest,2,95,Purdue,Delaware,56,15,39,1,0,Yes (1),,2,15,0
+837,1998,1,3,Midwest,3,67,Stanford,College of Charleston,57,14,10,1,0,No,,3,14,0
+838,1998,1,3,Midwest,4,69,Ole Miss,Valparaiso,70,13,1,2,0,No,,4,13,0
+839,1998,1,3,Midwest,5,87,TCU,Florida St,96,12,9,2,0,No,,5,12,0
+840,1998,1,3,Midwest,6,72,Clemson,Western Michigan,75,11,3,2,0,No,,6,11,0
+841,1998,1,3,Midwest,7,64,St Johns,Detroit,66,10,2,2,0,No,,7,10,0
+842,1998,1,3,Midwest,8,97,Rhode Island,Murray St,74,9,23,1,0,No,,8,9,0
+843,1998,1,4,South,1,99,Duke,Radford,63,16,36,1,0,Yes (1),,1,16,0
+844,1998,1,4,South,2,82,Kentucky,South Carolina St,67,15,15,1,0,Yes (1),,2,15,0
+845,1998,1,4,South,3,80,Michigan,Davidson,61,14,19,1,0,Yes (1),,3,14,0
+846,1998,1,4,South,4,79,New Mexico,Butler,62,13,17,1,0,No,,4,13,0
+847,1998,1,4,South,5,63,Syracuse,Iona,61,12,2,1,0,Yes (1),,5,12,0
+848,1998,1,4,South,6,65,UCLA,Miami,62,11,3,1,0,No,,6,11,0
+849,1998,1,4,South,7,46,Massachusetts,St Louis,51,10,5,2,0,Yes (2),,7,10,0
+850,1998,1,4,South,8,74,Oklahoma St,George Washington,59,9,15,1,0,No,,8,9,0
+851,1998,2,1,East,1,93,North Carolina,Charlotte,83,8,10,1,0,Yes (1),,1,8,0
+852,1998,2,1,East,2,78,Connecticut,Indiana,68,7,10,1,0,No,,2,7,0
+853,1998,2,1,East,14,66,Richmond,Washington,87,11,21,2,0,Yes (2),,14,11,0
+854,1998,2,1,East,4,63,Michigan St,Princeton,56,5,7,1,0,Yes (1),,4,5,0
+855,1998,2,2,West,1,82,Arizona,Illinois St,49,9,33,1,0,Yes (1),,1,9,0
+856,1998,2,2,West,2,74,Cincinnati,West Virginia,75,10,1,2,0,Yes (1),,2,10,0
+857,1998,2,2,West,3,75,Utah,Arkansas,69,6,6,1,0,No,,3,6,0
+858,1998,2,2,West,4,67,Maryland,Illinois,61,5,6,1,0,Yes (1),,4,5,0
+859,1998,2,3,Midwest,1,75,Kansas,Rhode Island,80,8,5,2,0,Yes (1),,1,8,0
+860,1998,2,3,Midwest,2,80,Purdue,Detroit,65,10,15,1,0,Yes (1),,2,10,0
+861,1998,2,3,Midwest,3,83,Stanford,Western Michigan,65,11,18,1,0,No,,3,11,0
+862,1998,2,3,Midwest,13,83,Valparaiso,Florida St,77,12,6,1,0,No,,13,12,0
+863,1998,2,4,South,1,79,Duke,Oklahoma St,73,8,6,1,0,Yes (1),,1,8,0
+864,1998,2,4,South,2,88,Kentucky,St Louis,61,10,27,1,0,Yes (1),,2,10,0
+865,1998,2,4,South,3,82,Michigan,UCLA,85,6,3,2,0,Yes (1),,3,6,0
+866,1998,2,4,South,4,46,New Mexico,Syracuse,56,5,10,2,0,Yes (2),,4,5,0
+867,1998,3,1,East,1,73,North Carolina,Michigan St,58,4,15,1,0,Yes (1),,1,4,0
+868,1998,3,1,East,2,75,Connecticut,Washington,74,11,1,1,0,Yes (2),,2,11,0
+869,1998,3,2,West,1,87,Arizona,Maryland,79,4,8,1,0,Yes (1),,1,4,0
+870,1998,3,2,West,10,62,West Virginia,Utah,65,3,3,2,0,No,,10,3,0
+871,1998,3,3,Midwest,8,74,Rhode Island,Valparaiso,68,13,6,1,0,No,,8,13,0
+872,1998,3,3,Midwest,2,59,Purdue,Stanford,67,3,8,2,0,Yes (1),,2,3,0
+873,1998,3,4,South,1,80,Duke,Syracuse,67,5,13,1,0,Yes (1),,1,5,0
+874,1998,3,4,South,2,94,Kentucky,UCLA,68,6,26,1,0,Yes (1),,2,6,0
+875,1998,4,1,East,1,75,North Carolina,Connecticut,64,2,11,1,0,Yes (1),,1,2,0
+876,1998,4,2,West,1,51,Arizona,Utah,76,3,25,2,0,Yes (1),,1,3,0
+877,1998,4,3,Midwest,8,77,Rhode Island,Stanford,79,3,2,2,0,No,,8,3,0
+878,1998,4,4,South,1,84,Duke,Kentucky,86,2,2,2,0,Yes (1),,1,2,0
+879,1998,5,1,Final Four,1,59,North Carolina,Utah,65,3,6,2,0,Yes (1),,1,3,0
+880,1998,5,2,Final Four,3,85,Stanford,Kentucky,86,2,1,2,0,Yes (2),,3,2,0
+881,1998,6,1,Championship,3,69,Utah,Kentucky,78,2,9,3,2,Yes (2),,3,2,2
+882,1999,1,1,East,1,99,Duke,Florida A&M,58,16,41,1,0,Yes (1),,1,16,0
+883,1999,1,1,East,2,75,Miami,Lafayette,54,15,21,1,0,No,,2,15,0
+884,1999,1,1,East,3,72,Cincinnati,George Mason,48,14,24,1,0,Yes (1),,3,14,0
+885,1999,1,1,East,4,62,Tennessee,Delaware,52,13,10,1,0,Yes (1),,4,13,0
+886,1999,1,1,East,5,32,Wisconsin,Southwest Missouri St,43,12,11,2,0,Yes (1),,5,12,0
+887,1999,1,1,East,6,61,Temple,Kent St,54,11,7,1,0,No,,6,11,0
+888,1999,1,1,East,7,54,Texas,Purdue,58,10,4,2,0,Yes (2),,7,10,0
+889,1999,1,1,East,8,53,College of Charleston,Tulsa,62,9,9,2,0,No,,8,9,0
+890,1999,1,2,Midwest,1,76,Michigan St,Mount St Marys,53,16,23,1,0,Yes (1),,1,16,0
+891,1999,1,2,Midwest,2,80,Utah,Arkansas St,58,15,22,1,0,No,,2,15,0
+892,1999,1,2,Midwest,3,82,Kentucky,New Mexico St,60,14,22,1,0,Yes (1),,3,14,0
+893,1999,1,2,Midwest,4,60,Arizona,Oklahoma,61,13,1,2,0,Yes (1),,4,13,0
+894,1999,1,2,Midwest,5,81,Charlotte,Rhode Island,70,12,11,1,0,No,,5,12,0
+895,1999,1,2,Midwest,6,95,Kansas,Evansville,74,11,21,1,0,Yes (1),,6,11,0
+896,1999,1,2,Midwest,7,58,Washington,Miami Ohio,59,10,1,2,0,Yes (1),,7,10,0
+897,1999,1,2,Midwest,8,70,Villanova,Ole Miss,72,9,2,2,0,Yes (1),,8,9,0
+898,1999,1,3,South,1,80,Auburn,Winthrop,41,16,39,1,0,Yes (1),,1,16,0
+899,1999,1,3,South,2,82,Maryland,Valparaiso,60,15,22,1,0,Yes (1),,2,15,0
+900,1999,1,3,South,3,69,St Johns,Samford,43,14,26,1,0,No,,3,14,0
+901,1999,1,3,South,4,72,Ohio St,Murray St,58,13,14,1,0,Yes (1),,4,13,0
+902,1999,1,3,South,5,53,UCLA,Detroit,56,12,3,2,0,No,,5,12,0
+903,1999,1,3,South,6,108,Indiana,George Washington,88,11,20,1,0,No,,6,11,0
+904,1999,1,3,South,7,58,Louisville,Creighton,62,10,4,2,0,Yes (1),,7,10,0
+905,1999,1,3,South,8,61,Syracuse,Oklahoma St,69,9,8,2,0,Yes (1),,8,9,0
+906,1999,1,4,West,1,91,Connecticut,Texas San Antonio,66,16,25,1,0,No,,1,16,0
+907,1999,1,4,West,2,69,Stanford,Alcorn St,57,15,12,1,0,No,,2,15,0
+908,1999,1,4,West,3,74,North Carolina,Weber St,76,14,2,2,0,Yes (1),,3,14,0
+909,1999,1,4,West,4,94,Arkansas,Siena,80,13,14,1,0,No,,4,13,0
+910,1999,1,4,West,5,77,Iowa,UAB,64,12,13,1,0,Yes (1),,5,12,0
+911,1999,1,4,West,6,75,Florida,Pennsylvania,61,11,14,1,0,Yes (1),,6,11,0
+912,1999,1,4,West,7,63,Minnesota,Gonzaga,75,10,12,2,0,Yes (1),,7,10,0
+913,1999,1,4,West,8,59,Missouri,New Mexico,61,9,2,2,0,No,,8,9,0
+914,1999,2,1,East,1,97,Duke,Tulsa,56,9,41,1,0,Yes (1),,1,9,0
+915,1999,2,1,East,2,63,Miami,Purdue,73,10,10,2,0,Yes (2),,2,10,0
+916,1999,2,1,East,3,54,Cincinnati,Temple,64,6,10,2,0,Yes (1),,3,6,0
+917,1999,2,1,East,4,51,Tennessee,Southwest Missouri St,81,12,30,2,0,Yes (1),,4,12,0
+918,1999,2,2,Midwest,1,74,Michigan St,Ole Miss,66,9,8,1,0,Yes (1),,1,9,0
+919,1999,2,2,Midwest,2,58,Utah,Miami Ohio,66,10,8,2,0,No,,2,10,0
+920,1999,2,2,Midwest,3,92,Kentucky,Kansas,88,6,4,1,0,Yes (1),,3,6,0
+921,1999,2,2,Midwest,13,85,Oklahoma,Charlotte,72,5,13,1,0,Yes (1),,13,5,0
+922,1999,2,3,South,1,81,Auburn,Oklahoma St,74,9,7,1,0,Yes (1),,1,9,0
+923,1999,2,3,South,2,75,Maryland,Creighton,62,10,13,1,0,Yes (1),,2,10,0
+924,1999,2,3,South,3,86,St Johns,Indiana,61,6,25,1,0,No,,3,6,0
+925,1999,2,3,South,4,75,Ohio St,Detroit,44,12,31,1,0,Yes (1),,4,12,0
+926,1999,2,4,West,1,78,Connecticut,New Mexico,56,9,22,1,0,No,,1,9,0
+927,1999,2,4,West,2,74,Stanford,Gonzaga,82,10,8,2,0,Yes (2),,2,10,0
+928,1999,2,4,West,14,74,Weber St,Florida,82,6,8,2,0,Yes (2),,14,6,0
+929,1999,2,4,West,4,72,Arkansas,Iowa,82,5,10,2,0,Yes (2),,4,5,0
+930,1999,3,1,East,1,78,Duke,Southwest Missouri St,61,12,17,1,0,Yes (1),,1,12,0
+931,1999,3,1,East,10,55,Purdue,Temple,77,6,22,2,0,Yes (1),,10,6,0
+932,1999,3,2,Midwest,1,54,Michigan St,Oklahoma,46,13,8,1,0,Yes (1),,1,13,0
+933,1999,3,2,Midwest,10,43,Miami Ohio,Kentucky,58,3,15,2,0,Yes (2),,10,3,0
+934,1999,3,3,South,1,64,Auburn,Ohio St,72,4,8,2,0,Yes (1),,1,4,0
+935,1999,3,3,South,2,62,Maryland,St Johns,76,3,14,2,0,Yes (1),,2,3,0
+936,1999,3,4,West,1,78,Connecticut,Iowa,68,5,10,1,0,Yes (2),,1,5,0
+937,1999,3,4,West,10,73,Gonzaga,Florida,72,6,1,1,0,Yes (1),,10,6,0
+938,1999,4,1,East,1,85,Duke,Temple,64,6,21,1,0,Yes (1),,1,6,0
+939,1999,4,2,Midwest,1,73,Michigan St,Kentucky,66,3,7,1,0,Yes (1),,1,3,0
+940,1999,4,3,South,4,77,Ohio St,St Johns,74,3,3,1,0,Yes (1),,4,3,0
+941,1999,4,4,West,1,67,Connecticut,Gonzaga,62,10,5,1,0,Yes (2),,1,10,0
+942,1999,5,1,Final Four,1,68,Duke,Michigan St,62,1,6,1,0,Yes (1),,1,1,0
+943,1999,5,2,Final Four,4,58,Ohio St,Connecticut,64,1,6,2,0,Yes (1),,4,1,0
+944,1999,6,1,Championship,1,74,Duke,Connecticut,77,1,3,3,1,Yes (1),,1,1,1
+945,2000,1,1,West,1,71,Arizona,Jackson St,47,16,24,1,0,Yes (1),,1,16,0
+946,2000,1,1,West,2,61,St Johns,Northern Arizona,56,15,5,1,0,No,,2,15,0
+947,2000,1,1,West,3,74,Oklahoma,Winthrop,50,14,24,1,0,Yes (1),,3,14,0
+948,2000,1,1,West,4,64,LSU,Southeast Missouri St,61,13,3,1,0,Yes (1),,4,13,0
+949,2000,1,1,West,5,77,Texas,Indiana St,61,12,16,1,0,No,,5,12,0
+950,2000,1,1,West,6,62,Purdue,Dayton,61,11,1,1,0,Yes (1),,6,11,0
+951,2000,1,1,West,7,66,Louisville,Gonzaga,77,10,11,2,0,Yes (1),,7,10,0
+952,2000,1,1,West,8,66,Wisconsin,Fresno St,56,9,10,1,0,Yes (1),,8,9,0
+953,2000,1,2,Midwest,1,65,Michigan St,Valparaiso,38,16,27,1,0,Yes (1),,1,16,0
+954,2000,1,2,Midwest,2,88,Iowa St,Central Connecticut St,78,15,10,1,0,Yes (1),,2,15,0
+955,2000,1,2,Midwest,3,74,Maryland,Iona,59,14,15,1,0,Yes (1),,3,14,0
+956,2000,1,2,Midwest,4,79,Syracuse,Samford,65,13,14,1,0,Yes (1),,4,13,0
+957,2000,1,2,Midwest,5,85,Kentucky,St Bonaventure,80,12,5,1,0,Yes (1),,5,12,0
+958,2000,1,2,Midwest,6,65,UCLA,Ball St,57,11,8,1,0,No,,6,11,0
+959,2000,1,2,Midwest,7,72,Auburn,Creighton,69,10,3,1,0,Yes (1),,7,10,0
+960,2000,1,2,Midwest,8,48,Utah,St Louis,45,9,3,1,0,Yes (2),,8,9,0
+961,2000,1,3,East,1,82,Duke,Lamar,55,16,27,1,0,Yes (1),,1,16,0
+962,2000,1,3,East,2,73,Temple,Lafayette,47,15,26,1,0,No,,2,15,0
+963,2000,1,3,East,3,86,Oklahoma St,Hofstra,66,14,20,1,0,No,,3,14,0
+964,2000,1,3,East,4,68,Illinois,Pennsylvania,48,13,20,1,0,No,,4,13,0
+965,2000,1,3,East,5,69,Florida,Butler,68,12,1,1,0,Yes (1),,5,12,0
+966,2000,1,3,East,6,57,Indiana,Pepperdine,77,11,20,2,0,No,,6,11,0
+967,2000,1,3,East,7,71,Oregon,Seton Hall,72,10,1,2,0,Yes (1),,7,10,0
+968,2000,1,3,East,8,81,Kansas,DePaul,77,9,4,1,0,Yes (1),,8,9,0
+969,2000,1,4,South,1,84,Stanford,South Carolina St,65,16,19,1,0,No,,1,16,0
+970,2000,1,4,South,2,64,Cincinnati,UNC Wilmington,47,15,17,1,0,Yes (1),,2,15,0
+971,2000,1,4,South,3,87,Ohio St,Appalachian St,61,14,26,1,0,Yes (1),,3,14,0
+972,2000,1,4,South,4,63,Tennessee,Louisiana Lafayette,58,13,5,1,0,Yes (1),,4,13,0
+973,2000,1,4,South,5,75,Connecticut,Utah St,67,12,8,1,0,Yes (2),,5,12,0
+974,2000,1,4,South,6,75,Miami,Arkansas,71,11,4,1,0,No,,6,11,0
+975,2000,1,4,South,7,89,Tulsa,UNLV,62,10,27,1,0,No,,7,10,0
+976,2000,1,4,South,8,84,North Carolina,Missouri,70,9,14,1,0,Yes (1),,8,9,0
+977,2000,2,1,West,1,58,Arizona,Wisconsin,66,8,8,2,0,Yes (1),,1,8,0
+978,2000,2,1,West,2,76,St Johns,Gonzaga,82,10,6,2,0,Yes (2),,2,10,0
+979,2000,2,1,West,3,62,Oklahoma,Purdue,66,6,4,2,0,Yes (1),,3,6,0
+980,2000,2,1,West,4,72,LSU,Texas,67,5,5,1,0,Yes (1),,4,5,0
+981,2000,2,2,Midwest,1,73,Michigan St,Utah,61,8,12,1,0,Yes (1),,1,8,0
+982,2000,2,2,Midwest,2,79,Iowa St,Auburn,60,7,19,1,0,Yes (1),,2,7,0
+983,2000,2,2,Midwest,3,62,Maryland,UCLA,105,6,43,2,0,Yes (1),,3,6,0
+984,2000,2,2,Midwest,4,52,Syracuse,Kentucky,50,5,2,1,0,Yes (1),,4,5,0
+985,2000,2,3,East,1,69,Duke,Kansas,64,8,5,1,0,Yes (1),,1,8,0
+986,2000,2,3,East,2,65,Temple,Seton Hall,67,10,2,2,0,Yes (2),,2,10,0
+987,2000,2,3,East,3,75,Oklahoma St,Pepperdine,67,11,8,1,0,No,,3,11,0
+988,2000,2,3,East,4,73,Illinois,Florida,93,5,20,2,0,Yes (2),,4,5,0
+989,2000,2,4,South,1,53,Stanford,North Carolina,60,8,7,2,0,Yes (2),,1,8,0
+990,2000,2,4,South,2,61,Cincinnati,Tulsa,69,7,8,2,0,Yes (1),,2,7,0
+991,2000,2,4,South,3,62,Ohio St,Miami,75,6,13,2,0,Yes (1),,3,6,0
+992,2000,2,4,South,4,65,Tennessee,Connecticut,51,5,14,1,0,Yes (1),,4,5,0
+993,2000,3,1,West,8,61,Wisconsin,LSU,48,4,13,1,0,Yes (1),,8,4,0
+994,2000,3,1,West,10,66,Gonzaga,Purdue,75,6,9,2,0,Yes (1),,10,6,0
+995,2000,3,2,Midwest,1,75,Michigan St,Syracuse,58,4,17,1,0,Yes (1),,1,4,0
+996,2000,3,2,Midwest,2,80,Iowa St,UCLA,56,6,24,1,0,Yes (1),,2,6,0
+997,2000,3,3,East,1,78,Duke,Florida,87,5,9,2,0,Yes (1),,1,5,0
+998,2000,3,3,East,10,66,Seton Hall,Oklahoma St,68,3,2,2,0,Yes (1),,10,3,0
+999,2000,3,4,South,8,74,North Carolina,Tennessee,69,4,5,1,0,Yes (1),,8,4,0
+1000,2000,3,4,South,7,80,Tulsa,Miami,71,6,9,1,0,No,,7,6,0
+1001,2000,4,1,West,8,64,Wisconsin,Purdue,60,6,4,1,0,Yes (1),,8,6,0
+1002,2000,4,2,Midwest,1,75,Michigan St,Iowa St,64,2,11,1,0,Yes (1),,1,2,0
+1003,2000,4,3,East,5,77,Florida,Oklahoma St,65,3,12,1,0,Yes (1),,5,3,0
+1004,2000,4,4,South,8,59,North Carolina,Tulsa,55,7,4,1,0,Yes (1),,8,7,0
+1005,2000,5,1,Final Four,8,41,Wisconsin,Michigan St,53,1,12,2,0,Yes (1),,8,1,0
+1006,2000,5,2,Final Four,5,71,Florida,North Carolina,59,8,12,1,0,Yes (1),,5,8,0
+1007,2000,6,1,Championship,1,89,Michigan St,Florida,76,5,13,4,1,Yes (1),,1,5,1
+1008,2001,1,1,Midwest,1,96,Illinois,Northwestern St,54,16,42,1,0,No,,1,16,0
+1009,2001,1,1,Midwest,2,101,Arizona,Eastern Illinois,76,15,25,1,0,Yes (1),,2,15,0
+1010,2001,1,1,Midwest,3,72,Ole Miss,Iona,70,14,2,1,0,Yes (2),,3,14,0
+1011,2001,1,1,Midwest,4,99,Kansas,Cal St Northridge,75,13,24,1,0,Yes (1),,4,13,0
+1012,2001,1,1,Midwest,5,79,Syracuse,Hawaii,69,12,10,1,0,Yes (1),,5,12,0
+1013,2001,1,1,Midwest,6,83,Notre Dame,Xavier,71,11,12,1,0,No,,6,11,0
+1014,2001,1,1,Midwest,7,63,Wake Forest,Butler,79,10,16,2,0,No,,7,10,0
+1015,2001,1,1,Midwest,8,63,Tennessee,Charlotte,70,9,7,2,0,Yes (1),,8,9,0
+1016,2001,1,2,South,1,69,Michigan St,Alabama St,35,16,34,1,0,Yes (1),,1,16,0
+1017,2001,1,2,South,2,70,North Carolina,Princeton,48,15,22,1,0,Yes (1),,2,15,0
+1018,2001,1,2,South,3,69,Florida,Western Kentucky,56,14,13,1,0,Yes (1),,3,14,0
+1019,2001,1,2,South,4,68,Oklahoma,Indiana St,70,13,2,2,0,Yes (1),,4,13,0
+1020,2001,1,2,South,5,85,Virginia,Gonzaga,86,12,1,2,0,Yes (1),,5,12,0
+1021,2001,1,2,South,6,65,Texas,Temple,79,11,14,2,0,No,,6,11,0
+1022,2001,1,2,South,7,69,Penn St,Providence,59,10,10,1,0,No,,7,10,0
+1023,2001,1,2,South,8,70,California,Fresno St,82,9,12,2,0,No,,8,9,0
+1024,2001,1,3,East,1,95,Duke,Monmouth,52,16,43,1,0,Yes (1),,1,16,0
+1025,2001,1,3,East,2,72,Kentucky,Holy Cross,68,15,4,1,0,Yes (1),,2,15,0
+1026,2001,1,3,East,3,68,Boston College,Southern Utah,65,14,3,1,0,No,,3,14,0
+1027,2001,1,3,East,4,61,UCLA,Hofstra,48,13,13,1,0,No,,4,13,0
+1028,2001,1,3,East,5,68,Ohio St,Utah St,77,12,9,2,0,Yes (1),,5,12,0
+1029,2001,1,3,East,6,69,USC,Oklahoma St,54,11,15,1,0,No,,6,11,0
+1030,2001,1,3,East,7,69,Iowa,Creighton,56,10,13,1,0,Yes (1),,7,10,0
+1031,2001,1,3,East,8,68,Georgia,Missouri,70,9,2,2,0,No,,8,9,0
+1032,2001,1,4,West,1,89,Stanford,UNC Greensboro,60,16,29,1,0,No,,1,16,0
+1033,2001,1,4,West,2,57,Iowa St,Hampton,58,15,1,2,0,Yes (1),,2,15,0
+1034,2001,1,4,West,3,83,Maryland,George Mason,80,14,3,1,0,Yes (1),,3,14,0
+1035,2001,1,4,West,4,73,Indiana,Kent St,77,13,4,2,0,No,,4,13,0
+1036,2001,1,4,West,5,84,Cincinnati,BYU,59,12,25,1,0,Yes (1),,5,12,0
+1037,2001,1,4,West,6,49,Wisconsin,Georgia St,50,11,1,2,0,Yes (1),,6,11,0
+1038,2001,1,4,West,7,61,Arkansas,Georgetown,63,10,2,2,0,No,,7,10,0
+1039,2001,1,4,West,8,62,Georgia Tech,St Josephs,66,9,4,2,0,No,,8,9,0
+1040,2001,2,1,Midwest,1,79,Illinois,Charlotte,61,9,18,1,0,No,,1,9,0
+1041,2001,2,1,Midwest,2,73,Arizona,Butler,52,10,21,1,0,Yes (1),,2,10,0
+1042,2001,2,1,Midwest,3,59,Ole Miss,Notre Dame,56,6,3,1,0,No,,3,6,0
+1043,2001,2,1,Midwest,4,87,Kansas,Syracuse,58,5,29,1,0,Yes (1),,4,5,0
+1044,2001,2,2,South,1,81,Michigan St,Fresno St,65,9,16,1,0,Yes (1),,1,9,0
+1045,2001,2,2,South,2,74,North Carolina,Penn St,82,7,8,2,0,Yes (1),,2,7,0
+1046,2001,2,2,South,3,54,Florida,Temple,75,11,21,2,0,Yes (1),,3,11,0
+1047,2001,2,2,South,13,68,Indiana St,Gonzaga,85,12,17,2,0,Yes (2),,13,12,0
+1048,2001,2,3,East,1,94,Duke,Missouri,81,9,13,1,0,Yes (1),,1,9,0
+1049,2001,2,3,East,2,92,Kentucky,Iowa,79,7,13,1,0,Yes (1),,2,7,0
+1050,2001,2,3,East,3,71,Boston College,USC,74,6,3,2,0,No,,3,6,0
+1051,2001,2,3,East,4,75,UCLA,Utah St,50,12,25,1,0,Yes (2),,4,12,0
+1052,2001,2,4,West,1,90,Stanford,St Josephs,83,9,7,1,0,No,,1,9,0
+1053,2001,2,4,West,15,57,Hampton,Georgetown,76,10,19,2,0,No,,15,10,0
+1054,2001,2,4,West,3,79,Maryland,Georgia St,60,11,19,1,0,Yes (1),,3,11,0
+1055,2001,2,4,West,13,43,Kent St,Cincinnati,66,5,23,2,0,Yes (2),,13,5,0
+1056,2001,3,1,Midwest,1,80,Illinois,Kansas,64,4,16,1,0,Yes (2),,1,4,0
+1057,2001,3,1,Midwest,2,66,Arizona,Ole Miss,56,3,10,1,0,Yes (1),,2,3,0
+1058,2001,3,2,South,1,77,Michigan St,Gonzaga,62,12,15,1,0,Yes (1),,1,12,0
+1059,2001,3,2,South,7,72,Penn St,Temple,84,11,12,2,0,No,,7,11,0
+1060,2001,3,3,East,1,76,Duke,UCLA,63,4,13,1,0,Yes (1),,1,4,0
+1061,2001,3,3,East,2,76,Kentucky,USC,80,6,4,2,0,Yes (1),,2,6,0
+1062,2001,3,4,West,1,78,Stanford,Cincinnati,65,5,13,1,0,Yes (2),,1,5,0
+1063,2001,3,4,West,10,66,Georgetown,Maryland,76,3,10,2,0,Yes (2),,10,3,0
+1064,2001,4,1,Midwest,1,81,Illinois,Arizona,87,2,6,2,0,Yes (2),,1,2,0
+1065,2001,4,2,South,1,69,Michigan St,Temple,62,11,7,1,0,Yes (1),,1,11,0
+1066,2001,4,3,East,1,79,Duke,USC,69,6,10,1,0,Yes (1),,1,6,0
+1067,2001,4,4,West,1,73,Stanford,Maryland,87,3,14,2,0,Yes (2),,1,3,0
+1068,2001,5,1,Final Four,2,80,Arizona,Michigan St,61,1,19,1,0,Yes (1),,2,1,0
+1069,2001,5,2,Final Four,1,95,Duke,Maryland,84,3,11,1,0,Yes (1),,1,3,0
+1070,2001,6,1,Championship,2,72,Arizona,Duke,82,1,10,3,1,Yes (1),,2,1,1
+1071,2002,1,1,South,1,84,Duke,Winthrop,37,16,47,1,0,Yes (1),,1,16,0
+1072,2002,1,1,South,2,86,Alabama,Florida Atlantic,78,15,8,1,0,No,,2,15,0
+1073,2002,1,1,South,3,71,Pittsburgh,Central Connecticut St,54,14,17,1,0,No,,3,14,0
+1074,2002,1,1,South,4,89,USC,UNC Wilmington,93,13,4,2,0,No,,4,13,0
+1075,2002,1,1,South,5,75,Indiana,Utah,56,12,19,1,0,No,,5,12,0
+1076,2002,1,1,South,6,82,California,Pennsylvania,75,11,7,1,0,No,,6,11,0
+1077,2002,1,1,South,7,61,Oklahoma St,Kent St,69,10,8,2,0,No,,7,10,0
+1078,2002,1,1,South,8,82,Notre Dame,Charlotte,63,9,19,1,0,No,,8,9,0
+1079,2002,1,2,West,1,90,Cincinnati,Boston University,52,16,38,1,0,Yes (1),,1,16,0
+1080,2002,1,2,West,2,71,Oklahoma,Illinois Chicago,63,15,8,1,0,Yes (1),,2,15,0
+1081,2002,1,2,West,3,86,Arizona,Santa Barbara,81,14,5,1,0,Yes (1),,3,14,0
+1082,2002,1,2,West,4,69,Ohio St,Davidson,64,13,5,1,0,Yes (1),,4,13,0
+1083,2002,1,2,West,5,80,Miami,Missouri,93,12,13,2,0,No,,5,12,0
+1084,2002,1,2,West,6,66,Gonzaga,Wyoming,73,11,7,2,0,Yes (1),,6,11,0
+1085,2002,1,2,West,7,70,Xavier,Hawaii,58,10,12,1,0,No,,7,10,0
+1086,2002,1,2,West,8,80,UCLA,Ole Miss,58,9,22,1,0,No,,8,9,0
+1087,2002,1,3,East,1,85,Maryland,Siena,70,16,15,1,0,Yes (1),,1,16,0
+1088,2002,1,3,East,2,78,Connecticut,Hampton,67,15,11,1,0,No,,2,15,0
+1089,2002,1,3,East,3,85,Georgia,Murray St,68,14,17,1,0,No,,3,14,0
+1090,2002,1,3,East,4,83,Kentucky,Valparaiso,68,13,15,1,0,Yes (1),,4,13,0
+1091,2002,1,3,East,5,69,Marquette,Tulsa,71,12,2,2,0,Yes (1),,5,12,0
+1092,2002,1,3,East,6,68,Texas Tech,Southern Illinois,76,11,8,2,0,Yes (1),,6,11,0
+1093,2002,1,3,East,7,69,NC State,Michigan St,58,10,11,1,0,Yes (2),,7,10,0
+1094,2002,1,3,East,8,80,Wisconsin,St Johns,70,9,10,1,0,Yes (1),,8,9,0
+1095,2002,1,4,Midwest,1,70,Kansas,Holy Cross,59,16,11,1,0,Yes (1),,1,16,0
+1096,2002,1,4,Midwest,2,81,Oregon,Montana,62,15,19,1,0,Yes (1),,2,15,0
+1097,2002,1,4,Midwest,3,70,Mississippi St,McNeese St,58,14,12,1,0,Yes (1),,3,14,0
+1098,2002,1,4,Midwest,4,93,Illinois,San Diego St,64,13,29,1,0,No,,4,13,0
+1099,2002,1,4,Midwest,5,82,Florida,Creighton,83,12,1,2,0,Yes (1),,5,12,0
+1100,2002,1,4,Midwest,6,70,Texas,Boston College,57,11,13,1,0,No,,6,11,0
+1101,2002,1,4,Midwest,7,83,Wake Forest,Pepperdine,74,10,9,1,0,No,,7,10,0
+1102,2002,1,4,Midwest,8,84,Stanford,Western Kentucky,68,9,16,1,0,No,,8,9,0
+1103,2002,2,1,South,1,84,Duke,Notre Dame,77,8,7,1,0,Yes (1),,1,8,0
+1104,2002,2,1,South,2,58,Alabama,Kent St,71,10,13,2,0,No,,2,10,0
+1105,2002,2,1,South,3,63,Pittsburgh,California,50,6,13,1,0,No,,3,6,0
+1106,2002,2,1,South,13,67,UNC Wilmington,Indiana,76,5,9,2,0,No,,13,5,0
+1107,2002,2,2,West,1,101,Cincinnati,UCLA,105,8,4,2,0,Yes (1),,1,8,0
+1108,2002,2,2,West,2,78,Oklahoma,Xavier,65,7,13,1,0,Yes (1),,2,7,0
+1109,2002,2,2,West,3,68,Arizona,Wyoming,60,11,8,1,0,Yes (1),,3,11,0
+1110,2002,2,2,West,4,67,Ohio St,Missouri,83,12,16,2,0,Yes (1),,4,12,0
+1111,2002,2,3,East,1,87,Maryland,Wisconsin,57,8,30,1,0,Yes (1),,1,8,0
+1112,2002,2,3,East,2,77,Connecticut,NC State,74,7,3,1,0,No,,2,7,0
+1113,2002,2,3,East,3,75,Georgia,Southern Illinois,77,11,2,2,0,No,,3,11,0
+1114,2002,2,3,East,4,87,Kentucky,Tulsa,82,12,5,1,0,Yes (1),,4,12,0
+1115,2002,2,4,Midwest,1,86,Kansas,Stanford,63,8,23,1,0,Yes (1),,1,8,0
+1116,2002,2,4,Midwest,2,92,Oregon,Wake Forest,87,7,5,1,0,Yes (1),,2,7,0
+1117,2002,2,4,Midwest,3,64,Mississippi St,Texas,68,6,4,2,0,Yes (1),,3,6,0
+1118,2002,2,4,Midwest,4,72,Illinois,Creighton,60,12,12,1,0,No,,4,12,0
+1119,2002,3,1,South,1,73,Duke,Indiana,74,5,1,2,0,Yes (1),,1,5,0
+1120,2002,3,1,South,10,78,Kent St,Pittsburgh,73,3,5,1,0,No,,10,3,0
+1121,2002,3,2,West,8,73,UCLA,Missouri,82,12,9,2,0,No,,8,12,0
+1122,2002,3,2,West,2,88,Oklahoma,Arizona,67,3,21,1,0,Yes (1),,2,3,0
+1123,2002,3,3,East,1,78,Maryland,Kentucky,68,4,10,1,0,Yes (1),,1,4,0
+1124,2002,3,3,East,2,71,Connecticut,Southern Illinois,59,11,12,1,0,No,,2,11,0
+1125,2002,3,4,Midwest,1,73,Kansas,Illinois,69,4,4,1,0,Yes (1),,1,4,0
+1126,2002,3,4,Midwest,2,72,Oregon,Texas,70,6,2,1,0,Yes (1),,2,6,0
+1127,2002,4,1,South,5,81,Indiana,Kent St,69,10,12,1,0,No,,5,10,0
+1128,2002,4,2,West,12,75,Missouri,Oklahoma,81,2,6,2,0,Yes (2),,12,2,0
+1129,2002,4,3,East,1,90,Maryland,Connecticut,82,2,8,1,0,Yes (1),,1,2,0
+1130,2002,4,4,Midwest,1,104,Kansas,Oregon,86,2,18,1,0,Yes (1),,1,2,0
+1131,2002,5,1,Final Four,5,73,Indiana,Oklahoma,64,2,9,1,0,Yes (2),,5,2,0
+1132,2002,5,2,Final Four,1,97,Maryland,Kansas,88,1,9,1,0,Yes (1),,1,1,0
+1133,2002,6,1,Championship,5,52,Indiana,Maryland,64,1,12,3,1,Yes (2),,5,1,1
+1134,2003,1,1,Midwest,1,95,Kentucky,IUPUI,64,16,31,1,0,Yes (1),,1,16,0
+1135,2003,1,1,Midwest,2,87,Pittsburgh,Wagner,61,15,26,1,0,No,,2,15,0
+1136,2003,1,1,Midwest,3,72,Marquette,Holy Cross,68,14,4,1,0,Yes (1),,3,14,0
+1137,2003,1,1,Midwest,4,71,Dayton,Tulsa,84,13,13,2,0,No,,4,13,0
+1138,2003,1,1,Midwest,5,81,Wisconsin,Weber St,74,12,7,1,0,Yes (1),,5,12,0
+1139,2003,1,1,Midwest,6,72,Missouri,Southern Illinois,71,11,1,1,0,No,,6,11,0
+1140,2003,1,1,Midwest,7,67,Indiana,Alabama,62,10,5,1,0,No,,7,10,0
+1141,2003,1,1,Midwest,8,58,Oregon,Utah,60,9,2,2,0,Yes (1),,8,9,0
+1142,2003,1,2,West,1,80,Arizona,Vermont,51,16,29,1,0,Yes (1),,1,16,0
+1143,2003,1,2,West,2,64,Kansas,Utah St,61,15,3,1,0,Yes (1),,2,15,0
+1144,2003,1,2,West,3,67,Duke,Colorado St,57,14,10,1,0,Yes (1),,3,14,0
+1145,2003,1,2,West,4,65,Illinois,Western Kentucky,60,13,5,1,0,No,,4,13,0
+1146,2003,1,2,West,5,70,Notre Dame,Wisconsin Milwaukee,69,12,1,1,0,No,,5,12,0
+1147,2003,1,2,West,6,73,Creighton,Central Michigan,79,11,6,2,0,No,,6,11,0
+1148,2003,1,2,West,7,71,Memphis,Arizona St,84,10,13,2,0,No,,7,10,0
+1149,2003,1,2,West,8,69,Cincinnati,Gonzaga,74,9,5,2,0,Yes (1),,8,9,0
+1150,2003,1,3,South,1,82,Texas,UNC Asheville,61,16,21,1,0,No,,1,16,0
+1151,2003,1,3,South,2,85,Florida,Sam Houston St,55,15,30,1,0,Yes (1),,2,15,0
+1152,2003,1,3,South,3,71,Xavier,Troy,59,14,12,1,0,No,,3,14,0
+1153,2003,1,3,South,4,77,Stanford,San Diego,69,13,8,1,0,No,,4,13,0
+1154,2003,1,3,South,5,58,Connecticut,BYU,53,12,5,1,0,No,,5,12,0
+1155,2003,1,3,South,6,75,Maryland,UNC Wilmington,73,11,2,1,0,Yes (1),,6,11,0
+1156,2003,1,3,South,7,79,Michigan St,Colorado,64,10,15,1,0,Yes (1),,7,10,0
+1157,2003,1,3,South,8,56,LSU,Purdue,80,9,24,2,0,Yes (1),,8,9,0
+1158,2003,1,4,East,1,71,Oklahoma,South Carolina St,54,16,17,1,0,Yes (1),,1,16,0
+1159,2003,1,4,East,2,76,Wake Forest,East Tennessee St,73,15,3,1,0,No,,2,15,0
+1160,2003,1,4,East,3,76,Syracuse,Manhattan,65,14,11,1,0,Yes (1),,3,14,0
+1161,2003,1,4,East,4,86,Louisville,Austin Peay,64,13,22,1,0,Yes (1),,4,13,0
+1162,2003,1,4,East,5,46,Mississippi St,Butler,47,12,1,2,0,Yes (1),,5,12,0
+1163,2003,1,4,East,6,77,Oklahoma St,Pennsylvania,63,11,14,1,0,No,,6,11,0
+1164,2003,1,4,East,7,63,St Josephs,Auburn,65,10,2,2,0,Yes (2),,7,10,0
+1165,2003,1,4,East,8,76,California,NC State,74,9,2,1,0,No,,8,9,0
+1166,2003,2,1,Midwest,1,74,Kentucky,Utah,54,9,20,1,0,Yes (1),,1,9,0
+1167,2003,2,1,Midwest,2,74,Pittsburgh,Indiana,52,7,22,1,0,No,,2,7,0
+1168,2003,2,1,Midwest,3,101,Marquette,Missouri,92,6,9,1,0,Yes (1),,3,6,0
+1169,2003,2,1,Midwest,13,60,Tulsa,Wisconsin,61,5,1,2,0,Yes (2),,13,5,0
+1170,2003,2,2,West,1,96,Arizona,Gonzaga,95,9,1,1,0,Yes (1),,1,9,0
+1171,2003,2,2,West,2,108,Kansas,Arizona St,76,10,32,1,0,Yes (1),,2,10,0
+1172,2003,2,2,West,3,86,Duke,Central Michigan,60,11,26,1,0,Yes (1),,3,11,0
+1173,2003,2,2,West,4,60,Illinois,Notre Dame,68,5,8,2,0,No,,4,5,0
+1174,2003,2,3,South,1,77,Texas,Purdue,67,9,10,1,0,Yes (2),,1,9,0
+1175,2003,2,3,South,2,46,Florida,Michigan St,68,7,22,2,0,Yes (1),,2,7,0
+1176,2003,2,3,South,3,64,Xavier,Maryland,77,6,13,2,0,Yes (2),,3,6,0
+1177,2003,2,3,South,4,74,Stanford,Connecticut,85,5,11,2,0,No,,4,5,0
+1178,2003,2,4,East,1,74,Oklahoma,California,65,8,9,1,0,Yes (1),,1,8,0
+1179,2003,2,4,East,2,62,Wake Forest,Auburn,68,10,6,2,0,Yes (2),,2,10,0
+1180,2003,2,4,East,3,68,Syracuse,Oklahoma St,56,6,12,1,0,Yes (1),,3,6,0
+1181,2003,2,4,East,4,71,Louisville,Butler,79,12,8,2,0,Yes (1),,4,12,0
+1182,2003,3,1,Midwest,1,63,Kentucky,Wisconsin,57,5,6,1,0,Yes (1),,1,5,0
+1183,2003,3,1,Midwest,2,74,Pittsburgh,Marquette,77,3,3,2,0,Yes (2),,2,3,0
+1184,2003,3,2,West,1,88,Arizona,Notre Dame,71,5,17,1,0,Yes (1),,1,5,0
+1185,2003,3,2,West,2,69,Kansas,Duke,65,3,4,1,0,Yes (1),,2,3,0
+1186,2003,3,3,South,1,82,Texas,Connecticut,78,5,4,1,0,No,,1,5,0
+1187,2003,3,3,South,7,60,Michigan St,Maryland,58,6,2,1,0,Yes (1),,7,6,0
+1188,2003,3,4,East,1,65,Oklahoma,Butler,54,12,11,1,0,Yes (1),,1,12,0
+1189,2003,3,4,East,10,78,Auburn,Syracuse,79,3,1,2,0,Yes (1),,10,3,0
+1190,2003,4,1,Midwest,1,69,Kentucky,Marquette,83,3,14,2,0,Yes (1),,1,3,0
+1191,2003,4,2,West,1,75,Arizona,Kansas,78,2,3,2,0,Yes (1),,1,2,0
+1192,2003,4,3,South,1,85,Texas,Michigan St,76,7,9,1,0,Yes (2),,1,7,0
+1193,2003,4,4,East,1,47,Oklahoma,Syracuse,63,3,16,2,0,Yes (1),,1,3,0
+1194,2003,5,1,Final Four,3,61,Marquette,Kansas,94,2,33,2,0,Yes (1),,3,2,0
+1195,2003,5,2,Final Four,1,84,Texas,Syracuse,95,3,11,2,0,Yes (2),,1,3,0
+1196,2003,6,1,Championship,2,78,Kansas,Syracuse,81,3,3,3,3,Yes (1),,2,3,3
+1197,2004,1,1,Midwest,1,96,Kentucky,Florida A&M,76,16,20,1,0,Yes (1),,1,16,0
+1198,2004,1,1,Midwest,2,76,Gonzaga,Valparaiso,49,15,27,1,0,Yes (1),,2,15,0
+1199,2004,1,1,Midwest,3,65,Georgia Tech,Northern Iowa,60,14,5,1,0,No,,3,14,0
+1200,2004,1,1,Midwest,4,78,Kansas,Illinois Chicago,53,13,25,1,0,Yes (1),,4,13,0
+1201,2004,1,1,Midwest,5,58,Providence,Pacific,66,12,8,2,0,No,,5,12,0
+1202,2004,1,1,Midwest,6,58,Boston College,Utah,51,11,7,1,0,No,,6,11,0
+1203,2004,1,1,Midwest,7,66,Michigan St,Nevada,72,10,6,2,0,Yes (1),,7,10,0
+1204,2004,1,1,Midwest,8,100,Washington,UAB,102,9,2,2,0,Yes (1),,8,9,0
+1205,2004,1,2,East,1,82,St Josephs,Liberty,63,16,19,1,0,Yes (2),,1,16,0
+1206,2004,1,2,East,2,75,Oklahoma St,Eastern Washington,56,15,19,1,0,No,,2,15,0
+1207,2004,1,2,East,3,53,Pittsburgh,Central Florida,44,14,9,1,0,Yes (2),,3,14,0
+1208,2004,1,2,East,4,79,Wake Forest,VCU,78,13,1,1,0,Yes (2),,4,13,0
+1209,2004,1,2,East,5,60,Florida,Manhattan,75,12,15,2,0,Yes (1),,5,12,0
+1210,2004,1,2,East,6,76,Wisconsin,Richmond,64,11,12,1,0,Yes (1),,6,11,0
+1211,2004,1,2,East,7,59,Memphis,South Carolina,43,10,16,1,0,No,,7,10,0
+1212,2004,1,2,East,8,76,Texas Tech,Charlotte,73,9,3,1,0,Yes (1),,8,9,0
+1213,2004,1,3,South,1,96,Duke,Alabama St,61,16,35,1,0,Yes (1),,1,16,0
+1214,2004,1,3,South,2,85,Mississippi St,Monmouth,52,15,33,1,0,Yes (1),,2,15,0
+1215,2004,1,3,South,3,66,Texas,Princeton,49,14,17,1,0,No,,3,14,0
+1216,2004,1,3,South,4,80,Cincinnati,East Tennessee St,77,13,3,1,0,Yes (1),,4,13,0
+1217,2004,1,3,South,5,72,Illinois,Murray St,53,12,19,1,0,No,,5,12,0
+1218,2004,1,3,South,6,63,North Carolina,Air Force,52,11,11,1,0,Yes (1),,6,11,0
+1219,2004,1,3,South,7,80,Xavier,Louisville,70,10,10,1,0,Yes (2),,7,10,0
+1220,2004,1,3,South,8,80,Seton Hall,Arizona,76,9,4,1,0,Yes (1),,8,9,0
+1221,2004,1,4,West,1,71,Stanford,Texas San Antonio,45,16,26,1,0,No,,1,16,0
+1222,2004,1,4,West,2,70,Connecticut,Vermont,53,15,17,1,0,Yes (2),,2,15,0
+1223,2004,1,4,West,3,61,NC State,Louisiana Lafayette,52,14,9,1,0,No,,3,14,0
+1224,2004,1,4,West,4,86,Maryland,UTEP,83,13,3,1,0,Yes (1),,4,13,0
+1225,2004,1,4,West,5,80,Syracuse,BYU,75,12,5,1,0,Yes (1),,5,12,0
+1226,2004,1,4,West,6,71,Vanderbilt,Western Michigan,58,11,13,1,0,No,,6,11,0
+1227,2004,1,4,West,7,76,DePaul,Dayton,69,10,7,1,0,No,,7,10,0
+1228,2004,1,4,West,8,65,Alabama,Southern Illinois,64,9,1,1,0,No,,8,9,0
+1229,2004,2,1,Midwest,1,75,Kentucky,UAB,76,9,1,2,0,Yes (1),,1,9,0
+1230,2004,2,1,Midwest,2,72,Gonzaga,Nevada,91,10,19,2,0,Yes (1),,2,10,0
+1231,2004,2,1,Midwest,3,57,Georgia Tech,Boston College,54,6,3,1,0,No,,3,6,0
+1232,2004,2,1,Midwest,4,78,Kansas,Pacific,63,12,15,1,0,Yes (1),,4,12,0
+1233,2004,2,2,East,1,70,St Josephs,Texas Tech,65,8,5,1,0,Yes (2),,1,8,0
+1234,2004,2,2,East,2,70,Oklahoma St,Memphis,53,7,17,1,0,No,,2,7,0
+1235,2004,2,2,East,3,59,Pittsburgh,Wisconsin,55,6,4,1,0,Yes (2),,3,6,0
+1236,2004,2,2,East,4,84,Wake Forest,Manhattan,80,12,4,1,0,No,,4,12,0
+1237,2004,2,3,South,1,90,Duke,Seton Hall,62,8,28,1,0,Yes (1),,1,8,0
+1238,2004,2,3,South,2,74,Mississippi St,Xavier,89,7,15,2,0,Yes (1),,2,7,0
+1239,2004,2,3,South,3,78,Texas,North Carolina,75,6,3,1,0,Yes (2),,3,6,0
+1240,2004,2,3,South,4,68,Cincinnati,Illinois,92,5,24,2,0,Yes (1),,4,5,0
+1241,2004,2,4,West,1,67,Stanford,Alabama,70,8,3,2,0,No,,1,8,0
+1242,2004,2,4,West,2,72,Connecticut,DePaul,55,7,17,1,0,No,,2,7,0
+1243,2004,2,4,West,3,73,NC State,Vanderbilt,75,6,2,2,0,No,,3,6,0
+1244,2004,2,4,West,4,70,Maryland,Syracuse,72,5,2,2,0,Yes (1),,4,5,0
+1245,2004,3,1,Midwest,9,74,UAB,Kansas,100,4,26,2,0,Yes (2),,9,4,0
+1246,2004,3,1,Midwest,10,67,Nevada,Georgia Tech,72,3,5,2,0,Yes (1),,10,3,0
+1247,2004,3,2,East,1,84,St Josephs,Wake Forest,80,4,4,1,0,No,,1,4,0
+1248,2004,3,2,East,2,63,Oklahoma St,Pittsburgh,51,3,12,1,0,No,,2,3,0
+1249,2004,3,3,South,1,72,Duke,Illinois,62,5,10,1,0,Yes (1),,1,5,0
+1250,2004,3,3,South,7,79,Xavier,Texas,71,3,8,1,0,No,,7,3,0
+1251,2004,3,4,West,8,80,Alabama,Syracuse,71,5,9,1,0,Yes (2),,8,5,0
+1252,2004,3,4,West,2,73,Connecticut,Vanderbilt,53,6,20,1,0,No,,2,6,0
+1253,2004,4,1,Midwest,4,71,Kansas,Georgia Tech,79,3,8,2,0,Yes (1),,4,3,0
+1254,2004,4,2,East,1,62,St Josephs,Oklahoma St,64,2,2,2,0,No,,1,2,0
+1255,2004,4,3,South,1,66,Duke,Xavier,63,7,3,1,0,Yes (1),,1,7,0
+1256,2004,4,4,West,8,71,Alabama,Connecticut,87,2,16,2,0,No,,8,2,0
+1257,2004,5,1,Final Four,3,67,Georgia Tech,Oklahoma St,65,2,2,1,0,No,,3,2,0
+1258,2004,5,2,Final Four,1,78,Duke,Connecticut,79,2,1,2,0,Yes (1),,1,2,0
+1259,2004,6,1,Championship,3,73,Georgia Tech,Connecticut,82,2,9,3,2,No,,3,2,2
+1260,2005,1,1,Midwest,1,67,Illinois,Fairleigh Dickinson,55,16,12,1,0,No,,1,16,0
+1261,2005,1,1,Midwest,2,63,Oklahoma St,Southeastern Louisiana,50,15,13,1,0,No,,2,15,0
+1262,2005,1,1,Midwest,3,66,Arizona,Utah St,53,14,13,1,0,Yes (1),,3,14,0
+1263,2005,1,1,Midwest,4,85,Boston College,Pennsylvania,65,13,20,1,0,No,,4,13,0
+1264,2005,1,1,Midwest,5,73,Alabama,Wisconsin Milwaukee,83,12,10,2,0,No,,5,12,0
+1265,2005,1,1,Midwest,6,68,LSU,UAB,82,11,14,2,0,Yes (1),,6,11,0
+1266,2005,1,1,Midwest,7,65,Southern Illinois,St Marys,56,10,9,1,0,Yes (2),,7,10,0
+1267,2005,1,1,Midwest,8,57,Texas,Nevada,61,9,4,2,0,Yes (2),,8,9,0
+1268,2005,1,2,West,1,88,Washington,Montana,77,16,11,1,0,Yes (1),,1,16,0
+1269,2005,1,2,West,2,70,Wake Forest,Chattanooga,54,15,16,1,0,No,,2,15,0
+1270,2005,1,2,West,3,74,Gonzaga,Winthrop,64,14,10,1,0,Yes (1),,3,14,0
+1271,2005,1,2,West,4,68,Louisville,Louisiana Lafayette,62,13,6,1,0,Yes (1),,4,13,0
+1272,2005,1,2,West,5,80,Georgia Tech,George Washington,68,12,12,1,0,No,,5,12,0
+1273,2005,1,2,West,6,78,Texas Tech,UCLA,66,11,12,1,0,Yes (1),,6,11,0
+1274,2005,1,2,West,7,63,West Virginia,Creighton,61,10,2,1,0,No,,7,10,0
+1275,2005,1,2,West,8,79,Pacific,Pittsburgh,71,9,8,1,0,No,,8,9,0
+1276,2005,1,3,East,1,96,North Carolina,Oakland,68,16,28,1,0,Yes (1),,1,16,0
+1277,2005,1,3,East,2,77,Connecticut,Central Florida,71,15,6,1,0,Yes (2),,2,15,0
+1278,2005,1,3,East,3,63,Kansas,Bucknell,64,14,1,2,0,Yes (1),,3,14,0
+1279,2005,1,3,East,4,67,Florida,Ohio,62,13,5,1,0,Yes (1),,4,13,0
+1280,2005,1,3,East,5,55,Villanova,New Mexico,47,12,8,1,0,Yes (1),,5,12,0
+1281,2005,1,3,East,6,57,Wisconsin,Northern Iowa,52,11,5,1,0,Yes (1),,6,11,0
+1282,2005,1,3,East,7,63,Charlotte,NC State,75,10,12,2,0,No,,7,10,0
+1283,2005,1,3,East,8,53,Minnesota,Iowa St,64,9,11,2,0,Yes (1),,8,9,0
+1284,2005,1,4,South,1,63,Duke,Delaware St,46,16,17,1,0,Yes (1),,1,16,0
+1285,2005,1,4,South,2,72,Kentucky,Eastern Kentucky,64,15,8,1,0,Yes (1),,2,15,0
+1286,2005,1,4,South,3,84,Oklahoma,Niagara,67,14,17,1,0,Yes (1),,3,14,0
+1287,2005,1,4,South,4,57,Syracuse,Vermont,60,13,3,2,0,Yes (1),,4,13,0
+1288,2005,1,4,South,5,89,Michigan St,Old Dominion,81,12,8,1,0,Yes (1),,5,12,0
+1289,2005,1,4,South,6,60,Utah,UTEP,54,11,6,1,0,No,,6,11,0
+1290,2005,1,4,South,7,76,Cincinnati,Iowa,64,10,12,1,0,Yes (1),,7,10,0
+1291,2005,1,4,South,8,70,Stanford,Mississippi St,93,9,23,2,0,Yes (2),,8,9,0
+1292,2005,2,1,Midwest,1,71,Illinois,Nevada,59,9,12,1,0,Yes (2),,1,9,0
+1293,2005,2,1,Midwest,2,85,Oklahoma St,Southern Illinois,77,7,8,1,0,No,,2,7,0
+1294,2005,2,1,Midwest,3,85,Arizona,UAB,63,11,22,1,0,Yes (1),,3,11,0
+1295,2005,2,1,Midwest,4,75,Boston College,Wisconsin Milwaukee,83,12,8,2,0,No,,4,12,0
+1296,2005,2,2,West,1,97,Washington,Pacific,79,8,18,1,0,Yes (1),,1,8,0
+1297,2005,2,2,West,2,105,Wake Forest,West Virginia,111,7,6,2,0,No,,2,7,0
+1298,2005,2,2,West,3,69,Gonzaga,Texas Tech,71,6,2,2,0,Yes (1),,3,6,0
+1299,2005,2,2,West,4,76,Louisville,Georgia Tech,54,5,22,1,0,Yes (1),,4,5,0
+1300,2005,2,3,East,1,92,North Carolina,Iowa St,65,9,27,1,0,Yes (1),,1,9,0
+1301,2005,2,3,East,2,62,Connecticut,NC State,65,10,3,2,0,No,,2,10,0
+1302,2005,2,3,East,14,62,Bucknell,Wisconsin,71,6,9,2,0,Yes (2),,14,6,0
+1303,2005,2,3,East,4,65,Florida,Villanova,76,5,11,2,0,Yes (1),,4,5,0
+1304,2005,2,4,South,1,63,Duke,Mississippi St,55,9,8,1,0,Yes (1),,1,9,0
+1305,2005,2,4,South,2,69,Kentucky,Cincinnati,60,7,9,1,0,Yes (1),,2,7,0
+1306,2005,2,4,South,3,58,Oklahoma,Utah,67,6,9,2,0,Yes (1),,3,6,0
+1307,2005,2,4,South,13,61,Vermont,Michigan St,72,5,11,2,0,Yes (1),,13,5,0
+1308,2005,3,1,Midwest,1,77,Illinois,Wisconsin Milwaukee,63,12,14,1,0,No,,1,12,0
+1309,2005,3,1,Midwest,2,78,Oklahoma St,Arizona,79,3,1,2,0,Yes (2),,2,3,0
+1310,2005,3,2,West,1,79,Washington,Louisville,93,4,14,2,0,Yes (1),,1,4,0
+1311,2005,3,2,West,7,65,West Virginia,Texas Tech,60,6,5,1,0,Yes (2),,7,6,0
+1312,2005,3,3,East,1,67,North Carolina,Villanova,66,5,1,1,0,Yes (1),,1,5,0
+1313,2005,3,3,East,10,56,NC State,Wisconsin,65,6,9,2,0,Yes (2),,10,6,0
+1314,2005,3,4,South,1,68,Duke,Michigan St,78,5,10,2,0,Yes (1),,1,5,0
+1315,2005,3,4,South,2,62,Kentucky,Utah,52,6,10,1,0,Yes (1),,2,6,0
+1316,2005,4,1,Midwest,1,90,Illinois,Arizona,89,3,1,1,0,Yes (2),,1,3,0
+1317,2005,4,2,West,4,93,Louisville,West Virginia,85,7,8,1,0,Yes (1),,4,7,0
+1318,2005,4,3,East,1,88,North Carolina,Wisconsin,82,6,6,1,0,Yes (1),,1,6,0
+1319,2005,4,4,South,5,94,Michigan St,Kentucky,88,2,6,1,0,Yes (1),,5,2,0
+1320,2005,5,1,Final Four,1,72,Illinois,Louisville,57,4,15,1,0,Yes (2),,1,4,0
+1321,2005,5,2,Final Four,1,87,North Carolina,Michigan St,71,5,16,1,0,Yes (1),,1,5,0
+1322,2005,6,1,Championship,1,70,Illinois,North Carolina,75,1,5,3,1,Yes (2),,1,1,1
+1323,2006,1,1,South,1,70,Duke,Southern,54,16,16,1,0,Yes (1),,1,16,0
+1324,2006,1,1,South,2,60,Texas,Pennsylvania,52,15,8,1,0,No,,2,15,0
+1325,2006,1,1,South,3,63,Iowa,Northwestern St,64,14,1,2,0,Yes (1),,3,14,0
+1326,2006,1,1,South,4,80,LSU,Iona,64,13,16,1,0,Yes (1),,4,13,0
+1327,2006,1,1,South,5,58,Syracuse,Texas A&M,66,12,8,2,0,Yes (1),,5,12,0
+1328,2006,1,1,South,6,64,West Virginia,Southern Illinois,46,11,18,1,0,No,,6,11,0
+1329,2006,1,1,South,7,52,California,NC State,58,10,6,2,0,No,,7,10,0
+1330,2006,1,1,South,8,88,George Washington,UNC Wilmington,85,9,3,1,0,No,,8,9,0
+1331,2006,1,2,West,1,94,Memphis,Oral Roberts,78,16,16,1,0,No,,1,16,0
+1332,2006,1,2,West,2,78,UCLA,Belmont,44,15,34,1,0,Yes (2),,2,15,0
+1333,2006,1,2,West,3,79,Gonzaga,Xavier,75,14,4,1,0,Yes (1),,3,14,0
+1334,2006,1,2,West,4,73,Kansas,Bradley,77,13,4,2,0,Yes (1),,4,13,0
+1335,2006,1,2,West,5,79,Pittsburgh,Kent St,64,12,15,1,0,No,,5,12,0
+1336,2006,1,2,West,6,87,Indiana,San Diego St,83,11,4,1,0,No,,6,11,0
+1337,2006,1,2,West,7,85,Marquette,Alabama,90,10,5,2,0,Yes (1),,7,10,0
+1338,2006,1,2,West,8,55,Arkansas,Bucknell,59,9,4,2,0,No,,8,9,0
+1339,2006,1,3,East,1,72,Connecticut,Albany,59,16,13,1,0,No,,1,16,0
+1340,2006,1,3,East,2,63,Tennessee,Winthrop,61,15,2,1,0,Yes (1),,2,15,0
+1341,2006,1,3,East,3,69,North Carolina,Murray St,65,14,4,1,0,Yes (1),,3,14,0
+1342,2006,1,3,East,4,78,Illinois,Air Force,69,13,9,1,0,No,,4,13,0
+1343,2006,1,3,East,5,75,Washington,Utah St,61,12,14,1,0,Yes (1),,5,12,0
+1344,2006,1,3,East,6,65,Michigan St,George Mason,75,11,10,2,0,Yes (1),,6,11,0
+1345,2006,1,3,East,7,86,Wichita St,Seton Hall,66,10,20,1,0,Yes (2),,7,10,0
+1346,2006,1,3,East,8,69,Kentucky,UAB,64,9,5,1,0,Yes (1),,8,9,0
+1347,2006,1,4,Midwest,1,58,Villanova,Monmouth,45,16,13,1,0,Yes (1),,1,16,0
+1348,2006,1,4,Midwest,2,70,Ohio St,Davidson,62,15,8,1,0,Yes (1),,2,15,0
+1349,2006,1,4,Midwest,3,76,Florida,South Alabama,50,14,26,1,0,Yes (1),,3,14,0
+1350,2006,1,4,Midwest,4,88,Boston College,Pacific,76,13,12,1,0,No,,4,13,0
+1351,2006,1,4,Midwest,5,79,Nevada,Montana,87,12,8,2,0,Yes (1),,5,12,0
+1352,2006,1,4,Midwest,6,74,Oklahoma,Wisconsin Milwaukee,82,11,8,2,0,Yes (1),,6,11,0
+1353,2006,1,4,Midwest,7,54,Georgetown,Northern Iowa,49,10,5,1,0,No,,7,10,0
+1354,2006,1,4,Midwest,8,94,Arizona,Wisconsin,75,9,19,1,0,Yes (1),,8,9,0
+1355,2006,2,1,South,1,74,Duke,George Washington,61,8,13,1,0,Yes (1),,1,8,0
+1356,2006,2,1,South,2,75,Texas,NC State,54,10,21,1,0,No,,2,10,0
+1357,2006,2,1,South,14,54,Northwestern St,West Virginia,67,6,13,2,0,No,,14,6,0
+1358,2006,2,1,South,4,58,LSU,Texas A&M,57,12,1,1,0,Yes (1),,4,12,0
+1359,2006,2,2,West,1,72,Memphis,Bucknell,56,9,16,1,0,No,,1,9,0
+1360,2006,2,2,West,2,62,UCLA,Alabama,59,10,3,1,0,No,,2,10,0
+1361,2006,2,2,West,3,90,Gonzaga,Indiana,80,6,10,1,0,Yes (1),,3,6,0
+1362,2006,2,2,West,13,72,Bradley,Pittsburgh,66,5,6,1,0,Yes (1),,13,5,0
+1363,2006,2,3,East,1,87,Connecticut,Kentucky,83,8,4,1,0,Yes (2),,1,8,0
+1364,2006,2,3,East,2,73,Tennessee,Wichita St,80,7,7,2,0,Yes (1),,2,7,0
+1365,2006,2,3,East,3,60,North Carolina,George Mason,65,11,5,2,0,Yes (1),,3,11,0
+1366,2006,2,3,East,4,64,Illinois,Washington,67,5,3,2,0,Yes (2),,4,5,0
+1367,2006,2,4,Midwest,1,82,Villanova,Arizona,78,8,4,1,0,Yes (1),,1,8,0
+1368,2006,2,4,Midwest,2,52,Ohio St,Georgetown,70,7,18,2,0,Yes (1),,2,7,0
+1369,2006,2,4,Midwest,3,82,Florida,Wisconsin Milwaukee,60,11,22,1,0,Yes (1),,3,11,0
+1370,2006,2,4,Midwest,4,69,Boston College,Montana,56,12,13,1,0,Yes (2),,4,12,0
+1371,2006,3,1,South,1,54,Duke,LSU,62,4,8,2,0,Yes (1),,1,4,0
+1372,2006,3,1,South,2,74,Texas,West Virginia,71,6,3,1,0,No,,2,6,0
+1373,2006,3,2,West,1,80,Memphis,Bradley,64,13,16,1,0,Yes (2),,1,13,0
+1374,2006,3,2,West,2,73,UCLA,Gonzaga,71,3,2,1,0,Yes (2),,2,3,0
+1375,2006,3,3,East,1,98,Connecticut,Washington,92,5,6,1,0,Yes (2),,1,5,0
+1376,2006,3,3,East,7,55,Wichita St,George Mason,63,11,8,2,0,No,,7,11,0
+1377,2006,3,4,Midwest,1,60,Villanova,Boston College,59,4,1,1,0,Yes (1),,1,4,0
+1378,2006,3,4,Midwest,7,53,Georgetown,Florida,57,3,4,2,0,Yes (2),,7,3,0
+1379,2006,4,1,South,4,70,LSU,Texas,60,2,10,1,0,Yes (1),,4,2,0
+1380,2006,4,2,West,1,45,Memphis,UCLA,50,2,5,2,0,No,,1,2,0
+1381,2006,4,3,East,1,84,Connecticut,George Mason,86,11,2,2,0,No,,1,11,0
+1382,2006,4,4,Midwest,1,62,Villanova,Florida,75,3,13,2,0,Yes (1),,1,3,0
+1383,2006,5,1,Final Four,4,45,LSU,UCLA,59,2,14,2,0,Yes (1),,4,2,0
+1384,2006,5,2,Final Four,11,58,George Mason,Florida,73,3,15,2,0,Yes (2),,11,3,0
+1385,2006,6,1,Championship,2,57,UCLA,Florida,73,3,16,3,3,Yes (2),,2,3,3
+1386,2007,1,1,Midwest,1,112,Florida,Jackson St,69,16,43,1,0,Yes (1),,1,16,0
+1387,2007,1,1,Midwest,2,76,Wisconsin,Texas A&M Corpus Christi,63,15,13,1,0,Yes (1),,2,15,0
+1388,2007,1,1,Midwest,3,58,Oregon,Miami Ohio,56,14,2,1,0,Yes (1),,3,14,0
+1389,2007,1,1,Midwest,4,82,Maryland,Davidson,70,13,12,1,0,Yes (1),,4,13,0
+1390,2007,1,1,Midwest,5,57,Butler,Old Dominion,46,12,11,1,0,Yes (2),,5,12,0
+1391,2007,1,1,Midwest,6,64,Notre Dame,Winthrop,74,11,10,2,0,No,,6,11,0
+1392,2007,1,1,Midwest,7,67,UNLV,Georgia Tech,63,10,4,1,0,No,,7,10,0
+1393,2007,1,1,Midwest,8,63,Arizona,Purdue,72,9,9,2,0,Yes (1),,8,9,0
+1394,2007,1,2,West,1,107,Kansas,Niagara,67,16,40,1,0,Yes (1),,1,16,0
+1395,2007,1,2,West,2,70,UCLA,Weber St,42,15,28,1,0,No,,2,15,0
+1396,2007,1,2,West,3,79,Pittsburgh,Wright St,58,14,21,1,0,No,,3,14,0
+1397,2007,1,2,West,4,61,Southern Illinois,Holy Cross,51,13,10,1,0,No,,4,13,0
+1398,2007,1,2,West,5,54,Virginia Tech,Illinois,52,12,2,1,0,Yes (1),,5,12,0
+1399,2007,1,2,West,6,77,Duke,VCU,79,11,2,2,0,Yes (1),,6,11,0
+1400,2007,1,2,West,7,70,Indiana,Gonzaga,57,10,13,1,0,Yes (2),,7,10,0
+1401,2007,1,2,West,8,67,Kentucky,Villanova,58,9,9,1,0,Yes (1),,8,9,0
+1402,2007,1,3,East,1,85,North Carolina,Eastern Kentucky,65,16,20,1,0,Yes (1),,1,16,0
+1403,2007,1,3,East,2,80,Georgetown,Belmont,55,15,25,1,0,Yes (2),,2,15,0
+1404,2007,1,3,East,3,70,Washington St,Oral Roberts,54,14,16,1,0,No,,3,14,0
+1405,2007,1,3,East,4,79,Texas,New Mexico St,67,13,12,1,0,Yes (2),,4,13,0
+1406,2007,1,3,East,5,77,USC,Arkansas,60,12,17,1,0,No,,5,12,0
+1407,2007,1,3,East,6,77,Vanderbilt,George Washington,44,11,33,1,0,No,,6,11,0
+1408,2007,1,3,East,7,84,Boston College,Texas Tech,75,10,9,1,0,Yes (2),,7,10,0
+1409,2007,1,3,East,8,49,Marquette,Michigan St,61,9,12,2,0,Yes (1),,8,9,0
+1410,2007,1,4,South,1,78,Ohio St,Central Connecticut St,57,16,21,1,0,Yes (1),,1,16,0
+1411,2007,1,4,South,2,73,Memphis,North Texas,58,15,15,1,0,No,,2,15,0
+1412,2007,1,4,South,3,68,Texas A&M,Pennsylvania,52,14,16,1,0,No,,3,14,0
+1413,2007,1,4,South,4,84,Virginia,Albany,57,13,27,1,0,Yes (1),,4,13,0
+1414,2007,1,4,South,5,121,Tennessee,Long Beach St,86,12,35,1,0,Yes (1),,5,12,0
+1415,2007,1,4,South,6,78,Louisville,Stanford,58,11,20,1,0,Yes (1),,6,11,0
+1416,2007,1,4,South,7,77,Nevada,Creighton,71,10,6,1,0,Yes (1),,7,10,0
+1417,2007,1,4,South,8,77,BYU,Xavier,79,9,2,2,0,No,,8,9,0
+1418,2007,2,1,Midwest,1,74,Florida,Purdue,67,9,7,1,0,Yes (1),,1,9,0
+1419,2007,2,1,Midwest,2,68,Wisconsin,UNLV,74,7,6,2,0,Yes (1),,2,7,0
+1420,2007,2,1,Midwest,3,75,Oregon,Winthrop,61,11,14,1,0,Yes (1),,3,11,0
+1421,2007,2,1,Midwest,4,59,Maryland,Butler,62,5,3,2,0,Yes (1),,4,5,0
+1422,2007,2,2,West,1,88,Kansas,Kentucky,76,8,12,1,0,Yes (1),,1,8,0
+1423,2007,2,2,West,2,54,UCLA,Indiana,49,7,5,1,0,No,,2,7,0
+1424,2007,2,2,West,3,84,Pittsburgh,VCU,79,11,5,1,0,Yes (2),,3,11,0
+1425,2007,2,2,West,4,63,Southern Illinois,Virginia Tech,48,5,15,1,0,Yes (2),,4,5,0
+1426,2007,2,3,East,1,81,North Carolina,Michigan St,67,9,14,1,0,Yes (1),,1,9,0
+1427,2007,2,3,East,2,62,Georgetown,Boston College,55,7,7,1,0,No,,2,7,0
+1428,2007,2,3,East,3,74,Washington St,Vanderbilt,78,6,4,2,0,No,,3,6,0
+1429,2007,2,3,East,4,68,Texas,USC,87,5,19,2,0,No,,4,5,0
+1430,2007,2,4,South,1,78,Ohio St,Xavier,71,9,7,1,0,Yes (1),,1,9,0
+1431,2007,2,4,South,2,78,Memphis,Nevada,62,7,16,1,0,Yes (2),,2,7,0
+1432,2007,2,4,South,3,72,Texas A&M,Louisville,69,6,3,1,0,Yes (2),,3,6,0
+1433,2007,2,4,South,4,74,Virginia,Tennessee,77,5,3,2,0,Yes (1),,4,5,0
+1434,2007,3,1,Midwest,1,65,Florida,Butler,57,5,8,1,0,Yes (1),,1,5,0
+1435,2007,3,1,Midwest,7,72,UNLV,Oregon,76,3,4,2,0,Yes (2),,7,3,0
+1436,2007,3,2,West,1,61,Kansas,Southern Illinois,58,4,3,1,0,Yes (1),,1,4,0
+1437,2007,3,2,West,2,64,UCLA,Pittsburgh,55,3,9,1,0,No,,2,3,0
+1438,2007,3,3,East,1,74,North Carolina,USC,64,5,10,1,0,Yes (1),,1,5,0
+1439,2007,3,3,East,2,66,Georgetown,Vanderbilt,65,6,1,1,0,No,,2,6,0
+1440,2007,3,4,South,1,85,Ohio St,Tennessee,84,5,1,1,0,Yes (1),,1,5,0
+1441,2007,3,4,South,2,65,Memphis,Texas A&M,64,3,1,1,0,No,,2,3,0
+1442,2007,4,1,Midwest,1,85,Florida,Oregon,77,3,8,1,0,Yes (1),,1,3,0
+1443,2007,4,2,West,1,55,Kansas,UCLA,68,2,13,2,0,Yes (1),,1,2,0
+1444,2007,4,3,East,1,84,North Carolina,Georgetown,96,2,12,2,0,Yes (1),,1,2,0
+1445,2007,4,4,South,1,92,Ohio St,Memphis,76,2,16,1,0,Yes (1),,1,2,0
+1446,2007,5,1,Final Four,1,76,Florida,UCLA,66,2,10,1,0,Yes (1),,1,2,0
+1447,2007,5,2,Final Four,2,60,Georgetown,Ohio St,67,1,7,2,0,Yes (2),,2,1,0
+1448,2007,6,1,Championship,1,84,Florida,Ohio St,75,1,9,4,1,Yes (1),,1,1,1
+1449,2008,1,1,East,1,113,North Carolina,Mount St Marys,74,16,39,1,0,Yes (1),,1,16,0
+1450,2008,1,1,East,2,72,Tennessee,American,57,15,15,1,0,Yes (1),,2,15,0
+1451,2008,1,1,East,3,79,Louisville,Boise St,61,14,18,1,0,Yes (1),,3,14,0
+1452,2008,1,1,East,4,71,Washington St,Winthrop,40,13,31,1,0,No,,4,13,0
+1453,2008,1,1,East,5,68,Notre Dame,George Mason,50,12,18,1,0,No,,5,12,0
+1454,2008,1,1,East,6,72,Oklahoma,St Josephs,64,11,8,1,0,Yes (1),,6,11,0
+1455,2008,1,1,East,7,81,Butler,South Alabama,61,10,20,1,0,No,,7,10,0
+1456,2008,1,1,East,8,72,Indiana,Arkansas,86,9,14,2,0,No,,8,9,0
+1457,2008,1,2,Midwest,1,85,Kansas,Portland St,61,16,24,1,0,Yes (1),,1,16,0
+1458,2008,1,2,Midwest,2,66,Georgetown,UMBC,47,15,19,1,0,No,,2,15,0
+1459,2008,1,2,Midwest,3,71,Wisconsin,Cal St Fullerton,56,14,15,1,0,Yes (1),,3,14,0
+1460,2008,1,2,Midwest,4,62,Vanderbilt,Siena,83,13,21,2,0,No,,4,13,0
+1461,2008,1,2,Midwest,5,69,Clemson,Villanova,75,12,6,2,0,Yes (2),,5,12,0
+1462,2008,1,2,Midwest,6,67,USC,Kansas St,80,11,13,2,0,Yes (2),,6,11,0
+1463,2008,1,2,Midwest,7,76,Gonzaga,Davidson,82,10,6,2,0,Yes (1),,7,10,0
+1464,2008,1,2,Midwest,8,71,UNLV,Kent St,58,9,13,1,0,No,,8,9,0
+1465,2008,1,3,South,1,87,Memphis,Texas Arlington,63,16,24,1,0,No,,1,16,0
+1466,2008,1,3,South,2,74,Texas,Austin Peay,54,15,20,1,0,No,,2,15,0
+1467,2008,1,3,South,3,77,Stanford,Cornell,53,14,24,1,0,No,,3,14,0
+1468,2008,1,3,South,4,82,Pittsburgh,Oral Roberts,63,13,19,1,0,No,,4,13,0
+1469,2008,1,3,South,5,72,Michigan St,Temple,61,12,11,1,0,Yes (1),,5,12,0
+1470,2008,1,3,South,6,74,Marquette,Kentucky,66,11,8,1,0,Yes (1),,6,11,0
+1471,2008,1,3,South,7,78,Miami,St Marys,64,10,14,1,0,Yes (2),,7,10,0
+1472,2008,1,3,South,8,76,Mississippi St,Oregon,69,9,7,1,0,Yes (1),,8,9,0
+1473,2008,1,4,West,1,70,UCLA,Mississippi Valley St,29,16,41,1,0,No,,1,16,0
+1474,2008,1,4,West,2,71,Duke,Belmont,70,15,1,1,0,Yes (1),,2,15,0
+1475,2008,1,4,West,3,73,Xavier,Georgia,61,14,12,1,0,No,,3,14,0
+1476,2008,1,4,West,4,69,Connecticut,San Diego,70,13,1,2,0,No,,4,13,0
+1477,2008,1,4,West,5,99,Drake,Western Kentucky,101,12,2,2,0,No,,5,12,0
+1478,2008,1,4,West,6,90,Purdue,Baylor,79,11,11,1,0,Yes (1),,6,11,0
+1479,2008,1,4,West,7,75,West Virginia,Arizona,65,10,10,1,0,Yes (2),,7,10,0
+1480,2008,1,4,West,8,62,BYU,Texas A&M,67,9,5,2,0,No,,8,9,0
+1481,2008,2,1,East,1,108,North Carolina,Arkansas,77,9,31,1,0,Yes (1),,1,9,0
+1482,2008,2,1,East,2,76,Tennessee,Butler,71,7,5,1,0,Yes (1),,2,7,0
+1483,2008,2,1,East,3,78,Louisville,Oklahoma,48,6,30,1,0,Yes (1),,3,6,0
+1484,2008,2,1,East,4,61,Washington St,Notre Dame,41,5,20,1,0,No,,4,5,0
+1485,2008,2,2,Midwest,1,75,Kansas,UNLV,56,8,19,1,0,Yes (1),,1,8,0
+1486,2008,2,2,Midwest,2,70,Georgetown,Davidson,74,10,4,2,0,No,,2,10,0
+1487,2008,2,2,Midwest,3,72,Wisconsin,Kansas St,55,11,17,1,0,Yes (1),,3,11,0
+1488,2008,2,2,Midwest,13,72,Siena,Villanova,84,12,12,2,0,Yes (2),,13,12,0
+1489,2008,2,3,South,1,77,Memphis,Mississippi St,74,8,3,1,0,Yes (2),,1,8,0
+1490,2008,2,3,South,2,75,Texas,Miami,72,7,3,1,0,No,,2,7,0
+1491,2008,2,3,South,3,82,Stanford,Marquette,81,6,1,1,0,Yes (2),,3,6,0
+1492,2008,2,3,South,4,54,Pittsburgh,Michigan St,65,5,11,2,0,Yes (2),,4,5,0
+1493,2008,2,4,West,1,51,UCLA,Texas A&M,49,9,2,1,0,No,,1,9,0
+1494,2008,2,4,West,2,67,Duke,West Virginia,73,7,6,2,0,Yes (1),,2,7,0
+1495,2008,2,4,West,3,85,Xavier,Purdue,78,6,7,1,0,Yes (2),,3,6,0
+1496,2008,2,4,West,13,63,San Diego,Western Kentucky,72,12,9,2,0,No,,13,12,0
+1497,2008,3,1,East,1,68,North Carolina,Washington St,47,4,21,1,0,Yes (1),,1,4,0
+1498,2008,3,1,East,2,60,Tennessee,Louisville,79,3,19,2,0,Yes (1),,2,3,0
+1499,2008,3,2,Midwest,1,72,Kansas,Villanova,57,12,15,1,0,Yes (1),,1,12,0
+1500,2008,3,2,Midwest,10,73,Davidson,Wisconsin,56,3,17,1,0,Yes (2),,10,3,0
+1501,2008,3,3,South,1,92,Memphis,Michigan St,74,5,18,1,0,Yes (2),,1,5,0
+1502,2008,3,3,South,2,82,Texas,Stanford,62,3,20,1,0,No,,2,3,0
+1503,2008,3,4,West,1,88,UCLA,Western Kentucky,78,12,10,1,0,No,,1,12,0
+1504,2008,3,4,West,7,75,West Virginia,Xavier,79,3,4,2,0,No,,7,3,0
+1505,2008,4,1,East,1,83,North Carolina,Louisville,73,3,10,1,0,Yes (1),,1,3,0
+1506,2008,4,2,Midwest,1,59,Kansas,Davidson,57,10,2,1,0,Yes (1),,1,10,0
+1507,2008,4,3,South,1,85,Memphis,Texas,67,2,18,1,0,No,,1,2,0
+1508,2008,4,4,West,1,76,UCLA,Xavier,57,3,19,1,0,No,,1,3,0
+1509,2008,5,1,Final Four,1,66,North Carolina,Kansas,84,1,18,2,0,Yes (1),,1,1,0
+1510,2008,5,2,Final Four,1,78,Memphis,UCLA,63,1,15,1,0,No,,1,1,0
+1511,2008,6,1,Championship,1,75,Kansas,Memphis,68,1,7,4,1,Yes (1),,1,1,1
+1512,2009,1,1,Midwest,1,74,Louisville,Morehead St,54,16,20,1,0,Yes (1),,1,16,0
+1513,2009,1,1,Midwest,2,77,Michigan St,Robert Morris,62,15,15,1,0,Yes (1),,2,15,0
+1514,2009,1,1,Midwest,3,84,Kansas,North Dakota St,74,14,10,1,0,Yes (1),,3,14,0
+1515,2009,1,1,Midwest,4,69,Wake Forest,Cleveland St,84,13,15,2,0,No,,4,13,0
+1516,2009,1,1,Midwest,5,71,Utah,Arizona,84,12,13,2,0,Yes (2),,5,12,0
+1517,2009,1,1,Midwest,6,60,West Virginia,Dayton,68,11,8,2,0,No,,6,11,0
+1518,2009,1,1,Midwest,7,55,Boston College,USC,72,10,17,2,0,No,,7,10,0
+1519,2009,1,1,Midwest,8,72,Ohio St,Siena,74,9,2,2,0,Yes (1),,8,9,0
+1520,2009,1,2,West,1,103,Connecticut,Chattanooga,47,16,56,1,0,No,,1,16,0
+1521,2009,1,2,West,2,81,Memphis,Cal St Northridge,70,15,11,1,0,No,,2,15,0
+1522,2009,1,2,West,3,78,Missouri,Cornell,59,14,19,1,0,No,,3,14,0
+1523,2009,1,2,West,4,71,Washington,Mississippi St,58,13,13,1,0,Yes (1),,4,13,0
+1524,2009,1,2,West,5,61,Purdue,Northern Iowa,56,12,5,1,0,Yes (1),,5,12,0
+1525,2009,1,2,West,6,58,Marquette,Utah St,57,11,1,1,0,Yes (1),,6,11,0
+1526,2009,1,2,West,7,71,California,Maryland,84,10,13,2,0,Yes (2),,7,10,0
+1527,2009,1,2,West,8,66,BYU,Texas A&M,79,9,13,2,0,No,,8,9,0
+1528,2009,1,3,East,1,72,Pittsburgh,East Tennessee St,62,16,10,1,0,No,,1,16,0
+1529,2009,1,3,East,2,85,Duke,Binghamton,62,15,23,1,0,Yes (1),,2,15,0
+1530,2009,1,3,East,3,80,Villanova,American,67,14,13,1,0,Yes (1),,3,14,0
+1531,2009,1,3,East,4,77,Xavier,Portland St,59,13,18,1,0,No,,4,13,0
+1532,2009,1,3,East,5,59,Florida St,Wisconsin,61,12,2,2,0,Yes (2),,5,12,0
+1533,2009,1,3,East,6,65,UCLA,VCU,64,11,1,1,0,Yes (2),,6,11,0
+1534,2009,1,3,East,7,76,Texas,Minnesota,62,10,14,1,0,Yes (2),,7,10,0
+1535,2009,1,3,East,8,77,Oklahoma St,Tennessee,75,9,2,1,0,Yes (2),,8,9,0
+1536,2009,1,4,South,1,101,North Carolina,Radford,58,16,43,1,0,Yes (1),,1,16,0
+1537,2009,1,4,South,2,82,Oklahoma,Morgan St,54,15,28,1,0,Yes (1),,2,15,0
+1538,2009,1,4,South,3,59,Syracuse,Stephen F Austin,44,14,15,1,0,Yes (1),,3,14,0
+1539,2009,1,4,South,4,77,Gonzaga,Akron,64,13,13,1,0,Yes (1),,4,13,0
+1540,2009,1,4,South,5,72,Illinois,Western Kentucky,76,12,4,2,0,No,,5,12,0
+1541,2009,1,4,South,6,66,Arizona St,Temple,57,11,9,1,0,No,,6,11,0
+1542,2009,1,4,South,7,59,Clemson,Michigan,62,10,3,2,0,Yes (2),,7,10,0
+1543,2009,1,4,South,8,75,LSU,Butler,71,9,4,1,0,Yes (1),,8,9,0
+1544,2009,2,1,Midwest,1,79,Louisville,Siena,72,9,7,1,0,Yes (1),,1,9,0
+1545,2009,2,1,Midwest,2,74,Michigan St,USC,69,10,5,1,0,Yes (1),,2,10,0
+1546,2009,2,1,Midwest,3,60,Kansas,Dayton,43,11,17,1,0,Yes (1),,3,11,0
+1547,2009,2,1,Midwest,13,57,Cleveland St,Arizona,71,12,14,2,0,Yes (2),,13,12,0
+1548,2009,2,2,West,1,92,Connecticut,Texas A&M,66,9,26,1,0,No,,1,9,0
+1549,2009,2,2,West,2,89,Memphis,Maryland,70,10,19,1,0,Yes (2),,2,10,0
+1550,2009,2,2,West,3,83,Missouri,Marquette,79,6,4,1,0,Yes (2),,3,6,0
+1551,2009,2,2,West,4,74,Washington,Purdue,76,5,2,2,0,Yes (1),,4,5,0
+1552,2009,2,3,East,1,84,Pittsburgh,Oklahoma St,76,8,8,1,0,No,,1,8,0
+1553,2009,2,3,East,2,74,Duke,Texas,69,7,5,1,0,Yes (1),,2,7,0
+1554,2009,2,3,East,3,89,Villanova,UCLA,69,6,20,1,0,Yes (1),,3,6,0
+1555,2009,2,3,East,4,60,Xavier,Wisconsin,49,12,11,1,0,Yes (2),,4,12,0
+1556,2009,2,4,South,1,84,North Carolina,LSU,70,8,14,1,0,Yes (1),,1,8,0
+1557,2009,2,4,South,2,73,Oklahoma,Michigan,63,10,10,1,0,Yes (1),,2,10,0
+1558,2009,2,4,South,3,78,Syracuse,Arizona St,67,6,11,1,0,Yes (1),,3,6,0
+1559,2009,2,4,South,4,83,Gonzaga,Western Kentucky,81,12,2,1,0,Yes (1),,4,12,0
+1560,2009,3,1,Midwest,1,103,Louisville,Arizona,64,12,39,1,0,Yes (1),,1,12,0
+1561,2009,3,1,Midwest,2,67,Michigan St,Kansas,62,3,5,1,0,Yes (1),,2,3,0
+1562,2009,3,2,West,1,72,Connecticut,Purdue,60,5,12,1,0,Yes (2),,1,5,0
+1563,2009,3,2,West,2,91,Memphis,Missouri,102,3,11,2,0,No,,2,3,0
+1564,2009,3,3,East,1,60,Pittsburgh,Xavier,55,4,5,1,0,No,,1,4,0
+1565,2009,3,3,East,2,54,Duke,Villanova,77,3,23,2,0,Yes (1),,2,3,0
+1566,2009,3,4,South,1,98,North Carolina,Gonzaga,77,4,21,1,0,Yes (1),,1,4,0
+1567,2009,3,4,South,2,84,Oklahoma,Syracuse,71,3,13,1,0,Yes (1),,2,3,0
+1568,2009,4,1,Midwest,1,52,Louisville,Michigan St,64,2,12,2,0,Yes (1),,1,2,0
+1569,2009,4,2,West,1,82,Connecticut,Missouri,75,3,7,1,0,No,,1,3,0
+1570,2009,4,3,East,1,76,Pittsburgh,Villanova,78,3,2,2,0,Yes (2),,1,3,0
+1571,2009,4,4,South,1,72,North Carolina,Oklahoma,60,2,12,1,0,Yes (1),,1,2,0
+1572,2009,5,1,Final Four,2,82,Michigan St,Connecticut,73,1,9,1,0,Yes (1),,2,1,0
+1573,2009,5,2,Final Four,3,69,Villanova,North Carolina,83,1,14,2,0,Yes (1),,3,1,0
+1574,2009,6,1,Championship,2,72,Michigan St,North Carolina,89,1,17,3,1,Yes (1),,2,1,1
+1575,2010,1,1,Midwest,1,90,Kansas,Lehigh,74,16,16,1,0,Yes (1),,1,16,0
+1576,2010,1,1,Midwest,2,68,Ohio St,Santa Barbara,51,15,17,1,0,Yes (1),,2,15,0
+1577,2010,1,1,Midwest,3,83,Georgetown,Ohio,97,14,14,2,0,No,,3,14,0
+1578,2010,1,1,Midwest,4,89,Maryland,Houston,77,13,12,1,0,Yes (1),,4,13,0
+1579,2010,1,1,Midwest,5,70,Michigan St,New Mexico St,67,12,3,1,0,Yes (1),,5,12,0
+1580,2010,1,1,Midwest,6,62,Tennessee,San Diego St,59,11,3,1,0,Yes (1),,6,11,0
+1581,2010,1,1,Midwest,7,59,Oklahoma St,Georgia Tech,64,10,5,2,0,No,,7,10,0
+1582,2010,1,1,Midwest,8,66,UNLV,Northern Iowa,69,9,3,2,0,No,,8,9,0
+1583,2010,1,2,West,1,79,Syracuse,Vermont,56,16,23,1,0,Yes (1),,1,16,0
+1584,2010,1,2,West,2,82,Kansas St,North Texas,62,15,20,1,0,Yes (1),,2,15,0
+1585,2010,1,2,West,3,89,Pittsburgh,Oakland,66,14,23,1,0,No,,3,14,0
+1586,2010,1,2,West,4,65,Vanderbilt,Murray St,66,13,1,2,0,No,,4,13,0
+1587,2010,1,2,West,5,77,Butler,UTEP,59,12,18,1,0,No,,5,12,0
+1588,2010,1,2,West,6,65,Xavier,Minnesota,54,11,11,1,0,Yes (2),,6,11,0
+1589,2010,1,2,West,7,99,BYU,Florida,92,10,7,1,0,Yes (2),,7,10,0
+1590,2010,1,2,West,8,67,Gonzaga,Florida St,60,9,7,1,0,Yes (1),,8,9,0
+1591,2010,1,3,East,1,100,Kentucky,East Tennessee St,71,16,29,1,0,Yes (1),,1,16,0
+1592,2010,1,3,East,2,77,West Virginia,Morgan St,50,15,27,1,0,No,,2,15,0
+1593,2010,1,3,East,3,62,New Mexico,Montana,57,14,5,1,0,Yes (2),,3,14,0
+1594,2010,1,3,East,4,53,Wisconsin,Wofford,49,13,4,1,0,Yes (1),,4,13,0
+1595,2010,1,3,East,5,65,Temple,Cornell,78,12,13,2,0,No,,5,12,0
+1596,2010,1,3,East,6,78,Marquette,Washington,80,11,2,2,0,Yes (1),,6,11,0
+1597,2010,1,3,East,7,78,Clemson,Missouri,86,10,8,2,0,No,,7,10,0
+1598,2010,1,3,East,8,80,Texas,Wake Forest,81,9,1,2,0,No,,8,9,0
+1599,2010,1,4,South,1,73,Duke,Arkansas Pine Bluff,44,16,29,1,0,Yes (1),,1,16,0
+1600,2010,1,4,South,2,73,Villanova,Robert Morris,70,15,3,1,0,Yes (1),,2,15,0
+1601,2010,1,4,South,3,68,Baylor,Sam Houston St,59,14,9,1,0,Yes (1),,3,14,0
+1602,2010,1,4,South,4,72,Purdue,Siena,64,13,8,1,0,Yes (1),,4,13,0
+1603,2010,1,4,South,5,69,Texas A&M,Utah St,53,12,16,1,0,Yes (2),,5,12,0
+1604,2010,1,4,South,6,50,Notre Dame,Old Dominion,51,11,1,2,0,Yes (2),,6,11,0
+1605,2010,1,4,South,7,71,Richmond,St Marys,80,10,9,2,0,Yes (2),,7,10,0
+1606,2010,1,4,South,8,77,California,Louisville,62,9,15,1,0,Yes (2),,8,9,0
+1607,2010,2,1,Midwest,1,67,Kansas,Northern Iowa,69,9,2,2,0,Yes (1),,1,9,0
+1608,2010,2,1,Midwest,2,75,Ohio St,Georgia Tech,66,10,9,1,0,Yes (1),,2,10,0
+1609,2010,2,1,Midwest,14,68,Ohio,Tennessee,83,6,15,2,0,Yes (2),,14,6,0
+1610,2010,2,1,Midwest,4,83,Maryland,Michigan St,85,5,2,2,0,Yes (1),,4,5,0
+1611,2010,2,2,West,1,87,Syracuse,Gonzaga,65,8,22,1,0,Yes (1),,1,8,0
+1612,2010,2,2,West,2,84,Kansas St,BYU,72,7,12,1,0,Yes (1),,2,7,0
+1613,2010,2,2,West,3,68,Pittsburgh,Xavier,71,6,3,2,0,No,,3,6,0
+1614,2010,2,2,West,13,52,Murray St,Butler,54,5,2,2,0,No,,13,5,0
+1615,2010,2,3,East,1,90,Kentucky,Wake Forest,60,9,30,1,0,Yes (1),,1,9,0
+1616,2010,2,3,East,2,68,West Virginia,Missouri,59,10,9,1,0,No,,2,10,0
+1617,2010,2,3,East,3,64,New Mexico,Washington,82,11,18,2,0,Yes (2),,3,11,0
+1618,2010,2,3,East,4,69,Wisconsin,Cornell,87,12,18,2,0,Yes (1),,4,12,0
+1619,2010,2,4,South,1,68,Duke,California,53,8,15,1,0,Yes (1),,1,8,0
+1620,2010,2,4,South,2,68,Villanova,St Marys,75,10,7,2,0,Yes (1),,2,10,0
+1621,2010,2,4,South,3,76,Baylor,Old Dominion,68,11,8,1,0,Yes (1),,3,11,0
+1622,2010,2,4,South,4,63,Purdue,Texas A&M,61,5,2,1,0,Yes (1),,4,5,0
+1623,2010,3,1,Midwest,9,52,Northern Iowa,Michigan St,59,5,7,2,0,Yes (2),,9,5,0
+1624,2010,3,1,Midwest,2,73,Ohio St,Tennessee,76,6,3,2,0,Yes (1),,2,6,0
+1625,2010,3,2,West,1,59,Syracuse,Butler,63,5,4,2,0,Yes (1),,1,5,0
+1626,2010,3,2,West,2,101,Kansas St,Xavier,96,6,5,1,0,Yes (1),,2,6,0
+1627,2010,3,3,East,1,62,Kentucky,Cornell,45,12,17,1,0,Yes (1),,1,12,0
+1628,2010,3,3,East,2,69,West Virginia,Washington,56,11,13,1,0,Yes (2),,2,11,0
+1629,2010,3,4,South,1,70,Duke,Purdue,57,4,13,1,0,Yes (1),,1,4,0
+1630,2010,3,4,South,10,49,St Marys,Baylor,72,3,23,2,0,Yes (1),,10,3,0
+1631,2010,4,1,Midwest,5,70,Michigan St,Tennessee,69,6,1,1,0,Yes (1),,5,6,0
+1632,2010,4,2,West,5,63,Butler,Kansas St,56,2,7,1,0,Yes (2),,5,2,0
+1633,2010,4,3,East,1,66,Kentucky,West Virginia,73,2,7,2,0,Yes (1),,1,2,0
+1634,2010,4,4,South,1,78,Duke,Baylor,71,3,7,1,0,Yes (1),,1,3,0
+1635,2010,5,1,Final Four,5,50,Michigan St,Butler,52,5,2,2,0,Yes (1),,5,5,0
+1636,2010,5,2,Final Four,2,57,West Virginia,Duke,78,1,21,2,0,Yes (2),,2,1,0
+1637,2010,6,1,Championship,5,59,Butler,Duke,61,1,2,3,1,Yes (2),,5,1,1
+1638,2011,1,1,East,1,75,Ohio St,Texas San Antonio,46,16,29,1,0,Yes (1),,1,16,0
+1639,2011,1,1,East,2,102,North Carolina,Long Island Brooklyn,87,15,15,1,0,Yes (1),,2,15,0
+1640,2011,1,1,East,3,77,Syracuse,Indiana St,60,14,17,1,0,Yes (1),,3,14,0
+1641,2011,1,1,East,4,59,Kentucky,Princeton,57,13,2,1,0,Yes (1),,4,13,0
+1642,2011,1,1,East,5,84,West Virginia,Clemson,78,12,6,1,0,No,,5,12,0
+1643,2011,1,1,East,6,55,Xavier,Marquette,66,11,11,2,0,Yes (2),,6,11,0
+1644,2011,1,1,East,7,68,Washington,Georgia,65,10,3,1,0,Yes (1),,7,10,0
+1645,2011,1,1,East,8,61,George Mason,Villanova,57,9,4,1,0,Yes (2),,8,9,0
+1646,2011,1,2,West,1,87,Duke,Hampton,45,16,42,1,0,Yes (1),,1,16,0
+1647,2011,1,2,West,2,68,San Diego St,Northern Colorado,50,15,18,1,0,No,,2,15,0
+1648,2011,1,2,West,3,81,Connecticut,Bucknell,52,14,29,1,0,No,,3,14,0
+1649,2011,1,2,West,4,85,Texas,Oakland,81,13,4,1,0,No,,4,13,0
+1650,2011,1,2,West,5,77,Arizona,Memphis,75,12,2,1,0,Yes (1),,5,12,0
+1651,2011,1,2,West,6,78,Cincinnati,Missouri,63,11,15,1,0,Yes (1),,6,11,0
+1652,2011,1,2,West,7,66,Temple,Penn St,64,10,2,1,0,No,,7,10,0
+1653,2011,1,2,West,8,75,Michigan,Tennessee,45,9,30,1,0,Yes (1),,8,9,0
+1654,2011,1,3,Southwest,1,72,Kansas,Boston University,53,16,19,1,0,Yes (1),,1,16,0
+1655,2011,1,3,Southwest,2,69,Notre Dame,Akron,56,15,13,1,0,No,,2,15,0
+1656,2011,1,3,Southwest,3,65,Purdue,St Peters,43,14,22,1,0,Yes (1),,3,14,0
+1657,2011,1,3,Southwest,4,61,Louisville,Morehead St,62,13,1,2,0,Yes (1),,4,13,0
+1658,2011,1,3,Southwest,5,66,Vanderbilt,Richmond,69,12,3,2,0,No,,5,12,0
+1659,2011,1,3,Southwest,6,56,Georgetown,VCU,74,11,18,2,0,Yes (2),,6,11,0
+1660,2011,1,3,Southwest,7,50,Texas A&M,Florida St,57,10,7,2,0,No,,7,10,0
+1661,2011,1,3,Southwest,8,62,UNLV,Illinois,73,9,11,2,0,No,,8,9,0
+1662,2011,1,4,Southeast,1,74,Pittsburgh,UNC Asheville,51,16,23,1,0,No,,1,16,0
+1663,2011,1,4,Southeast,2,79,Florida,Santa Barbara,51,15,28,1,0,Yes (1),,2,15,0
+1664,2011,1,4,Southeast,3,74,BYU,Wofford,66,14,8,1,0,Yes (2),,3,14,0
+1665,2011,1,4,Southeast,4,72,Wisconsin,Belmont,58,13,14,1,0,Yes (1),,4,13,0
+1666,2011,1,4,Southeast,5,73,Kansas St,Utah St,68,12,5,1,0,Yes (1),,5,12,0
+1667,2011,1,4,Southeast,6,71,St Johns,Gonzaga,86,11,15,2,0,Yes (2),,6,11,0
+1668,2011,1,4,Southeast,7,78,UCLA,Michigan St,76,10,2,1,0,Yes (2),,7,10,0
+1669,2011,1,4,Southeast,8,60,Butler,Old Dominion,58,9,2,1,0,Yes (2),,8,9,0
+1670,2011,2,1,East,1,98,Ohio St,George Mason,66,8,32,1,0,Yes (1),,1,8,0
+1671,2011,2,1,East,2,86,North Carolina,Washington,83,7,3,1,0,Yes (1),,2,7,0
+1672,2011,2,1,East,3,62,Syracuse,Marquette,66,11,4,2,0,Yes (1),,3,11,0
+1673,2011,2,1,East,4,71,Kentucky,West Virginia,63,5,8,1,0,Yes (1),,4,5,0
+1674,2011,2,2,West,1,73,Duke,Michigan,71,8,2,1,0,Yes (1),,1,8,0
+1675,2011,2,2,West,2,71,San Diego St,Temple,64,7,7,1,0,No,,2,7,0
+1676,2011,2,2,West,3,69,Connecticut,Cincinnati,58,6,11,1,0,Yes (2),,3,6,0
+1677,2011,2,2,West,4,69,Texas,Arizona,70,5,1,2,0,Yes (2),,4,5,0
+1678,2011,2,3,Southwest,1,73,Kansas,Illinois,59,9,14,1,0,Yes (1),,1,9,0
+1679,2011,2,3,Southwest,2,57,Notre Dame,Florida St,71,10,14,2,0,No,,2,10,0
+1680,2011,2,3,Southwest,3,76,Purdue,VCU,94,11,18,2,0,Yes (1),,3,11,0
+1681,2011,2,3,Southwest,13,48,Morehead St,Richmond,65,12,17,2,0,No,,13,12,0
+1682,2011,2,4,Southeast,1,70,Pittsburgh,Butler,71,8,1,2,0,No,,1,8,0
+1683,2011,2,4,Southeast,2,73,Florida,UCLA,65,7,8,1,0,Yes (1),,2,7,0
+1684,2011,2,4,Southeast,3,89,BYU,Gonzaga,67,11,22,1,0,Yes (2),,3,11,0
+1685,2011,2,4,Southeast,4,70,Wisconsin,Kansas St,65,5,5,1,0,Yes (1),,4,5,0
+1686,2011,3,1,East,1,60,Ohio St,Kentucky,62,4,2,2,0,Yes (1),,1,4,0
+1687,2011,3,1,East,2,81,North Carolina,Marquette,63,11,18,1,0,Yes (1),,2,11,0
+1688,2011,3,2,West,1,77,Duke,Arizona,93,5,16,2,0,Yes (1),,1,5,0
+1689,2011,3,2,West,2,67,San Diego St,Connecticut,74,3,7,2,0,No,,2,3,0
+1690,2011,3,3,Southwest,1,77,Kansas,Richmond,57,12,20,1,0,Yes (1),,1,12,0
+1691,2011,3,3,Southwest,10,71,Florida St,VCU,72,11,1,2,0,Yes (2),,10,11,0
+1692,2011,3,4,Southeast,8,61,Butler,Wisconsin,54,4,7,1,0,Yes (2),,8,4,0
+1693,2011,3,4,Southeast,2,83,Florida,BYU,74,3,9,1,0,Yes (1),,2,3,0
+1694,2011,4,1,East,4,76,Kentucky,North Carolina,69,2,7,1,0,Yes (1),,4,2,0
+1695,2011,4,2,West,5,63,Arizona,Connecticut,65,3,2,2,0,Yes (1),,5,3,0
+1696,2011,4,3,Southwest,1,61,Kansas,VCU,71,11,10,2,0,Yes (1),,1,11,0
+1697,2011,4,4,Southeast,8,74,Butler,Florida,71,2,3,1,0,Yes (2),,8,2,0
+1698,2011,5,1,Final Four,4,55,Kentucky,Connecticut,56,3,1,2,0,Yes (1),,4,3,0
+1699,2011,5,2,Final Four,11,62,VCU,Butler,70,8,8,2,0,Yes (1),,11,8,0
+1700,2011,6,1,Championship,3,53,Connecticut,Butler,41,8,12,4,3,No,,3,8,3
+1701,2012,1,1,South,1,81,Kentucky,Western Kentucky,66,16,15,1,0,Yes (1),,1,16,0
+1702,2012,1,1,South,2,70,Duke,Lehigh,75,15,5,2,0,Yes (1),,2,15,0
+1703,2012,1,1,South,3,68,Baylor,South Dakota St,60,14,8,1,0,Yes (1),,3,14,0
+1704,2012,1,1,South,4,79,Indiana,New Mexico St,66,13,13,1,0,Yes (2),,4,13,0
+1705,2012,1,1,South,5,59,Wichita St,VCU,62,12,3,2,0,Yes (2),,5,12,0
+1706,2012,1,1,South,6,64,UNLV,Colorado,68,11,4,2,0,No,,6,11,0
+1707,2012,1,1,South,7,63,Notre Dame,Xavier,67,10,4,2,0,No,,7,10,0
+1708,2012,1,1,South,8,77,Iowa St,Connecticut,64,9,13,1,0,Yes (1),,8,9,0
+1709,2012,1,2,West,1,89,Michigan St,Long Island Brooklyn,67,16,22,1,0,Yes (1),,1,16,0
+1710,2012,1,2,West,2,84,Missouri,Norfolk St,86,15,2,2,0,No,,2,15,0
+1711,2012,1,2,West,3,88,Marquette,BYU,68,14,20,1,0,Yes (1),,3,14,0
+1712,2012,1,2,West,4,69,Louisville,Davidson,62,13,7,1,0,Yes (1),,4,13,0
+1713,2012,1,2,West,5,75,New Mexico,Long Beach St,68,12,7,1,0,No,,5,12,0
+1714,2012,1,2,West,6,58,Murray St,Colorado St,41,11,17,1,0,No,,6,11,0
+1715,2012,1,2,West,7,71,Florida,Virginia,45,10,26,1,0,Yes (1),,7,10,0
+1716,2012,1,2,West,8,54,Memphis,St Louis,61,9,7,2,0,Yes (2),,8,9,0
+1717,2012,1,3,East,1,72,Syracuse,UNC Asheville,65,16,7,1,0,Yes (1),,1,16,0
+1718,2012,1,3,East,2,78,Ohio St,Loyola Maryland,59,15,19,1,0,Yes (1),,2,15,0
+1719,2012,1,3,East,3,86,Florida St,St Bonaventure,63,14,23,1,0,No,,3,14,0
+1720,2012,1,3,East,4,73,Wisconsin,Montana,49,13,24,1,0,Yes (1),,4,13,0
+1721,2012,1,3,East,5,79,Vanderbilt,Harvard,70,12,9,1,0,No,,5,12,0
+1722,2012,1,3,East,6,65,Cincinnati,Texas,59,11,6,1,0,Yes (1),,6,11,0
+1723,2012,1,3,East,7,77,Gonzaga,West Virginia,54,10,23,1,0,Yes (1),,7,10,0
+1724,2012,1,3,East,8,70,Kansas St,Southern Mississippi,64,9,6,1,0,Yes (1),,8,9,0
+1725,2012,1,4,Midwest,1,77,North Carolina,Vermont,58,16,19,1,0,Yes (1),,1,16,0
+1726,2012,1,4,Midwest,2,65,Kansas,Detroit,50,15,15,1,0,Yes (1),,2,15,0
+1727,2012,1,4,Midwest,3,74,Georgetown,Belmont,59,14,15,1,0,Yes (2),,3,14,0
+1728,2012,1,4,Midwest,4,60,Michigan,Ohio,65,13,5,2,0,Yes (1),,4,13,0
+1729,2012,1,4,Midwest,5,44,Temple,South Florida,58,12,14,2,0,No,,5,12,0
+1730,2012,1,4,Midwest,6,65,San Diego St,NC State,79,11,14,2,0,No,,6,11,0
+1731,2012,1,4,Midwest,7,69,St Marys,Purdue,72,10,3,2,0,Yes (1),,7,10,0
+1732,2012,1,4,Midwest,8,58,Creighton,Alabama,57,9,1,1,0,No,,8,9,0
+1733,2012,2,1,South,1,87,Kentucky,Iowa St,71,8,16,1,0,Yes (1),,1,8,0
+1734,2012,2,1,South,15,58,Lehigh,Xavier,70,10,12,2,0,No,,15,10,0
+1735,2012,2,1,South,3,80,Baylor,Colorado,63,11,17,1,0,Yes (1),,3,11,0
+1736,2012,2,1,South,4,63,Indiana,VCU,61,12,2,1,0,Yes (2),,4,12,0
+1737,2012,2,2,West,1,65,Michigan St,St Louis,61,9,4,1,0,Yes (1),,1,9,0
+1738,2012,2,2,West,15,50,Norfolk St,Florida,84,7,34,2,0,Yes (2),,15,7,0
+1739,2012,2,2,West,3,62,Marquette,Murray St,53,6,9,1,0,Yes (1),,3,6,0
+1740,2012,2,2,West,4,59,Louisville,New Mexico,58,5,1,1,0,Yes (1),,4,5,0
+1741,2012,2,3,East,1,75,Syracuse,Kansas St,59,8,16,1,0,Yes (1),,1,8,0
+1742,2012,2,3,East,2,73,Ohio St,Gonzaga,66,7,7,1,0,Yes (1),,2,7,0
+1743,2012,2,3,East,3,56,Florida St,Cincinnati,62,6,6,2,0,Yes (2),,3,6,0
+1744,2012,2,3,East,4,60,Wisconsin,Vanderbilt,57,5,3,1,0,Yes (1),,4,5,0
+1745,2012,2,4,Midwest,1,87,North Carolina,Creighton,73,8,14,1,0,Yes (1),,1,8,0
+1746,2012,2,4,Midwest,2,63,Kansas,Purdue,60,10,3,1,0,Yes (1),,2,10,0
+1747,2012,2,4,Midwest,3,63,Georgetown,NC State,88,11,25,2,0,No,,3,11,0
+1748,2012,2,4,Midwest,13,62,Ohio,South Florida,56,12,6,1,0,No,,13,12,0
+1749,2012,3,1,South,1,102,Kentucky,Indiana,90,4,12,1,0,Yes (1),,1,4,0
+1750,2012,3,1,South,10,70,Xavier,Baylor,75,3,5,2,0,Yes (2),,10,3,0
+1751,2012,3,2,West,1,44,Michigan St,Louisville,57,4,13,2,0,Yes (1),,1,4,0
+1752,2012,3,2,West,7,68,Florida,Marquette,58,3,10,1,0,Yes (1),,7,3,0
+1753,2012,3,3,East,1,84,Syracuse,Wisconsin,83,4,1,1,0,Yes (1),,1,4,0
+1754,2012,3,3,East,2,81,Ohio St,Cincinnati,66,6,15,1,0,Yes (1),,2,6,0
+1755,2012,3,4,Midwest,1,73,North Carolina,Ohio,65,13,8,1,0,Yes (1),,1,13,0
+1756,2012,3,4,Midwest,2,60,Kansas,NC State,57,11,3,1,0,Yes (1),,2,11,0
+1757,2012,4,1,South,1,82,Kentucky,Baylor,70,3,12,1,0,Yes (1),,1,3,0
+1758,2012,4,2,West,4,72,Louisville,Florida,68,7,4,1,0,Yes (1),,4,7,0
+1759,2012,4,3,East,1,70,Syracuse,Ohio St,77,2,7,2,0,Yes (1),,1,2,0
+1760,2012,4,4,Midwest,1,67,North Carolina,Kansas,80,2,13,2,0,Yes (1),,1,2,0
+1761,2012,5,1,Final Four,1,69,Kentucky,Louisville,61,4,8,1,0,Yes (1),,1,4,0
+1762,2012,5,2,Final Four,2,62,Ohio St,Kansas,64,2,2,2,0,Yes (1),,2,2,0
+1763,2012,6,1,Championship,1,67,Kentucky,Kansas,59,2,8,4,1,Yes (1),,1,2,1
+1764,2013,1,1,Midwest,1,79,Louisville,North Carolina A&T,48,16,31,1,0,Yes (1),,1,16,0
+1765,2013,1,1,Midwest,2,73,Duke,Albany,61,15,12,1,0,Yes (1),,2,15,0
+1766,2013,1,1,Midwest,3,65,Michigan St,Valparaiso,54,14,11,1,0,Yes (1),,3,14,0
+1767,2013,1,1,Midwest,4,64,St Louis,New Mexico St,44,13,20,1,0,Yes (1),,4,13,0
+1768,2013,1,1,Midwest,5,55,Oklahoma St,Oregon,68,12,13,2,0,Yes (2),,5,12,0
+1769,2013,1,1,Midwest,6,54,Memphis,St Marys,52,11,2,1,0,Yes (2),,6,11,0
+1770,2013,1,1,Midwest,7,67,Creighton,Cincinnati,63,10,4,1,0,Yes (2),,7,10,0
+1771,2013,1,1,Midwest,8,84,Colorado St,Missouri,72,9,12,1,0,No,,8,9,0
+1772,2013,1,2,West,1,64,Gonzaga,Southern,58,16,6,1,0,Yes (1),,1,16,0
+1773,2013,1,2,West,2,95,Ohio St,Iona,70,15,25,1,0,Yes (1),,2,15,0
+1774,2013,1,2,West,3,62,New Mexico,Harvard,68,14,6,2,0,No,,3,14,0
+1775,2013,1,2,West,4,61,Kansas St,La Salle,63,13,2,2,0,Yes (1),,4,13,0
+1776,2013,1,2,West,5,46,Wisconsin,Ole Miss,57,12,11,2,0,Yes (1),,5,12,0
+1777,2013,1,2,West,6,81,Arizona,Belmont,64,11,17,1,0,Yes (1),,6,11,0
+1778,2013,1,2,West,7,58,Notre Dame,Iowa St,76,10,18,2,0,Yes (2),,7,10,0
+1779,2013,1,2,West,8,55,Pittsburgh,Wichita St,73,9,18,2,0,No,,8,9,0
+1780,2013,1,3,South,1,64,Kansas,Western Kentucky,57,16,7,1,0,Yes (1),,1,16,0
+1781,2013,1,3,South,2,68,Georgetown,Florida Gulf Coast,78,15,10,2,0,No,,2,15,0
+1782,2013,1,3,South,3,79,Florida,Northwestern St,47,14,32,1,0,Yes (1),,3,14,0
+1783,2013,1,3,South,4,71,Michigan,South Dakota St,56,13,15,1,0,Yes (1),,4,13,0
+1784,2013,1,3,South,5,88,VCU,Akron,42,12,46,1,0,Yes (1),,5,12,0
+1785,2013,1,3,South,6,63,UCLA,Minnesota,83,11,20,2,0,Yes (2),,6,11,0
+1786,2013,1,3,South,7,70,San Diego St,Oklahoma,55,10,15,1,0,Yes (2),,7,10,0
+1787,2013,1,3,South,8,78,North Carolina,Villanova,71,9,7,1,0,Yes (1),,8,9,0
+1788,2013,1,4,East,1,83,Indiana,James Madison,62,16,21,1,0,No,,1,16,0
+1789,2013,1,4,East,2,78,Miami,Pacific,49,15,29,1,0,No,,2,15,0
+1790,2013,1,4,East,3,59,Marquette,Davidson,58,14,1,1,0,Yes (1),,3,14,0
+1791,2013,1,4,East,4,81,Syracuse,Montana,34,13,47,1,0,Yes (1),,4,13,0
+1792,2013,1,4,East,5,61,UNLV,California,64,12,3,2,0,No,,5,12,0
+1793,2013,1,4,East,6,68,Butler,Bucknell,56,11,12,1,0,No,,6,11,0
+1794,2013,1,4,East,7,57,Illinois,Colorado,49,10,8,1,0,No,,7,10,0
+1795,2013,1,4,East,8,72,NC State,Temple,76,9,4,2,0,No,,8,9,0
+1796,2013,2,1,Midwest,1,82,Louisville,Colorado St,56,8,26,1,0,Yes (1),,1,8,0
+1797,2013,2,1,Midwest,2,66,Duke,Creighton,50,7,16,1,0,Yes (1),,2,7,0
+1798,2013,2,1,Midwest,3,70,Michigan St,Memphis,48,6,22,1,0,Yes (1),,3,6,0
+1799,2013,2,1,Midwest,4,57,St Louis,Oregon,74,12,17,2,0,Yes (1),,4,12,0
+1800,2013,2,2,West,1,70,Gonzaga,Wichita St,76,9,6,2,0,Yes (1),,1,9,0
+1801,2013,2,2,West,2,78,Ohio St,Iowa St,75,10,3,1,0,Yes (1),,2,10,0
+1802,2013,2,2,West,14,51,Harvard,Arizona,74,6,23,2,0,Yes (2),,14,6,0
+1803,2013,2,2,West,13,76,La Salle,Ole Miss,74,12,2,1,0,No,,13,12,0
+1804,2013,2,3,South,1,70,Kansas,North Carolina,58,8,12,1,0,Yes (1),,1,8,0
+1805,2013,2,3,South,15,81,Florida Gulf Coast,San Diego St,71,7,10,1,0,No,,15,7,0
+1806,2013,2,3,South,3,78,Florida,Minnesota,64,11,14,1,0,Yes (1),,3,11,0
+1807,2013,2,3,South,4,78,Michigan,VCU,53,5,25,1,0,Yes (1),,4,5,0
+1808,2013,2,4,East,1,58,Indiana,Temple,52,9,6,1,0,No,,1,9,0
+1809,2013,2,4,East,2,63,Miami,Illinois,59,7,4,1,0,No,,2,7,0
+1810,2013,2,4,East,3,74,Marquette,Butler,72,6,2,1,0,Yes (1),,3,6,0
+1811,2013,2,4,East,4,66,Syracuse,California,60,12,6,1,0,Yes (1),,4,12,0
+1812,2013,3,1,Midwest,1,77,Louisville,Oregon,69,12,8,1,0,Yes (1),,1,12,0
+1813,2013,3,1,Midwest,2,71,Duke,Michigan St,61,3,10,1,0,Yes (1),,2,3,0
+1814,2013,3,2,West,9,72,Wichita St,La Salle,58,13,14,1,0,No,,9,13,0
+1815,2013,3,2,West,2,73,Ohio St,Arizona,70,6,3,1,0,Yes (1),,2,6,0
+1816,2013,3,3,South,1,85,Kansas,Michigan,87,4,2,2,0,Yes (1),,1,4,0
+1817,2013,3,3,South,15,50,Florida Gulf Coast,Florida,62,3,12,2,0,Yes (2),,15,3,0
+1818,2013,3,4,East,1,50,Indiana,Syracuse,61,4,11,2,0,Yes (2),,1,4,0
+1819,2013,3,4,East,2,61,Miami,Marquette,71,3,10,2,0,Yes (2),,2,3,0
+1820,2013,4,1,Midwest,1,85,Louisville,Duke,63,2,22,1,0,Yes (1),,1,2,0
+1821,2013,4,2,West,9,70,Wichita St,Ohio St,66,2,4,1,0,Yes (2),,9,2,0
+1822,2013,4,3,South,4,79,Michigan,Florida,59,3,20,1,0,Yes (1),,4,3,0
+1823,2013,4,4,East,4,55,Syracuse,Marquette,39,3,16,1,0,Yes (1),,4,3,0
+1824,2013,5,1,Final Four,1,72,Louisville,Wichita St,68,9,4,1,0,Yes (1),,1,9,0
+1825,2013,5,2,Final Four,4,61,Michigan,Syracuse,56,4,5,1,0,Yes (1),,4,4,0
+1826,2013,6,1,Championship,1,82,Louisville,Michigan,76,4,6,4,1,Yes (1),,1,4,1
+1827,2014,1,1,South,1,67,Florida,Albany,55,16,12,1,0,Yes (1),,1,16,0
+1828,2014,1,1,South,2,80,Kansas,Eastern Kentucky,69,15,11,1,0,Yes (1),,2,15,0
+1829,2014,1,1,South,3,77,Syracuse,Western Michigan,53,14,24,1,0,Yes (1),,3,14,0
+1830,2014,1,1,South,4,76,UCLA,Tulsa,59,13,17,1,0,No,,4,13,0
+1831,2014,1,1,South,5,75,VCU,Stephen F Austin,77,12,2,2,0,Yes (1),,5,12,0
+1832,2014,1,1,South,6,59,Ohio St,Dayton,60,11,1,2,0,Yes (1),,6,11,0
+1833,2014,1,1,South,7,53,New Mexico,Stanford,58,10,5,2,0,No,,7,10,0
+1834,2014,1,1,South,8,48,Colorado,Pittsburgh,77,9,29,2,0,No,,8,9,0
+1835,2014,1,2,East,1,70,Virginia,Coastal Carolina,59,16,11,1,0,Yes (1),,1,16,0
+1836,2014,1,2,East,2,73,Villanova,Wisconsin Milwaukee,53,15,20,1,0,Yes (1),,2,15,0
+1837,2014,1,2,East,3,93,Iowa St,North Carolina Central,75,14,18,1,0,Yes (1),,3,14,0
+1838,2014,1,2,East,4,93,Michigan St,Delaware,78,13,15,1,0,Yes (1),,4,13,0
+1839,2014,1,2,East,5,57,Cincinnati,Harvard,61,12,4,2,0,Yes (1),,5,12,0
+1840,2014,1,2,East,6,79,North Carolina,Providence,77,11,2,1,0,Yes (1),,6,11,0
+1841,2014,1,2,East,7,89,Connecticut,St Josephs,81,10,8,1,0,No,,7,10,0
+1842,2014,1,2,East,8,71,Memphis,George Washington,66,9,5,1,0,No,,8,9,0
+1843,2014,1,3,West,1,88,Arizona,Weber St,59,16,29,1,0,Yes (1),,1,16,0
+1844,2014,1,3,West,2,75,Wisconsin,American,35,15,40,1,0,Yes (1),,2,15,0
+1845,2014,1,3,West,3,76,Creighton,Louisiana Lafayette,66,14,10,1,0,No,,3,14,0
+1846,2014,1,3,West,4,73,San Diego St,New Mexico St,69,13,4,1,0,Yes (2),,4,13,0
+1847,2014,1,3,West,5,75,Oklahoma,North Dakota St,80,12,5,2,0,Yes (1),,5,12,0
+1848,2014,1,3,West,6,74,Baylor,Nebraska,60,11,14,1,0,Yes (1),,6,11,0
+1849,2014,1,3,West,7,87,Oregon,BYU,68,10,19,1,0,Yes (1),,7,10,0
+1850,2014,1,3,West,8,85,Gonzaga,Oklahoma St,77,9,8,1,0,Yes (1),,8,9,0
+1851,2014,1,4,Midwest,1,64,Wichita St,Cal Poly,37,16,27,1,0,No,,1,16,0
+1852,2014,1,4,Midwest,2,57,Michigan,Wofford,40,15,17,1,0,Yes (1),,2,15,0
+1853,2014,1,4,Midwest,3,71,Duke,Mercer,78,14,7,2,0,Yes (1),,3,14,0
+1854,2014,1,4,Midwest,4,71,Louisville,Manhattan,64,13,7,1,0,Yes (1),,4,13,0
+1855,2014,1,4,Midwest,5,83,St Louis,NC State,80,12,3,1,0,Yes (1),,5,12,0
+1856,2014,1,4,Midwest,6,67,Massachusetts,Tennessee,86,11,19,2,0,Yes (2),,6,11,0
+1857,2014,1,4,Midwest,7,87,Texas,Arizona St,85,10,2,1,0,No,,7,10,0
+1858,2014,1,4,Midwest,8,56,Kentucky,Kansas St,49,9,7,1,0,Yes (1),,8,9,0
+1859,2014,2,1,South,1,61,Florida,Pittsburgh,45,9,16,1,0,Yes (1),,1,9,0
+1860,2014,2,1,South,2,57,Kansas,Stanford,60,10,3,2,0,Yes (1),,2,10,0
+1861,2014,2,1,South,3,53,Syracuse,Dayton,55,11,2,2,0,Yes (1),,3,11,0
+1862,2014,2,1,South,4,77,UCLA,Stephen F Austin,60,12,17,1,0,No,,4,12,0
+1863,2014,2,2,East,1,78,Virginia,Memphis,60,8,18,1,0,Yes (1),,1,8,0
+1864,2014,2,2,East,2,65,Villanova,Connecticut,77,7,12,2,0,Yes (1),,2,7,0
+1865,2014,2,2,East,3,85,Iowa St,North Carolina,83,6,2,1,0,Yes (1),,3,6,0
+1866,2014,2,2,East,4,80,Michigan St,Harvard,73,12,7,1,0,Yes (1),,4,12,0
+1867,2014,2,3,West,1,84,Arizona,Gonzaga,81,8,3,1,0,Yes (1),,1,8,0
+1868,2014,2,3,West,2,85,Wisconsin,Oregon,77,7,8,1,0,Yes (1),,2,7,0
+1869,2014,2,3,West,3,55,Creighton,Baylor,85,6,30,2,0,Yes (2),,3,6,0
+1870,2014,2,3,West,4,63,San Diego St,North Dakota St,44,12,19,1,0,Yes (2),,4,12,0
+1871,2014,2,4,Midwest,1,76,Wichita St,Kentucky,78,8,2,2,0,Yes (2),,1,8,0
+1872,2014,2,4,Midwest,2,79,Michigan,Texas,65,7,14,1,0,Yes (1),,2,7,0
+1873,2014,2,4,Midwest,14,63,Mercer,Tennessee,83,11,20,2,0,Yes (2),,14,11,0
+1874,2014,2,4,Midwest,4,66,Louisville,St Louis,51,5,15,1,0,Yes (1),,4,5,0
+1875,2014,3,1,South,1,79,Florida,UCLA,68,4,11,1,0,Yes (1),,1,4,0
+1876,2014,3,1,South,10,72,Stanford,Dayton,82,11,10,2,0,No,,10,11,0
+1877,2014,3,2,East,1,59,Virginia,Michigan St,61,4,2,2,0,Yes (1),,1,4,0
+1878,2014,3,2,East,7,81,Connecticut,Iowa St,76,3,5,1,0,Yes (2),,7,3,0
+1879,2014,3,3,West,1,70,Arizona,San Diego St,64,4,6,1,0,Yes (1),,1,4,0
+1880,2014,3,3,West,2,69,Wisconsin,Baylor,52,6,17,1,0,Yes (1),,2,6,0
+1881,2014,3,4,Midwest,8,74,Kentucky,Louisville,69,4,5,1,0,Yes (1),,8,4,0
+1882,2014,3,4,Midwest,2,73,Michigan,Tennessee,71,11,2,1,0,Yes (1),,2,11,0
+1883,2014,4,1,South,1,62,Florida,Dayton,52,11,10,1,0,Yes (1),,1,11,0
+1884,2014,4,2,East,4,54,Michigan St,Connecticut,60,7,6,2,0,Yes (1),,4,7,0
+1885,2014,4,3,West,1,63,Arizona,Wisconsin,64,2,1,2,0,Yes (1),,1,2,0
+1886,2014,4,4,Midwest,8,75,Kentucky,Michigan,72,2,3,1,0,Yes (1),,8,2,0
+1887,2014,5,1,Final Four,1,53,Florida,Connecticut,63,7,10,2,0,Yes (1),,1,7,0
+1888,2014,5,2,Final Four,2,73,Wisconsin,Kentucky,74,8,1,2,0,Yes (1),,2,8,0
+1889,2014,6,1,Championship,7,60,Connecticut,Kentucky,54,8,6,4,7,Yes (2),,7,8,7
+1890,2015,1,1,Midwest,1,79,Kentucky,Hampton,56,16,23,1,0,Yes (1),,1,16,0
+1891,2015,1,1,Midwest,2,75,Kansas,New Mexico St,56,15,19,1,0,Yes (1),,2,15,0
+1892,2015,1,1,Midwest,3,69,Notre Dame,Northeastern,65,14,4,1,0,Yes (2),,3,14,0
+1893,2015,1,1,Midwest,4,65,Maryland,Valparaiso,62,13,3,1,0,Yes (1),,4,13,0
+1894,2015,1,1,Midwest,5,68,West Virginia,Buffalo,62,12,6,1,0,Yes (2),,5,12,0
+1895,2015,1,1,Midwest,6,56,Butler,Texas,48,11,8,1,0,No,,6,11,0
+1896,2015,1,1,Midwest,7,81,Wichita St,Indiana,76,10,5,1,0,No,,7,10,0
+1897,2015,1,1,Midwest,8,66,Cincinnati,Purdue,65,9,1,1,0,Yes (1),,8,9,0
+1898,2015,1,2,West,1,86,Wisconsin,Coastal Carolina,72,16,14,1,0,Yes (1),,1,16,0
+1899,2015,1,2,West,2,93,Arizona,Texas Southern,72,15,21,1,0,Yes (1),,2,15,0
+1900,2015,1,2,West,3,56,Baylor,Georgia St,57,14,1,2,0,Yes (1),,3,14,0
+1901,2015,1,2,West,4,67,North Carolina,Harvard,65,13,2,1,0,Yes (1),,4,13,0
+1902,2015,1,2,West,5,56,Arkansas,Wofford,53,12,3,1,0,Yes (2),,5,12,0
+1903,2015,1,2,West,6,76,Xavier,Ole Miss,57,11,19,1,0,No,,6,11,0
+1904,2015,1,2,West,7,72,VCU,Ohio St,75,10,3,2,0,Yes (1),,7,10,0
+1905,2015,1,2,West,8,79,Oregon,Oklahoma St,73,9,6,1,0,Yes (1),,8,9,0
+1906,2015,1,3,East,1,93,Villanova,Lafayette,52,16,41,1,0,Yes (1),,1,16,0
+1907,2015,1,3,East,2,79,Virginia,Belmont,67,15,12,1,0,Yes (1),,2,15,0
+1908,2015,1,3,East,3,69,Oklahoma,Albany,60,14,9,1,0,Yes (1),,3,14,0
+1909,2015,1,3,East,4,57,Louisville,Cal Irvine,55,13,2,1,0,Yes (1),,4,13,0
+1910,2015,1,3,East,5,71,Northern Iowa,Wyoming,54,12,17,1,0,No,,5,12,0
+1911,2015,1,3,East,6,53,Providence,Dayton,66,11,13,2,0,No,,6,11,0
+1912,2015,1,3,East,7,70,Michigan St,Georgia,63,10,7,1,0,Yes (1),,7,10,0
+1913,2015,1,3,East,8,66,NC State,LSU,65,9,1,1,0,Yes (2),,8,9,0
+1914,2015,1,4,South,1,85,Duke,Robert Morris,56,16,29,1,0,Yes (1),,1,16,0
+1915,2015,1,4,South,2,86,Gonzaga,North Dakota St,76,15,10,1,0,Yes (1),,2,15,0
+1916,2015,1,4,South,3,59,Iowa St,UAB,60,14,1,2,0,Yes (1),,3,14,0
+1917,2015,1,4,South,4,84,Georgetown,Eastern Washington,74,13,10,1,0,No,,4,13,0
+1918,2015,1,4,South,5,57,Utah,Stephen F Austin,50,12,7,1,0,No,,5,12,0
+1919,2015,1,4,South,6,59,SMU,UCLA,60,11,1,2,0,No,,6,11,0
+1920,2015,1,4,South,7,83,Iowa,Davidson,52,10,31,1,0,Yes (1),,7,10,0
+1921,2015,1,4,South,8,76,San Diego St,St Johns,64,9,12,1,0,No,,8,9,0
+1922,2015,2,1,Midwest,1,64,Kentucky,Cincinnati,51,8,13,1,0,Yes (1),,1,8,0
+1923,2015,2,1,Midwest,2,65,Kansas,Wichita St,78,7,13,2,0,Yes (1),,2,7,0
+1924,2015,2,1,Midwest,3,67,Notre Dame,Butler,64,6,3,1,0,No,,3,6,0
+1925,2015,2,1,Midwest,4,59,Maryland,West Virginia,69,5,10,2,0,Yes (1),,4,5,0
+1926,2015,2,2,West,1,72,Wisconsin,Oregon,65,8,7,1,0,Yes (1),,1,8,0
+1927,2015,2,2,West,2,73,Arizona,Ohio St,58,10,15,1,0,Yes (1),,2,10,0
+1928,2015,2,2,West,14,67,Georgia St,Xavier,75,6,8,2,0,Yes (1),,14,6,0
+1929,2015,2,2,West,4,87,North Carolina,Arkansas,78,5,9,1,0,Yes (1),,4,5,0
+1930,2015,2,3,East,1,68,Villanova,NC State,71,8,3,2,0,Yes (1),,1,8,0
+1931,2015,2,3,East,2,54,Virginia,Michigan St,60,7,6,2,0,Yes (1),,2,7,0
+1932,2015,2,3,East,3,72,Oklahoma,Dayton,66,11,6,1,0,Yes (1),,3,11,0
+1933,2015,2,3,East,4,66,Louisville,Northern Iowa,53,5,13,1,0,Yes (1),,4,5,0
+1934,2015,2,4,South,1,68,Duke,San Diego St,49,8,19,1,0,Yes (1),,1,8,0
+1935,2015,2,4,South,2,87,Gonzaga,Iowa,68,7,19,1,0,Yes (1),,2,7,0
+1936,2015,2,4,South,14,75,UAB,UCLA,92,11,17,2,0,No,,14,11,0
+1937,2015,2,4,South,4,64,Georgetown,Utah,75,5,11,2,0,No,,4,5,0
+1938,2015,3,1,Midwest,1,78,Kentucky,West Virginia,39,5,39,1,0,Yes (1),,1,5,0
+1939,2015,3,1,Midwest,7,70,Wichita St,Notre Dame,81,3,11,2,0,No,,7,3,0
+1940,2015,3,2,West,1,79,Wisconsin,North Carolina,72,4,7,1,0,Yes (1),,1,4,0
+1941,2015,3,2,West,2,68,Arizona,Xavier,60,6,8,1,0,Yes (1),,2,6,0
+1942,2015,3,3,East,8,65,NC State,Louisville,75,4,10,2,0,Yes (2),,8,4,0
+1943,2015,3,3,East,7,62,Michigan St,Oklahoma,58,3,4,1,0,Yes (1),,7,3,0
+1944,2015,3,4,South,1,63,Duke,Utah,57,5,6,1,0,Yes (1),,1,5,0
+1945,2015,3,4,South,2,74,Gonzaga,UCLA,62,11,12,1,0,Yes (1),,2,11,0
+1946,2015,4,1,Midwest,1,68,Kentucky,Notre Dame,66,3,2,1,0,Yes (1),,1,3,0
+1947,2015,4,2,West,1,85,Wisconsin,Arizona,78,2,7,1,0,Yes (1),,1,2,0
+1948,2015,4,3,East,4,70,Louisville,Michigan St,76,7,6,2,0,Yes (1),,4,7,0
+1949,2015,4,4,South,1,66,Duke,Gonzaga,52,2,14,1,0,Yes (1),,1,2,0
+1950,2015,5,1,Final Four,1,64,Kentucky,Wisconsin,71,1,7,2,0,Yes (1),,1,1,0
+1951,2015,5,2,Final Four,7,61,Michigan St,Duke,81,1,20,2,0,Yes (1),,7,1,0
+1952,2015,6,1,Championship,1,63,Wisconsin,Duke,68,1,5,3,1,Yes (1),,1,1,1
+1953,2016,1,1,South,1,105,Kansas,Austin Peay,79,16,26,1,0,Yes (1),,1,16,0
+1954,2016,1,1,South,2,86,Villanova,UNC Asheville,56,15,30,1,0,Yes (1),,2,15,0
+1955,2016,1,1,South,3,79,Miami,Buffalo,72,14,7,1,0,Yes (2),,3,14,0
+1956,2016,1,1,South,4,66,California,Hawaii,77,13,11,2,0,No,,4,13,0
+1957,2016,1,1,South,5,79,Maryland,South Dakota St,74,12,5,1,0,Yes (1),,5,12,0
+1958,2016,1,1,South,6,55,Arizona,Wichita St,65,11,10,2,0,Yes (1),,6,11,0
+1959,2016,1,1,South,7,72,Iowa,Temple,70,10,2,1,0,Yes (1),,7,10,0
+1960,2016,1,1,South,8,67,Colorado,Connecticut,74,9,7,2,0,No,,8,9,0
+1961,2016,1,2,West,1,91,Oregon,Holy Cross,52,16,39,1,0,Yes (1),,1,16,0
+1962,2016,1,2,West,2,82,Oklahoma,Cal St Bakersfield,68,15,14,1,0,Yes (1),,2,15,0
+1963,2016,1,2,West,3,92,Texas A&M,Wisconsin Green Bay,65,14,27,1,0,No,,3,14,0
+1964,2016,1,2,West,4,93,Duke,UNC Wilmington,85,13,8,1,0,Yes (1),,4,13,0
+1965,2016,1,2,West,5,75,Baylor,Yale,79,12,4,2,0,Yes (1),,5,12,0
+1966,2016,1,2,West,6,72,Texas,Northern Iowa,75,11,3,2,0,No,,6,11,0
+1967,2016,1,2,West,7,67,Oregon St,VCU,75,10,8,2,0,Yes (2),,7,10,0
+1968,2016,1,2,West,8,78,St Josephs,Cincinnati,76,9,2,1,0,Yes (2),,8,9,0
+1969,2016,1,3,East,1,83,North Carolina,Florida Gulf Coast,67,16,16,1,0,Yes (1),,1,16,0
+1970,2016,1,3,East,2,71,Xavier,Weber St,53,15,18,1,0,No,,2,15,0
+1971,2016,1,3,East,3,56,West Virginia,Stephen F Austin,70,14,14,2,0,No,,3,14,0
+1972,2016,1,3,East,4,85,Kentucky,Stony Brook,57,13,28,1,0,Yes (1),,4,13,0
+1973,2016,1,3,East,5,99,Indiana,Chattanooga,74,12,25,1,0,No,,5,12,0
+1974,2016,1,3,East,6,70,Notre Dame,Michigan,63,11,7,1,0,Yes (2),,6,11,0
+1975,2016,1,3,East,7,47,Wisconsin,Pittsburgh,43,10,4,1,0,Yes (1),,7,10,0
+1976,2016,1,3,East,8,69,USC,Providence,70,9,1,2,0,No,,8,9,0
+1977,2016,1,4,Midwest,1,81,Virginia,Hampton,45,16,36,1,0,Yes (1),,1,16,0
+1978,2016,1,4,Midwest,2,81,Michigan St,Middle Tennessee St,90,15,9,2,0,Yes (1),,2,15,0
+1979,2016,1,4,Midwest,3,80,Utah,Fresno St,69,14,11,1,0,No,,3,14,0
+1980,2016,1,4,Midwest,4,94,Iowa St,Iona,81,13,13,1,0,Yes (1),,4,13,0
+1981,2016,1,4,Midwest,5,83,Purdue,Arkansas Little Rock,85,12,2,2,0,Yes (1),,5,12,0
+1982,2016,1,4,Midwest,6,52,Seton Hall,Gonzaga,68,11,16,2,0,Yes (1),,6,11,0
+1983,2016,1,4,Midwest,7,51,Dayton,Syracuse,70,10,19,2,0,Yes (2),,7,10,0
+1984,2016,1,4,Midwest,8,61,Texas Tech,Butler,71,9,10,2,0,Yes (1),,8,9,0
+1985,2016,2,1,South,1,73,Kansas,Connecticut,61,9,12,1,0,Yes (1),,1,9,0
+1986,2016,2,1,South,2,87,Villanova,Iowa,68,7,19,1,0,Yes (1),,2,7,0
+1987,2016,2,1,South,3,65,Miami,Wichita St,57,11,8,1,0,No,,3,11,0
+1988,2016,2,1,South,13,60,Hawaii,Maryland,73,5,13,2,0,Yes (2),,13,5,0
+1989,2016,2,2,West,1,69,Oregon,St Josephs,64,8,5,1,0,Yes (1),,1,8,0
+1990,2016,2,2,West,2,85,Oklahoma,VCU,81,10,4,1,0,Yes (1),,2,10,0
+1991,2016,2,2,West,3,92,Texas A&M,Northern Iowa,88,11,4,1,0,No,,3,11,0
+1992,2016,2,2,West,4,71,Duke,Yale,64,12,7,1,0,Yes (1),,4,12,0
+1993,2016,2,3,East,1,85,North Carolina,Providence,66,9,19,1,0,Yes (1),,1,9,0
+1994,2016,2,3,East,2,63,Xavier,Wisconsin,66,7,3,2,0,Yes (2),,2,7,0
+1995,2016,2,3,East,14,75,Stephen F Austin,Notre Dame,76,6,1,2,0,No,,14,6,0
+1996,2016,2,3,East,4,67,Kentucky,Indiana,73,5,6,2,0,Yes (1),,4,5,0
+1997,2016,2,4,Midwest,1,77,Virginia,Butler,69,9,8,1,0,Yes (1),,1,9,0
+1998,2016,2,4,Midwest,15,50,Middle Tennessee St,Syracuse,75,10,25,2,0,Yes (2),,15,10,0
+1999,2016,2,4,Midwest,3,59,Utah,Gonzaga,82,11,23,2,0,Yes (2),,3,11,0
+2000,2016,2,4,Midwest,4,78,Iowa St,Arkansas Little Rock,61,12,17,1,0,Yes (1),,4,12,0
+2001,2016,3,1,South,1,79,Kansas,Maryland,63,5,16,1,0,Yes (1),,1,5,0
+2002,2016,3,1,South,2,92,Villanova,Miami,69,3,23,1,0,Yes (1),,2,3,0
+2003,2016,3,2,West,1,82,Oregon,Duke,68,4,14,1,0,Yes (1),,1,4,0
+2004,2016,3,2,West,2,77,Oklahoma,Texas A&M,63,3,14,1,0,Yes (1),,2,3,0
+2005,2016,3,3,East,1,101,North Carolina,Indiana,86,5,15,1,0,Yes (1),,1,5,0
+2006,2016,3,3,East,7,56,Wisconsin,Notre Dame,61,6,5,2,0,Yes (1),,7,6,0
+2007,2016,3,4,Midwest,1,84,Virginia,Iowa St,71,4,13,1,0,Yes (1),,1,4,0
+2008,2016,3,4,Midwest,10,63,Syracuse,Gonzaga,60,11,3,1,0,Yes (1),,10,11,0
+2009,2016,4,1,South,1,59,Kansas,Villanova,64,2,5,2,0,Yes (1),,1,2,0
+2010,2016,4,2,West,1,68,Oregon,Oklahoma,80,2,12,2,0,Yes (1),,1,2,0
+2011,2016,4,3,East,1,88,North Carolina,Notre Dame,74,6,14,1,0,Yes (1),,1,6,0
+2012,2016,4,4,Midwest,1,62,Virginia,Syracuse,68,10,6,2,0,Yes (1),,1,10,0
+2013,2016,5,1,Final Four,2,95,Villanova,Oklahoma,51,2,44,1,0,Yes (1),,2,2,0
+2014,2016,5,2,Final Four,1,83,North Carolina,Syracuse,66,10,17,1,0,Yes (1),,1,10,0
+2015,2016,6,1,Championship,2,77,Villanova,North Carolina,74,1,3,4,2,Yes (1),,2,1,2
+2016,2017,1,1,East,1,76,Villanova,Mount St Marys,56,16,20,1,0,Yes (1),,1,16,0
+2017,2017,1,1,East,2,87,Duke,Troy,65,15,22,1,0,Yes (1),,2,15,0
+2018,2017,1,1,East,3,91,Baylor,New Mexico St,73,14,18,1,0,Yes (1),,3,14,0
+2019,2017,1,1,East,4,80,Florida,East Tennessee St,65,13,15,1,0,Yes (1),,4,13,0
+2020,2017,1,1,East,5,76,Virginia,UNC Wilmington,71,12,5,1,0,Yes (1),,5,12,0
+2021,2017,1,1,East,6,65,SMU,USC,66,11,1,2,0,No,,6,11,0
+2022,2017,1,1,East,7,93,South Carolina,Marquette,73,10,20,1,0,Yes (2),,7,10,0
+2023,2017,1,1,East,8,84,Wisconsin,Virginia Tech,74,9,10,1,0,Yes (1),,8,9,0
+2024,2017,1,2,West,1,66,Gonzaga,South Dakota St,46,16,20,1,0,Yes (1),,1,16,0
+2025,2017,1,2,West,2,100,Arizona,North Dakota,82,15,18,1,0,Yes (1),,2,15,0
+2026,2017,1,2,West,3,86,Florida St,Florida Gulf Coast,80,14,6,1,0,No,,3,14,0
+2027,2017,1,2,West,4,86,West Virginia,Bucknell,80,13,6,1,0,No,,4,13,0
+2028,2017,1,2,West,5,60,Notre Dame,Princeton,58,12,2,1,0,No,,5,12,0
+2029,2017,1,2,West,6,65,Maryland,Xavier,76,11,11,2,0,Yes (1),,6,11,0
+2030,2017,1,2,West,7,85,St Marys,VCU,77,10,8,1,0,Yes (1),,7,10,0
+2031,2017,1,2,West,8,68,Northwestern,Vanderbilt,66,9,2,1,0,No,,8,9,0
+2032,2017,1,3,Midwest,1,100,Kansas,UC Davis,62,16,38,1,0,Yes (1),,1,16,0
+2033,2017,1,3,Midwest,2,78,Louisville,Jacksonville St,63,15,15,1,0,Yes (1),,2,15,0
+2034,2017,1,3,Midwest,3,93,Oregon,Iona,77,14,16,1,0,Yes (1),,3,14,0
+2035,2017,1,3,Midwest,4,80,Purdue,Vermont,70,13,10,1,0,Yes (1),,4,13,0
+2036,2017,1,3,Midwest,5,84,Iowa St,Nevada,73,12,11,1,0,Yes (1),,5,12,0
+2037,2017,1,3,Midwest,6,72,Creighton,Rhode Island,84,11,12,2,0,No,,6,11,0
+2038,2017,1,3,Midwest,7,92,Michigan,Oklahoma St,91,10,1,1,0,Yes (1),,7,10,0
+2039,2017,1,3,Midwest,8,58,Miami,Michigan St,78,9,20,2,0,Yes (2),,8,9,0
+2040,2017,1,4,South,1,103,North Carolina,Texas Southern,64,16,39,1,0,Yes (1),,1,16,0
+2041,2017,1,4,South,2,79,Kentucky,Northern Kentucky,70,15,9,1,0,Yes (1),,2,15,0
+2042,2017,1,4,South,3,97,UCLA,Kent St,80,14,17,1,0,No,,3,14,0
+2043,2017,1,4,South,4,76,Butler,Winthrop,64,13,12,1,0,No,,4,13,0
+2044,2017,1,4,South,5,72,Minnesota,Middle Tennessee St,81,12,9,2,0,Yes (1),,5,12,0
+2045,2017,1,4,South,6,75,Cincinnati,Kansas St,61,11,14,1,0,Yes (1),,6,11,0
+2046,2017,1,4,South,7,58,Dayton,Wichita St,64,10,6,2,0,No,,7,10,0
+2047,2017,1,4,South,8,77,Arkansas,Seton Hall,71,9,6,1,0,Yes (2),,8,9,0
+2048,2017,2,1,East,1,62,Villanova,Wisconsin,65,8,3,2,0,Yes (1),,1,8,0
+2049,2017,2,1,East,2,81,Duke,South Carolina,88,7,7,2,0,Yes (1),,2,7,0
+2050,2017,2,1,East,3,82,Baylor,USC,78,11,4,1,0,Yes (1),,3,11,0
+2051,2017,2,1,East,4,65,Florida,Virginia,39,5,26,1,0,Yes (1),,4,5,0
+2052,2017,2,2,West,1,79,Gonzaga,Northwestern,73,8,6,1,0,Yes (1),,1,8,0
+2053,2017,2,2,West,2,69,Arizona,St Marys,60,7,9,1,0,Yes (1),,2,7,0
+2054,2017,2,2,West,3,66,Florida St,Xavier,91,11,25,2,0,No,,3,11,0
+2055,2017,2,2,West,4,83,West Virginia,Notre Dame,71,5,12,1,0,No,,4,5,0
+2056,2017,2,3,Midwest,1,90,Kansas,Michigan St,70,9,20,1,0,Yes (1),,1,9,0
+2057,2017,2,3,Midwest,2,69,Louisville,Michigan,73,7,4,2,0,Yes (1),,2,7,0
+2058,2017,2,3,Midwest,3,75,Oregon,Rhode Island,72,11,3,1,0,Yes (1),,3,11,0
+2059,2017,2,3,Midwest,4,80,Purdue,Iowa St,76,5,4,1,0,Yes (1),,4,5,0
+2060,2017,2,4,South,1,72,North Carolina,Arkansas,65,8,7,1,0,Yes (1),,1,8,0
+2061,2017,2,4,South,2,65,Kentucky,Wichita St,62,10,3,1,0,Yes (1),,2,10,0
+2062,2017,2,4,South,3,79,UCLA,Cincinnati,67,6,12,1,0,Yes (2),,3,6,0
+2063,2017,2,4,South,4,74,Butler,Middle Tennessee St,65,12,9,1,0,No,,4,12,0
+2064,2017,3,1,East,8,83,Wisconsin,Florida,84,4,1,2,0,Yes (1),,8,4,0
+2065,2017,3,1,East,7,70,South Carolina,Baylor,50,3,20,1,0,Yes (2),,7,3,0
+2066,2017,3,2,West,1,61,Gonzaga,West Virginia,58,4,3,1,0,Yes (1),,1,4,0
+2067,2017,3,2,West,2,71,Arizona,Xavier,73,11,2,2,0,Yes (1),,2,11,0
+2068,2017,3,3,Midwest,1,98,Kansas,Purdue,66,4,32,1,0,Yes (1),,1,4,0
+2069,2017,3,3,Midwest,7,68,Michigan,Oregon,69,3,1,2,0,Yes (1),,7,3,0
+2070,2017,3,4,South,1,92,North Carolina,Butler,80,4,12,1,0,Yes (1),,1,4,0
+2071,2017,3,4,South,2,86,Kentucky,UCLA,75,3,11,1,0,Yes (1),,2,3,0
+2072,2017,4,1,East,4,70,Florida,South Carolina,77,7,7,2,0,Yes (1),,4,7,0
+2073,2017,4,2,West,1,83,Gonzaga,Xavier,59,11,24,1,0,Yes (1),,1,11,0
+2074,2017,4,3,Midwest,1,60,Kansas,Oregon,74,3,14,2,0,Yes (1),,1,3,0
+2075,2017,4,4,South,1,75,North Carolina,Kentucky,73,2,2,1,0,Yes (1),,1,2,0
+2076,2017,5,1,Final Four,7,73,South Carolina,Gonzaga,77,1,4,2,0,Yes (2),,7,1,0
+2077,2017,5,2,Final Four,3,76,Oregon,North Carolina,77,1,1,2,0,Yes (1),,3,1,0
+2078,2017,6,1,Championship,1,65,Gonzaga,North Carolina,71,1,6,3,1,Yes (1),,1,1,1
+2079,2018,1,1,South,1,54,Virginia,UMBC,74,16,20,2,0,Yes (1),,1,16,0
+2080,2018,1,1,South,2,68,Cincinnati,Georgia St,53,15,15,1,0,Yes (1),,2,15,0
+2081,2018,1,1,South,3,73,Tennessee,Wright St,47,14,26,1,0,Yes (1),,3,14,0
+2082,2018,1,1,South,4,68,Arizona,Buffalo,89,13,21,2,0,Yes (1),,4,13,0
+2083,2018,1,1,South,5,78,Kentucky,Davidson,73,12,5,1,0,Yes (1),,5,12,0
+2084,2018,1,1,South,6,62,Miami,Loyola Chicago,64,11,2,2,0,No,,6,11,0
+2085,2018,1,1,South,7,87,Nevada,Texas,83,10,4,1,0,Yes (1),,7,10,0
+2086,2018,1,1,South,8,59,Creighton,Kansas St,69,9,10,2,0,Yes (2),,8,9,0
+2087,2018,1,2,West,1,102,Xavier,Texas Southern,83,16,19,1,0,No,,1,16,0
+2088,2018,1,2,West,2,84,North Carolina,Lipscomb,66,15,18,1,0,Yes (1),,2,15,0
+2089,2018,1,2,West,3,61,Michigan,Montana,47,14,14,1,0,Yes (1),,3,14,0
+2090,2018,1,2,West,4,68,Gonzaga,UNC Greensboro,64,13,4,1,0,Yes (1),,4,13,0
+2091,2018,1,2,West,5,81,Ohio St,South Dakota St,73,12,8,1,0,Yes (1),,5,12,0
+2092,2018,1,2,West,6,67,Houston,San Diego St,65,11,2,1,0,Yes (1),,6,11,0
+2093,2018,1,2,West,7,73,Texas A&M,Providence,69,10,4,1,0,No,,7,10,0
+2094,2018,1,2,West,8,54,Missouri,Florida St,67,9,13,2,0,No,,8,9,0
+2095,2018,1,3,East,1,87,Villanova,Radford,61,16,26,1,0,Yes (1),,1,16,0
+2096,2018,1,3,East,2,74,Purdue,Cal St Fullerton,48,15,26,1,0,Yes (1),,2,15,0
+2097,2018,1,3,East,3,70,Texas Tech,Stephen F Austin,60,14,10,1,0,Yes (1),,3,14,0
+2098,2018,1,3,East,4,75,Wichita St,Marshall,81,13,6,2,0,No,,4,13,0
+2099,2018,1,3,East,5,85,West Virginia,Murray St,68,12,17,1,0,No,,5,12,0
+2100,2018,1,3,East,6,77,Florida,St Bonaventure,62,11,15,1,0,Yes (1),,6,11,0
+2101,2018,1,3,East,7,62,Arkansas,Butler,79,10,17,2,0,No,,7,10,0
+2102,2018,1,3,East,8,83,Virginia Tech,Alabama,86,9,3,2,0,Yes (1),,8,9,0
+2103,2018,1,4,Midwest,1,76,Kansas,Pennsylvania,60,16,16,1,0,Yes (1),,1,16,0
+2104,2018,1,4,Midwest,2,89,Duke,Iona,67,15,22,1,0,Yes (1),,2,15,0
+2105,2018,1,4,Midwest,3,82,Michigan St,Bucknell,78,14,4,1,0,Yes (1),,3,14,0
+2106,2018,1,4,Midwest,4,62,Auburn,College of Charleston,58,13,4,1,0,Yes (1),,4,13,0
+2107,2018,1,4,Midwest,5,79,Clemson,New Mexico St,68,12,11,1,0,Yes (2),,5,12,0
+2108,2018,1,4,Midwest,6,52,TCU,Syracuse,57,11,5,2,0,Yes (2),,6,11,0
+2109,2018,1,4,Midwest,7,83,Rhode Island,Oklahoma,78,10,5,1,0,Yes (2),,7,10,0
+2110,2018,1,4,Midwest,8,94,Seton Hall,NC State,83,9,11,1,0,Yes (1),,8,9,0
+2111,2018,2,1,South,16,43,UMBC,Kansas St,50,9,7,2,0,Yes (2),,16,9,0
+2112,2018,2,1,South,2,73,Cincinnati,Nevada,75,7,2,2,0,Yes (1),,2,7,0
+2113,2018,2,1,South,3,62,Tennessee,Loyola Chicago,63,11,1,2,0,Yes (1),,3,11,0
+2114,2018,2,1,South,13,75,Buffalo,Kentucky,95,5,20,2,0,Yes (1),,13,5,0
+2115,2018,2,2,West,1,70,Xavier,Florida St,75,9,5,2,0,No,,1,9,0
+2116,2018,2,2,West,2,65,North Carolina,Texas A&M,86,7,21,2,0,Yes (1),,2,7,0
+2117,2018,2,2,West,3,64,Michigan,Houston,63,6,1,1,0,Yes (1),,3,6,0
+2118,2018,2,2,West,4,90,Gonzaga,Ohio St,84,5,6,1,0,Yes (1),,4,5,0
+2119,2018,2,3,East,1,81,Villanova,Alabama,58,9,23,1,0,Yes (1),,1,9,0
+2120,2018,2,3,East,2,76,Purdue,Butler,73,10,3,1,0,Yes (1),,2,10,0
+2121,2018,2,3,East,3,69,Texas Tech,Florida,66,6,3,1,0,Yes (1),,3,6,0
+2122,2018,2,3,East,13,71,Marshall,West Virginia,94,5,23,2,0,No,,13,5,0
+2123,2018,2,4,Midwest,1,83,Kansas,Seton Hall,79,8,4,1,0,Yes (1),,1,8,0
+2124,2018,2,4,Midwest,2,87,Duke,Rhode Island,62,7,25,1,0,Yes (1),,2,7,0
+2125,2018,2,4,Midwest,3,53,Michigan St,Syracuse,55,11,2,2,0,Yes (1),,3,11,0
+2126,2018,2,4,Midwest,4,53,Auburn,Clemson,84,5,31,2,0,Yes (1),,4,5,0
+2127,2018,3,1,South,9,61,Kansas St,Kentucky,58,5,3,1,0,Yes (1),,9,5,0
+2128,2018,3,1,South,7,68,Nevada,Loyola Chicago,69,11,1,2,0,Yes (1),,7,11,0
+2129,2018,3,2,West,9,75,Florida St,Gonzaga,60,4,15,1,0,Yes (2),,9,4,0
+2130,2018,3,2,West,7,72,Texas A&M,Michigan,99,3,27,2,0,Yes (2),,7,3,0
+2131,2018,3,3,East,1,90,Villanova,West Virginia,78,5,12,1,0,Yes (1),,1,5,0
+2132,2018,3,3,East,2,65,Purdue,Texas Tech,78,3,13,2,0,Yes (1),,2,3,0
+2133,2018,3,4,Midwest,1,80,Kansas,Clemson,76,5,4,1,0,Yes (1),,1,5,0
+2134,2018,3,4,Midwest,2,69,Duke,Syracuse,65,11,4,1,0,Yes (1),,2,11,0
+2135,2018,4,1,South,9,62,Kansas St,Loyola Chicago,78,11,16,2,0,Yes (1),,9,11,0
+2136,2018,4,2,West,9,54,Florida St,Michigan,58,3,4,2,0,Yes (2),,9,3,0
+2137,2018,4,3,East,1,71,Villanova,Texas Tech,59,3,12,1,0,Yes (1),,1,3,0
+2138,2018,4,4,Midwest,1,85,Kansas,Duke,81,2,4,1,0,Yes (1),,1,2,0
+2139,2018,5,1,Final Four,11,57,Loyola Chicago,Michigan,69,3,12,2,0,Yes (2),,11,3,0
+2140,2018,5,2,Final Four,1,95,Villanova,Kansas,79,1,16,1,0,Yes (1),,1,1,0
+2141,2018,6,1,Championship,3,62,Michigan,Villanova,79,1,17,3,1,Yes (1),,3,1,1
