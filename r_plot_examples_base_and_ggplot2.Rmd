@@ -126,6 +126,14 @@ orange %>%
   geom_density(fill= 7, color= 2)
 
 ```
+### Adding a Density Plot to the Customized Histogram
+Use the same histogram created in the "Customized Histogram Using Base R" section and overlay a density curve on it.
+```{r}
+x <- iris$Petal.Width
+h <- hist(x, breaks=20, col="pink", freq=FALSE, xlab= "Petal Width", main="Histogram With Density Curve")
+lines(density(x), lwd=2, col="blue")
+```
+
 ## Bar Plot
 ###Base R
 ```{r}
