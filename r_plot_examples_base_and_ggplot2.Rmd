@@ -25,9 +25,11 @@ library(tidyverse)
 library(vioplot)
 library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
+library(hexbin)
 library(RColorBrewer)
 library(viridis)
 library(geojsonio)
+
 ```
 
 ## Histogram
@@ -99,6 +101,20 @@ ggplot(iris, aes(x=Petal.Width)) +
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + ylab("Frequency") + 
   facet_grid(. ~ Species)
+```
+
+## 2d Histogram with Density
+```{r}
+#this is for more color
+rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+r <- rf(32)
+#this is the actual setup of the plot
+MM <- read.csv('data/MarchMadness.csv')
+x <- MM$Pointdiff
+y <-  MM$Seed
+dataframe <- data.frame(x, y)
+h <- hexbin(dataframe)
+plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
 ```
 
 ## Density Curve
