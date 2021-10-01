@@ -25,91 +25,77 @@ library(tidyverse)
 library(vioplot)
 library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
+library(RColorBrewer)
 ```
 
 
 ## Histogram
 
-Based on example Histogram from:
-https://statisticsglobe.com/histogram-in-base-r-hist-function
-
-Using the rivers dataset from Base R
-```{r}
-rivers
-```
-
 ### Basic Histogram (Base R)
 
-```{r}
-hist(rivers)
-```
-
-Adding titles, changing the color of the histogram, changing the breaks, changing the axis limits
+Use the Iris dataset. Show distribution of petal width.
 
 ```{r}
-hist(rivers,                                                # Change main title of histogram
-     main = "Length of Rivers in North America", col='blue', breaks=20, xlim=c(0, 5000), ylim=c(0, 120))
+hist(iris$Petal.Width,
+     main = "Iris Petal Width Histogram",
+     xlab = "Petal Width")
 ```
 
-Using the Iris dataset to customize a histogram.
-
-```{r}
-iris
-```
-
-Displaying the default histogram for petal width.
-
-```{r}
-hist(iris$Petal.Width)
-```
-
-Customizing the histogram.
+### Customized Histogram using Base R
 
 ```{r}
 hist(iris$Petal.Width,                                                
-     main = "Iris Petal Width Histogram", xlab = " Petal Width", col='pink', breaks=20, xlim=c(0, 3), ylim=c(0, 50))
+     main = "Iris Petal Width Histogram", xlab = "Petal Width", col='pink', breaks=20, xlim=c(0, 2.9), ylim=c(0, 40))
 ```
 
-Re-creating a histogram with ggplot2 based on the following example:
-http://www.sthda.com/english/wiki/ggplot2-histogram-plot-quick-start-guide-r-software-and-data-visualization
-
-Creating the dataset.
+### Creating Histograms for each Species on Petal Width using Base R
 
 ```{r}
-set.seed(1234)
-df <- data.frame(
-  sex=factor(rep(c("F", "M"), each=200)),
-  weight=round(c(rnorm(200, mean=55, sd=5), rnorm(200, mean=65, sd=5)))
-  )
-head(df)
+#Subsetting the different species
+set <- iris$Sepal.Width[iris$Species == "setosa"]
+ver <- iris$Sepal.Width[iris$Species == "versicolor"]
+vir <- iris$Sepal.Width[iris$Species == "virginica"]
+par(mfrow = c(3, 1))
+hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.5, 6.5), ylim=c(0, 50))
+hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.75, 5.5), ylim=c(0, 50))
+hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', breaks=2.5, xlim=c(1.5, 5.5), ylim=c(0, 50))
 ```
 
-Creating a basic histogram.
+### Basic Histogram using GGPlot2
 
 ```{r}
-# Basic histogram
-ggplot(df, aes(x=weight)) + geom_histogram()
-# Change the width of bins
-ggplot(df, aes(x=weight)) + 
-  geom_histogram(binwidth=1)
-# Change colors
-p<-ggplot(df, aes(x=weight)) + 
-  geom_histogram(color="black", fill="white")
-p
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram()
 ```
 
-Creating a histogram for Iris Dataset on Petal Length using ggplot2 and customizing.
+### Customized Histogram using GGPlot2
+
+Changing the bins, color, outline color, adding title, and adding x and y labels
 
 ```{r}
-##Basic histogram
-ggplot(iris, aes(x=iris$Petal.Length)) + geom_histogram()
-##Changing the bins
-ggplot(iris, aes(x=iris$Petal.Length)) + 
-  geom_histogram(binwidth=1.5)
-##Changing the colors and adding a title
-s<-ggplot(iris, aes(x=iris$Petal.Length)) + 
-  geom_histogram(color="yellow", fill="red", binwidth=1.5)
-s + ggtitle("Iris Petal Length Histogram") + xlab("Petal Length")
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(binwidth=1.5, color="Blue", fill="orange") + 
+  ggtitle("Iris Petal Width Histogram") + 
+  xlab("Petal Width") + 
+  ylab("Frequency")
+```
+
+### GGPlot2 Histogram with Species Added in
+
+```{r}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(binwidth=1.5, color="yellow", aes(fill=Species)) + 
+  ggtitle("Iris Petal Width Histogram") + 
+  xlab("Petal Width") + 
+  ylab("Frequency")
+```
+
+### Creating Histograms for each Species on Petal Width using GGPlot2
+
+```{r}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(binwidth=1.5, color="blue", fill="orange") + ggtitle("Iris Petal Width Histogram") + xlab("Petal Width") + ylab("Frequency") + 
+  facet_grid(. ~ Species)
 ```
 
 ## Density Curve
@@ -119,7 +105,6 @@ s + ggtitle("Iris Petal Length Histogram") + xlab("Petal Length")
 # get a dataset from R
 # Orange dataset has information about the growth of orange trees
 orange <- Orange
-head(orange)
 ```
 
 ```{r}
@@ -147,8 +132,6 @@ orange %>%
 ### Create a data set to work with
 survey <- c(apple=45, orange=25, honeydew=35, banana=50, watermelon=20, blueberry=15)
 
-survey
-
 ### Create a barchart with titles and color
 barplot(survey,
         main="Favorite Fruit Survey",
@@ -169,8 +152,7 @@ legend("topright",
 
 ### GGplot2
 ```{r}
-# First load ggplot2
-library(ggplot2)
+
 
 # Use the same data set created in the base r example but make it into a data frame
 survey1 <- data.frame(
@@ -293,10 +275,6 @@ Base R:
 data(ChickWeight)
 ```
 ```{r}
-head(ChickWeight)
-str(ChickWeight)
-```
-```{r}
 #Boxplot:
 boxplot(ChickWeight$weight ~ ChickWeight$Time,
         main = "Chick Age versus Chick Weight",
@@ -305,7 +283,6 @@ boxplot(ChickWeight$weight ~ ChickWeight$Time,
 ```
 ggplot2:
 ```{r}
-library(ggplot2)
 p <- ggplot(ChickWeight, aes(group=Time, y=weight)) + 
   geom_boxplot() +
   labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
@@ -389,10 +366,17 @@ This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two 
 
 ```{r}
 ggplot(data = iris) + 
+
+### Add Boxplot on top of the strip plot for iris species. - used https://www.youtube.com/watch?v=mbvU8fF4eGM&t=613s as a reference
+
+  geom_boxplot(mapping = aes(x = iris$Sepal.Width, y = iris$Species, fill = iris$Species),
+               alpha = 0.25,
+               width = 0.5,
+               show.legend = FALSE) +
+               
   geom_jitter(aes(y=Species, x=Sepal.Width, color = Species), 
               width = 0.05, 
-              height = 0.2, 
-              alpha = 0.5,
+              height = 0.2,
               pch = 19,
               cex = 2) +
   labs(title = "Sepal Width Distribution by Iris Species",
@@ -436,10 +420,10 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
   scale_x_continuous(breaks = seq(5, 30, 5)) +
   geom_text(aes(label = PLAYER), 
             data = top_one,
-            nudge_x = -0.25,
+            nudge_x = 0.25,
             angle = 90,
             alpha = 0.5,
-            vjust = "bottom", 
+            vjust = "top", 
             hjust = "middle") +
   labs(title = "Scoring Distribution of Top 10 Scorers") +
   theme_bw() +
@@ -447,6 +431,50 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
   geom_boxplot(alpha = 0,
                linetype = 3)
 ```
+
+## Strip Plot showing the distribution of a numberic variable by a categorical variable
+```{r}
+#This example is similar to the one that Dr. Haney did above, this time with a different dataset with new variables.
+data(chickwts)
+str(chickwts)
+
+```
+
+```{r}
+#in ggplot2:
+ggplot(data = chickwts) + 
+  geom_jitter(aes(y=feed, x=weight, color = feed), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Chick Weight by Feed Type",
+       x = "Chick Weight in Grams",
+       y = "Feed Type") + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+```{r}
+# A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
+data(CO2)
+str(CO2)
+```
+```{r}
+ggplot(data = CO2) + 
+  geom_jitter(aes(y=Treatment, x=uptake, color = Treatment), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Carbon Dioxide Uptake in Grass Plants by Treatment Type",
+       x = "Carbon Dioxide Uptake",
+       y = "Treatment Type") + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
 
 ## Normal Probability (QQ) Plot
 
@@ -493,7 +521,6 @@ First, let's read in some data on passengers who were aboard the *Titanic*.
 
 ```{r}
 titanic <- read.csv("data/titanic.csv")
-str(titanic)
 ```
 
 Next we will mosaic plot of Titanic ticket class vs embarkment location. First check to see if there is any missing data.
@@ -531,7 +558,7 @@ Let's make a similar mosaic plot using ggplot2. We need to use the ggmosaic pack
 
 ```{r}
 titanic_clean <- titanic %>% 
-  filter(Embarked %in% c("C", "Q", "S")) %>%
+  filter(Embarked %in% c("C", "Q", "S")) %>%  # Removes cases with missing data
   mutate(
   Embarked = factor(embarked),
   Pclass = factor(Pclass)
@@ -572,10 +599,8 @@ abline(lm(covidchart$death ~ covidchart$positive), col = "red")
 We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
 
 ## Rcolorbrewer in Base R
-Another way to color your plot is by using rcolorbrewer. We first have to load rcolorbrewer like so:
-```{r}
-library(RColorBrewer)
-```
+Another way to color your plot is by using rcolorbrewer. We first have to load rcolorbrewer
+
 Then, execute this:
 ```{r}
 display.brewer.all()
@@ -602,6 +627,7 @@ From there, go back to your plot's color argument and type something like
 plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = Past[1])
 ```
 To set the color of the plot to the first color in the "Past" palette we made with colorbrewer.
+
 ### ggplot2
 ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
 ```{r}
@@ -695,13 +721,11 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
 ## Diverging Bar Chart
 ```{r}
 data(swiss)
-head(swiss)
-str(swiss)
 ```
+
 ```{r}
 
 #Data Preparation
-library(ggplot2)
 swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
 swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized mpg
 swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
@@ -729,7 +753,6 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
 To make a lollipop chart with ggplot2 you can use `geom_point()` for the circle and `geom_segment()` for the stem.
 
 ```{R}
-library(ggplot2)
 
 let <- data.frame(
   x=LETTERS[1:10],
@@ -754,7 +777,7 @@ ggplot(let, aes(x=x, y=y)) +
 
 ## Diverging Lollipop Chart
 
-Use the state data that comes with R. Let's look at state life expectancy. First, prepare the data.
+Use the state data that comes with R. Let's look at state life expectancy. First, prepare the data that we will use for a couple examples.
 
 ```{r}
 state_df <- data.frame(state.x77, Region=state.region, Division=state.division)
@@ -766,7 +789,7 @@ state_df <- state_df[order(state_df$Life.Exp.Z), ]
 state_df$State <- factor(state_df$State, levels = state_df$State)
 ```
 
-Next create a simple diverging lollipop chart to highlight the difference of each state mean life expectancy from the mean state mean life expectancy.
+Next create a simple diverging lollipop chart to highlight the difference of each state's mean life expectancy from the mean state mean life expectancy.
 
 ```{r, fig.width=6.5, fig.height=7.5}
 ggplot(state_df, aes(x=State, y=Life.Exp)) + 
@@ -784,7 +807,7 @@ ggplot(state_df, aes(x=State, y=Life.Exp)) +
   coord_flip()
 ```
 
-Now let's try to view a subset. With a smaller amount of data we can add the life expectancies to the dots.
+Now let's try to view a subset. With a smaller amount of data we can add the life expectancies as labels on the dots.
 
 ```{r}
 ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=round(Life.Exp, 1))) + 
@@ -793,7 +816,7 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
   geom_text(color="white", size=2.2) +
   labs(y = "Standard Deviations from Mean State Life Expectancy") +
   geom_text(aes(x = "West Virginia", 
-                y = -0.1, 
+                y = -0.05, 
                 label = "Mean State Life Expectancy"),
             angle = 90,
             color = "darkgray") +
@@ -807,7 +830,3 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
 
 
 ## Chloropleth
-
-
-
-
