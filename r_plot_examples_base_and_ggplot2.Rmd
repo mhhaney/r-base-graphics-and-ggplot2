@@ -581,23 +581,27 @@ Then, execute this:
 display.brewer.all()
 ```
 to see all the available palettes. To view a single palette, type
-```{r}
-display.brewer.pal(n, name)
-```
-name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, display.brewer.pal(3, RdYlBlu shows you the first three colors in the RdYlBl (red, yellow, blue) palette. 
 
+display.brewer.pal(n, name)
+
+name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, 
 ```{r}
-brewer.pal(n, name)
+display.brewer.pal(3, Pastel1)
 ```
-returns the hex codes of the n colors in the name palette, and can be assigned as a vector. 
+shows you the first three colors in the Pastel1 palette. 
+
+
+brewer.pal(n, name)
+
+returns the hex codes of the n colors in the name palette, and can be assigned as a vector, your artist's palette Here, we create a palette of all 9 colors in Pastel1 palette. 
 ```{r}
-Bl <- brewer.pal(9, Blues)
+Past <- brewer.pal(9, Pastel1)
 ```
 From there, go back to your plot's color argument and type something like
 ```{r}
-plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = Bl[1])
+plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = Past[1])
 ```
-To set the color of the plot to the first color in the "Bl" palette we made with colorbrewer.
+To set the color of the plot to the first color in the "Past" palette we made with colorbrewer.
 ### ggplot2
 ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
 ```{r}
@@ -607,11 +611,11 @@ ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + l
 In order to use colorbrewer in ggplot2, you have to first save your ggplot in a variable, and then append the function scale_color_brewer() to it, with the argument palette =."palettename" inside the function. Like so:
 ```{r}
 covid <- ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
-covid + scale_color_brewer(palette = "Greens")
+covid + scale_color_brewer(palette = "Pastel1")
 ```
 Alternatively, you could append the scale_color_brewer function to the ggplot function
 ```{r}
-ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm) + scale_color_brewer(palette = "Greens")
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm) + scale_color_brewer(palette = "Pastel1")
 ```
 ## Bubble Plot
 
