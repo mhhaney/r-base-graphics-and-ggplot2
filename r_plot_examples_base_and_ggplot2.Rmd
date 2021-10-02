@@ -1241,6 +1241,34 @@ text(8, 5, expression(paste(frac(1, sigma*sqrt(2*pi)), " ",
                             plain(e)^{frac(-(x-mu)^2, 2*sigma^2)})),
      cex = 1.2)
 ```
+## HeatMap Plot
+```{r}
+library(ggplot2)
+library(dplyr)
+library(reshape)
+L <- read.csv('phone.csv')
+
+L1 <- 
+  L %>%select(country,X1995,X1996,X1997,X1998,X1999,X2000,X2001,X2002,X2003,X2004,X2005,)
+
+L2 <-
+  L1 %>%filter(country=='Argentina'|country=='Brazil'|country=='Chile'|country=='Colombia'|country=='Portugal'|country=='Barbados'|country=='Mexico'|country=='Spain'|country=='Egypt')
+
+for (col in 1:ncol(L2)){
+ colnames(L2)[col] <- sub('X', '', colnames(L2)[col])
+}
+
+L3<-melt(L2)
+
+plot<-ggplot(L3, aes(variable,country,fill= value)) + geom_tile()
+
+plot1<- plot+xlab('Year')+
+ ylab('Country')+
+ ggtitle('Mobile Cell Phone Subs 1995-2005')+
+ labs(fill = 'Per capita subscriptions')
+
+plot1 + scale_fill_distiller(palette = 'Spectral')
+```
 
 ### Plots side by side - gridExtra Package - grid.arrange()
 
@@ -1279,5 +1307,3 @@ plotex <- list(pointex, pointex2)
 
 grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
-
-
