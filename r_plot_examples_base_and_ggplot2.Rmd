@@ -27,14 +27,11 @@ library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
 library(hexbin)
 library(RColorBrewer)
-<<<<<<< HEAD
 library(ggplot2)
 library(dplyr)
-=======
 library(viridis)
 library(geojsonio)
 library(kableExtra) # For nice looking tables in html output
->>>>>>> 40b97696ee55ae5b148b88d8c59fa5e50204108a
 ```
 
 ## Histogram
@@ -981,12 +978,10 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
   theme(legend.position = "none")
 ```
 
-
-## Chloropleth
-
-<<<<<<< HEAD
 ## Making pie charts in R and ggplot2
-## Base R
+
+### Base R
+
 ```{r}
 data <- read.csv("data/titanic.csv", TRUE, sep = ",")
 slices <- table(data$Pclass)
@@ -997,7 +992,9 @@ lbls <- paste(lbls, pct) #this adds the percentage to the labels
 lbls <- paste(lbls,"%",sep="")
 pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(length(lbls)))
 ```
-## Pie Chart Using ggplot2
+
+### Pie Chart Using ggplot2
+
 ```{r}
 #nums <- read.csv("data/titanic.csv")
 #ClassCount <- as.data.frame(table(nums$Pclass))
@@ -1018,7 +1015,9 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   geom_text(aes(y = lab.ypos, label = prop), color = "black") +
   scale_fill_manual(values = mycols) + theme_void()
 ```
-=======
+
+## Chloropleth
+
 Create a chloropleth using color to show population density of European countries. First, download geojson data using the `geojson_read()` function from the `geojsonio` package. `what = "sp"` instructs the function to return the data as a `SpatialPolygonsDataFrame` type. This type contains vertices data that can be used to draw polygons, as well as additional information associated with the polygon. In this case the polygons are European countries and the associated data includes population and area data from 2005.
 
 ```{r}
@@ -1040,7 +1039,6 @@ spdf_tibble <- broom::tidy(spdf) %>%
   mutate(id = strtoi(id))
 ```
 Merge the geospatial data with the data about the polygons (countries).
->>>>>>> 40b97696ee55ae5b148b88d8c59fa5e50204108a
 
 ```{r}
 # Make the merge
