@@ -243,6 +243,7 @@ ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
 ## Density Curve
 
 ### Basic Density Curve Using Base R
+
 ```{r}
 # get a dataset from R
 # Orange dataset has information about the growth of orange trees
@@ -262,6 +263,7 @@ polygon(density(orange$circumference), col=7, border=2)
 ```
 
 ### Basic Density Curve Using GGPlot2
+
 ```{r}
 # create the density plot
 
@@ -272,8 +274,11 @@ orange %>%
 
 
 ```
+
 ### Adding a Density Plot to a Histogram
+
 Use the same histogram created in the "Customized Histogram Using Base R" section and overlay a density curve on it.
+
 ```{r}
 x <- iris$Petal.Width
 h <- hist(x, breaks=20, col="pink", freq=FALSE, xlab= "Petal Width", main="Histogram With Density Curve")
@@ -285,8 +290,8 @@ lines(density(x), lwd=2, col="blue")
 ## density plot with groups
 
 ### facet(ggplot2)
+
 ```{r}
-library(hrbrthemes)
 ggplot(data=diamonds,
        aes(x=price, fill = cut)) +
   geom_density(adjust = 1.5) +
@@ -323,6 +328,7 @@ legend("topright",
 ```
 
 ### GGplot2
+
 ```{r}
 # Use the same data set created in the base r example but make it into a data frame
 survey1 <- data.frame(
@@ -342,6 +348,7 @@ ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red",
 
 
 ```
+
 ### Bar plot with data added above the bars (Base R)
 First, let's read in some data on passengers who were aboard the *Titanic*.
 
@@ -351,6 +358,7 @@ titanic <- read.csv("data/titanic.csv")
 
 Next, calculate survival percentage and class count for each passenger
 class, using the `aggregate()` function, and then merge those two results into a data frame.
+
 ```{r}
 # calculate survival percentage by class and count by class.
 surv_pct <- aggregate(Survived ~ Pclass, data = titanic, FUN = mean)
@@ -432,9 +440,11 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
   
 
 ```
+
 ## side-by-side barplots
 
-## base r
+### base r
+
 ```{r}
 x <- replicate(4, rnorm(100))
 apply(x, 2, mean)
@@ -445,7 +455,9 @@ legend("topleft", c("A","B"), pch=15,
        col=c("aquamarine3","coral"), 
        bty="n")
 ```
-## ggplot2
+
+### ggplot2
+
 ```{r}
 gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
 names(gender_spouse)
@@ -461,11 +473,13 @@ ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
 
 ## Stacked Area Plot
 Data is total steel produced annually from the 5 largest steel producing countries
+
 ```{r}
 steel <- read.csv("data/steel.csv")
 ```
 
 Make the plot. geom_area() is the function that produces the stacked area plot.
+
 ```{r}
 ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
     geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
@@ -497,15 +511,15 @@ boxplot(ChickWeight$weight ~ ChickWeight$Time,
         xlab = "Chick Age in Days",
         ylab = "Chick Weight in Grams")
 ```
+
 ggplot2:
+
 ```{r}
 p <- ggplot(ChickWeight, aes(group=Time, y=weight)) + 
   geom_boxplot() +
   labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
   theme_classic()
 p
-
-
 ```
 
 ## Violin Plot
@@ -514,7 +528,9 @@ Let's pull the NBA Players data
 ```{r message = FALSE, results = "hide"}
 nba_players <- read_csv("data/nba_players.csv")
 ```
+
 Pulling data from OKC, UTA, and CHI
+
 ```{r}
 team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
 pts <- c(nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
@@ -536,6 +552,7 @@ with(data , vioplot(
 
 
 ```
+
 ### Basic Plot with ggplot2 ###
 I did add a boxplot on top of the violin plot to make it resemble the base r graph.
 ```{r}
@@ -660,8 +677,6 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
   theme(panel.grid.major.y = element_blank()) +
   geom_boxplot(alpha = 0,
                linetype = 3)
-               
-
 ```
 
 ## Strip Plot showing the distribution of a numberic variable by a categorical variable
@@ -701,8 +716,6 @@ ggplot(data = CO2) +
        y = "Treatment Type") + 
   theme_bw() +
   theme(legend.position = "none")
-  
-
 ```
 
 
@@ -743,10 +756,7 @@ ggplot(rivers_df, aes(sample = length)) +
        y = "Sample Quantiles") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) # Centers title
-  
-
 ```
-
 
 ## Mosaic Plot
 
@@ -805,7 +815,6 @@ titanic_m_data <- titanic_clean %>%
   count(Embarked, Pclass)
 ```
 
-
 ```{r}
   ggplot(data = titanic_m_data) + 
     geom_mosaic(aes(x = product(Pclass), fill = Embarked, weight = n)) +
@@ -820,6 +829,7 @@ titanic_m_data <- titanic_clean %>%
 ## Scatterplots
 
 ### Scatterplots in Base R
+
 Creating a scatterplot in base R is simple. For this example, I used the dataset
 pennsylvania-history, which shows the history of pennsylvania's recorded covid cases
 from January to March 7. The variables of interest are positive, the number of positive
@@ -829,6 +839,7 @@ First, we read the data file, pennsylvania-history.csv and store it as covidchar
 Our x values in the plot function are covidchart$positive, and our yvalue is covidchart$death.
 Our title, as explaieid in main is "Covid Infection and Fatalities." Our x-axis is labeled Infections, for covid infections, and our y axis is labeled fatalities. Note that these fatalities are not explciitly confirmed to be from Covid, but are the overall fatality count in PA over time, each point representing a different count of infection and fatality per day.
 We then draw a regression line based on positive cases and fatalities. The regression line is colored red and the points are colored grey after the color scheme of the virus itself.
+
 ```{r}
 covidchart <- read.csv("data/pennsylvania-history.csv")
 covidchart <- subset(covidchart, !is.na(positive) & !is.na(death))
@@ -874,6 +885,7 @@ From there, go back to your plot's color argument and use the following code to 
 ```{r}
 barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab = "count", ylim = c(0,9), col = Past[1])
 ```
+
 Alternatively, you could use the following code use every color in the palette to color the bars.
 
 ```{r}
@@ -897,9 +909,6 @@ ggplot(data = dummy, aes(x = colno, y = colcount, fill = colno)) +
   geom_bar(stat = "identity") + 
   labs(x = "ColorNumber", y = "ColorCount", title = "Color Dummy Data") +
   scale_fill_brewer(palette = "Pastel1")
-  
-  
-
 ```
 
 ## Bubble Plot
@@ -981,11 +990,10 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
   ggtitle('Miles per Gallon vs Gross Horsepower with Displacement')+
   labs(size = 'Displacement\n(cu. in.)', x='miles per gallon', y='gross horsepower')+
   theme_classic()
-  
-
 ```
 
 ## Diverging Bar Chart
+
 ```{r}
 data(swiss)
 ```
@@ -1010,9 +1018,6 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
        x = "Municipality",
        y = 'Fertility') + 
   coord_flip()
-  
-
-
 ```
 
 ## Lollipop Chart
@@ -1042,8 +1047,6 @@ ggplot(let, aes(x=x, y=y)) +
   ggtitle("Student Hours of Study (per Week)") +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_y_continuous(limits = c(0, 10))
-  
-
 ```
 
 ## Diverging Lollipop Chart
@@ -1099,8 +1102,6 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
   theme_bw() +
   theme(axis.title.y=element_blank()) +
   theme(legend.position = "none")
-  
-
 ```
 
 ## Making pie charts in R and ggplot2
@@ -1116,8 +1117,6 @@ pct <- round(slices/sum(slices)*100)
 lbls <- paste(lbls, pct) #this adds the percentage to the labels
 lbls <- paste(lbls,"%",sep="")
 pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(length(lbls)))
-
-
 ```
 
 ### Pie Chart Using ggplot2
@@ -1141,8 +1140,6 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   coord_polar("y", start = 0) +
   geom_text(aes(y = lab.ypos, label = prop), color = "black") +
   scale_fill_manual(values = mycols) + theme_void()
-  
-
 ```
 
 ## Chloropleth
@@ -1154,6 +1151,7 @@ spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europ
 
 class(spdf)
 ```
+
 The `SpatialPolygonsDataFrame` is implemented as an S4 class in R, so we can extract the data attribute (data associated with the polygons) with `@`. The data attribute is a data frame. 
 
 ```{r}
@@ -1167,6 +1165,7 @@ To use the geospatial data with ggplot we first need to transform it into a data
 spdf_tibble <- broom::tidy(spdf) %>% 
   mutate(id = strtoi(id))
 ```
+
 Merge the geospatial data with the data about the polygons (countries).
 
 ```{r}
@@ -1189,6 +1188,7 @@ ggplot() +
   
 
 ```
+
 Do the same, but use the color palette from the `viridis` package.
 
 ```{r}
@@ -1203,8 +1203,6 @@ ggplot() +
   theme_void() +
   coord_map()
 ```
-
-
 
 ## Mathematical Annotation in R
 
