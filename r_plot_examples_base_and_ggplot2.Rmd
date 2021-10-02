@@ -761,3 +761,43 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
 
 
 
+
+
+### Plots side by side - gridExtra Package - grid.arrange()
+
+## resources used https://www.youtube.com/watch?v=GVWSGr4OLj8&list=PLhUoWCH9bWbxje8xauO7wagHzYJclj9cx&index=7
+
+library(gridExtra)
+library(ggplot2)
+
+x = c(1, 2, 3, 4, 5, 6, 7)
+y = c(8, 9, 10, 11, 12, 13, 14)
+
+data1 = data.frame(x, y)
+
+pointex <- ggplot(data1, aes(x = x, y = y)) +
+  geom_point() +
+  labs(x = "examplelength",
+       y = "examplewidth")
+
+print(pointex)
+
+
+nums = c(3, 8, 4, 5, 0.2, 0.5, 20)
+int = c(0, 3, 9, 5, 1.5, 15, 5.3)
+
+data2 = data.frame(nums, int)
+
+histex <- ggplot(data2,
+                 aes(x = nums, y= int)) +
+  geom_point()+
+  labs(x="miles",
+       y="hours")
+
+print(histex)
+                 
+plotex <- list(pointex, histex)
+
+grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
+
+
