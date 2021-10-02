@@ -44,6 +44,8 @@ Use the Iris dataset. Show distribution of petal width.
 hist(iris$Petal.Width,
      main = "Iris Petal Width Histogram",
      xlab = "Petal Width")
+     
+\newline
 ```
 
 ### Customized Histogram using Base R
@@ -64,6 +66,8 @@ par(mfrow = c(3, 1))
 hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
 hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
 hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 5.5))
+
+\newline
 ```
 
 ### Basic Histogram using GGPlot2
@@ -71,6 +75,8 @@ hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab=
 ```{r, message=FALSE}
 ggplot(iris, aes(x=Petal.Width)) + 
   geom_histogram()
+  
+\newline
 ```
 
 ### Customized Histogram using GGPlot2
@@ -83,6 +89,8 @@ ggplot(iris, aes(x=Petal.Width)) +
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + 
   ylab("Frequency")
+  
+\newline
 ```
 
 ### GGPlot2 Histogram with Species Added in
@@ -93,6 +101,8 @@ ggplot(iris, aes(x=Petal.Width)) +
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + 
   ylab("Frequency")
+  
+\newline
 ```
 
 ### Creating Histograms for each Species on Petal Width using GGPlot2
@@ -103,6 +113,8 @@ ggplot(iris, aes(x=Petal.Width)) +
   ggtitle("Iris Petal Width Histogram") + 
   xlab("Petal Width") + ylab("Frequency") + 
   facet_grid(. ~ Species)
+  
+\newline
 ```
 
 ## 2d Histogram with Density
@@ -141,6 +153,8 @@ plot(h, colramp = rf,
      xlab = "Seed Differential", 
      ylab = "Point Differential",
      main = "Seed Differential vs Point Differential")
+     
+\newline
 ```
 
 ### Try it with ggplot2's `geom_hex()`
@@ -153,6 +167,8 @@ ggplot(MM, aes(x=Seeddiff, y=Pointdiff) ) +
        y = "Point Differential",
        title = "Seed Differential vs Point Differential") +
   theme_bw()
+  
+\newline
 ```
 
 ### Examine the same relationship with a scatterplot, with regression line added.
@@ -178,6 +194,8 @@ ggplot(MM, aes(x=Seeddiff, y=Pointdiff)) +
                                             list(r2=r2, slope=slope))),
                                  vjust = "middle", hjust = "left") +
   theme_bw()
+  
+\newline
 ```
 
 ### Take a look at average point differential by seed differential
@@ -219,6 +237,8 @@ ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
                                  vjust = "middle", hjust = "left") +
   scale_x_continuous(breaks = 2:10, limits = c(2, 10)) +
   theme_bw()
+  
+\newline
 ```
 
 ## Density Curve
@@ -238,6 +258,8 @@ plot(density(orange$circumference),
      ylab = "DISTRIBUTION")
 
 polygon(density(orange$circumference), col=7, border=2)
+
+\newline
 ```
 
 ### Basic Density Curve Using GGPlot2
@@ -247,6 +269,8 @@ polygon(density(orange$circumference), col=7, border=2)
 orange %>%
   ggplot( aes(x = circumference)) +
   geom_density(fill= 7, color= 2)
+  
+\newline
 
 ```
 ### Adding a Density Plot to a Histogram
@@ -255,6 +279,8 @@ Use the same histogram created in the "Customized Histogram Using Base R" sectio
 x <- iris$Petal.Width
 h <- hist(x, breaks=20, col="pink", freq=FALSE, xlab= "Petal Width", main="Histogram With Density Curve")
 lines(density(x), lwd=2, col="blue")
+
+\newline
 ```
 
 ## Bar Plot
@@ -269,6 +295,8 @@ barplot(survey,
         xlab="Fruit",
         ylab="Count",
         col=c("red", "orange", "green", "yellow", "pink", "blue"))
+        
+\newline
 
 ### Add a legend
 legend("topright",
@@ -290,11 +318,15 @@ survey1 <- data.frame(
 
 # Create the barchart
 ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity") 
+
+\newline
 ```
 
 ```{r}
 # Add color with black outlines
 ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red", "orange", "green", "yellow", "pink", "blue"), color="black") + labs(x="Count", y="Fruit", title="Fruit Survey") + theme(legend.position = "none")
+
+\newline
 
 ```
 ### Bar plot with data added above the bars (Base R)
@@ -335,6 +367,8 @@ plt <- barplot(by_class_data$Surv_Pct,
                ylim = c(0.0, 0.75),
                axes = FALSE
 )
+
+\newline
 
 # Add y axis
 axis(2, at = seq(0.0, 0.7, by = 0.1),
@@ -381,6 +415,9 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
                      labels = paste(seq(0, 70, by = 10), "%", sep=""))  +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) # Centers title
+  
+  
+\newline
 ```
 
 ## Line Plot ("Time Series Plot")
@@ -395,6 +432,8 @@ Make the plot. geom_area() is the function that produces the stacked area plot.
 ```{r}
 ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
     geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
+    
+\newline
 ```
 
 ## Segmented Stacked Bar Plot
@@ -402,6 +441,8 @@ ggplot(steel, aes(x=year, y=Steel, fill=Country)) +
 ```{r}
 ggplot(steel, aes(fill=Country, y=Steel, x=year)) + 
     geom_bar(position="fill", stat="identity") + ggtitle("Share of Steel Produced Annually") + ylab("% of Steel Produced") + xlab("Year")
+    
+\newline
 ```
 
 ## Boxplot
@@ -426,6 +467,8 @@ p <- ggplot(ChickWeight, aes(group=Time, y=weight)) +
   labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
   theme_classic()
 p
+
+\newline
 ```
 
 ## Violin Plot
@@ -453,6 +496,8 @@ with(data , vioplot(
   border = c(sample(200:900, 3)),
   rectCol = c(893)
 ))
+
+\newline
 ```
 ### Basic Plot with ggplot2 ###
 I did add a boxplot on top of the violin plot to make it resemble the base r graph.
@@ -460,6 +505,8 @@ I did add a boxplot on top of the violin plot to make it resemble the base r gra
 ggplot(data, aes(x= team, y = pts, fill = team)) + 
   geom_violin(trim = F, show.legend = T) + 
   geom_boxplot(width = 0.1)
+  
+\newline
 ```
 
 ## Strip Chart
@@ -477,6 +524,8 @@ stripchart(jitter(iris$Sepal.Width, amount = 0),
            col= alpha("blue", 0.5),
            pch = 19,
            method= 'jitter')
+           
+\newline
 ```
 
 ### Strip chart in ggplot2
@@ -496,6 +545,8 @@ ggplot(data = iris) +
   labs(title = "Sepal Width Distribution",
        y = NULL,
        x = "Sepal Width (cm)")
+       
+\newline
 ```
 
 ### Strip Chart Divided into Groups, ggplot2
@@ -522,6 +573,8 @@ ggplot(data = iris) +
        y = NULL) + 
   theme_bw() +
   theme(legend.position = "none")
+  
+\newline
 ```
 
 ### Strip Chart with NBA Data, ggplot2
@@ -536,6 +589,8 @@ nba_players %>%
   ggplot(aes(x =PTS, y = TEAM)) + 
     geom_point() +
     labs(title = "Scoring Distribution on Selected NBA Teams")
+    
+\newline
 ```
 
 #### More Customized Strip Chart of NBA Scoring with ggplot2
@@ -568,6 +623,8 @@ ggplot(data = top_ten, aes(x =PTS, y = TEAM)) +
   theme(panel.grid.major.y = element_blank()) +
   geom_boxplot(alpha = 0,
                linetype = 3)
+               
+\newline
 ```
 
 ## Strip Plot showing the distribution of a numberic variable by a categorical variable
@@ -588,6 +645,8 @@ ggplot(data = chickwts) +
        y = "Feed Type") + 
   theme_bw() +
   theme(legend.position = "none")
+  
+\newline
 ```
 
 A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
@@ -605,6 +664,8 @@ ggplot(data = CO2) +
        y = "Treatment Type") + 
   theme_bw() +
   theme(legend.position = "none")
+  
+\newline
 ```
 
 
@@ -622,6 +683,8 @@ Here we create a basic QQ plot in base R and add the normal distribution QQ plot
 qqnorm(rivers,
        main = "Q-Q Plot of North American River Lengths")
 qqline(rivers, col = "red")
+
+\newline
 ```
 
 ### Basic QQ Plot with Normal Distribution Reference Line (ggplot2)
@@ -643,6 +706,8 @@ ggplot(rivers_df, aes(sample = length)) +
        y = "Sample Quantiles") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) # Centers title
+  
+\newline
 ```
 
 
@@ -683,6 +748,8 @@ mosaicplot(table(class, embarked),
            main="Passenger Class by Embarkment Site",
               xlab="Class",ylab="Embarkment Site",
               col=c(2,3,4))
+              
+\newline
 ```
 
 ### Mosaic Plot with ggplot2
@@ -708,6 +775,8 @@ titanic_m_data <- titanic_clean %>%
     xlab("Passenger Class") + 
     ylab("Embarkment Site") + 
   ggtitle("Passenger Class by Embarkment Site")
+  
+\newline
   
 ```
 
@@ -791,6 +860,9 @@ ggplot(data = dummy, aes(x = colno, y = colcount, fill = colno)) +
   geom_bar(stat = "identity") + 
   labs(x = "ColorNumber", y = "ColorCount", title = "Color Dummy Data") +
   scale_fill_brewer(palette = "Pastel1")
+  
+  
+\newline
 ```
 
 ## Bubble Plot
@@ -816,6 +888,8 @@ legend('right', inset=c(-0.35,0),
        title = 'Displacement\n(cu. in.)',
        pch=16, ncol=1, pt.cex = c(100, 200, 300, 400),
        bty = 'n')
+       
+\newline
 ```
 
 Yikes, it seems like the points may be a bit too large. Lets make them all smaller by dividing their values by 100 & take care not to forget about the legend points as well by changing the values for `pt.cex`. 
@@ -833,6 +907,8 @@ legend('right', inset=c(-0.35,0),
        title = 'Displacement\n(cu. in.)',
        pch=16, ncol=1, pt.cex = c(100, 200, 300, 400)/100,
        bty = 'n')
+       
+\newline
 ```
 
 Better, but the points don't seem to be proportional. It seems that `cex` scales points by altering the radius of a point. This would cause the area of each consecutive point to be exponentially larger than the last when using the formula $A=πr^2$. To correct this and make the point size proportional to the area, rearrange the formula to solve for the radius that produces the desired area. $r=\sqrt{\frac{A}{π}}$
@@ -852,6 +928,8 @@ legend('right', inset=c(-0.35,0),
        title = 'Displacement\n(cu. in.)',
        pch=16, ncol=1, pt.cex = sqrt(c(100, 200, 300, 400)/3.14)/5,
        bty = 'n')
+      
+\newline
 ```
 
 Now it looks right!
@@ -866,6 +944,8 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
   ggtitle('Miles per Gallon vs Gross Horsepower with Displacement')+
   labs(size = 'Displacement\n(cu. in.)', x='miles per gallon', y='gross horsepower')+
   theme_classic()
+  
+\newline
 ```
 
 ## Diverging Bar Chart
@@ -893,6 +973,8 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
        x = "Municipality",
        y = 'Fertility') + 
   coord_flip()
+  
+\newline
 
 ```
 
@@ -923,6 +1005,8 @@ ggplot(let, aes(x=x, y=y)) +
   ggtitle("Student Hours of Study (per Week)") +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_y_continuous(limits = c(0, 10))
+  
+\newline
 ```
 
 ## Diverging Lollipop Chart
@@ -955,6 +1039,8 @@ ggplot(state_df, aes(x=State, y=Life.Exp)) +
        x = NULL) + 
   scale_y_continuous(breaks = seq(68, 74, 1)) +
   coord_flip()
+  
+\newline
 ```
 
 Now let's try to view a subset. With a smaller amount of data we can add the life expectancies as labels on the dots.
@@ -976,6 +1062,8 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
   theme_bw() +
   theme(axis.title.y=element_blank()) +
   theme(legend.position = "none")
+  
+\newline
 ```
 
 ## Making pie charts in R and ggplot2
@@ -991,6 +1079,8 @@ pct <- round(slices/sum(slices)*100)
 lbls <- paste(lbls, pct) #this adds the percentage to the labels
 lbls <- paste(lbls,"%",sep="")
 pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(length(lbls)))
+
+\newline
 ```
 
 ### Pie Chart Using ggplot2
@@ -1014,6 +1104,8 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   coord_polar("y", start = 0) +
   geom_text(aes(y = lab.ypos, label = prop), color = "black") +
   scale_fill_manual(values = mycols) + theme_void()
+  
+\newline
 ```
 
 ## Chloropleth
@@ -1057,6 +1149,8 @@ ggplot() +
                    group = group), size=0, alpha=0.9) +
   theme_void() +
   coord_map()
+  
+\newline
 ```
 Do the same, but use the color palette from the `viridis` package.
 
@@ -1070,6 +1164,54 @@ ggplot() +
   scale_fill_viridis() +
   labs(title = "Population") +
   theme_void() +
-  coord_map()
+  coord_map()]
+  
+\newline
+
+
+## Mathematical Annotation in R
+
+## Examples
+
+
+x <- seq(-4, 4, len = 101)
+y <- cbind(sin(x), cos(x))
+matplot(x, y, type = "l", xaxt = "n",
+        main = expression(paste(plain(sin) * phi, "  and  ",
+                                plain(cos) * phi)),
+        ylab = expression("sin" * phi, "cos" * phi), # only 1st is taken
+        xlab = expression(paste("Phase Angle ", phi)),
+        col.main = "blue")
+axis(1, at = c(-pi, -pi/2, 0, pi/2, pi),
+     labels = expression(-pi, -pi/2, 0, pi/2, pi))
+
+## How to combine "math" and numeric variables :
+plot(1:10, type="n", xlab="", ylab="", main = "plot math & numbers")
+theta <- 1.23 ; mtext(bquote(hat(theta) == .(theta)))
+for(i in 2:9)
+    text(i,i+1, substitute(list(xi,eta) == group("(",list(x,y),")"),
+                           list(x=i, y=i+1)))
+## note that both of these use calls rather than expressions.
+
+plot(1:10, 1:10)
+text(4, 9, expression(hat(beta) == (X^t * X)^{-1} * X^t * y))
+text(4, 8.4, "expression(hat(beta) == (X^t * X)^{-1} * X^t * y)",
+     cex = .8)
+text(4, 7, expression(bar(x) == sum(frac(x[i], n), i==1, n)))
+text(4, 6.4, "expression(bar(x) == sum(frac(x[i], n), i==1, n))",
+     cex = .8)
+text(8, 5, expression(paste(frac(1, sigma*sqrt(2*pi)), " ",
+                            plain(e)^{frac(-(x-mu)^2, 2*sigma^2)})),
+     cex = 1.2)
 ```
+
+
+
+
+
+
+
+
+
+
 
