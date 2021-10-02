@@ -29,7 +29,7 @@ library(hexbin)
 library(RColorBrewer)
 library(viridis)
 library(geojsonio)
-
+library(kableExtra) # For nice looking tables in html output
 ```
 
 ## Histogram
@@ -104,6 +104,9 @@ ggplot(iris, aes(x=Petal.Width)) +
 ```
 
 ## 2d Histogram with Density
+
+### Examine seed vs point differential for the NCAA Men's Basketball Tournament
+
 ```{r}
 <<<<<<< HEAD
  #this is for more color
@@ -132,7 +135,109 @@ h <- hexbin(dataframe)
 plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
 ```
 
+<<<<<<< HEAD
 >>>>>>> db7aaf23698122c3709bc65577c9d389006ba98c
+=======
+### Let's look at seed differential vs point differential instead.
+
+```{r}
+#this is for more color
+rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+
+#this is the actual setup of the plot
+MM <- read.csv('data/MarchMadness.csv') %>% 
+  mutate(Seeddiff = abs(Seed - Seed.1))
+
+x <- MM$Seeddiff
+y <-  MM$Pointdiff
+
+h<- hexbin(x, y, xbins = 20)
+
+plot(h, colramp = rf, 
+     xlab = "Seed Differential", 
+     ylab = "Point Differential",
+     main = "Seed Differential vs Point Differential")
+```
+
+### Try it with ggplot2's `geom_hex()`
+
+```{r}
+ggplot(MM, aes(x=Seeddiff, y=Pointdiff) ) +
+  geom_hex(bins = 30) +
+  scale_fill_continuous(type = "viridis") +
+    labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Seed Differential vs Point Differential") +
+  theme_bw()
+```
+
+### Examine the same relationship with a scatterplot, with regression line added.
+
+```{r, message = FALSE}
+fit <- lm(Pointdiff ~ Seeddiff, data = MM)
+r2 <- round(summary(fit)$r.squared, 2)
+slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
+
+ggplot(MM, aes(x=Seeddiff, y=Pointdiff)) +
+  geom_point(size = 3, 
+             alpha = 0.20, 
+             color = "steelblue") +
+  geom_smooth(method = lm, 
+              se = FALSE, 
+              linetype = "solid",
+              color = "red") +
+  labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Higher Seed Differentials Are Associated with Higher Point Differentials") +
+  annotate("text", x = 1, y = 52,
+           label = as.expression(substitute(atop(R^2==r2, beta==slope),
+                                            list(r2=r2, slope=slope))),
+                                 vjust = "middle", hjust = "left") +
+  theme_bw()
+```
+
+### Take a look at average point differential by seed differential
+
+```{r}
+MM %>% 
+  group_by(Seeddiff) %>% 
+  summarize(AvgPtDiff = round(mean(Pointdiff), 2)) %>% 
+  kbl(align = "l") %>% 
+  kable_styling()
+```
+
+### Closer examination of seed differential vs point differential
+
+Hmm... It seems like there isn't much difference in average point differential for seed differentials ranging from 2 to 10. Let's rerun the scatterplot and regression for that range of seed differentials.
+
+```{r, message = FALSE}
+MM_sub <- MM %>% 
+  filter(between(Seeddiff, 2, 10))
+
+fit <- lm(Pointdiff ~ Seeddiff, data = MM_sub)
+r2 <- round(summary(fit)$r.squared, 2)
+slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
+
+ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
+  geom_point(size = 3, 
+             alpha = 0.20, 
+             color = "steelblue") +
+  geom_smooth(method = lm, 
+              se = FALSE, 
+              linetype = "solid",
+              color = "red") +
+  labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Moderate Seed Differentials Don't Seem Very Important") +
+  annotate("text", x = 2, y = 45,
+           label = as.expression(substitute(atop(R^2==r2, beta==slope),
+                                            list(r2=r2, slope=slope))),
+                                 vjust = "middle", hjust = "left") +
+  scale_x_continuous(breaks = 2:10, limits = c(2, 10)) +
+  theme_bw()
+```
+
+>>>>>>> 40b97696ee55ae5b148b88d8c59fa5e50204108a
 ## Density Curve
 
 ### Basic Density Curve Using Base R
