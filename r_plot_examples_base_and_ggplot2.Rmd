@@ -28,6 +28,8 @@ library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
 library(hexbin)
 library(RColorBrewer)
+library(ggplot2)
+library(dplyr)
 ```
 
 
@@ -718,6 +720,38 @@ ggplot(let, aes(x=x, y=y)) +
 
 ## Chloropleth
 
-
+## Making pie charts in R and ggplot2
+## Base R
+```{r}
+data <- read.csv("data/titanic.csv", TRUE, sep = ",")
+slices <- table(data$Pclass)
+## ^^ we use the table() function to get the count of each class
+lbls <- c("1st Class", "2nd Class", "3rd Class")
+pct <- round(slices/sum(slices)*100)
+lbls <- paste(lbls, pct) #this adds the percentage to the labels
+lbls <- paste(lbls,"%",sep="")
+pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(length(lbls)))
+```
+## Pie Chart Using ggplot2
+```{r}
+#nums <- read.csv("data/titanic.csv")
+#ClassCount <- as.data.frame(table(nums$Pclass))
+#I tried to get the data from a csv but I was genuinely unable to
+ClassCount <- data.frame(
+  Class = c("1st", "2nd", "3rd"),
+  n = c(186, 173, 355),
+  prop = c(26.1, 24.2, 49.7)
+)
+ClassCount <- ClassCount %>%
+  arrange(desc(Class)) %>%
+  mutate(lab.ypos = cumsum(prop) -0.5*prop)
+## the cumsum(prop) - 0.5*prop helps us put the labels in the center of the portion
+mycols <- rainbow(length(ClassCount$Class))
+ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
+  geom_bar(width = 1, stat = "identity", color = "black") +
+  coord_polar("y", start = 0) +
+  geom_text(aes(y = lab.ypos, label = prop), color = "black") +
+  scale_fill_manual(values = mycols) + theme_void()
+```
 
 
