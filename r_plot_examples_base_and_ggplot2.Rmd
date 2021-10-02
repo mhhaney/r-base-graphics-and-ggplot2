@@ -105,7 +105,7 @@ ggplot(iris, aes(x=Petal.Width)) +
 
 ## 2d Histogram with Density
 
-### Examine seed vs point differential
+### Examine seed vs point differential for the NCAA Men's Basketball Tournament
 
 ```{r}
 #this is for more color
@@ -188,6 +188,36 @@ MM %>%
   kable_styling()
 ```
 
+### Closer examination of seed differential vs point differential
+
+Hmm... It seems like there isn't much difference in average point differential for seed differentials ranging from 2 to 10. Let's rerun the scatterplot and regression for that range of seed differentials.
+
+```{r, message = FALSE}
+MM_sub <- MM %>% 
+  filter(between(Seeddiff, 2, 10))
+
+fit <- lm(Pointdiff ~ Seeddiff, data = MM_sub)
+r2 <- round(summary(fit)$r.squared, 2)
+slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
+
+ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
+  geom_point(size = 3, 
+             alpha = 0.20, 
+             color = "steelblue") +
+  geom_smooth(method = lm, 
+              se = FALSE, 
+              linetype = "solid",
+              color = "red") +
+  labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Moderate Seed Differentials Don't Seem Very Important") +
+  annotate("text", x = 2, y = 45,
+           label = as.expression(substitute(atop(R^2==r2, beta==slope),
+                                            list(r2=r2, slope=slope))),
+                                 vjust = "middle", hjust = "left") +
+  scale_x_continuous(breaks = 2:10, limits = c(2, 10)) +
+  theme_bw()
+```
 
 ## Density Curve
 
