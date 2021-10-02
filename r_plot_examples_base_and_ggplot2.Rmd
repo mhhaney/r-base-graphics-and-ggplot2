@@ -1304,3 +1304,23 @@ plotex <- list(pointex, pointex2)
 
 grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
+
+## Stacked Bar plot
+Base R
+```{r}
+fishy <- read.table(text ="Butterfish Cockle Swordfish Tuna
+1 59 49 18 24 
+2 32 24 71 31", header= TRUE)
+  
+barplot(as.matrix(fishy),col=c("blue","purple"))
+```
+GGplot
+```{r}
+fish <- read.csv('Pescado.csv')
+names(fish)
+
+library(ggplot2)
+ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
+  geom_bar(stat='identity')
+
+```
