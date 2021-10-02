@@ -134,6 +134,18 @@ x <- iris$Petal.Width
 h <- hist(x, breaks=20, col="pink", freq=FALSE, xlab= "Petal Width", main="Histogram With Density Curve")
 lines(density(x), lwd=2, col="blue")
 ```
+## density plot with groups
+## facet(ggplot2)
+```{r}
+View(diamonds)
+
+ggplot(data=diamonds,
+       aes(x=price, fill = cut)) +
+  geom_density(adjust = 1.5) +
+  theme_ipsum() +
+  facet_wrap(~ cut) +
+  theme(legend.position = "none")
+```
 
 ## Bar Plot
 ###Base R
@@ -259,6 +271,30 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
                      labels = paste(seq(0, 70, by = 10), "%", sep=""))  +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) # Centers title
+```
+## side-by-side barplots
+
+## base r
+```{r}
+x <- replicate(4, rnorm(100))
+apply(x, 2, mean)
+barplot(matrix(c(5,3,8,9),nr=2), beside=T, 
+        col=c("aquamarine3","coral"), 
+        names.arg=LETTERS[1:2])
+legend("topleft", c("A","B"), pch=15, 
+       col=c("aquamarine3","coral"), 
+       bty="n")
+```
+## ggplot2
+```{r}
+gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
+names(gender_spouse)
+# check the number of students of each gender
+library(ggplot2)
+##side-by-side bars
+ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
+  geom_bar(stat="identity" ,position = "dodge")
+
 ```
 
 ## Line Plot ("Time Series Plot")
