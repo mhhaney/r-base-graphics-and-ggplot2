@@ -1317,7 +1317,7 @@ barplot(as.matrix(fishy),col=c("blue","purple"))
 ```
 GGplot
 ```{r}
-fish <- read.csv('Pescado.csv')
+fish <- read.csv('data/Pescado.csv')
 names(fish)
 
 library(ggplot2)
