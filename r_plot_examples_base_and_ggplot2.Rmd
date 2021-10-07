@@ -522,6 +522,32 @@ p <- ggplot(ChickWeight, aes(group=Time, y=weight)) +
   theme_classic()
 p
 ```
+## A Boxplot with Jitter (GGPLOT2)
+Using Jitter, you can display the individual data points in each box in a way that is easy to see and understand.
+
+This example is based on one found at the R Graph Gallery website: https://www.r-graph-gallery.com/89-box-and-scatter-plot-with-ggplot2.html 
+
+```{r}
+data("ChickWeight")
+str(ChickWeight)
+```
+```{r}
+ChickWeight %>%
+  ggplot( aes(x=Diet, y=weight, fill=Diet)) +
+    geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+    geom_jitter(color= "red", size=0.6, alpha=0.9) +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=14)
+    ) +
+    ggtitle("Chick Weight by Diet") +
+    ylab("Chick Weight in Grams") +
+    xlab("Chick Diet")
+    
+```
+
+```
 
 ## Violin Plot
 Let's pull the NBA Players data
