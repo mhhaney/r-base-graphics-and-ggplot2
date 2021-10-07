@@ -32,6 +32,7 @@ library(geojsonio)
 library(gridExtra)
 library(kableExtra) # For nice looking tables in html output
 library(reshape) # For the melt function in heatmap example
+library(lubridate)
 ```
 
 ## Histogram
@@ -1267,6 +1268,48 @@ plot1<- plot+xlab('Year')+
 
 plot1 + scale_fill_distiller(palette = 'Spectral')
 ```
+
+### Querying data directly from USGS to use for plot
+```{r}
+# The URL used to query the USGS database 
+# includes parameters including data type, site number, and dates
+URL = 'https://waterdata.usgs.gov/usa/nwis/dv?cb_00060=on&format=rdb&site_no=03049500&referred_module=sw&period=&begin_date=1970-01-01&end_date=2020-12-31'
+
+# data is displayed with some extra comments so it takes a little additional processing to clean up
+d = read.delim(URL, comment.char = '#', stringsAsFactors = F)
+d=d[-1,]
+d$datetime=as.POSIXct(d$datetime)
+colnames(d)[4]='discharge'
+d$discharge = as.numeric(d$discharge)
+
+# creating month & year variabes for aggregation
+d$month=month(d$datetime)
+d$year=year(d$datetime)
+
+# aggregating discharge by month & year to return means
+aggDischarge=aggregate(discharge~month+year, d, mean)
+
+# plotting just by month, 1 (Jan) is at the bottom and 12 (Dec) is at the top
+# there are ways to revserse the order of scales but introducing axis labels complicates that
+# I instead am reversing the order of months and using those values for plotting 
+aggDischarge$plotMonth = abs(aggDischarge$month - 12) + 1
+```
+
+### Creating a heat map of mean daily discharge from 1970-2020
+```{r}
+ggplot(aggDischarge, aes(x=year, y=plotMonth, fill=discharge))+ 
+  geom_tile()+
+  scale_fill_viridis(discrete = F)+
+  scale_y_continuous(limits = c(0, 13), # setting limits to 12 causes the top set of tiles to go missing but increasing it to 13 includes them all
+                     breaks = seq(1, 12, 1), # one break for each month so none are skipped
+                     labels = c('Dec', 'Nov', 'Oct', 'Sep', 'Aug', 'Jul',
+                                'Jun', 'May', 'Apr', 'Mar', 'Feb', 'Jan'),
+                     expand = c(0, 0))+ # removing some empty space above the x axis and below the title
+  labs(x = 'year', y = 'month', fill = 'Mean Daily\nDischarge\ncu. ft/sec', 
+       title = 'Mean Daily Discharge of the Allegheny River at Natrona, PA')+
+  theme_classic()
+```
+
 
 ### Plots side by side - gridExtra Package - grid.arrange()
 
