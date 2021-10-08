@@ -572,8 +572,6 @@ ChickWeight %>%
     
 ```
 
-```
-
 ## Violin Plot
 Let's pull the NBA Players data
 
@@ -1430,7 +1428,7 @@ library(broom)
 
 
 ```{r}
-spdf <- geojson_read("us_states_hexgrid.geojson",  what = "sp")
+spdf <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
 
 # Bit of reformating
 spdf@data = spdf@data %>%
@@ -1459,7 +1457,7 @@ ggplot() +
 
 
 ```{r}
-hockey <- read.csv("hockey_search.csv")
+hockey <- read.csv("data/hockey_search.csv")
 ```
 
 
