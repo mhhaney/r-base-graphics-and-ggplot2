@@ -469,6 +469,30 @@ ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
   geom_bar(stat="identity" ,position = "dodge")
 
 ```
+## Circular Bar Plot using GGPlot2
+
+```{r}
+##Creating a general circular barplot
+##Creating a data frame
+data <- data.frame(
+  colors=c("red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white"), 
+  value=c(50, 35, 80, 60, 75, 65, 55, 90, 10)
+)
+##Making the plot
+p <- ggplot(data, aes(x=as.factor(colors), y=value)) + 
+##Numeric value in alpha changes how bright or vibrant the color in the graph appears  
+ geom_bar(stat="identity", fill=alpha("red", 0.5)) +
+
+##Adding limits
+ylim(-120, 150) + theme_minimal() + theme(
+  axis.text = element_blank(), 
+  axis.title = element_blank(), 
+  panel.grid = element_blank(), 
+  plot.margin = unit(rep(-2, 4), "cm")) + 
+##Making the coordinate polar instead of cartesian 
+  coord_polar(start = 0)
+p
+```
 
 ## Line Plot ("Time Series Plot")
 
