@@ -1094,9 +1094,10 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
 
 ### Base R
 
-Using titanic dataset as 'data'
+Using titanic dataset.
+
 ```{r}
-slices <- table(data$Pclass)
+slices <- table(titanic$Pclass)
 ## ^^ we use the table() function to get the count of each class
 lbls <- c("1st Class", "2nd Class", "3rd Class")
 pct <- round(slices/sum(slices)*100)
