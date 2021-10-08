@@ -32,6 +32,7 @@ library(geojsonio)
 library(gridExtra)
 library(kableExtra) # For nice looking tables in html output
 library(reshape) # For the melt function in heatmap example
+library(lubridate)
 ```
 
 ## Histogram
@@ -469,6 +470,30 @@ ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
   geom_bar(stat="identity" ,position = "dodge")
 
 ```
+## Circular Bar Plot using GGPlot2
+
+```{r}
+##Creating a general circular barplot
+##Creating a data frame
+data <- data.frame(
+  colors=c("red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white"), 
+  value=c(50, 35, 80, 60, 75, 65, 55, 90, 10)
+)
+##Making the plot
+p <- ggplot(data, aes(x=as.factor(colors), y=value)) + 
+##Numeric value in alpha changes how bright or vibrant the color in the graph appears  
+ geom_bar(stat="identity", fill=alpha("red", 0.5)) +
+
+##Adding limits
+ylim(-120, 150) + theme_minimal() + theme(
+  axis.text = element_blank(), 
+  axis.title = element_blank(), 
+  panel.grid = element_blank(), 
+  plot.margin = unit(rep(-2, 4), "cm")) + 
+##Making the coordinate polar instead of cartesian 
+  coord_polar(start = 0)
+p
+```
 
 ## Line Plot ("Time Series Plot")
 
@@ -521,6 +546,32 @@ p <- ggplot(ChickWeight, aes(group=Time, y=weight)) +
   labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
   theme_classic()
 p
+```
+## A Boxplot with Jitter (GGPLOT2)
+Using Jitter, you can display the individual data points in each box in a way that is easy to see and understand.
+
+This example is based on one found at the R Graph Gallery website: https://www.r-graph-gallery.com/89-box-and-scatter-plot-with-ggplot2.html 
+
+```{r}
+data("ChickWeight")
+str(ChickWeight)
+```
+```{r}
+ChickWeight %>%
+  ggplot( aes(x=Diet, y=weight, fill=Diet)) +
+    geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+    geom_jitter(color= "red", size=0.6, alpha=0.9) +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=14)
+    ) +
+    ggtitle("Chick Weight by Diet") +
+    ylab("Chick Weight in Grams") +
+    xlab("Chick Diet")
+    
+```
+
 ```
 
 ## Violin Plot
@@ -1304,6 +1355,48 @@ plot1<- plot+xlab('Year')+
 plot1 + scale_fill_distiller(palette = 'Spectral')
 ```
 
+### Querying data directly from USGS to use for plot
+```{r}
+# The URL used to query the USGS database 
+# includes parameters including data type, site number, and dates
+URL = 'https://waterdata.usgs.gov/usa/nwis/dv?cb_00060=on&format=rdb&site_no=03049500&referred_module=sw&period=&begin_date=1970-01-01&end_date=2020-12-31'
+
+# data is displayed with some extra comments so it takes a little additional processing to clean up
+d = read.delim(URL, comment.char = '#', stringsAsFactors = F)
+d=d[-1,]
+d$datetime=as.POSIXct(d$datetime)
+colnames(d)[4]='discharge'
+d$discharge = as.numeric(d$discharge)
+
+# creating month & year variabes for aggregation
+d$month=month(d$datetime)
+d$year=year(d$datetime)
+
+# aggregating discharge by month & year to return means
+aggDischarge=aggregate(discharge~month+year, d, mean)
+
+# plotting just by month, 1 (Jan) is at the bottom and 12 (Dec) is at the top
+# there are ways to revserse the order of scales but introducing axis labels complicates that
+# I instead am reversing the order of months and using those values for plotting 
+aggDischarge$plotMonth = abs(aggDischarge$month - 12) + 1
+```
+
+### Creating a heat map of mean daily discharge from 1970-2020
+```{r}
+ggplot(aggDischarge, aes(x=year, y=plotMonth, fill=discharge))+ 
+  geom_tile()+
+  scale_fill_viridis(discrete = F)+
+  scale_y_continuous(limits = c(0, 13), # setting limits to 12 causes the top set of tiles to go missing but increasing it to 13 includes them all
+                     breaks = seq(1, 12, 1), # one break for each month so none are skipped
+                     labels = c('Dec', 'Nov', 'Oct', 'Sep', 'Aug', 'Jul',
+                                'Jun', 'May', 'Apr', 'Mar', 'Feb', 'Jan'),
+                     expand = c(0, 0))+ # removing some empty space above the x axis and below the title
+  labs(x = 'year', y = 'month', fill = 'Mean Daily\nDischarge\ncu. ft/sec', 
+       title = 'Mean Daily Discharge of the Allegheny River at Natrona, PA')+
+  theme_classic()
+```
+
+
 ### Plots side by side - gridExtra Package - grid.arrange()
 
 Resources used https://www.youtube.com/watch?v=GVWSGr4OLj8&list=PLhUoWCH9bWbxje8xauO7wagHzYJclj9cx&index=7
@@ -1360,4 +1453,62 @@ library(ggplot2)
 ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
   geom_bar(stat='identity')
 
+```
+
+##Hexbin Map
+
+```{r}
+library(geojsonio)
+library(rgdal)
+library(rgeos)
+library(broom)
+```
+
+
+```{r}
+spdf <- geojson_read("us_states_hexgrid.geojson",  what = "sp")
+
+# Bit of reformating
+spdf@data = spdf@data %>%
+  mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+
+# Show it
+plot(spdf)
+```
+
+```{r}
+
+spdf@data = spdf@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+spdf_fortified <- tidy(spdf, region = "google_name")
+
+# Calculate the centroid of each hexagon to add the label:
+
+centers <- cbind.data.frame(data.frame(gCentroid(spdf, byid=TRUE), id=spdf@data$iso3166_2))
+ 
+# Now I can plot this shape easily as described before:
+ggplot() +
+  geom_polygon(data = spdf_fortified, aes( x = long, y = lat, group = group), fill="skyblue", color="white") +
+  geom_text(data=centers, aes(x=x, y=y, label=id)) +
+  theme_void() +
+  coord_map()
+```
+
+
+```{r}
+hockey <- read.csv("hockey_search.csv")
+```
+
+
+```{r}
+spdf_fortified <- spdf_fortified %>%
+  left_join(. , hockey, by=c("id"="State")) 
+ 
+# Make a first chloropleth map
+ggplot() +
+  geom_polygon(data = spdf_fortified, aes(fill =  Searches, x = long, y = lat, group = group)) +
+  geom_text(data=centers, aes(x=x, y=y, label=id)) +
+  scale_fill_gradient(trans = "log") +
+  theme_void() +
+  coord_map() + 
+  ggtitle("Google Search Popularity for Hockey by State")
 ```
