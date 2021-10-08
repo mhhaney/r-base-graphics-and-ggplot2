@@ -33,6 +33,26 @@ library(gridExtra)
 library(kableExtra) # For nice looking tables in html output
 library(reshape) # For the melt function in heatmap example
 library(lubridate)
+library(geojsonio)
+library(rgdal)
+library(rgeos)
+library(broom)
+```
+
+## Read in Data Files
+```{r message = FALSE, results = "hide"}
+MM <- read.csv('data/MarchMadness.csv')
+titanic <- read.csv("data/titanic.csv")
+nba_players <- read_csv("data/nba_players.csv")
+gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
+steel <- read.csv("data/steel.csv")
+data <- read.csv("data/titanic.csv", TRUE, sep = ",")
+spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson", what = "sp")
+L <- read.csv('data/phone.csv')
+spd <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
+hockey <- read.csv("data/hockey_search.csv")
+
+
 ```
 
 ## Histogram
@@ -127,7 +147,7 @@ ggplot(iris, aes(x=Petal.Width)) +
 rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
 r <- rf(32)
 #this is the actual setup of the plot
-MM <- read.csv('data/MarchMadness.csv')
+## MM is March Madness Data
 x <- MM$Pointdiff
 y <-  MM$Seed
 dataframe <- data.frame(x, y)
@@ -142,7 +162,7 @@ plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
 rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
 
 #this is the actual setup of the plot
-MM <- read.csv('data/MarchMadness.csv') %>% 
+MM <- MM %>% 
   mutate(Seeddiff = abs(Seed - Seed.1))
 
 x <- MM$Seeddiff
@@ -352,14 +372,11 @@ ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red",
 ```
 
 ### Bar plot with data added above the bars (Base R)
-First, let's read in some data on passengers who were aboard the *Titanic*.
 
-```{r}
-titanic <- read.csv("data/titanic.csv")
-```
 
-Next, calculate survival percentage and class count for each passenger
-class, using the `aggregate()` function, and then merge those two results into a data frame.
+
+First, calculate survival percentage and class count for each passenger
+class, using the `aggregate()` function, and then merge those two results into a data frame from the titanic dataset `titanic`.
 
 ```{r}
 # calculate survival percentage by class and count by class.
@@ -408,14 +425,10 @@ text(x = plt,
 
 ### Bar plot with data added above the bars (ggplot2)
 
-First, let's read in some data on passengers who were aboard the *Titanic*. For the `ggplot2` example we will use the `tidyverse` approach.
 
-```{r message = FALSE, results = "hide"}
-titanic <- read_csv("data/titanic.csv")
-```
 
-Next, calculate survival percentage and class count for each passenger
-class.
+First, calculate survival percentage and class count for each passenger
+class using `titanic` dataset using tidyverse approach.
 
 ```{r}
 survival <- titanic %>%  
@@ -460,11 +473,11 @@ legend("topleft", c("A","B"), pch=15,
 
 ### ggplot2
 
+Using `gender_spouse` dataset.
+
 ```{r}
-gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
 names(gender_spouse)
 # check the number of students of each gender
-library(ggplot2)
 ##side-by-side bars
 ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
   geom_bar(stat="identity" ,position = "dodge")
@@ -498,11 +511,7 @@ p
 ## Line Plot ("Time Series Plot")
 
 ## Stacked Area Plot
-Data is total steel produced annually from the 5 largest steel producing countries
-
-```{r}
-steel <- read.csv("data/steel.csv")
-```
+`steel' Data is total steel produced annually from the 5 largest steel producing countries
 
 Make the plot. geom_area() is the function that produces the stacked area plot.
 
@@ -573,13 +582,8 @@ ChickWeight %>%
 ```
 
 ## Violin Plot
-Let's pull the NBA Players data
 
-```{r message = FALSE, results = "hide"}
-nba_players <- read_csv("data/nba_players.csv")
-```
-
-Pulling data from OKC, UTA, and CHI
+Pulling data from OKC, UTA, and CHI from `nba_players` dataset
 
 ```{r}
 team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
@@ -812,13 +816,9 @@ ggplot(rivers_df, aes(sample = length)) +
 
 ### Mosaic Plot with Base R
 
-First, let's read in some data on passengers who were aboard the *Titanic*.
 
-```{r}
-titanic <- read.csv("data/titanic.csv")
-```
 
-Next we will mosaic plot of Titanic ticket class vs embarkment location. First check to see if there is any missing data.
+First, we will mosaic plot of Titanic ticket class vs embarkment location using `titanic` dataset. First check to see if there is any missing data.
 
 ```{r}
 table(titanic$Pclass)
@@ -1158,8 +1158,8 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
 
 ### Base R
 
+Using titanic dataset as 'data'
 ```{r}
-data <- read.csv("data/titanic.csv", TRUE, sep = ",")
 slices <- table(data$Pclass)
 ## ^^ we use the table() function to get the count of each class
 lbls <- c("1st Class", "2nd Class", "3rd Class")
@@ -1172,7 +1172,6 @@ pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(
 ### Pie Chart Using ggplot2
 
 ```{r}
-#nums <- read.csv("data/titanic.csv")
 #ClassCount <- as.data.frame(table(nums$Pclass))
 #I tried to get the data from a csv but I was genuinely unable to
 ClassCount <- data.frame(
@@ -1196,9 +1195,9 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
 
 Create a chloropleth using color to show population density of European countries. First, download geojson data using the `geojson_read()` function from the `geojsonio` package. `what = "sp"` instructs the function to return the data as a `SpatialPolygonsDataFrame` type. This type contains vertices data that can be used to draw polygons, as well as additional information associated with the polygon. In this case the polygons are European countries and the associated data includes population and area data from 2005.
 
-```{r}
-spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson", what = "sp")
+We are using the data from "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson" stored under `spdf`
 
+```{r}
 class(spdf)
 ```
 
@@ -1292,8 +1291,8 @@ text(8, 5, expression(paste(frac(1, sigma*sqrt(2*pi)), " ",
 
 ## HeatMap Plot
 
+Using Phone data `L`
 ```{r, message = FALSE}
-L <- read.csv('data/phone.csv')
 
 L1 <-
   L %>%select(country,X1995,X1996,X1997,X1998,X1999,X2000,X2001,X2002,X2003,X2004,X2005,)
@@ -1411,7 +1410,6 @@ GGplot
 fish <- read.csv('data/Pescado.csv')
 names(fish)
 
-library(ggplot2)
 ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
   geom_bar(stat='identity')
 
@@ -1419,55 +1417,45 @@ ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
 
 ##Hexbin Map
 
-```{r}
-library(geojsonio)
-library(rgdal)
-library(rgeos)
-library(broom)
-```
 
-
+Using   `spd` dataset
 ```{r}
-spdf <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
 
 # Bit of reformating
-spdf@data = spdf@data %>%
+spd@data = spd@data %>%
   mutate(google_name = gsub(" \\(United States\\)", "", google_name))
 
 # Show it
-plot(spdf)
+plot(spd)
 ```
 
 ```{r}
 
-spdf@data = spdf@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
-spdf_fortified <- tidy(spdf, region = "google_name")
+spd@data = spd@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+spd_fortified <- tidy(spd, region = "google_name")
 
 # Calculate the centroid of each hexagon to add the label:
 
-centers <- cbind.data.frame(data.frame(gCentroid(spdf, byid=TRUE), id=spdf@data$iso3166_2))
+centers <- cbind.data.frame(data.frame(gCentroid(spd, byid=TRUE), id=spd@data$iso3166_2))
  
 # Now I can plot this shape easily as described before:
 ggplot() +
-  geom_polygon(data = spdf_fortified, aes( x = long, y = lat, group = group), fill="skyblue", color="white") +
+  geom_polygon(data = spd_fortified, aes( x = long, y = lat, group = group), fill="skyblue", color="white") +
   geom_text(data=centers, aes(x=x, y=y, label=id)) +
   theme_void() +
   coord_map()
 ```
 
 
-```{r}
-hockey <- read.csv("data/hockey_search.csv")
-```
-
+Using `hockey` dataset
 
 ```{r}
-spdf_fortified <- spdf_fortified %>%
+spd_fortified <- spd_fortified %>%
   left_join(. , hockey, by=c("id"="State")) 
  
 # Make a first chloropleth map
 ggplot() +
-  geom_polygon(data = spdf_fortified, aes(fill =  Searches, x = long, y = lat, group = group)) +
+  geom_polygon(data = spd_fortified, aes(fill =  Searches, x = long, y = lat, group = group)) +
   geom_text(data=centers, aes(x=x, y=y, label=id)) +
   scale_fill_gradient(trans = "log") +
   theme_void() +
