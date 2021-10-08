@@ -1382,5 +1382,3 @@ ggplot() +
   coord_map() + 
   ggtitle("Google Search Popularity for Hockey by State")
 ```
-
-
