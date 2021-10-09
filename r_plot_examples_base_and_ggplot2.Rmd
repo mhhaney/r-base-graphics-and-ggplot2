@@ -463,6 +463,51 @@ ylim(-120, 150) + theme_minimal() + theme(
 p
 ```
 
+## Creating Circular Plot with Labels
+```{r}
+
+data <- data.frame(
+  id=seq(1, 9),
+  individual=paste( c("red ", "orange ", "yellow ",
+                    "green ", "blue ", "purple ",
+                    "pink ", "black ", "white "), seq(1,9), sep=""),
+  value=sample( seq(10, 100), 9, replace=T)
+)
+##Prepping the data to create labels for the graph
+# Get the name and the y position of each label
+label_data <- data
+ 
+# calculating the angles on the label
+number_of_bar <- nrow(label_data)
+angle <-  90 - 360 * (label_data$id-0.5) /number_of_bar     # 0.5 is subtracted because the text needs to be on the angle of the center of the bars. 
+ 
+# calculate the alignment of labels: right or left
+# If I am on the left part of the plot, my labels have currently an angle < -90
+label_data$hjust<-ifelse( angle < -90, 1, 0)
+ 
+# flip angle BY to make them readable
+label_data$angle<-ifelse(angle < -90, angle+180, angle)
+# ----- ------------------------------------------- ---- #
+ 
+# Creating the plot
+p <- ggplot(data, aes(x=as.factor(id), y=value)) +       
+  geom_bar(stat="identity", fill=alpha("red", 0.5)) +
+  ylim(-100,120) +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.margin = unit(rep(-1,4), "cm")      
+  ) +
+  coord_polar(start = 0) +
+  
+  # Add the labels, using the label_data dataframe that we have created before
+  geom_text(data=label_data, aes(x=id, y=value+10, label=individual, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
+ 
+p
+```
+
 ## Line Plot ("Time Series Plot")
 
 This time series shows the water level in Lake Huron from 1875 to 1972.
