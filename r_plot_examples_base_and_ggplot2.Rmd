@@ -1493,8 +1493,10 @@ ggplot(fruit_survey, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=fruit)) +
   coord_polar(theta="y") + 
   xlim(c(2, 4))
 ```
+
 ## Doughnut Chart with Base R
 It is possible to build a doughnut chart in base R; however, it requires a very long 'doughnut' function. The function is included below, and the additional code to create an actual chart. The example is taken from https://www.r-graph-gallery.com/130-ring-or-donut-chart.html. It is suggested to just use ggplot whenever you want to create this kind of chart. 
+
 ```{r}
 doughnut <-
 function (x, labels = names(x), edges = 200, outer.radius = 0.8,
@@ -1566,4 +1568,5 @@ function (x, labels = names(x), edges = 200, outer.radius = 0.8,
 # inner.radius controls the width of the ring
 doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.2,0.4,0.5), rgb(0.2,0.9,0.4,0.4) , rgb(0.0,0.9,0.8,0.4)) )
 ```
+
 After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
