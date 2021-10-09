@@ -2,7 +2,7 @@
 title: "R Plots Implemented with Base R and ggplot2"
 author: "DSA400W Class at Chatham University, Fall 2021"
 date: "9/21/2021"
-output: html_document
+output: html_document:
   out_dir <- 'docs';
   rmarkdown::render(input_file,
  encoding=encoding,
