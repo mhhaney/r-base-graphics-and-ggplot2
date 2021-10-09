@@ -1403,9 +1403,7 @@ ggplot() +
 ## Scatter plot
 
 ```{r}
-library(tidyverse)
-basket <- read.csv('nba_players.csv')
-names(basket)
+basket <- nba_players
 
 ggplot(data = basket, aes(x = AGE, y = PTS)) +
   geom_point(alpha = 1, aes(color = PTS))+
