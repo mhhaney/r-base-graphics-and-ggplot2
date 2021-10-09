@@ -1400,3 +1400,16 @@ ggplot() +
   coord_map() + 
   ggtitle("Google Search Popularity for Hockey by State")
 ```
+## Scatter plot
+
+```{r}
+library(tidyverse)
+basket <- read.csv('nba_players.csv')
+names(basket)
+
+ggplot(data = basket, aes(x = AGE, y = PTS)) +
+  geom_point(alpha = 1, aes(color = PTS))+
+  geom_density_2d()+
+  ggtitle('NBA Player Age to Points Made')
+
+```
