@@ -2,7 +2,8 @@
 title: "R Plots Implemented with Base R and ggplot2"
 author: "DSA400W Class at Chatham University, Fall 2021"
 date: "9/21/2021"
-output: html_document:
+output: html_document
+knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
  encoding=encoding,
@@ -1452,17 +1453,18 @@ soccer_ns <- ggplot()+
         text = element_blank())
 ```
 
-```{r}
-df2 <- df %>%
-  filter(Lat !=0 & Lon !=0) %>%
-  filter(complete.cases(.))
-pitch <- png::readPNG("pitchoutline.png")
 
-ggplot(df2, aes(remove_outliers(Lon), remove_outliers(Lat))) +
-  annotation_custom(rasterGrob(pitch, width = unit(1,"npc"),
-                               height = unit(1, "npc"), just = "centre", hjust = NULL, vjust = NULL, interpolate = TRUE, default.units = 'npc', name = NULL, gp =gpar(), vp= NULL) +
-                      stat_bkde2d(bandwith = c(.00004, .00004), aes(fill=..level..), geom ='polygon',
-                                  alpha = 0.5, colour = 'black') +
-                      theme_heatmap()+
-                      viridis::scale_fill_viridis(option = 'inferno')
+```{r}
+# df2 <- df %>%
+#   filter(Lat !=0 & Lon !=0) %>%
+#   filter(complete.cases(.))
+# pitch <- png::readPNG("pitchoutline.png")
+# 
+# ggplot(df2, aes(remove_outliers(Lon), remove_outliers(Lat))) +
+#   annotation_custom(rasterGrob(pitch, width = unit(1,"npc"),
+#                                height = unit(1, "npc"), just = "centre", hjust = NULL, vjust = NULL, interpolate = TRUE, default.units = 'npc', name = NULL, gp =gpar(), vp= NULL) +
+#                       stat_bkde2d(bandwith = c(.00004, .00004), aes(fill=..level..), geom ='polygon',
+#                                   alpha = 0.5, colour = 'black') +
+#                       theme_heatmap()+
+#                       viridis::scale_fill_viridis(option = 'inferno')
 ```
