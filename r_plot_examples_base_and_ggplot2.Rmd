@@ -439,6 +439,7 @@ names(gender_spouse)
 ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
   geom_bar(stat="identity" ,position = "dodge")
 ```
+
 ## Circular Bar Plot using GGPlot2
 
 ```{r}
@@ -463,7 +464,7 @@ ylim(-120, 150) + theme_minimal() + theme(
 p
 ```
 
-## Creating Circular Plot with Labels
+## Creating Circular Bar Plot with Labels
 ```{r}
 
 data <- data.frame(
@@ -677,10 +678,17 @@ stripchart(Age ~ Pclass, data = titanic,
 
 ### Strip Chart Divided into Groups, ggplot2
 
-Here is an example where the ggplot2 plot takes more work than the base R plot. Need to use `Pclass` as a factor or manipulate the x-axis scale to make sure it only shows 1, 2, and 3. Used the `scale_color_brewer()` function to set this plot to the same RColorBrewer palette as the base R example.
+Here is an example where the ggplot2 plot takes more work than the base R plot. Need to change `Pclass` to a factor or manipulate the x-axis scale to make sure it only shows 1, 2, and 3. As long as we are changing `Pclass` to a factor anyway let's make the labels for the classes "First", "Second", and "Third". 
 
 ```{r}
-ggplot(data = titanic, aes(x = Pclass, y = Age, color = as.factor(Pclass))) +
+titanic <- titanic %>% 
+  mutate(Pclass = factor(Pclass, labels = c("First", "Second", "Third")))
+```
+
+Used the `scale_color_brewer()` function to set this plot to the same RColorBrewer palette as the base R example.
+
+```{r}
+ggplot(data = titanic, aes(x = Pclass, y = Age, color = Pclass)) +
   geom_jitter(pch = 1, cex = 2, width = 0.12) +
   scale_color_brewer(palette = "Dark2") +
   theme_bw() +
@@ -852,14 +860,12 @@ table(titanic$Pclass)
 table(titanic$Embarked)
 ```
 
-Notice that there are two cases for which blank. We will remove those cases. Also, since `Pclass` is an integer vector it would be best to change it to a factor, and then specify the levels as a character vector. (See `?factor`)
+Notice that there are two cases for which `Embarked` is blank. We will remove those cases.
 
 ```{r}
 mask <- titanic$Embarked %in% c("C", "Q", "S")
 embarked <- titanic$Embarked[mask]
 class <- titanic$Pclass[mask]
-class <- factor(class, levels = c(1, 2, 3),
-                labels = c("First", "Second", "Third"))
 ```
 
 Make the mosaic plot.
@@ -880,8 +886,7 @@ Let's make a similar mosaic plot using ggplot2. We need to use the ggmosaic pack
 titanic_clean <- titanic %>% 
   filter(Embarked %in% c("C", "Q", "S")) %>%  # Removes cases with missing data
   mutate(
-  Embarked = factor(embarked),
-  Pclass = factor(Pclass)
+  Embarked = factor(embarked)
 )
 titanic_m_data <- titanic_clean %>% 
   count(Embarked, Pclass)
@@ -1482,6 +1487,7 @@ ggplot(data = basket, aes(x = AGE, y = PTS)) +
 
 
 ## Dot Plot : shooting map in a soccer field 
+
 ```{r}
 ###I used a package called “ggsoccer”, and you can build a soccer pitch with this package. you can build the soccer pitch from scratch like I did before knowing ggsoccer, but it takes a lot of time and you might have mistakes because it is long
 
