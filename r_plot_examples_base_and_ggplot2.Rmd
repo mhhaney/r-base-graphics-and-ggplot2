@@ -33,6 +33,24 @@ library(gridExtra)
 library(kableExtra) # For nice looking tables in html output
 library(reshape) # For the melt function in heatmap example
 library(lubridate)
+library(geojsonio)
+library(rgdal)
+library(rgeos)
+library(broom)
+```
+
+## Read in Data Files
+```{r message = FALSE, results = "hide"}
+MM <- read.csv('data/MarchMadness.csv')
+titanic <- read.csv("data/titanic.csv")
+nba_players <- read_csv("data/nba_players.csv")
+gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
+steel <- read.csv("data/steel.csv")
+data <- read.csv("data/titanic.csv", TRUE, sep = ",")
+spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson", what = "sp")
+L <- read.csv('data/phone.csv')
+spd <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
+hockey <- read.csv("data/hockey_search.csv")
 ```
 
 ## Histogram
@@ -46,7 +64,6 @@ hist(iris$Petal.Width,
      main = "Iris Petal Width Histogram",
      xlab = "Petal Width")
      
-
 ```
 
 ### Customized Histogram using Base R
@@ -67,8 +84,6 @@ par(mfrow = c(3, 1))
 hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
 hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
 hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 5.5))
-
-
 ```
 
 ### Basic Histogram using GGPlot2
@@ -77,7 +92,6 @@ hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab=
 ggplot(iris, aes(x=Petal.Width)) + 
   geom_histogram()
   
-
 ```
 
 ### Customized Histogram using GGPlot2
@@ -91,7 +105,6 @@ ggplot(iris, aes(x=Petal.Width)) +
   xlab("Petal Width") + 
   ylab("Frequency")
   
-
 ```
 
 ### GGPlot2 Histogram with Species Added in
@@ -103,7 +116,6 @@ ggplot(iris, aes(x=Petal.Width)) +
   xlab("Petal Width") + 
   ylab("Frequency")
   
-
 ```
 
 ### Creating Histograms for each Species on Petal Width using GGPlot2
@@ -115,7 +127,6 @@ ggplot(iris, aes(x=Petal.Width)) +
   xlab("Petal Width") + ylab("Frequency") + 
   facet_grid(. ~ Species)
   
-
 ```
 
 ## 2d Histogram with Density
@@ -127,7 +138,7 @@ ggplot(iris, aes(x=Petal.Width)) +
 rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
 r <- rf(32)
 #this is the actual setup of the plot
-MM <- read.csv('data/MarchMadness.csv')
+## MM is March Madness Data
 x <- MM$Pointdiff
 y <-  MM$Seed
 dataframe <- data.frame(x, y)
@@ -140,22 +151,17 @@ plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
 ```{r}
 #this is for more color
 rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
-
 #this is the actual setup of the plot
-MM <- read.csv('data/MarchMadness.csv') %>% 
+MM <- MM %>% 
   mutate(Seeddiff = abs(Seed - Seed.1))
-
 x <- MM$Seeddiff
 y <-  MM$Pointdiff
-
 h<- hexbin(x, y, xbins = 20)
-
 plot(h, colramp = rf, 
      xlab = "Seed Differential", 
      ylab = "Point Differential",
      main = "Seed Differential vs Point Differential")
      
-
 ```
 
 ### Try it with ggplot2's `geom_hex()`
@@ -169,7 +175,6 @@ ggplot(MM, aes(x=Seeddiff, y=Pointdiff) ) +
        title = "Seed Differential vs Point Differential") +
   theme_bw()
   
-
 ```
 
 ### Examine the same relationship with a scatterplot, with regression line added.
@@ -178,7 +183,6 @@ ggplot(MM, aes(x=Seeddiff, y=Pointdiff) ) +
 fit <- lm(Pointdiff ~ Seeddiff, data = MM)
 r2 <- round(summary(fit)$r.squared, 2)
 slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
-
 ggplot(MM, aes(x=Seeddiff, y=Pointdiff)) +
   geom_point(size = 3, 
              alpha = 0.20, 
@@ -196,7 +200,6 @@ ggplot(MM, aes(x=Seeddiff, y=Pointdiff)) +
                                  vjust = "middle", hjust = "left") +
   theme_bw()
   
-
 ```
 
 ### Take a look at average point differential by seed differential
@@ -216,11 +219,9 @@ Hmm... It seems like there isn't much difference in average point differential f
 ```{r, message = FALSE}
 MM_sub <- MM %>% 
   filter(between(Seeddiff, 2, 10))
-
 fit <- lm(Pointdiff ~ Seeddiff, data = MM_sub)
 r2 <- round(summary(fit)$r.squared, 2)
 slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
-
 ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
   geom_point(size = 3, 
              alpha = 0.20, 
@@ -239,7 +240,6 @@ ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
   scale_x_continuous(breaks = 2:10, limits = c(2, 10)) +
   theme_bw()
   
-
 ```
 
 ## Density Curve
@@ -258,23 +258,17 @@ plot(density(orange$circumference),
      main = "CIRCUMFERENCE OF ORANGE TREES",
      xlab = "CIRCUMFERENCE",
      ylab = "DISTRIBUTION")
-
 polygon(density(orange$circumference), col=7, border=2)
-
-
 ```
 
 ### Basic Density Curve Using GGPlot2
 
 ```{r}
 # create the density plot
-
 orange %>%
   ggplot( aes(x = circumference)) +
   geom_density(fill= 7, color= 2)
   
-
-
 ```
 
 ### Adding a Density Plot to a Histogram
@@ -285,8 +279,6 @@ Use the same histogram created in the "Customized Histogram Using Base R" sectio
 x <- iris$Petal.Width
 h <- hist(x, breaks=20, col="pink", freq=FALSE, xlab= "Petal Width", main="Histogram With Density Curve")
 lines(density(x), lwd=2, col="blue")
-
-
 ```
 
 ## density plot with groups
@@ -308,7 +300,6 @@ ggplot(data=diamonds,
 ```{r}
 ### Create a data set to work with
 survey <- c(apple=45, orange=25, honeydew=35, banana=50, watermelon=20, blueberry=15)
-
 ### Create a barchart with titles and color
 barplot(survey,
         main="Favorite Fruit Survey",
@@ -316,8 +307,6 @@ barplot(survey,
         ylab="Count",
         col=c("red", "orange", "green", "yellow", "pink", "blue"))
         
-
-
 ### Add a legend
 legend("topright",
        legend = c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
@@ -326,7 +315,6 @@ legend("topright",
        bty = "n",
        pt.cex = 2,
        cex = 1.2)
-
 ```
 
 ### GGplot2
@@ -336,36 +324,26 @@ legend("topright",
 survey1 <- data.frame(
   fruit=c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
   value=c(45, 25, 35, 50, 20, 15))
-
 # Create the barchart
 ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity") 
-
-
 ```
 
 ```{r}
 # Add color with black outlines
 ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red", "orange", "green", "yellow", "pink", "blue"), color="black") + labs(x="Count", y="Fruit", title="Fruit Survey") + theme(legend.position = "none")
-
-
-
 ```
 
 ### Bar plot with data added above the bars (Base R)
-First, let's read in some data on passengers who were aboard the *Titanic*.
 
-```{r}
-titanic <- read.csv("data/titanic.csv")
-```
 
-Next, calculate survival percentage and class count for each passenger
-class, using the `aggregate()` function, and then merge those two results into a data frame.
+
+First, calculate survival percentage and class count for each passenger
+class, using the `aggregate()` function, and then merge those two results into a data frame from the titanic dataset `titanic`.
 
 ```{r}
 # calculate survival percentage by class and count by class.
 surv_pct <- aggregate(Survived ~ Pclass, data = titanic, FUN = mean)
 class_ct <- aggregate(Survived ~ Pclass, data = titanic, FUN = length)
-
 # Merge those two results into a single data frame, and specify 
 # column names
 by_class_data <- merge(surv_pct, class_ct,
@@ -390,15 +368,11 @@ plt <- barplot(by_class_data$Surv_Pct,
                ylim = c(0.0, 0.75),
                axes = FALSE
 )
-
-
-
 # Add y axis
 axis(2, at = seq(0.0, 0.7, by = 0.1),
      labels = paste(seq(0, 70, by = 10), "%", sep=""),
      las = 1,
      cex.axis = 0.9)
-
 # Add the text of the labels
 text(x = plt, 
      y = by_class_data$Surv_Pct + 0.04, 
@@ -408,14 +382,10 @@ text(x = plt,
 
 ### Bar plot with data added above the bars (ggplot2)
 
-First, let's read in some data on passengers who were aboard the *Titanic*. For the `ggplot2` example we will use the `tidyverse` approach.
 
-```{r message = FALSE, results = "hide"}
-titanic <- read_csv("data/titanic.csv")
-```
 
-Next, calculate survival percentage and class count for each passenger
-class.
+First, calculate survival percentage and class count for each passenger
+class using `titanic` dataset using tidyverse approach.
 
 ```{r}
 survival <- titanic %>%  
@@ -440,7 +410,6 @@ ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
   theme(plot.title = element_text(hjust = 0.5)) # Centers title
   
   
-
 ```
 
 ## side-by-side barplots
@@ -460,15 +429,14 @@ legend("topleft", c("A","B"), pch=15,
 
 ### ggplot2
 
+Using `gender_spouse` dataset.
+
 ```{r}
-gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
 names(gender_spouse)
 # check the number of students of each gender
-library(ggplot2)
 ##side-by-side bars
 ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
   geom_bar(stat="identity" ,position = "dodge")
-
 ```
 ## Circular Bar Plot using GGPlot2
 
@@ -483,7 +451,6 @@ data <- data.frame(
 p <- ggplot(data, aes(x=as.factor(colors), y=value)) + 
 ##Numeric value in alpha changes how bright or vibrant the color in the graph appears  
  geom_bar(stat="identity", fill=alpha("red", 0.5)) +
-
 ##Adding limits
 ylim(-120, 150) + theme_minimal() + theme(
   axis.text = element_blank(), 
@@ -497,20 +464,26 @@ p
 
 ## Line Plot ("Time Series Plot")
 
-## Stacked Area Plot
-Data is total steel produced annually from the 5 largest steel producing countries
+This time series shows the water level in Lake Huron from 1875 to 1972.
 
+The original dataset from R is a time series, and in order to plot it I had to transform to a dataframe and then plot using that instead.
 ```{r}
-steel <- read.csv("data/steel.csv")
+lakehuron <- data.frame(LakeHuron)
+
+ggplot(lakehuron, aes(x=(1875:1972), y= LakeHuron)) +
+  geom_line() + 
+  ggtitle("WATER LEVELS IN LAKE HURON") +
+  xlab("") +
+  ylab("WATER LEVEL")
 ```
 
+## Stacked Area Plot
+`steel' Data is total steel produced annually from the 5 largest steel producing countries
 Make the plot. geom_area() is the function that produces the stacked area plot.
-
 ```{r}
 ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
     geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
     
-
 ```
 
 ## Segmented Stacked Bar Plot
@@ -519,7 +492,6 @@ ggplot(steel, aes(x=year, y=Steel, fill=Country)) +
 ggplot(steel, aes(fill=Country, y=Steel, x=year)) + 
     geom_bar(position="fill", stat="identity") + ggtitle("Share of Steel Produced Annually") + ylab("% of Steel Produced") + xlab("Year")
     
-
 ```
 
 ## Boxplot
@@ -572,16 +544,9 @@ ChickWeight %>%
     
 ```
 
-```
-
 ## Violin Plot
-Let's pull the NBA Players data
 
-```{r message = FALSE, results = "hide"}
-nba_players <- read_csv("data/nba_players.csv")
-```
-
-Pulling data from OKC, UTA, and CHI
+Pulling data from OKC, UTA, and CHI from `nba_players` dataset
 
 ```{r}
 team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
@@ -601,8 +566,6 @@ with(data , vioplot(
   border = c(sample(200:900, 3)),
   rectCol = c(893)
 ))
-
-
 ```
 
 ### Basic Plot with ggplot2 ###
@@ -612,7 +575,6 @@ ggplot(data, aes(x= team, y = pts, fill = team)) +
   geom_violin(trim = F, show.legend = T) + 
   geom_boxplot(width = 0.1)
   
-
 ```
 
 ## Strip Chart
@@ -631,7 +593,6 @@ stripchart(jitter(iris$Sepal.Width, amount = 0),
            pch = 19,
            method= 'jitter')
            
-
 ```
 
 ### Strip chart in ggplot2
@@ -652,18 +613,44 @@ ggplot(data = iris) +
        y = NULL,
        x = "Sepal Width (cm)")
        
+```
 
+### Strip Chart Divided into Groups, Base R
+
+```{r}
+palette(brewer.pal(n = 3, name = "Dark2"))
+
+stripchart(Age ~ Pclass, data = titanic,
+           vertical = TRUE,
+           method = "jitter",
+           pch = 1,
+           col = 1:3,
+           main = "Titanic Passenger Age by Class",
+           xlab = "Class")
 ```
 
 ### Strip Chart Divided into Groups, ggplot2
+
+Here is an example where the ggplot2 plot takes more work than the base R plot. Need to use `Pclass` as a factor or manipulate the x-axis scale to make sure it only shows 1, 2, and 3. Used the `scale_color_brewer()` function to set this plot to the same RColorBrewer palette as the base R example.
+
+```{r}
+ggplot(data = titanic, aes(x = Pclass, y = Age, color = as.factor(Pclass))) +
+  geom_jitter(pch = 1, cex = 2, width = 0.12) +
+  scale_color_brewer(palette = "Dark2") +
+  theme_bw() +
+  theme(legend.position = "none") +
+  labs(title = "Titanic Passenger Age by Class",
+       x = "Class",
+       y = "Age")
+```
+
+### Enhanced Strip Chart Divided into Groups, ggplot2
 
 This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two variables as parameters. One can be the categorical group, iris species.
 
 ```{r}
 ggplot(data = iris) + 
-
 ### Add Boxplot on top of the strip plot for iris species. - used https://www.youtube.com/watch?v=mbvU8fF4eGM&t=613s as a reference
-
   geom_boxplot(mapping = aes(x = Sepal.Width, y = Species, fill = Species),
                alpha = 0.25,
                width = 0.5,
@@ -680,7 +667,6 @@ ggplot(data = iris) +
   theme_bw() +
   theme(legend.position = "none")
   
-
 ```
 
 ### Strip Chart with NBA Data, ggplot2
@@ -696,7 +682,6 @@ nba_players %>%
     geom_point() +
     labs(title = "Scoring Distribution on Selected NBA Teams")
     
-
 ```
 
 #### More Customized Strip Chart of NBA Scoring with ggplot2
@@ -708,12 +693,10 @@ top_ten <- nba_players %>%
   arrange(desc(PTS), .by_group = TRUE) %>% 
   mutate(rn = row_number()) %>% 
   filter(rn <= 10)
-
 top_one <- nba_players %>%
   filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
   group_by(TEAM) %>%
   filter(row_number(desc(PTS)) == 1)
-
 ggplot(data = top_ten, aes(x =PTS, y = TEAM)) + 
   geom_point() +
   scale_x_continuous(breaks = seq(5, 30, 5)) +
@@ -750,7 +733,6 @@ ggplot(data = chickwts) +
   theme_bw() +
   theme(legend.position = "none")
   
-
 ```
 
 A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
@@ -785,8 +767,6 @@ Here we create a basic QQ plot in base R and add the normal distribution QQ plot
 qqnorm(rivers,
        main = "Q-Q Plot of North American River Lengths")
 qqline(rivers, col = "red")
-
-
 ```
 
 ### Basic QQ Plot with Normal Distribution Reference Line (ggplot2)
@@ -814,13 +794,9 @@ ggplot(rivers_df, aes(sample = length)) +
 
 ### Mosaic Plot with Base R
 
-First, let's read in some data on passengers who were aboard the *Titanic*.
 
-```{r}
-titanic <- read.csv("data/titanic.csv")
-```
 
-Next we will mosaic plot of Titanic ticket class vs embarkment location. First check to see if there is any missing data.
+First, we will mosaic plot of Titanic ticket class vs embarkment location using `titanic` dataset. First check to see if there is any missing data.
 
 ```{r}
 table(titanic$Pclass)
@@ -848,7 +824,6 @@ mosaicplot(table(class, embarked),
               xlab="Class",ylab="Embarkment Site",
               col=c(2,3,4))
               
-
 ```
 
 ### Mosaic Plot with ggplot2
@@ -862,7 +837,6 @@ titanic_clean <- titanic %>%
   Embarked = factor(embarked),
   Pclass = factor(Pclass)
 )
-
 titanic_m_data <- titanic_clean %>% 
   count(Embarked, Pclass)
 ```
@@ -874,7 +848,6 @@ titanic_m_data <- titanic_clean %>%
     ylab("Embarkment Site") + 
   ggtitle("Passenger Class by Embarkment Site")
   
-
   
 ```
 
@@ -975,7 +948,6 @@ To set the point size in base plot, use `cex=data$variable`. In this case `cex=m
 
 ```{r}
 par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
-
 plot(mtcars$mpg, mtcars$hp, cex = mtcars$disp,
      pch=16,
      main = 'Miles per Gallon vs Gross Horsepower with Displacement',
@@ -987,14 +959,12 @@ legend('right', inset=c(-0.35,0),
        pch=16, ncol=1, pt.cex = c(100, 200, 300, 400),
        bty = 'n')
        
-
 ```
 
 Yikes, it seems like the points may be a bit too large. Lets make them all smaller by dividing their values by 100 & take care not to forget about the legend points as well by changing the values for `pt.cex`. 
 
 ```{r}
 par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
-
 plot(mtcars$mpg, mtcars$hp, cex = mtcars$disp/100,
      pch=16,
      main = 'Miles per Gallon vs Gross Horsepower with Displacement',
@@ -1006,7 +976,6 @@ legend('right', inset=c(-0.35,0),
        pch=16, ncol=1, pt.cex = c(100, 200, 300, 400)/100,
        bty = 'n')
        
-
 ```
 
 Better, but the points don't seem to be proportional. It seems that `cex` scales points by altering the radius of a point. This would cause the area of each consecutive point to be exponentially larger than the last when using the formula $A=πr^2$. To correct this and make the point size proportional to the area, rearrange the formula to solve for the radius that produces the desired area. $r=\sqrt{\frac{A}{π}}$
@@ -1015,7 +984,6 @@ Now the points are proportional in area but still too large, so I divide the are
 
 ```{r}
 par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
-
 plot(mtcars$mpg, mtcars$hp, cex = sqrt(mtcars$disp/3.14)/5,
      pch=16,
      main = 'Miles per Gallon vs Gross Horsepower with Displacement',
@@ -1027,7 +995,6 @@ legend('right', inset=c(-0.35,0),
        pch=16, ncol=1, pt.cex = sqrt(c(100, 200, 300, 400)/3.14)/5,
        bty = 'n')
       
-
 ```
 
 Now it looks right!
@@ -1051,14 +1018,12 @@ data(swiss)
 ```
 
 ```{r}
-
 #Data Preparation
 swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
 swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility
 swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
 swiss <- swiss[order(swiss$Fertility_z), ]  # sort
 swiss$`municipality` <- factor(swiss$`municipality`, levels = swiss$`municipality`)  # convert to factor to retain sorted order in plot.
-
 #Diverging Barplot:
 ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) + 
   geom_bar(stat='identity', aes(fill=Fertility_type), width=.5) +
@@ -1079,7 +1044,6 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
 To make a lollipop chart with ggplot2 you can use `geom_point()` for the circle and `geom_segment()` for the stem.
 
 ```{R}
-
 let <- data.frame(
   x=LETTERS[1:10],
   y=runif(10, 2, 9)
@@ -1132,7 +1096,6 @@ ggplot(state_df, aes(x=State, y=Life.Exp)) +
   scale_y_continuous(breaks = seq(68, 74, 1)) +
   coord_flip()
   
-
 ```
 
 Now let's try to view a subset. With a smaller amount of data we can add the life expectancies as labels on the dots.
@@ -1160,9 +1123,10 @@ ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=rou
 
 ### Base R
 
+Using titanic dataset.
+
 ```{r}
-data <- read.csv("data/titanic.csv", TRUE, sep = ",")
-slices <- table(data$Pclass)
+slices <- table(titanic$Pclass)
 ## ^^ we use the table() function to get the count of each class
 lbls <- c("1st Class", "2nd Class", "3rd Class")
 pct <- round(slices/sum(slices)*100)
@@ -1174,7 +1138,6 @@ pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(
 ### Pie Chart Using ggplot2
 
 ```{r}
-#nums <- read.csv("data/titanic.csv")
 #ClassCount <- as.data.frame(table(nums$Pclass))
 #I tried to get the data from a csv but I was genuinely unable to
 ClassCount <- data.frame(
@@ -1198,9 +1161,9 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
 
 Create a chloropleth using color to show population density of European countries. First, download geojson data using the `geojson_read()` function from the `geojsonio` package. `what = "sp"` instructs the function to return the data as a `SpatialPolygonsDataFrame` type. This type contains vertices data that can be used to draw polygons, as well as additional information associated with the polygon. In this case the polygons are European countries and the associated data includes population and area data from 2005.
 
-```{r}
-spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson", what = "sp")
+We are using the data from "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson" stored under `spdf`
 
+```{r}
 class(spdf)
 ```
 
@@ -1238,7 +1201,6 @@ ggplot() +
   theme_void() +
   coord_map()
   
-
 ```
 
 Do the same, but use the color palette from the `viridis` package.
@@ -1307,7 +1269,6 @@ matplot(x, y, type = "l", xaxt = "n",
         col.main = "blue")
 axis(1, at = c(-pi, -pi/2, 0, pi/2, pi),
      labels = expression(-pi, -pi/2, 0, pi/2, pi))
-
 ## How to combine "math" and numeric variables :
 plot(1:10, type="n", xlab="", ylab="", main = "plot math & numbers")
 theta <- 1.23 ; mtext(bquote(hat(theta) == .(theta)))
@@ -1315,7 +1276,6 @@ for(i in 2:9)
     text(i,i+1, substitute(list(xi,eta) == group("(",list(x,y),")"),
                            list(x=i, y=i+1)))
 ## note that both of these use calls rather than expressions.
-
 plot(1:10, 1:10)
 text(4, 9, expression(hat(beta) == (X^t * X)^{-1} * X^t * y))
 text(4, 8.4, "expression(hat(beta) == (X^t * X)^{-1} * X^t * y)",
@@ -1330,28 +1290,21 @@ text(8, 5, expression(paste(frac(1, sigma*sqrt(2*pi)), " ",
 
 ## HeatMap Plot
 
+Using Phone data `L`
 ```{r, message = FALSE}
-L <- read.csv('data/phone.csv')
-
 L1 <-
   L %>%select(country,X1995,X1996,X1997,X1998,X1999,X2000,X2001,X2002,X2003,X2004,X2005,)
-
 L2 <-
   L1 %>%filter(country=='Argentina'|country=='Brazil'|country=='Chile'|country=='Colombia'|country=='Portugal'|country=='Barbados'|country=='Mexico'|country=='Spain'|country=='Egypt')
-
 for (col in 1:ncol(L2)){
  colnames(L2)[col] <- sub('X', '', colnames(L2)[col])
 }
-
 L3<-melt(L2)
-
 plot<-ggplot(L3, aes(variable,country,fill= value)) + geom_tile()
-
 plot1<- plot+xlab('Year')+
  ylab('Country')+
  ggtitle('Mobile Cell Phone Subs 1995-2005')+
  labs(fill = 'Per capita subscriptions')
-
 plot1 + scale_fill_distiller(palette = 'Spectral')
 ```
 
@@ -1360,21 +1313,17 @@ plot1 + scale_fill_distiller(palette = 'Spectral')
 # The URL used to query the USGS database 
 # includes parameters including data type, site number, and dates
 URL = 'https://waterdata.usgs.gov/usa/nwis/dv?cb_00060=on&format=rdb&site_no=03049500&referred_module=sw&period=&begin_date=1970-01-01&end_date=2020-12-31'
-
 # data is displayed with some extra comments so it takes a little additional processing to clean up
 d = read.delim(URL, comment.char = '#', stringsAsFactors = F)
 d=d[-1,]
 d$datetime=as.POSIXct(d$datetime)
 colnames(d)[4]='discharge'
 d$discharge = as.numeric(d$discharge)
-
 # creating month & year variabes for aggregation
 d$month=month(d$datetime)
 d$year=year(d$datetime)
-
 # aggregating discharge by month & year to return means
 aggDischarge=aggregate(discharge~month+year, d, mean)
-
 # plotting just by month, 1 (Jan) is at the bottom and 12 (Dec) is at the top
 # there are ways to revserse the order of scales but introducing axis labels complicates that
 # I instead am reversing the order of months and using those values for plotting 
@@ -1404,34 +1353,27 @@ Resources used https://www.youtube.com/watch?v=GVWSGr4OLj8&list=PLhUoWCH9bWbxje8
 ```{r}
 x = c(1, 2, 3, 4, 5, 6, 7)
 y = c(8, 9, 10, 11, 12, 13, 14)
-
 data1 = data.frame(x, y)
-
 pointex <- ggplot(data1, aes(x = x, y = y)) +
   geom_point() +
   labs(x = "examplelength",
        y = "examplewidth")
-
 pointex
 ```
 
 ```{r}
 nums = c(3, 8, 4, 5, 0.2, 0.5, 20)
 int = c(0, 3, 9, 5, 1.5, 15, 5.3)
-
 data2 = data.frame(nums, int)
-
 pointex2 <- ggplot(data2, aes(x = nums, y= int)) +
   geom_point()+
   labs(x="miles",
        y="hours")
-
 pointex2
 ```
 
 ```{r}                 
 plotex <- list(pointex, pointex2)
-
 grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
 
@@ -1448,67 +1390,219 @@ GGplot
 ```{r}
 fish <- read.csv('data/Pescado.csv')
 names(fish)
-
-library(ggplot2)
 ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
   geom_bar(stat='identity')
-
 ```
 
 ##Hexbin Map
 
+
+Using   `spd` dataset
 ```{r}
-library(geojsonio)
-library(rgdal)
-library(rgeos)
-library(broom)
-```
-
-
-```{r}
-spdf <- geojson_read("us_states_hexgrid.geojson",  what = "sp")
-
 # Bit of reformating
-spdf@data = spdf@data %>%
+spd@data = spd@data %>%
   mutate(google_name = gsub(" \\(United States\\)", "", google_name))
-
 # Show it
-plot(spdf)
+plot(spd)
 ```
 
 ```{r}
-
-spdf@data = spdf@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
-spdf_fortified <- tidy(spdf, region = "google_name")
-
+spd@data = spd@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+spd_fortified <- tidy(spd, region = "google_name")
 # Calculate the centroid of each hexagon to add the label:
-
-centers <- cbind.data.frame(data.frame(gCentroid(spdf, byid=TRUE), id=spdf@data$iso3166_2))
+centers <- cbind.data.frame(data.frame(gCentroid(spd, byid=TRUE), id=spd@data$iso3166_2))
  
 # Now I can plot this shape easily as described before:
 ggplot() +
-  geom_polygon(data = spdf_fortified, aes( x = long, y = lat, group = group), fill="skyblue", color="white") +
+  geom_polygon(data = spd_fortified, aes( x = long, y = lat, group = group), fill="skyblue", color="white") +
   geom_text(data=centers, aes(x=x, y=y, label=id)) +
   theme_void() +
   coord_map()
 ```
 
 
-```{r}
-hockey <- read.csv("hockey_search.csv")
-```
-
+Using `hockey` dataset
 
 ```{r}
-spdf_fortified <- spdf_fortified %>%
+spd_fortified <- spd_fortified %>%
   left_join(. , hockey, by=c("id"="State")) 
  
 # Make a first chloropleth map
 ggplot() +
-  geom_polygon(data = spdf_fortified, aes(fill =  Searches, x = long, y = lat, group = group)) +
+  geom_polygon(data = spd_fortified, aes(fill =  Searches, x = long, y = lat, group = group)) +
   geom_text(data=centers, aes(x=x, y=y, label=id)) +
   scale_fill_gradient(trans = "log") +
   theme_void() +
   coord_map() + 
   ggtitle("Google Search Popularity for Hockey by State")
 ```
+
+```{r}
+options(scipen=999)
+#this turns the scientific notation off
+theme_set(theme_bw())
+#^ this helps get a good theme for this graph
+data("midwest", package = "ggplot2")
+
+# Scatterplot with line of best fit
+gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) +    #this gets us the line of best fit
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(y="Population", 
+       x="Area", 
+       title="Area Vs Population", 
+       caption = "Source: midwest")
+
+plot(gg)
+```
+
+## Scatter plot
+
+```{r}
+basket <- nba_players
+
+ggplot(data = basket, aes(x = AGE, y = PTS)) +
+  geom_point(alpha = 1, aes(color = PTS))+
+  geom_density_2d()+
+  ggtitle('NBA Player Age to Points Made')
+
+```
+
+### GPS Heatmap
+
+```{r}
+soccer_ns <- ggplot()+
+  geom_rect(aes(xmin = -10, xmax = 100, ymin= -10, ymax = 130), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ### Background outline
+  geom_rect(aes(xmin = 0, xmax = 90, ymin= 0, ymax = 120), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ###Sideline, Endline
+  geom_rect(aes(xmin = 0, xmax = 90, ymin= 0, ymax = 60), fill = NA , colour = "#FFFFFF", size = 0.5)+ #Halfway
+  geom_rect(aes(xmin = 24.85, xmax = 65.15, ymin= 0, ymax = 16.5), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ #lower 18 yard box
+  geom_rect(aes(xmin = 35.85, xmax = 54.15, ymin= 0, ymax = 5.5), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ # Lower 5 yard box
+  geom_rect(aes(xmin = 24.85, xmax = 65.15, ymin= 103.5, ymax = 120), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ #upper 18 yard box
+  geom_rect(aes(xmin = 35.85, xmax = 54.15, ymin= 114.5, ymax = 120), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ #upper 5 yard box
+  geom_curve(aes(x = 35.85, y = 16.5, xend = 54.15, yend = 16.5), curvature = -0.6, colour = "#FFFFFF")+ #lower D
+  geom_curve(aes(x = 35.85, y = 103.5, xend = 54.15, yend = 103.5), curvature = .6, colour = "#FFFFFF")+ #upper D
+  ggforce::geom_circle(aes(x0=45, y0=60, r= 9.15), colour = "#FFFFFF")+ ##Halfway circle
+  theme(rect = element_blank(),
+        line = element_blank(),
+        text = element_blank())
+```
+
+
+```{r}
+# df2 <- df %>%
+#   filter(Lat !=0 & Lon !=0) %>%
+#   filter(complete.cases(.))
+# pitch <- png::readPNG("pitchoutline.png")
+# 
+# ggplot(df2, aes(remove_outliers(Lon), remove_outliers(Lat))) +
+#   annotation_custom(rasterGrob(pitch, width = unit(1,"npc"),
+#                                height = unit(1, "npc"), just = "centre", hjust = NULL, vjust = NULL, interpolate = TRUE, default.units = 'npc', name = NULL, gp =gpar(), vp= NULL) +
+#                       stat_bkde2d(bandwith = c(.00004, .00004), aes(fill=..level..), geom ='polygon',
+#                                   alpha = 0.5, colour = 'black') +
+#                       theme_heatmap()+
+#                       viridis::scale_fill_viridis(option = 'inferno')
+```
+
+## Basic Doughnut Chart with ggplot
+
+```{r}
+# Create test data
+fruit_survey <- data.frame(
+  fruit=c("Apple", "Banana", "Honeydew", "Watermelon"),
+  count=c(15, 25, 20, 40)
+)
+
+# Compute percentages
+fruit_survey$fraction = fruit_survey$count / sum(fruit_survey$count)
+
+# Compute the cumulative percentages (top of each rectangle)
+fruit_survey$ymax = cumsum(fruit_survey$fraction)
+
+# Compute the bottom of each rectangle
+fruit_survey$ymin = c(0, head(fruit_survey$ymax, n=-1))
+
+# Make the plot
+ggplot(fruit_survey, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=fruit)) +
+  geom_rect() +
+  coord_polar(theta="y") + 
+  xlim(c(2, 4))
+```
+
+## Doughnut Chart with Base R
+It is possible to build a doughnut chart in base R; however, it requires a very long 'doughnut' function. The function is included below, and the additional code to create an actual chart. The example is taken from https://www.r-graph-gallery.com/130-ring-or-donut-chart.html. It is suggested to just use ggplot whenever you want to create this kind of chart. 
+
+```{r}
+doughnut <-
+function (x, labels = names(x), edges = 200, outer.radius = 0.8,
+          inner.radius=0.6, clockwise = FALSE,
+          init.angle = if (clockwise) 90 else 0, density = NULL,
+          angle = 45, col = NULL, border = FALSE, lty = NULL,
+          main = NULL, ...)
+{
+    if (!is.numeric(x) || any(is.na(x) | x < 0))
+        stop("'x' values must be positive.")
+    if (is.null(labels))
+        labels <- as.character(seq_along(x))
+    else labels <- as.graphicsAnnot(labels)
+    x <- c(0, cumsum(x)/sum(x))
+    dx <- diff(x)
+    nx <- length(dx)
+    plot.new()
+    pin <- par("pin")
+    xlim <- ylim <- c(-1, 1)
+    if (pin[1L] > pin[2L])
+        xlim <- (pin[1L]/pin[2L]) * xlim
+    else ylim <- (pin[2L]/pin[1L]) * ylim
+    plot.window(xlim, ylim, "", asp = 1)
+    if (is.null(col))
+        col <- if (is.null(density))
+          palette()
+        else par("fg")
+    col <- rep(col, length.out = nx)
+    border <- rep(border, length.out = nx)
+    lty <- rep(lty, length.out = nx)
+    angle <- rep(angle, length.out = nx)
+    density <- rep(density, length.out = nx)
+    twopi <- if (clockwise)
+        -2 * pi
+    else 2 * pi
+    t2xy <- function(t, radius) {
+        t2p <- twopi * t + init.angle * pi/180
+        list(x = radius * cos(t2p),
+             y = radius * sin(t2p))
+    }
+    for (i in 1L:nx) {
+        n <- max(2, floor(edges * dx[i]))
+        P <- t2xy(seq.int(x[i], x[i + 1], length.out = n),
+                  outer.radius)
+        polygon(c(P$x, 0), c(P$y, 0), density = density[i],
+                angle = angle[i], border = border[i],
+                col = col[i], lty = lty[i])
+        Pout <- t2xy(mean(x[i + 0:1]), outer.radius)
+        lab <- as.character(labels[i])
+        if (!is.na(lab) && nzchar(lab)) {
+            lines(c(1, 1.05) * Pout$x, c(1, 1.05) * Pout$y)
+            text(1.1 * Pout$x, 1.1 * Pout$y, labels[i],
+                 xpd = TRUE, adj = ifelse(Pout$x < 0, 1, 0),
+                 ...)
+        }
+        ## Add white disc          
+        Pin <- t2xy(seq.int(0, 1, length.out = n*nx),
+                  inner.radius)
+        polygon(Pin$x, Pin$y, density = density[i],
+                angle = angle[i], border = border[i],
+                col = "white", lty = lty[i])
+    }
+
+    title(main = main, ...)
+    invisible(NULL)
+}
+
+
+# inner.radius controls the width of the ring
+doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.2,0.4,0.5), rgb(0.2,0.9,0.4,0.4) , rgb(0.0,0.9,0.8,0.4)) )
+```
+
+After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
