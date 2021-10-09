@@ -1434,10 +1434,18 @@ ggplot(data = basket, aes(x = AGE, y = PTS)) +
 
 ```
 
-### GPS Heatmap
 
+## Dot Plot : shooting map in a soccer field 
 ```{r}
-soccer_ns <- ggplot()+
+###I used a package called “ggsoccer”, and you can build a soccer pitch with this package. you can build the soccer pitch from scratch like I did before knowing ggsoccer, but it takes a lot of time and you might have mistakes because it is long
+library(ggplot2)
+library(ggsoccer)
+
+ggplot() +
+  annotate_pitch() +
+  theme_pitch()
+### this is how you can build a soccer pitch from scratch   
+  soccer_ns <- ggplot()+
   geom_rect(aes(xmin = -10, xmax = 100, ymin= -10, ymax = 130), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ### Background outline
   geom_rect(aes(xmin = 0, xmax = 90, ymin= 0, ymax = 120), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ###Sideline, Endline
   geom_rect(aes(xmin = 0, xmax = 90, ymin= 0, ymax = 60), fill = NA , colour = "#FFFFFF", size = 0.5)+ #Halfway
@@ -1451,22 +1459,38 @@ soccer_ns <- ggplot()+
   theme(rect = element_blank(),
         line = element_blank(),
         text = element_blank())
-```
 
+### By default the pitch is white and grey, so we need to change the pitch color from white to green and the lines from grey to white 
+library(ggplot2)
+library(ggsoccer)
 
-```{r}
-# df2 <- df %>%
-#   filter(Lat !=0 & Lon !=0) %>%
-#   filter(complete.cases(.))
-# pitch <- png::readPNG("pitchoutline.png")
-# 
-# ggplot(df2, aes(remove_outliers(Lon), remove_outliers(Lat))) +
-#   annotation_custom(rasterGrob(pitch, width = unit(1,"npc"),
-#                                height = unit(1, "npc"), just = "centre", hjust = NULL, vjust = NULL, interpolate = TRUE, default.units = 'npc', name = NULL, gp =gpar(), vp= NULL) +
-#                       stat_bkde2d(bandwith = c(.00004, .00004), aes(fill=..level..), geom ='polygon',
-#                                   alpha = 0.5, colour = 'black') +
-#                       theme_heatmap()+
-#                       viridis::scale_fill_viridis(option = 'inferno')
+ggplot() +
+  annotate_pitch(colour = "white",
+                 fill = "#3ab54a") +
+  theme_pitch() +
+  theme(panel.background = element_rect(fill = "#3ab54a")) 
+
+###And here I created a shot map that basically shows the shots on target that it is shown in orange and the off target shots are shown in blue.
+library(ggplot2)
+library(ggsoccer)
+
+# Data
+set.seed(1)
+df <- data.frame(x = rnorm(20, 80, 10), 
+                 y = rnorm(20, 50, 20),
+                 Shot = sample(c("In", "Out"),
+                               40, replace = TRUE))
+
+ggplot(df) +
+  annotate_pitch(colour = "white",
+                 fill = "#3ab54a") +
+  geom_point(aes(x = x, y = y, fill = Shot),
+             shape = 21,
+             size = 4) +
+  coord_cartesian(xlim = c(45, 105))+ 
+  theme_pitch() +
+  theme(panel.background = element_rect(fill = "#3ab54a")) 
+
 ```
 
 ## Basic Doughnut Chart with ggplot
