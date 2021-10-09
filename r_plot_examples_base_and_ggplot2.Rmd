@@ -3,7 +3,6 @@ title: "R Plots Implemented with Base R and ggplot2"
 author: "DSA400W Class at Chatham University, Fall 2021"
 date: "9/21/2021"
 output: html_document
-knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
  encoding=encoding,
@@ -1400,12 +1399,32 @@ ggplot() +
   coord_map() + 
   ggtitle("Google Search Popularity for Hockey by State")
 ```
+
+```{r}
+options(scipen=999)
+#this turns the scientific notation off
+theme_set(theme_bw())
+#^ this helps get a good theme for this graph
+data("midwest", package = "ggplot2")
+
+# Scatterplot with line of best fit
+gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) +    #this gets us the line of best fit
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(y="Population", 
+       x="Area", 
+       title="Area Vs Population", 
+       caption = "Source: midwest")
+
+plot(gg)
+```
+
 ## Scatter plot
 
 ```{r}
-library(tidyverse)
-basket <- read.csv('nba_players.csv')
-names(basket)
+basket <- nba_players
 
 ggplot(data = basket, aes(x = AGE, y = PTS)) +
   geom_point(alpha = 1, aes(color = PTS))+
@@ -1413,7 +1432,9 @@ ggplot(data = basket, aes(x = AGE, y = PTS)) +
   ggtitle('NBA Player Age to Points Made')
 
 ```
+
 ### GPS Heatmap
+
 ```{r}
 soccer_ns <- ggplot()+
   geom_rect(aes(xmin = -10, xmax = 100, ymin= -10, ymax = 130), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ### Background outline
@@ -1430,6 +1451,7 @@ soccer_ns <- ggplot()+
         line = element_blank(),
         text = element_blank())
 ```
+
 ```{r}
 df2 <- df %>%
   filter(Lat !=0 & Lon !=0) %>%
