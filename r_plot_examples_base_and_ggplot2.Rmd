@@ -37,6 +37,7 @@ library(geojsonio)
 library(rgdal)
 library(rgeos)
 library(broom)
+library(ggsoccer)
 ```
 
 ## Read in Data Files
@@ -1438,8 +1439,6 @@ ggplot(data = basket, aes(x = AGE, y = PTS)) +
 ## Dot Plot : shooting map in a soccer field 
 ```{r}
 ###I used a package called “ggsoccer”, and you can build a soccer pitch with this package. you can build the soccer pitch from scratch like I did before knowing ggsoccer, but it takes a lot of time and you might have mistakes because it is long
-library(ggplot2)
-library(ggsoccer)
 
 ggplot() +
   annotate_pitch() +
@@ -1461,8 +1460,6 @@ ggplot() +
         text = element_blank())
 
 ### By default the pitch is white and grey, so we need to change the pitch color from white to green and the lines from grey to white 
-library(ggplot2)
-library(ggsoccer)
 
 ggplot() +
   annotate_pitch(colour = "white",
@@ -1471,8 +1468,6 @@ ggplot() +
   theme(panel.background = element_rect(fill = "#3ab54a")) 
 
 ###And here I created a shot map that basically shows the shots on target that it is shown in orange and the off target shots are shown in blue.
-library(ggplot2)
-library(ggsoccer)
 
 # Data
 set.seed(1)
