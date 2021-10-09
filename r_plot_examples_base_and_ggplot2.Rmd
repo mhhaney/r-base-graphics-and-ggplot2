@@ -3,7 +3,6 @@ title: "R Plots Implemented with Base R and ggplot2"
 author: "DSA400W Class at Chatham University, Fall 2021"
 date: "9/21/2021"
 output: html_document
-knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
  encoding=encoding,
@@ -134,21 +133,6 @@ ggplot(iris, aes(x=Petal.Width)) +
 ### Examine seed vs point differential for the NCAA Men's Basketball Tournament
 
 ```{r}
-<<<<<<< HEAD
- #this is for more color
- rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
- r <- rf(32)
- #this is the actual setup of the plot
- MM <- read.csv('data/MarchMadness.csv')
- x <- MM$Pointdiff
- y <-  MM$Seed
- dataframe <- data.frame(x, y)
- h <- hexbin(dataframe)
- plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
-```
-
-
-=======
 #this is for more color
 rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
 r <- rf(32)
@@ -161,9 +145,6 @@ h <- hexbin(dataframe)
 plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
 ```
 
-<<<<<<< HEAD
->>>>>>> db7aaf23698122c3709bc65577c9d389006ba98c
-=======
 ### Let's look at seed differential vs point differential instead.
 
 ```{r}
@@ -260,7 +241,6 @@ ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
   
 ```
 
->>>>>>> 40b97696ee55ae5b148b88d8c59fa5e50204108a
 ## Density Curve
 
 ### Basic Density Curve Using Base R
@@ -1420,27 +1400,6 @@ ggplot() +
   ggtitle("Google Search Popularity for Hockey by State")
 ```
 
-```{r, message=FALSE, warning=FALSE, results='hide'}
-
-#Scatterplot with Line of Best Fit
-
-options(scipen=999)  # turn-off scientific notation like 1e+48
-theme_set(theme_dark())  # pre-set the bw theme.
-cardata <- as.data.frame(data(cars))
-head(cars)
-gg <- ggplot(cars, aes(x=speed, y=dist)) + 
-  geom_point(aes(col=, size=popdensity)) + 
-  geom_smooth(method="loess", se=F) + 
-  xlim(c(0, 10)) + 
-  ylim(c(0, 25)) + 
-  labs(subtitle="Car Speed vs. Stopping Distance", 
-       y="Stopping Distance", 
-       x="Speed", 
-       title="Car Speed vs. Stopping Distance")
-
-plot(gg)
-```
-
 ```{r}
 options(scipen=999)
 #this turns the scientific notation off
@@ -1462,4 +1421,13 @@ gg <- ggplot(midwest, aes(x=area, y=poptotal)) +
 plot(gg)
 ```
 
+## Scatter plot
 
+```{r}
+basket <- nba_players
+
+ggplot(data = basket, aes(x = AGE, y = PTS)) +
+  geom_point(alpha = 1, aes(color = PTS))+
+  geom_density_2d()+
+  ggtitle('NBA Player Age to Points Made')
+```
