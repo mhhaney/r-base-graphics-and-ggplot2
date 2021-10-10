@@ -628,3 +628,4 @@ rownames(records) <- c("Wins", "Losses")
 colnames(records) <- c("Muhammad Ali", "Joe Frazier", "George Foreman", "Mike Tyson")
 barplot(records, col = c("green", "red"), xlab = "Boxers", ylab = "Score", main = "The Four Heavenly Kings of Boxing", beside = T, legend = rownames(records))
 ```
+This creates a double bar plot making such a comparison, with the green-colored bars noting the wins, and the red-colored bars noting the losses, with one "column" for each boxer. The Y axis denotes the "score", as in, a numeric count of wins/losses.
