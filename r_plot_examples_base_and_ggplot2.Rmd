@@ -623,9 +623,8 @@ ggplot(let, aes(x=x, y=y)) +
 I've been on something of a boxing kick for the past weeks, so I thought I'd put together a grouped barplot comparing the win-loss records of Muhammad Ali, Joe Frazier, George Foreman, and Mike Tyson.
 
 ```{r}
-records <- matrix(c("56", "5", "32, "4", "76", "5", "50", "6"), nrow = 2, ncol = 4)
+records <- matrix(c(56, 5, 32, 4, 76, 5, 50, 6), nrow = 2, ncol = 4)
 rownames(records) <- c("Wins", "Losses")
 colnames(records) <- c("Muhammad Ali", "Joe Frazier", "George Foreman", "Mike Tyson")
-colors <- brewer.pal(2, "Dark2")
-barplot(records, col = colors, xlab = "Boxers", ylab = "Score", main = "The Four Heavenly Kings of Boxing", beside = T)
+barplot(records, col = c("green", "red"), xlab = "Boxers", ylab = "Score", main = "The Four Heavenly Kings of Boxing", beside = T, legend = rownames(records))
 ```
