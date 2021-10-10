@@ -26,6 +26,7 @@ library(vioplot)
 library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
 library(hexbin)
+library(GGally)
 library(RColorBrewer)
 library(viridis)
 library(geojsonio)
@@ -38,14 +39,13 @@ library(rgdal)
 library(rgeos)
 library(broom)
 library(ggsoccer)
-library(GGally)
 ```
 
 ## Read in Data Files
 ```{r message = FALSE, results = "hide"}
 MM <- read.csv('data/MarchMadness.csv')
 titanic <- read.csv("data/titanic.csv")
-nba_players <- read.csv("data/nba_players.csv")
+nba_players <- read_csv("data/nba_players.csv")
 gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
 steel <- read.csv("data/steel.csv")
 data <- read.csv("data/titanic.csv", TRUE, sep = ",")
@@ -632,6 +632,7 @@ p <- ggplot(ChickWeight, aes(group=Time, y=weight)) +
   theme_classic()
 p
 ```
+
 ## A Boxplot with Jitter (GGPLOT2)
 Using Jitter, you can display the individual data points in each box in a way that is easy to see and understand.
 
@@ -662,8 +663,8 @@ ChickWeight %>%
 Pulling data from OKC, UTA, and CHI from `nba_players` dataset
 
 ```{r}
-team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
-pts <- c(nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
+team <- nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")]
+pts <- nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")]
 data <- data.frame(team, pts)
 ```
 
@@ -1710,7 +1711,7 @@ After researching doughnut charts on several sites, I learned that they, along w
 ## Parallel Coordinate Plot
 # Working with large data set
 ```{r}
-ggparcoord(data = nba,
+ggparcoord(data = nba_players,
            columns = 4:8,
            groupColumn = 'TEAM',
            scale = 'globalminmax',
