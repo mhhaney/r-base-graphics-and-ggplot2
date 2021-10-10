@@ -39,6 +39,7 @@ library(rgdal)
 library(rgeos)
 library(broom)
 library(ggsoccer)
+library(ggridges)
 ```
 
 ## Read in Data Files
@@ -1731,5 +1732,20 @@ ggparcoord(data = card,
            boxplot = TRUE,
            showPoints = TRUE)+
   ggtitle('Playing Card Distribution')
+  
+```
+
+## Creating a basic ridgeline plot
+
+Plot showing the distribution of points within each NBA team
+
+```{r}
+
+##libary found at the top (ggridges)
+
+ggplot(nba_players, aes(x = PTS, y = TEAM)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none")
   
 ```
