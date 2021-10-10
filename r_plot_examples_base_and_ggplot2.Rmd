@@ -40,6 +40,7 @@ library(rgeos)
 library(broom)
 library(ggsoccer)
 library(ggridges)
+library(gganimate)
 ```
 
 ## Read in Data Files
@@ -1790,5 +1791,25 @@ ggplot(nba_players, aes(x = PTS, y = TEAM)) +
   geom_density_ridges() +
   theme_ridges() + 
   theme(legend.position = "none")
+  
+```
+
+## Creating an animated Bubble Chart
+
+Using Age as the ransition to see how many points and Games Played per player. The larger the Bubble, the more Field Goals Made. Color represents Wins
+
+```{r}
+
+a <- nba_players %>%
+  ggplot( aes(x = GP, y= PTS, size = FGM, color = W)) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10() +
+  theme_bw() +
+  labs(title = "Age: {frame_time}", x = "Games Played", y  = "Points") +
+  transition_time(AGE) + 
+  ease_aes("bounce-in")
+  
+
+animate(plot = a)
   
 ```
