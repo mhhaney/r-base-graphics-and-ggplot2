@@ -38,6 +38,7 @@ library(rgdal)
 library(rgeos)
 library(broom)
 library(ggsoccer)
+library(GGally)
 ```
 
 ## Read in Data Files
@@ -52,6 +53,7 @@ spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europ
 L <- read.csv('data/phone.csv')
 spd <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
 hockey <- read.csv("data/hockey_search.csv")
+card <- read.csv('cards.csv')
 ```
 
 ## Histogram
@@ -1704,3 +1706,29 @@ doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.
 ```
 
 After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
+
+## Parallel Coordinate Plot
+# Working with large data set
+```{r}
+ggparcoord(data = nba,
+           columns = 4:8,
+           groupColumn = 'TEAM',
+           scale = 'globalminmax',
+           #scale = 'center',
+           order = 'skewness',
+           alphaLines = .3)+
+   ggtitle('NBA AVG Distribution')
+
+```
+# Working with small data set
+```{r}
+names(card)
+
+ggparcoord(data = card,
+           columns = 1:3,
+           alphaLines = .3,
+           boxplot = TRUE,
+           showPoints = TRUE)+
+  ggtitle('Playing Card Distribution')
+  
+```
