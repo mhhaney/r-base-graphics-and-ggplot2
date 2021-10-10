@@ -720,7 +720,7 @@ ggplot(df, aes(x=dose, y=len, fill=dose)) +
 The geom_point argument is used to add the points to the violin plot. It is always recommended to add some jitter to those points with the position_jitter argument. The seed value is a randomly generated number, while the width represents the amount of jitter from each points.
 
 ### Additional Violin Plot With Same Dataset 
-In this plot, we will see the type of vitamin c, either the viatmin itself, or orange juice versus the tooth length.
+In this plot, we will see the type of vitamin c, either the vitamin itself, or orange juice versus the tooth length.
 
 ```{r} 
 ggplot(df, aes(x=supp, y=len, fill=supp)) +
@@ -729,7 +729,9 @@ ggplot(df, aes(x=supp, y=len, fill=supp)) +
 ```
 
 ### Using a Boxplot Instead of points
+
 Boxplots are often used on top of other plots to show descriptive statistics.
+
 ```{r}
 ggplot(df, aes(x=supp, y=len, fill=supp)) +
   geom_violin(show.legend = F) +
@@ -1505,7 +1507,9 @@ grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
 
 ## Stacked Bar plot
-Base R
+
+### Stacked Bar Plot with Base R
+
 ```{r}
 fishy <- read.table(text ="Butterfish Cockle Swordfish Tuna
 1 59 49 18 24 
@@ -1513,7 +1517,9 @@ fishy <- read.table(text ="Butterfish Cockle Swordfish Tuna
   
 barplot(as.matrix(fishy),col=c("blue","purple"))
 ```
-GGplot
+
+### Stacked Bar Plot with ggplot
+
 ```{r}
 fish <- read.csv('data/Pescado.csv')
 names(fish)
@@ -1521,8 +1527,7 @@ ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
   geom_bar(stat='identity')
 ```
 
-##Hexbin Map
-
+## Hexbin Map
 
 Using   `spd` dataset
 ```{r}
@@ -1546,7 +1551,6 @@ ggplot() +
   theme_void() +
   coord_map()
 ```
-
 
 Using `hockey` dataset
 
@@ -1596,7 +1600,6 @@ ggplot(data = basket, aes(x = AGE, y = PTS)) +
   ggtitle('NBA Player Age to Points Made')
 
 ```
-
 
 ## Dot Plot : shooting map in a soccer field 
 
@@ -1754,7 +1757,9 @@ doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.
 After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
 
 ## Parallel Coordinate Plot
-# Working with large data set
+
+### Working with large data set
+
 ```{r}
 ggparcoord(data = nba_players,
            columns = 4:8,
@@ -1766,7 +1771,9 @@ ggparcoord(data = nba_players,
    ggtitle('NBA AVG Distribution')
 
 ```
-# Working with small data set
+
+### Working with small data set
+
 ```{r}
 names(card)
 
@@ -1796,7 +1803,7 @@ ggplot(nba_players, aes(x = PTS, y = TEAM)) +
 
 ## Creating an animated Bubble Chart
 
-Using Age as the ransition to see how many points and Games Played per player. The larger the Bubble, the more Field Goals Made. Color represents Wins
+Using Age as the transition to see how many points and Games Played per player. The larger the Bubble, the more Field Goals Made. Color represents Wins
 
 ```{r}
 
