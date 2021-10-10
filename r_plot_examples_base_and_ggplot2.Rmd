@@ -692,6 +692,49 @@ ggplot(data, aes(x= team, y = pts, fill = team)) +
   
 ```
 
+### Additional Violin Plots With ggplot2
+The first example was created using https://r-charts.com/distribution/violin-plot-points-ggplot2/. 
+
+```{r}
+df <- ToothGrowth
+
+# Convert the dose column to a factor to be the categorical variable
+df$dose <- as.factor(df$dose)
+
+head(df)
+
+# Create the basic violin plot to see the correlation between tooth length and dose of vitamin c
+ggplot(df, aes(x=dose, y=len)) + 
+  geom_violin()
+
+# Add color to the plot
+ggplot(df, aes(x=dose, y=len, fill=dose)) +
+  geom_violin()
+
+# Add points to the plot
+ggplot(df, aes(x=dose, y=len, fill=dose)) +
+  geom_violin() +
+  geom_point(position = position_jitter(seed=1, width=0.2)) 
+```
+The geom_point argument is used to add the points to the violin plot. It is always recommended to add some jitter to those points with the position_jitter argument. The seed value is a randomly generated number, while the width represents the amount of jitter from each points.
+
+### Additional Violin Plot With Same Dataset 
+In this plot, we will see the type of vitamin c, either the viatmin itself, or orange juice versus the tooth length.
+
+```{r} 
+ggplot(df, aes(x=supp, y=len, fill=supp)) +
+  geom_violin() +
+  geom_jitter(position=position_jitter(seed=1, width=0.2))
+```
+
+### Using a Boxplot Instead of points
+Boxplots are often used on top of other plots to show descriptive statistics.
+```{r}
+ggplot(df, aes(x=supp, y=len, fill=supp)) +
+  geom_violin(show.legend = F) +
+  geom_boxplot(width = 0.2)
+```
+
 ## Strip Chart
 
 ### Strip chart in base R
