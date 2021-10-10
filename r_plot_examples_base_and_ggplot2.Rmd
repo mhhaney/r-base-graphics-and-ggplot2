@@ -45,7 +45,7 @@ library(GGally)
 ```{r message = FALSE, results = "hide"}
 MM <- read.csv('data/MarchMadness.csv')
 titanic <- read.csv("data/titanic.csv")
-nba_players <- read_csv("data/nba_players.csv")
+nba_players <- read.csv("data/nba_players.csv")
 gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
 steel <- read.csv("data/steel.csv")
 data <- read.csv("data/titanic.csv", TRUE, sep = ",")
@@ -53,7 +53,7 @@ spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europ
 L <- read.csv('data/phone.csv')
 spd <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
 hockey <- read.csv("data/hockey_search.csv")
-card <- read.csv('cards.csv')
+card <- read.csv('data/cards.csv')
 ```
 
 ## Histogram
@@ -670,7 +670,7 @@ data <- data.frame(team, pts)
 ### Basic Plot with Base R ###
 ```{r}
 with(data , vioplot( 
-  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  pts[team=="OKC"], pts[team=="UTA"], pts[team=="CHI"],  
   col= c(255,234,268) , names=c("OKC","UTA","CHI"),
   xlab = "Teams",
   ylab = "Points",
