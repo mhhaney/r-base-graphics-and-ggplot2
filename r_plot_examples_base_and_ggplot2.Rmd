@@ -1756,6 +1756,18 @@ doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.
 
 After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
 
+## Interesting Barplot: The Four Kings
+
+I've been on something of a boxing kick for the past weeks, so I thought I'd put together a grouped barplot comparing the win-loss records of Muhammad Ali, Joe Frazier, George Foreman, and Mike Tyson.
+
+```{r}
+records <- matrix(c(56, 5, 32, 4, 76, 5, 50, 6), nrow = 2, ncol = 4)
+rownames(records) <- c("Wins", "Losses")
+colnames(records) <- c("Muhammad Ali", "Joe Frazier", "George Foreman", "Mike Tyson")
+barplot(records, col = c("green", "red"), xlab = "Boxers", ylab = "Score", main = "The Four Heavenly Kings of Boxing", beside = T, legend = rownames(records))
+```
+This creates a double bar plot making such a comparison, with the green-colored bars noting the wins, and the red-colored bars noting the losses, with one "column" for each boxer. The Y axis denotes the "score", as in, a numeric count of wins/losses.
+
 ## Parallel Coordinate Plot
 
 ### Working with large data set
