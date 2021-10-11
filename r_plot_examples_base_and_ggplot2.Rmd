@@ -469,6 +469,7 @@ p
 ```
 
 ## Creating Circular Bar Plot with Labels
+
 ```{r}
 
 data <- data.frame(
@@ -1322,15 +1323,16 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   scale_fill_manual(values = mycols) + theme_void()
 ```
 
+
 ## Additional Pie Chart in Base R
 
 ```{r}
-## Additional Pie Chart in Base R
 #Creating the labels and values for the data
 lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park")
 values <- c(34934, 13965, 2317, 9586, 2254, 3682)
 #Adding lines and color for the filling of the pie chart and adding the angle parameter to change the angle of each group of lines
 colpal = brewer.pal(6, "Set3")
+
 pie(values, labels=lab, main = "Pittsburgh Schools' Student Population", density = 10, 
     angle=c(90, 45, 60, 30, 75, 20), col = colpal)
 
@@ -1417,6 +1419,42 @@ ggplot() +
   theme_void() +
   coord_map()
 ```
+### Two plots side-by-side - gridExtra Package - grid.arrange()
+
+library(gridExtra)
+library(ggplot2)
+
+#I created my own random data here to use
+
+x = c(1, 2, 3, 4, 5, 6, 7)
+y = c(8, 9, 10, 11, 12, 13, 14)
+
+data1 = data.frame(x, y)
+
+pointex <- ggplot(data1, aes(x = x, y = y)) +
+  geom_point() +
+  labs(x = "examplelength",
+       y = "examplewidth")
+
+print(pointex)
+
+
+nums = c(3, 8, 4, 5, 0.2, 0.5, 20)
+int = c(0, 3, 9, 5, 1.5, 15, 5.3)
+
+data2 = data.frame(nums, int)
+
+histex <- ggplot(data2,
+                 aes(x = nums, y= int)) +
+  geom_point()+
+  labs(x="miles",
+       y="hours")
+
+print(histex)
+                 
+plotex <- list(pointex, histex)
+
+grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 
 ## Mathematical Annotation in R
 
@@ -1854,4 +1892,24 @@ a <- nba_players %>%
 
 animate(plot = a)
   
+```{r}
+
+## plotMath with random Data: Area V.S Cicumference
+
+r <- rnorm(30)
+Area <- (pi * (r)^2)
+
+circumference <- (2 * pi * r)
+
+plot(Area, circumference, 
+     type = 'p', 
+     main = ("Area V.S Circumference"),
+     
+     #expression() is used to add symbols to graph ONLY
+     
+     #expression(paste()) is used to add both text and symbol to the graph
+     xlab= expression(paste("Area = ", pi * r^2)),
+     ylab = expression(paste("Circumference = ", 2 * pi * r)),
+     
+     )
 ```
