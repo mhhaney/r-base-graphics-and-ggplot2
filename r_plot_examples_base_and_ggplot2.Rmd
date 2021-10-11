@@ -41,6 +41,7 @@ library(broom)
 library(ggsoccer)
 library(ggridges)
 library(gganimate)
+library(quantmod)
 ```
 
 ## Read in Data Files
@@ -1913,4 +1914,20 @@ plot(Area, circumference,
      ylab = expression(paste("Circumference = ", 2 * pi * r)),
      
      )
+```
+```{r}
+## candlestick chart
+### For the data I used real data from the stocks by using the library “quantmod” and I decided to go with Facebook as you know that recently and specifically on 10/4/2021 all Facebook servers went down so I used the candlestick chart to see how did that issue affected Facebook in the market.
+library("quantmod")
+
+# get the Facebook Stock data
+### So basically you get the company stock name and adjust the date. I decided to do just 3 months until the servers went down. Also, the periodicity can change but I wanted to go with daily so I can tel the difference. The chart shows that now is a great time to buy stocks.
+Facebook<-getSymbols("FB", 
+                   from = "2021-7-1", 
+                   to = "2021-10-5",
+                   periodicity = "daily",
+                   auto.assign=FALSE)
+
+chartSeries(Facebook, name="Facebook Chart")
+
 ```
