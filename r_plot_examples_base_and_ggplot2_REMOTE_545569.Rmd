@@ -22,7 +22,6 @@ This document will explore the implementation of various types of plots that can
 
 ```{r message = FALSE, results = FALSE}
 library(tidyverse)
-library(ggplot2)
 library(vioplot)
 library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
@@ -42,8 +41,6 @@ library(broom)
 library(ggsoccer)
 library(ggridges)
 library(gganimate)
-library(nhlapi)
-library(quantmod)
 ```
 
 ## Read in Data Files
@@ -472,7 +469,6 @@ p
 ```
 
 ## Creating Circular Bar Plot with Labels
-
 ```{r}
 
 data <- data.frame(
@@ -1094,43 +1090,6 @@ ggplot2 is much the same. we set covidchart as the source of our data and positi
 ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
 ``` 
 
-### Scatter plot
-
-```{r}
-basket <- nba_players
-
-ggplot(data = basket, aes(x = AGE, y = PTS)) +
-  geom_point(alpha = 1, aes(color = PTS))+
-  geom_density_2d()+
-  ggtitle('NBA Player Age to Points Made')
-
-```
-
-### Scatterplot with line of best fit
-
-=======
-```{r}
-
-options(scipen=999)
-#this turns the scientific notation off
-
-theme_set(theme_bw())
-#^ this helps get a good theme for this graph
-
-data("midwest", package = "ggplot2")
-
-gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
-  geom_point(aes(col=state, size=popdensity)) + 
-  geom_smooth(method="loess", se=F) +    #this gets us the line of best fit
-  xlim(c(0, 0.1)) + 
-  ylim(c(0, 500000)) + 
-  labs(y="Population", 
-       x="Area", 
-       title="Area Vs Population", 
-       caption = "Source: midwest")
-
-plot(gg)
-```
 ### ColorBrewer with ggplot2
 
 In order to use an RColorBrewer palette in a barplot in ggplot2, you have to first save your barplot in a variable, and then append the function scale_fill_brewer() to it, with the argument palette ="palettename" inside the function. Don't forget to add code setting "fill" equal to your x variables (i.e. your bars), otherwise you'll get a plain grey bar graph. Done correctly, code should look like this:
@@ -1363,42 +1322,6 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   scale_fill_manual(values = mycols) + theme_void()
 ```
 
-
-## Additional Pie Chart in Base R
-
-```{r}
-#Creating the labels and values for the data
-lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park")
-values <- c(34934, 13965, 2317, 9586, 2254, 3682)
-#Adding lines and color for the filling of the pie chart and adding the angle parameter to change the angle of each group of lines
-colpal = brewer.pal(6, "Set3")
-
-pie(values, labels=lab, main = "Pittsburgh Schools' Student Population", density = 10, 
-    angle=c(90, 45, 60, 30, 75, 20), col = colpal)
-
-```
-## Additional Pie Charts using GGPlot2
-
-```{r}
-# Creating the dataframe
-
-data <- data.frame(
-  lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park"),
-  val <- c(34934, 13965, 2317, 9586, 2254, 3682)
-  
-)
-
-#Creating the pie chart
-s <-ggplot(data, aes(x="", y=val, fill=lab)) +
-  geom_bar(stat="identity", width=1) +
-  coord_polar("y", start=0) +
-#Removing grid from the background
-  theme_void() +
-  ggtitle("Pittsburgh Schools' Student Population")
-s + scale_fill_manual(values=c("#FFFF66", "#9900CC", "#000000", "#FF3300", "#0000CC", "#66CC33"))
-  
-```
-
 ## Chloropleth
 
 Create a chloropleth using color to show population density of European countries. First, download geojson data using the `geojson_read()` function from the `geojsonio` package. `what = "sp"` instructs the function to return the data as a `SpatialPolygonsDataFrame` type. This type contains vertices data that can be used to draw polygons, as well as additional information associated with the polygon. In this case the polygons are European countries and the associated data includes population and area data from 2005.
@@ -1458,42 +1381,6 @@ ggplot() +
   labs(title = "Population") +
   theme_void() +
   coord_map()
-```
-
-### Two plots side-by-side - gridExtra Package - grid.arrange()
-
-```{r}
-#I created my own random data here to use
-
-x = c(1, 2, 3, 4, 5, 6, 7)
-y = c(8, 9, 10, 11, 12, 13, 14)
-
-data1 = data.frame(x, y)
-
-pointex <- ggplot(data1, aes(x = x, y = y)) +
-  geom_point() +
-  labs(x = "examplelength",
-       y = "examplewidth")
-
-print(pointex)
-
-
-nums = c(3, 8, 4, 5, 0.2, 0.5, 20)
-int = c(0, 3, 9, 5, 1.5, 15, 5.3)
-
-data2 = data.frame(nums, int)
-
-histex <- ggplot(data2,
-                 aes(x = nums, y= int)) +
-  geom_point()+
-  labs(x="miles",
-       y="hours")
-
-print(histex)
-                 
-plotex <- list(pointex, histex)
-
-grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
 
 ## Mathematical Annotation in R
@@ -1585,48 +1472,6 @@ ggplot(aggDischarge, aes(x=year, y=plotMonth, fill=discharge))+
   labs(x = 'year', y = 'month', fill = 'Mean Daily\nDischarge\ncu. ft/sec', 
        title = 'Mean Daily Discharge of the Allegheny River at Natrona, PA')+
   theme_classic()
-```
-
-### Hockey Rink Heat map
-### Resource used: https://jozef.io/r400-nhlapi-positional-data/
-
-```{r}
-
-gameIds <- 2017020001:2017021271
-
-cl <- parallel::makeCluster(parallel::detectCores() / 2)
-
-gameFeeds <- parallel::parLapplyLB(cl, gameIds, nhlapi::nhl_games_feed)
-
-parallel::stopCluster(cl)
-
-saveRDS(gameFeeds, file.path("~", "gamefeeds_regular_2017.rds"))
-
-# Retrieve the data frames with plays from the data
-getPlaysDf <- function(gm) {
-  playsRes <- try(gm[[1L]][["liveData"]][["plays"]][["allPlays"]])
-  if (inherits(playsRes, "try-error")) data.frame() else playsRes
-}
-plays <- lapply(gameFeeds, getPlaysDf)
-
-# Bind the list into a single data frame
-plays <- nhlapi:::util_rbindlist(plays)
-
-# Keep only the records that have coordinates
-plays <- plays[!is.na(plays$coordinates.x), ]
-
-# Move the coordinates to non-negative values before plotting
-plays$coordx <- plays$coordinates.x + abs(min(plays$coordinates.x))
-plays$coordy <- plays$coordinates.y + abs(min(plays$coordinates.y))
-
-goals <- subset(plays, result.event == "Goal")
-
-ggplot(goals, aes(x = goals$coordx, y = goals$coordy, colour = "Black" )) +
-  labs(title = "Where are goals scored from on a rink") +
-  geom_point(alpha = 0.1, size = 0.2) +
-  xlim(0, 198) + ylim(0, 84) +
-  geom_density_2d_filled(alpha = 0.35, show.legend = FALSE) +
-  theme_void()
 ```
 
 
@@ -1723,6 +1568,38 @@ ggplot() +
   ggtitle("Google Search Popularity for Hockey by State")
 ```
 
+```{r}
+options(scipen=999)
+#this turns the scientific notation off
+theme_set(theme_bw())
+#^ this helps get a good theme for this graph
+data("midwest", package = "ggplot2")
+
+# Scatterplot with line of best fit
+gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) +    #this gets us the line of best fit
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(y="Population", 
+       x="Area", 
+       title="Area Vs Population", 
+       caption = "Source: midwest")
+
+plot(gg)
+```
+
+## Scatter plot
+
+```{r}
+basket <- nba_players
+
+ggplot(data = basket, aes(x = AGE, y = PTS)) +
+  geom_point(alpha = 1, aes(color = PTS))+
+  geom_density_2d()+
+  ggtitle('NBA Player Age to Points Made')
+
+```
 
 ## Dot Plot : shooting map in a soccer field 
 
@@ -1941,42 +1818,5 @@ a <- nba_players %>%
   
 
 animate(plot = a)
-```
   
-```{r}
-
-## plotMath with random Data: Area V.S Cicumference
-
-r <- rnorm(30)
-Area <- (pi * (r)^2)
-
-circumference <- (2 * pi * r)
-
-plot(Area, circumference, 
-     type = 'p', 
-     main = ("Area V.S Circumference"),
-     
-     #expression() is used to add symbols to graph ONLY
-     
-     #expression(paste()) is used to add both text and symbol to the graph
-     xlab= expression(paste("Area = ", pi * r^2)),
-     ylab = expression(paste("Circumference = ", 2 * pi * r)),
-     
-     )
-```
-```{r}
-## candlestick chart
-### For the data I used real data from the stocks by using the library “quantmod” and I decided to go with Facebook as you know that recently and specifically on 10/4/2021 all Facebook servers went down so I used the candlestick chart to see how did that issue affected Facebook in the market.
-library("quantmod")
-
-# get the Facebook Stock data
-### So basically you get the company stock name and adjust the date. I decided to do just 3 months until the servers went down. Also, the periodicity can change but I wanted to go with daily so I can tel the difference. The chart shows that now is a great time to buy stocks.
-Facebook<-getSymbols("FB", 
-                   from = "2021-7-1", 
-                   to = "2021-10-5",
-                   periodicity = "daily",
-                   auto.assign=FALSE)
-
-chartSeries(Facebook, name="Facebook Chart")
-
 ```
