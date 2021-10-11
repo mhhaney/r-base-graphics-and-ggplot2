@@ -1855,4 +1855,24 @@ a <- nba_players %>%
 
 animate(plot = a)
   
+```{r}
+
+## plotMath with random Data: Area V.S Cicumference
+
+r <- rnorm(30)
+Area <- (pi * (r)^2)
+
+circumference <- (2 * pi * r)
+
+plot(Area, circumference, 
+     type = 'p', 
+     main = ("Area V.S Circumference"),
+     
+     #expression() is used to add symbols to graph ONLY
+     
+     #expression(paste()) is used to add both text and symbol to the graph
+     xlab= expression(paste("Area = ", pi * r^2)),
+     ylab = expression(paste("Circumference = ", 2 * pi * r)),
+     
+     )
 ```
