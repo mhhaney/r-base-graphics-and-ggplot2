@@ -26,6 +26,7 @@ library(vioplot)
 library(ggmosaic)
 library(scales) # provides alpha() function to set alpha for base R plots
 library(hexbin)
+library(GGally)
 library(RColorBrewer)
 library(viridis)
 library(geojsonio)
@@ -37,6 +38,9 @@ library(geojsonio)
 library(rgdal)
 library(rgeos)
 library(broom)
+library(ggsoccer)
+library(ggridges)
+library(gganimate)
 ```
 
 ## Read in Data Files
@@ -51,6 +55,7 @@ spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europ
 L <- read.csv('data/phone.csv')
 spd <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
 hockey <- read.csv("data/hockey_search.csv")
+card <- read.csv('data/cards.csv')
 ```
 
 ## Histogram
@@ -438,6 +443,7 @@ names(gender_spouse)
 ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
   geom_bar(stat="identity" ,position = "dodge")
 ```
+
 ## Circular Bar Plot using GGPlot2
 
 ```{r}
@@ -462,6 +468,51 @@ ylim(-120, 150) + theme_minimal() + theme(
 p
 ```
 
+## Creating Circular Bar Plot with Labels
+```{r}
+
+data <- data.frame(
+  id=seq(1, 9),
+  individual=paste( c("red ", "orange ", "yellow ",
+                    "green ", "blue ", "purple ",
+                    "pink ", "black ", "white "), seq(1,9), sep=""),
+  value=sample( seq(10, 100), 9, replace=T)
+)
+##Prepping the data to create labels for the graph
+# Get the name and the y position of each label
+label_data <- data
+ 
+# calculating the angles on the label
+number_of_bar <- nrow(label_data)
+angle <-  90 - 360 * (label_data$id-0.5) /number_of_bar     # 0.5 is subtracted because the text needs to be on the angle of the center of the bars. 
+ 
+# calculate the alignment of labels: right or left
+# If I am on the left part of the plot, my labels have currently an angle < -90
+label_data$hjust<-ifelse( angle < -90, 1, 0)
+ 
+# flip angle BY to make them readable
+label_data$angle<-ifelse(angle < -90, angle+180, angle)
+# ----- ------------------------------------------- ---- #
+ 
+# Creating the plot
+p <- ggplot(data, aes(x=as.factor(id), y=value)) +       
+  geom_bar(stat="identity", fill=alpha("red", 0.5)) +
+  ylim(-100,120) +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.margin = unit(rep(-1,4), "cm")      
+  ) +
+  coord_polar(start = 0) +
+  
+  # Add the labels, using the label_data dataframe that we have created before
+  geom_text(data=label_data, aes(x=id, y=value+10, label=individual, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=2.5, angle= label_data$angle, inherit.aes = FALSE ) 
+ 
+p
+```
+
 ## Line Plot ("Time Series Plot")
 
 This time series shows the water level in Lake Huron from 1875 to 1972.
@@ -476,6 +527,70 @@ ggplot(lakehuron, aes(x=(1875:1972), y= LakeHuron)) +
   xlab("") +
   ylab("WATER LEVEL")
 ```
+
+#### Creating a line plot with conditional coloring
+
+The first step is to get the data and create the conditional variable(s). For this plot I will use discharge data from the Youghiogheny River to visualize flood events. _What even is a flood?_ There are many ways that flooding events can be quantified, but among the simplest are to see when discharge exceeds 3 & 7 times the monthly median. Here is how to process the data for that. 
+
+```{r}
+# The URL used to query the USGS database 
+# includes parameters including data type, site number, and dates
+URL = 'https://waterdata.usgs.gov/usa/nwis/dv?cb_00060=on&format=rdb&site_no=03075500&referred_module=sw&period=&begin_date=2018-01-01&end_date=2020-12-31'
+
+# data is displayed with some extra comments so it takes a little additional processing to clean up
+d = read.delim(URL, comment.char = '#', stringsAsFactors = F)
+d=d[-1,]
+d$datetime=as.POSIXct(d$datetime)
+colnames(d)[4]='discharge'
+d$discharge = as.numeric(d$discharge)
+
+# creating month & year variables for aggregation
+d$month=month(d$datetime)
+d$year=year(d$datetime)
+
+# creating a data frame of median discharges for each year & then upper thresholds as described by Olden & Poff (2003)
+
+# aggregating for median using unique months & years
+aggDischarge=aggregate(data=d, discharge~year+month, FUN=median, na.rm=TRUE)
+colnames(aggDischarge)[3]='monthly.median' #rename column
+
+# merging the calculated medians back into the main data frame. all.x=T prevents any of the original data from being removed by allowing monthly medians to be copied as many times necessary 
+d=merge(d, aggDischarge, all.x=T)
+
+#identify flood events, upper thresholds are defined as 3 and 7 times monthly median discharge
+d$flood.threshold3=d$monthly.median*3
+d$flood.threshold7=d$monthly.median*7
+
+# creating a factor variable for each reading indicating if a flood event threshold is exceeded
+d$flood.event3=ifelse(d$discharge>d$flood.threshold3,1,0) 
+d$flood.event7=ifelse(d$discharge>d$flood.threshold7,1,0)
+
+# if discharge surpasses 7 medians, then logically it will be above 3 medians as well. To create a single variable with three factor levels (non-flood, 3, & 7), we can simply add the flood.event columns together to create values of 0, 1, & 2
+d$flood.event=as.factor(d$flood.event3+d$flood.event7)
+```
+
+#### Plotting the results
+
+There are two important aesthetics to set to get this to work.
+1. set `color = flood.event`
+This tells R to use the variable to change the line color by the associated value
+
+2. set `group = 1`
+By default, setting a color separates the factor levels into different lines. This tells R to keep the data together.
+
+```{r}
+ggplot(d, aes(x=datetime, y=discharge,
+              color = flood.event, group = 1))+
+  labs(title = 'Flood Events of the Youghiogheny River near Oakland, MD', x = 'year', y = 'discharge (cu. ft/sec)',
+       color='Flood Event')+
+  geom_line(size=0.75)+
+  # customize the line colors and legend labels with scale_color_manual()
+  scale_color_manual(values=c('black', 'orange', 'red'),
+                     labels=c('non-flood', 'moderate', 'heavy'))+
+  scale_y_continuous(expand = c(0, 0))+ # removing some empty space between the x axis and title
+  theme_classic()
+```
+
 
 ## Stacked Area Plot
 `steel' Data is total steel produced annually from the 5 largest steel producing countries
@@ -519,6 +634,7 @@ p <- ggplot(ChickWeight, aes(group=Time, y=weight)) +
   theme_classic()
 p
 ```
+
 ## A Boxplot with Jitter (GGPLOT2)
 Using Jitter, you can display the individual data points in each box in a way that is easy to see and understand.
 
@@ -549,15 +665,15 @@ ChickWeight %>%
 Pulling data from OKC, UTA, and CHI from `nba_players` dataset
 
 ```{r}
-team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
-pts <- c(nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
+team <- nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")]
+pts <- nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")]
 data <- data.frame(team, pts)
 ```
 
 ### Basic Plot with Base R ###
 ```{r}
 with(data , vioplot( 
-  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  pts[team=="OKC"], pts[team=="UTA"], pts[team=="CHI"],  
   col= c(255,234,268) , names=c("OKC","UTA","CHI"),
   xlab = "Teams",
   ylab = "Points",
@@ -575,6 +691,51 @@ ggplot(data, aes(x= team, y = pts, fill = team)) +
   geom_violin(trim = F, show.legend = T) + 
   geom_boxplot(width = 0.1)
   
+```
+
+### Additional Violin Plots With ggplot2
+The first example was created using https://r-charts.com/distribution/violin-plot-points-ggplot2/. 
+
+```{r}
+df <- ToothGrowth
+
+# Convert the dose column to a factor to be the categorical variable
+df$dose <- as.factor(df$dose)
+
+head(df)
+
+# Create the basic violin plot to see the correlation between tooth length and dose of vitamin c
+ggplot(df, aes(x=dose, y=len)) + 
+  geom_violin()
+
+# Add color to the plot
+ggplot(df, aes(x=dose, y=len, fill=dose)) +
+  geom_violin()
+
+# Add points to the plot
+ggplot(df, aes(x=dose, y=len, fill=dose)) +
+  geom_violin() +
+  geom_point(position = position_jitter(seed=1, width=0.2)) 
+```
+The geom_point argument is used to add the points to the violin plot. It is always recommended to add some jitter to those points with the position_jitter argument. The seed value is a randomly generated number, while the width represents the amount of jitter from each points.
+
+### Additional Violin Plot With Same Dataset 
+In this plot, we will see the type of vitamin c, either the vitamin itself, or orange juice versus the tooth length.
+
+```{r} 
+ggplot(df, aes(x=supp, y=len, fill=supp)) +
+  geom_violin() +
+  geom_jitter(position=position_jitter(seed=1, width=0.2))
+```
+
+### Using a Boxplot Instead of points
+
+Boxplots are often used on top of other plots to show descriptive statistics.
+
+```{r}
+ggplot(df, aes(x=supp, y=len, fill=supp)) +
+  geom_violin(show.legend = F) +
+  geom_boxplot(width = 0.2)
 ```
 
 ## Strip Chart
@@ -631,10 +792,17 @@ stripchart(Age ~ Pclass, data = titanic,
 
 ### Strip Chart Divided into Groups, ggplot2
 
-Here is an example where the ggplot2 plot takes more work than the base R plot. Need to use `Pclass` as a factor or manipulate the x-axis scale to make sure it only shows 1, 2, and 3. Used the `scale_color_brewer()` function to set this plot to the same RColorBrewer palette as the base R example.
+Here is an example where the ggplot2 plot takes more work than the base R plot. Need to change `Pclass` to a factor or manipulate the x-axis scale to make sure it only shows 1, 2, and 3. As long as we are changing `Pclass` to a factor anyway let's make the labels for the classes "First", "Second", and "Third". 
 
 ```{r}
-ggplot(data = titanic, aes(x = Pclass, y = Age, color = as.factor(Pclass))) +
+titanic <- titanic %>% 
+  mutate(Pclass = factor(Pclass, labels = c("First", "Second", "Third")))
+```
+
+Used the `scale_color_brewer()` function to set this plot to the same RColorBrewer palette as the base R example.
+
+```{r}
+ggplot(data = titanic, aes(x = Pclass, y = Age, color = Pclass)) +
   geom_jitter(pch = 1, cex = 2, width = 0.12) +
   scale_color_brewer(palette = "Dark2") +
   theme_bw() +
@@ -806,14 +974,12 @@ table(titanic$Pclass)
 table(titanic$Embarked)
 ```
 
-Notice that there are two cases for which blank. We will remove those cases. Also, since `Pclass` is an integer vector it would be best to change it to a factor, and then specify the levels as a character vector. (See `?factor`)
+Notice that there are two cases for which `Embarked` is blank. We will remove those cases.
 
 ```{r}
 mask <- titanic$Embarked %in% c("C", "Q", "S")
 embarked <- titanic$Embarked[mask]
 class <- titanic$Pclass[mask]
-class <- factor(class, levels = c(1, 2, 3),
-                labels = c("First", "Second", "Third"))
 ```
 
 Make the mosaic plot.
@@ -834,8 +1000,7 @@ Let's make a similar mosaic plot using ggplot2. We need to use the ggmosaic pack
 titanic_clean <- titanic %>% 
   filter(Embarked %in% c("C", "Q", "S")) %>%  # Removes cases with missing data
   mutate(
-  Embarked = factor(embarked),
-  Pclass = factor(Pclass)
+  Embarked = factor(embarked)
 )
 titanic_m_data <- titanic_clean %>% 
   count(Embarked, Pclass)
@@ -1308,7 +1473,7 @@ plot1<- plot+xlab('Year')+
 plot1 + scale_fill_distiller(palette = 'Spectral')
 ```
 
-### Querying data directly from USGS to use for plot
+#### Querying data directly from USGS to use for plot
 ```{r}
 # The URL used to query the USGS database 
 # includes parameters including data type, site number, and dates
@@ -1330,7 +1495,7 @@ aggDischarge=aggregate(discharge~month+year, d, mean)
 aggDischarge$plotMonth = abs(aggDischarge$month - 12) + 1
 ```
 
-### Creating a heat map of mean daily discharge from 1970-2020
+#### Creating a heat map of mean daily discharge from 1970-2020
 ```{r}
 ggplot(aggDischarge, aes(x=year, y=plotMonth, fill=discharge))+ 
   geom_tile()+
@@ -1378,7 +1543,9 @@ grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
 
 ## Stacked Bar plot
-Base R
+
+### Stacked Bar Plot with Base R
+
 ```{r}
 fishy <- read.table(text ="Butterfish Cockle Swordfish Tuna
 1 59 49 18 24 
@@ -1386,7 +1553,9 @@ fishy <- read.table(text ="Butterfish Cockle Swordfish Tuna
   
 barplot(as.matrix(fishy),col=c("blue","purple"))
 ```
-GGplot
+
+### Stacked Bar Plot with ggplot
+
 ```{r}
 fish <- read.csv('data/Pescado.csv')
 names(fish)
@@ -1394,8 +1563,7 @@ ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
   geom_bar(stat='identity')
 ```
 
-##Hexbin Map
-
+## Hexbin Map
 
 Using   `spd` dataset
 ```{r}
@@ -1419,7 +1587,6 @@ ggplot() +
   theme_void() +
   coord_map()
 ```
-
 
 Using `hockey` dataset
 
@@ -1470,10 +1637,16 @@ ggplot(data = basket, aes(x = AGE, y = PTS)) +
 
 ```
 
-### GPS Heatmap
+## Dot Plot : shooting map in a soccer field 
 
 ```{r}
-soccer_ns <- ggplot()+
+###I used a package called “ggsoccer”, and you can build a soccer pitch with this package. you can build the soccer pitch from scratch like I did before knowing ggsoccer, but it takes a lot of time and you might have mistakes because it is long
+
+ggplot() +
+  annotate_pitch() +
+  theme_pitch()
+### this is how you can build a soccer pitch from scratch   
+  soccer_ns <- ggplot()+
   geom_rect(aes(xmin = -10, xmax = 100, ymin= -10, ymax = 130), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ### Background outline
   geom_rect(aes(xmin = 0, xmax = 90, ymin= 0, ymax = 120), fill = "#669933", colour = "#FFFFFF", size = 0.5)+ ###Sideline, Endline
   geom_rect(aes(xmin = 0, xmax = 90, ymin= 0, ymax = 60), fill = NA , colour = "#FFFFFF", size = 0.5)+ #Halfway
@@ -1487,22 +1660,34 @@ soccer_ns <- ggplot()+
   theme(rect = element_blank(),
         line = element_blank(),
         text = element_blank())
-```
 
+### By default the pitch is white and grey, so we need to change the pitch color from white to green and the lines from grey to white 
 
-```{r}
-# df2 <- df %>%
-#   filter(Lat !=0 & Lon !=0) %>%
-#   filter(complete.cases(.))
-# pitch <- png::readPNG("pitchoutline.png")
-# 
-# ggplot(df2, aes(remove_outliers(Lon), remove_outliers(Lat))) +
-#   annotation_custom(rasterGrob(pitch, width = unit(1,"npc"),
-#                                height = unit(1, "npc"), just = "centre", hjust = NULL, vjust = NULL, interpolate = TRUE, default.units = 'npc', name = NULL, gp =gpar(), vp= NULL) +
-#                       stat_bkde2d(bandwith = c(.00004, .00004), aes(fill=..level..), geom ='polygon',
-#                                   alpha = 0.5, colour = 'black') +
-#                       theme_heatmap()+
-#                       viridis::scale_fill_viridis(option = 'inferno')
+ggplot() +
+  annotate_pitch(colour = "white",
+                 fill = "#3ab54a") +
+  theme_pitch() +
+  theme(panel.background = element_rect(fill = "#3ab54a")) 
+
+###And here I created a shot map that basically shows the shots on target that it is shown in orange and the off target shots are shown in blue.
+
+# Data
+set.seed(1)
+df <- data.frame(x = rnorm(20, 80, 10), 
+                 y = rnorm(20, 50, 20),
+                 Shot = sample(c("In", "Out"),
+                               40, replace = TRUE))
+
+ggplot(df) +
+  annotate_pitch(colour = "white",
+                 fill = "#3ab54a") +
+  geom_point(aes(x = x, y = y, fill = Shot),
+             shape = 21,
+             size = 4) +
+  coord_cartesian(xlim = c(45, 105))+ 
+  theme_pitch() +
+  theme(panel.background = element_rect(fill = "#3ab54a")) 
+
 ```
 
 ## Basic Doughnut Chart with ggplot
@@ -1606,3 +1791,68 @@ doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.
 ```
 
 After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
+
+## Parallel Coordinate Plot
+
+### Working with large data set
+
+```{r}
+ggparcoord(data = nba_players,
+           columns = 4:8,
+           groupColumn = 'TEAM',
+           scale = 'globalminmax',
+           #scale = 'center',
+           order = 'skewness',
+           alphaLines = .3)+
+   ggtitle('NBA AVG Distribution')
+
+```
+
+### Working with small data set
+
+```{r}
+names(card)
+
+ggparcoord(data = card,
+           columns = 1:3,
+           alphaLines = .3,
+           boxplot = TRUE,
+           showPoints = TRUE)+
+  ggtitle('Playing Card Distribution')
+  
+```
+
+## Creating a basic ridgeline plot
+
+Plot showing the distribution of points within each NBA team
+
+```{r}
+
+##libary found at the top (ggridges)
+
+ggplot(nba_players, aes(x = PTS, y = TEAM)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none")
+  
+```
+
+## Creating an animated Bubble Chart
+
+Using Age as the transition to see how many points and Games Played per player. The larger the Bubble, the more Field Goals Made. Color represents Wins
+
+```{r}
+
+a <- nba_players %>%
+  ggplot( aes(x = GP, y= PTS, size = FGM, color = W)) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10() +
+  theme_bw() +
+  labs(title = "Age: {frame_time}", x = "Games Played", y  = "Points") +
+  transition_time(AGE) + 
+  ease_aes("bounce-in")
+  
+
+animate(plot = a)
+  
+```
