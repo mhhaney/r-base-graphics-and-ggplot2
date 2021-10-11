@@ -1181,20 +1181,17 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
 
 ```{r}
 data(swiss)
-str(swiss)
 ```
 
 ```{r}
-#Data Preparation and Manipulation
-swiss$municipality <- rownames(swiss)  # create new column for municipality names
-swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility/z-score of the fertility, which is how far each municipality's fertility rate is from the mean fertility rate throughout Switzerland.
-swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # This ifelse statement creates the new variable Fertility_type, which is used to separate the fertility z-scores of each municipality into categories above and below the average. This variable is used to determine the color of the bars in the barplot below, with municipalities with z scores varying above and below the mean being colored to reflect their orientation.  
+#Data Preparation
+swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
+swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility
+swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
 swiss <- swiss[order(swiss$Fertility_z), ]  # sort
-swiss$municipality <- factor(swiss$municipality, levels = swiss$municipality)  # Converting municipality to a factor retains the sorted order of each municipality value in plot, ensuring that the plotting code treats the data in the factor correctly. The plot will reflect the municipalities in the order we want them to be in, by z-score, because we set the levels argument to swiss$municipality. 
-```
-```{r}
-#Plotting the Diverging Barplot:
-ggplot(swiss, aes(x=municipality, y=Fertility_z, label=Fertility_z)) + 
+swiss$`municipality` <- factor(swiss$`municipality`, levels = swiss$`municipality`)  # convert to factor to retain sorted order in plot.
+#Diverging Barplot:
+ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) + 
   geom_bar(stat='identity', aes(fill=Fertility_type), width=.5) +
   theme(text = element_text(size=9)) +
   scale_fill_manual(name="Fertility", 
@@ -1204,8 +1201,6 @@ ggplot(swiss, aes(x=municipality, y=Fertility_z, label=Fertility_z)) +
        x = "Municipality",
        y = 'Fertility') + 
   coord_flip()
-
-## The scale_fill_manual() function in this plot gives us control over the legend for our plot. The variable in our legend, Fertility, is mapped to the color fill; when using scale_fill_manual, we are able to specify the exact colors we want to use in our plot, rather than the default of using a different hue on the color wheel for each factor level. 
 ```
 
 ## Lollipop Chart
@@ -1328,7 +1323,8 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   scale_fill_manual(values = mycols) + theme_void()
 ```
 
-## Additional Pie Chart using Base R
+
+## Additional Pie Chart in Base R
 
 ```{r}
 #Creating the labels and values for the data
@@ -1336,9 +1332,31 @@ lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park")
 values <- c(34934, 13965, 2317, 9586, 2254, 3682)
 #Adding lines and color for the filling of the pie chart and adding the angle parameter to change the angle of each group of lines
 colpal = brewer.pal(6, "Set3")
-pie(values, labels=lab, main = "Pittsburgh Schools", density = 10, 
+
+pie(values, labels=lab, main = "Pittsburgh Schools' Student Population", density = 10, 
     angle=c(90, 45, 60, 30, 75, 20), col = colpal)
 
+```
+## Additional Pie Charts using GGPlot2
+
+```{r}
+# Creating the dataframe
+
+data <- data.frame(
+  lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park"),
+  val <- c(34934, 13965, 2317, 9586, 2254, 3682)
+  
+)
+
+#Creating the pie chart
+s <-ggplot(data, aes(x="", y=val, fill=lab)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+#Removing grid from the background
+  theme_void() +
+  ggtitle("Pittsburgh Schools' Student Population")
+s + scale_fill_manual(values=c("#FFFF66", "#9900CC", "#000000", "#FF3300", "#0000CC", "#66CC33"))
+  
 ```
 
 ## Chloropleth
@@ -1810,18 +1828,6 @@ doughnut( c(3,5,9,12) , inner.radius=0.5, col=c(rgb(0.2,0.2,0.4,0.5), rgb(0.8,0.
 ```
 
 After researching doughnut charts on several sites, I learned that they, along with pie charts are not very well liked by professionals. It was mentioned that readers have a hard time with reading angles, so charts like bar charts and histograms are more easily understood. 
-
-## Interesting Barplot: The Four Kings
-
-I've been on something of a boxing kick for the past weeks, so I thought I'd put together a grouped barplot comparing the win-loss records of Muhammad Ali, Joe Frazier, George Foreman, and Mike Tyson.
-
-```{r}
-records <- matrix(c(56, 5, 32, 4, 76, 5, 50, 6), nrow = 2, ncol = 4)
-rownames(records) <- c("Wins", "Losses")
-colnames(records) <- c("Muhammad Ali", "Joe Frazier", "George Foreman", "Mike Tyson")
-barplot(records, col = c("green", "red"), xlab = "Boxers", ylab = "Score", main = "The Four Heavenly Kings of Boxing", beside = T, legend = rownames(records))
-```
-This creates a double bar plot making such a comparison, with the green-colored bars noting the wins, and the red-colored bars noting the losses, with one "column" for each boxer. The Y axis denotes the "score", as in, a numeric count of wins/losses.
 
 ## Parallel Coordinate Plot
 
