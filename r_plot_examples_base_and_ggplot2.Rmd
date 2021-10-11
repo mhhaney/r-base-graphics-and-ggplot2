@@ -301,6 +301,29 @@ ggplot(data=diamonds,
   theme(legend.position = "none")
 ```
 
+## Ridgeline Plot
+
+This is an example taken directly from the R-Graph-Gallery to show the diamonds dataset used in the plot above.
+
+```{r}
+library(ggridges)
+
+ggplot(diamonds, aes(x = price, y = cut, fill = cut)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none") 
+```
+This ridgeline plot shows the distributions of chick weights when fed different diet types.
+
+```{r}
+ggplot(ChickWeight, aes(x = weight, y = Diet, fill = Diet)) +
+  geom_density_ridges() +
+  theme_ridges() + 
+  theme(legend.position = "none") +
+  ggtitle("Effects of Diet on Chick Weight") +
+  ylab("Chick Diet Type") +
+  xlab("Chick Weight")
+```
 ## Bar Plot
 
 ###Base R
