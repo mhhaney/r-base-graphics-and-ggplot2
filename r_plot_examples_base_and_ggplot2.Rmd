@@ -469,6 +469,7 @@ p
 ```
 
 ## Creating Circular Bar Plot with Labels
+
 ```{r}
 
 data <- data.frame(
@@ -1325,6 +1326,19 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   coord_polar("y", start = 0) +
   geom_text(aes(y = lab.ypos, label = prop), color = "black") +
   scale_fill_manual(values = mycols) + theme_void()
+```
+
+## Additional Pie Chart using Base R
+
+```{r}
+#Creating the labels and values for the data
+lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park")
+values <- c(34934, 13965, 2317, 9586, 2254, 3682)
+#Adding lines and color for the filling of the pie chart and adding the angle parameter to change the angle of each group of lines
+colpal = brewer.pal(6, "Set3")
+pie(values, labels=lab, main = "Pittsburgh Schools", density = 10, 
+    angle=c(90, 45, 60, 30, 75, 20), col = colpal)
+
 ```
 
 ## Chloropleth
