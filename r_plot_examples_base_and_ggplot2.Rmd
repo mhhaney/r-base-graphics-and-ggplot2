@@ -1189,7 +1189,7 @@ swiss$municipality <- rownames(swiss)  # create new column for municipality name
 swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility/z-score of the fertility, which is how far each municipality's fertility rate is from the mean fertility rate throughout Switzerland.
 swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # This ifelse statement creates the new variable Fertility_type, which is used to separate the fertility z-scores of each municipality into categories above and below the average. This variable is used to determine the color of the bars in the barplot below, with municipalities with z scores varying above and below the mean being colored to reflect their orientation.  
 swiss <- swiss[order(swiss$Fertility_z), ]  # sort
-swiss$municipality <- factor(swiss$municipality, levels = swiss$municipality)  # Converting municipality to factor to retains the sorted order of each municipality value in plot, ensuring that the plotting code treats the data in the factor correctly. The plot will reflect the municipalities in the order we want them to be in, by z-score, because we set the levels argument to swiss$municipality. 
+swiss$municipality <- factor(swiss$municipality, levels = swiss$municipality)  # Converting municipality to a factor retains the sorted order of each municipality value in plot, ensuring that the plotting code treats the data in the factor correctly. The plot will reflect the municipalities in the order we want them to be in, by z-score, because we set the levels argument to swiss$municipality. 
 ```
 ```{r}
 #Plotting the Diverging Barplot:
