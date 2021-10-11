@@ -1419,11 +1419,10 @@ ggplot() +
   theme_void() +
   coord_map()
 ```
+
 ### Two plots side-by-side - gridExtra Package - grid.arrange()
 
-library(gridExtra)
-library(ggplot2)
-
+```{r}
 #I created my own random data here to use
 
 x = c(1, 2, 3, 4, 5, 6, 7)
@@ -1455,6 +1454,7 @@ print(histex)
 plotex <- list(pointex, histex)
 
 grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
+```
 
 ## Mathematical Annotation in R
 
@@ -1891,6 +1891,7 @@ a <- nba_players %>%
   
 
 animate(plot = a)
+```
   
 ```{r}
 
