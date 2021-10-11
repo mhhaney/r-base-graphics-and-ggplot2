@@ -313,6 +313,7 @@ ggplot(diamonds, aes(x = price, y = cut, fill = cut)) +
   theme_ridges() + 
   theme(legend.position = "none") 
 ```
+
 This ridgeline plot shows the distributions of chick weights when fed different diet types.
 
 ```{r}
@@ -324,6 +325,7 @@ ggplot(ChickWeight, aes(x = weight, y = Diet, fill = Diet)) +
   ylab("Chick Diet Type") +
   xlab("Chick Weight")
 ```
+
 ## Bar Plot
 
 ###Base R
@@ -1799,6 +1801,7 @@ ggplot(fruit_survey, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=fruit)) +
 ```
 
 ## Doughnut Chart with Base R
+
 It is possible to build a doughnut chart in base R; however, it requires a very long 'doughnut' function. The function is included below, and the additional code to create an actual chart. The example is taken from https://www.r-graph-gallery.com/130-ring-or-donut-chart.html. It is suggested to just use ggplot whenever you want to create this kind of chart. 
 
 ```{r}
