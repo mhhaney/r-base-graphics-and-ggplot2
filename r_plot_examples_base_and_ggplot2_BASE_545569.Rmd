@@ -1,0 +1,1465 @@
+---
+title: "R Plots Implemented with Base R and ggplot2"
+author: "DSA400W Class at Chatham University, Fall 2021"
+date: "9/21/2021"
+output: html_document
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+This document will explore the implementation of various types of plots that can be produced with base R graphics and/or the ggplot2 package. For each plot type we begin by showing basic plots and then enhance the plots by combining plot types, adding new variables using faceting, color, shape or size, or customizing colors, axes, axis labels, annotations or styles.
+
+## Load Libraries
+
+```{r message = FALSE, results = FALSE}
+library(tidyverse)
+library(vioplot)
+library(ggmosaic)
+library(scales) # provides alpha() function to set alpha for base R plots
+library(hexbin)
+library(RColorBrewer)
+library(viridis)
+library(geojsonio)
+library(gridExtra)
+library(kableExtra) # For nice looking tables in html output
+library(reshape) # For the melt function in heatmap example
+library(lubridate)
+library(geojsonio)
+library(rgdal)
+library(rgeos)
+library(broom)
+```
+
+## Read in Data Files
+```{r message = FALSE, results = "hide"}
+MM <- read.csv('data/MarchMadness.csv')
+titanic <- read.csv("data/titanic.csv")
+nba_players <- read_csv("data/nba_players.csv")
+gender_spouse <- read.csv( file = "data/dataset_gender_spouse.csv")
+steel <- read.csv("data/steel.csv")
+data <- read.csv("data/titanic.csv", TRUE, sep = ",")
+spdf <- geojson_read("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson", what = "sp")
+L <- read.csv('data/phone.csv')
+spd <- geojson_read("data/us_states_hexgrid.geojson",  what = "sp")
+hockey <- read.csv("data/hockey_search.csv")
+```
+
+## Histogram
+
+### Basic Histogram (Base R)
+
+Use the Iris dataset. Show distribution of petal width.
+
+```{r}
+hist(iris$Petal.Width,
+     main = "Iris Petal Width Histogram",
+     xlab = "Petal Width")
+     
+```
+
+### Customized Histogram using Base R
+
+```{r}
+hist(iris$Petal.Width,                                                
+     main = "Iris Petal Width Histogram", xlab = "Petal Width", col='pink', breaks=20, xlim=c(0, 2.9), ylim=c(0, 40))
+```
+
+### Creating Histograms for each Species on Petal Width using Base R
+
+```{r, fig.height = 7, fig.width = 5}
+#Subsetting the different species
+set <- iris$Sepal.Width[iris$Species == "setosa"]
+ver <- iris$Sepal.Width[iris$Species == "versicolor"]
+vir <- iris$Sepal.Width[iris$Species == "virginica"]
+par(mfrow = c(3, 1))
+hist(set, main = "Iris Setosa Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
+hist(ver, main = "Iris Versicolor Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 6.5))
+hist(vir, main = "Iris Virginica Petal Width", xlab = " Petal Width (Cm)", ylab="Frequency", col='orange', xlim=c(1.5, 5.5))
+```
+
+### Basic Histogram using GGPlot2
+
+```{r, message=FALSE}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram()
+  
+```
+
+### Customized Histogram using GGPlot2
+
+Changing the bins, color, outline color, adding title, and adding x and y labels
+
+```{r, message = FALSE}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(color="Blue", fill="orange", bins = 20) + 
+  ggtitle("Iris Petal Width Histogram") + 
+  xlab("Petal Width") + 
+  ylab("Frequency")
+  
+```
+
+### GGPlot2 Histogram with Species Added in
+
+```{r}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(color="yellow", aes(fill=Species), bins = 20) + 
+  ggtitle("Iris Petal Width Histogram") + 
+  xlab("Petal Width") + 
+  ylab("Frequency")
+  
+```
+
+### Creating Histograms for each Species on Petal Width using GGPlot2
+
+```{r}
+ggplot(iris, aes(x=Petal.Width)) + 
+  geom_histogram(color="blue", fill="orange", bins = 20) + 
+  ggtitle("Iris Petal Width Histogram") + 
+  xlab("Petal Width") + ylab("Frequency") + 
+  facet_grid(. ~ Species)
+  
+```
+
+## 2d Histogram with Density
+
+### Examine seed vs point differential for the NCAA Men's Basketball Tournament
+
+```{r}
+<<<<<<< HEAD
+ #this is for more color
+ rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+ r <- rf(32)
+ #this is the actual setup of the plot
+ MM <- read.csv('data/MarchMadness.csv')
+ x <- MM$Pointdiff
+ y <-  MM$Seed
+ dataframe <- data.frame(x, y)
+ h <- hexbin(dataframe)
+ plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
+```
+
+
+=======
+#this is for more color
+rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+r <- rf(32)
+#this is the actual setup of the plot
+## MM is March Madness Data
+x <- MM$Pointdiff
+y <-  MM$Seed
+dataframe <- data.frame(x, y)
+h <- hexbin(dataframe)
+plot(h, colramp = rf, xlab = "Point Differential", ylab = "Seed")
+```
+
+<<<<<<< HEAD
+>>>>>>> db7aaf23698122c3709bc65577c9d389006ba98c
+=======
+### Let's look at seed differential vs point differential instead.
+
+```{r}
+#this is for more color
+rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+#this is the actual setup of the plot
+MM <- MM %>% 
+  mutate(Seeddiff = abs(Seed - Seed.1))
+x <- MM$Seeddiff
+y <-  MM$Pointdiff
+h<- hexbin(x, y, xbins = 20)
+plot(h, colramp = rf, 
+     xlab = "Seed Differential", 
+     ylab = "Point Differential",
+     main = "Seed Differential vs Point Differential")
+     
+```
+
+### Try it with ggplot2's `geom_hex()`
+
+```{r}
+ggplot(MM, aes(x=Seeddiff, y=Pointdiff) ) +
+  geom_hex(bins = 30) +
+  scale_fill_continuous(type = "viridis") +
+    labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Seed Differential vs Point Differential") +
+  theme_bw()
+  
+```
+
+### Examine the same relationship with a scatterplot, with regression line added.
+
+```{r, message = FALSE}
+fit <- lm(Pointdiff ~ Seeddiff, data = MM)
+r2 <- round(summary(fit)$r.squared, 2)
+slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
+ggplot(MM, aes(x=Seeddiff, y=Pointdiff)) +
+  geom_point(size = 3, 
+             alpha = 0.20, 
+             color = "steelblue") +
+  geom_smooth(method = lm, 
+              se = FALSE, 
+              linetype = "solid",
+              color = "red") +
+  labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Higher Seed Differentials Are Associated with Higher Point Differentials") +
+  annotate("text", x = 1, y = 52,
+           label = as.expression(substitute(atop(R^2==r2, beta==slope),
+                                            list(r2=r2, slope=slope))),
+                                 vjust = "middle", hjust = "left") +
+  theme_bw()
+  
+```
+
+### Take a look at average point differential by seed differential
+
+```{r}
+MM %>% 
+  group_by(Seeddiff) %>% 
+  summarize(AvgPtDiff = round(mean(Pointdiff), 2)) %>% 
+  kbl(align = "l") %>% 
+  kable_styling()
+```
+
+### Closer examination of seed differential vs point differential
+
+Hmm... It seems like there isn't much difference in average point differential for seed differentials ranging from 2 to 10. Let's rerun the scatterplot and regression for that range of seed differentials.
+
+```{r, message = FALSE}
+MM_sub <- MM %>% 
+  filter(between(Seeddiff, 2, 10))
+fit <- lm(Pointdiff ~ Seeddiff, data = MM_sub)
+r2 <- round(summary(fit)$r.squared, 2)
+slope <- round(summary(fit)$coefficients["Seeddiff","Estimate"], 2)
+ggplot(MM_sub, aes(x=Seeddiff, y=Pointdiff)) +
+  geom_point(size = 3, 
+             alpha = 0.20, 
+             color = "steelblue") +
+  geom_smooth(method = lm, 
+              se = FALSE, 
+              linetype = "solid",
+              color = "red") +
+  labs(x = "Seed Differential",
+       y = "Point Differential",
+       title = "Moderate Seed Differentials Don't Seem Very Important") +
+  annotate("text", x = 2, y = 45,
+           label = as.expression(substitute(atop(R^2==r2, beta==slope),
+                                            list(r2=r2, slope=slope))),
+                                 vjust = "middle", hjust = "left") +
+  scale_x_continuous(breaks = 2:10, limits = c(2, 10)) +
+  theme_bw()
+  
+```
+
+>>>>>>> 40b97696ee55ae5b148b88d8c59fa5e50204108a
+## Density Curve
+
+### Basic Density Curve Using Base R
+
+```{r}
+# get a dataset from R
+# Orange dataset has information about the growth of orange trees
+orange <- Orange
+```
+
+```{r}
+# create a density plot
+plot(density(orange$circumference),
+     main = "CIRCUMFERENCE OF ORANGE TREES",
+     xlab = "CIRCUMFERENCE",
+     ylab = "DISTRIBUTION")
+polygon(density(orange$circumference), col=7, border=2)
+```
+
+### Basic Density Curve Using GGPlot2
+
+```{r}
+# create the density plot
+orange %>%
+  ggplot( aes(x = circumference)) +
+  geom_density(fill= 7, color= 2)
+  
+```
+
+### Adding a Density Plot to a Histogram
+
+Use the same histogram created in the "Customized Histogram Using Base R" section and overlay a density curve on it.
+
+```{r}
+x <- iris$Petal.Width
+h <- hist(x, breaks=20, col="pink", freq=FALSE, xlab= "Petal Width", main="Histogram With Density Curve")
+lines(density(x), lwd=2, col="blue")
+```
+
+## density plot with groups
+
+### facet(ggplot2)
+
+```{r}
+ggplot(data=diamonds,
+       aes(x=price, fill = cut)) +
+  geom_density(adjust = 1.5) +
+  facet_wrap(~ cut) +
+  theme(legend.position = "none")
+```
+
+## Bar Plot
+
+###Base R
+
+```{r}
+### Create a data set to work with
+survey <- c(apple=45, orange=25, honeydew=35, banana=50, watermelon=20, blueberry=15)
+### Create a barchart with titles and color
+barplot(survey,
+        main="Favorite Fruit Survey",
+        xlab="Fruit",
+        ylab="Count",
+        col=c("red", "orange", "green", "yellow", "pink", "blue"))
+        
+### Add a legend
+legend("topright",
+       legend = c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
+       col = c("red", "orange", "green", "yellow", "pink", "blue"),
+       pch = 19,
+       bty = "n",
+       pt.cex = 2,
+       cex = 1.2)
+```
+
+### GGplot2
+
+```{r}
+# Use the same data set created in the base r example but make it into a data frame
+survey1 <- data.frame(
+  fruit=c("apple", "orange", "honeydew", "banana", "watermelon", "blueberry"),
+  value=c(45, 25, 35, 50, 20, 15))
+# Create the barchart
+ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity") 
+```
+
+```{r}
+# Add color with black outlines
+ggplot(survey1, aes(x=fruit, y=value)) + geom_bar(stat="identity", fill=c("red", "orange", "green", "yellow", "pink", "blue"), color="black") + labs(x="Count", y="Fruit", title="Fruit Survey") + theme(legend.position = "none")
+```
+
+### Bar plot with data added above the bars (Base R)
+
+
+
+First, calculate survival percentage and class count for each passenger
+class, using the `aggregate()` function, and then merge those two results into a data frame from the titanic dataset `titanic`.
+
+```{r}
+# calculate survival percentage by class and count by class.
+surv_pct <- aggregate(Survived ~ Pclass, data = titanic, FUN = mean)
+class_ct <- aggregate(Survived ~ Pclass, data = titanic, FUN = length)
+# Merge those two results into a single data frame, and specify 
+# column names
+by_class_data <- merge(surv_pct, class_ct,
+                       by = "Pclass")
+colnames(by_class_data) <- c("Pclass", "Surv_Pct", "Count")
+#str(by_class_data)
+```
+
+Create the barplot. Note that we increase the `ylim` parameter a bit to leave room for labels above the bars. We also set `axes = FALSE` so that the default y-axis is not plotted. Note also that we assign the barplot object to a variable. What gets assigned to the variable is the x positions of the midpoints of each of the bars on the plot. We will use those x positions later to position the labels above the bars, since the x position for a text label specifies the center of the label.
+
+In the next step we create a custom y-axis with the `axis()` function. The `at` parameter specifies the placement of the tick marks on the axis ("axis ticks") and the `labels` parameter specifies the tick labels. Use the `paste()` function to make percentage labels.
+
+Finally, we create the labels showing the count of passengers in each class and place them right above the bars. The x position comes from the barplot object and the y position is just the height of the bars plus a little extra so that the text labels don't overlap the bars.
+
+```{r}
+plt <- barplot(by_class_data$Surv_Pct, 
+               names.arg = paste("Class", by_class_data$Pclass),
+               col = 'steelblue',
+               main = "Survival Percentage by Passenger Class",
+               ylab = "Survival Percentage",
+               xlab = "Passenger Class",
+               ylim = c(0.0, 0.75),
+               axes = FALSE
+)
+# Add y axis
+axis(2, at = seq(0.0, 0.7, by = 0.1),
+     labels = paste(seq(0, 70, by = 10), "%", sep=""),
+     las = 1,
+     cex.axis = 0.9)
+# Add the text of the labels
+text(x = plt, 
+     y = by_class_data$Surv_Pct + 0.04, 
+     labels = paste("n: ", by_class_data$Count, sep=""), 
+     cex=1) 
+```
+
+### Bar plot with data added above the bars (ggplot2)
+
+
+
+First, calculate survival percentage and class count for each passenger
+class using `titanic` dataset using tidyverse approach.
+
+```{r}
+survival <- titanic %>%  
+  group_by(Pclass) %>% 
+  summarize(Count = n(),
+            Surv_Pct = mean(Survived))
+```
+
+Make the plot.
+
+```{r}
+ggplot(survival, aes(x = Pclass, y = Surv_Pct)) +
+  geom_col(fill = "steelblue") +
+  geom_text(aes(label = paste("n: ", Count, sep="")), vjust = -0.5) +
+  xlab("Passenger Class") +
+  ylab("Survival Percentage") +
+  ggtitle("Survival Percentage by Passenger Class") +
+  scale_y_continuous(limits = c(0, 0.70),
+                     breaks = seq(0, .7, by = 0.10),
+                     labels = paste(seq(0, 70, by = 10), "%", sep=""))  +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) # Centers title
+  
+  
+```
+
+## side-by-side barplots
+
+### base r
+
+```{r}
+x <- replicate(4, rnorm(100))
+apply(x, 2, mean)
+barplot(matrix(c(5,3,8,9),nr=2), beside=T, 
+        col=c("aquamarine3","coral"), 
+        names.arg=LETTERS[1:2])
+legend("topleft", c("A","B"), pch=15, 
+       col=c("aquamarine3","coral"), 
+       bty="n")
+```
+
+### ggplot2
+
+Using `gender_spouse` dataset.
+
+```{r}
+names(gender_spouse)
+# check the number of students of each gender
+##side-by-side bars
+ggplot(gender_spouse, aes(y=total, x=gender, fill=spouse))+
+  geom_bar(stat="identity" ,position = "dodge")
+```
+## Circular Bar Plot using GGPlot2
+
+```{r}
+##Creating a general circular barplot
+##Creating a data frame
+data <- data.frame(
+  colors=c("red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white"), 
+  value=c(50, 35, 80, 60, 75, 65, 55, 90, 10)
+)
+##Making the plot
+p <- ggplot(data, aes(x=as.factor(colors), y=value)) + 
+##Numeric value in alpha changes how bright or vibrant the color in the graph appears  
+ geom_bar(stat="identity", fill=alpha("red", 0.5)) +
+##Adding limits
+ylim(-120, 150) + theme_minimal() + theme(
+  axis.text = element_blank(), 
+  axis.title = element_blank(), 
+  panel.grid = element_blank(), 
+  plot.margin = unit(rep(-2, 4), "cm")) + 
+##Making the coordinate polar instead of cartesian 
+  coord_polar(start = 0)
+p
+```
+
+## Line Plot ("Time Series Plot")
+
+This time series shows the water level in Lake Huron from 1875 to 1972.
+
+The original dataset from R is a time series, and in order to plot it I had to transform to a dataframe and then plot using that instead.
+```{r}
+lakehuron <- data.frame(LakeHuron)
+
+ggplot(lakehuron, aes(x=(1875:1972), y= LakeHuron)) +
+  geom_line() + 
+  ggtitle("WATER LEVELS IN LAKE HURON") +
+  xlab("") +
+  ylab("WATER LEVEL")
+```
+
+## Stacked Area Plot
+`steel' Data is total steel produced annually from the 5 largest steel producing countries
+Make the plot. geom_area() is the function that produces the stacked area plot.
+```{r}
+ggplot(steel, aes(x=year, y=Steel, fill=Country)) + 
+    geom_area() + ggtitle("Annual Steel Produced, Top 5 Countries (Million Tons)") + ylab("Steel Produced (Million Tons)") + xlab("Year")
+    
+```
+
+## Segmented Stacked Bar Plot
+
+```{r}
+ggplot(steel, aes(fill=Country, y=Steel, x=year)) + 
+    geom_bar(position="fill", stat="identity") + ggtitle("Share of Steel Produced Annually") + ylab("% of Steel Produced") + xlab("Year")
+    
+```
+
+## Boxplot
+In the Boxplot section add two basic boxplot examples, one utilizing base R and one utilizing ggplot2. Note that even basic examples should have appopriate titles and axis labels.
+
+Base R:
+```{r}
+# Some data to work with:
+data(ChickWeight)
+```
+```{r}
+#Boxplot:
+boxplot(ChickWeight$weight ~ ChickWeight$Time,
+        main = "Chick Age versus Chick Weight",
+        xlab = "Chick Age in Days",
+        ylab = "Chick Weight in Grams")
+```
+
+ggplot2:
+
+```{r}
+p <- ggplot(ChickWeight, aes(group=Time, y=weight)) + 
+  geom_boxplot() +
+  labs(title="Chick Age versus Chick Weight",x="Chick Age in Days", y = " Chick Weight in Grams")+
+  theme_classic()
+p
+```
+## A Boxplot with Jitter (GGPLOT2)
+Using Jitter, you can display the individual data points in each box in a way that is easy to see and understand.
+
+This example is based on one found at the R Graph Gallery website: https://www.r-graph-gallery.com/89-box-and-scatter-plot-with-ggplot2.html 
+
+```{r}
+data("ChickWeight")
+str(ChickWeight)
+```
+```{r}
+ChickWeight %>%
+  ggplot( aes(x=Diet, y=weight, fill=Diet)) +
+    geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+    geom_jitter(color= "red", size=0.6, alpha=0.9) +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=14)
+    ) +
+    ggtitle("Chick Weight by Diet") +
+    ylab("Chick Weight in Grams") +
+    xlab("Chick Diet")
+    
+```
+
+## Violin Plot
+
+Pulling data from OKC, UTA, and CHI from `nba_players` dataset
+
+```{r}
+team <- c(nba_players$TEAM[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
+pts <- c(nba_players$PTS[nba_players$TEAM %in% c("OKC", "UTA", "CHI")])
+data <- data.frame(team, pts)
+```
+
+### Basic Plot with Base R ###
+```{r}
+with(data , vioplot( 
+  pts[team=="OKC"] , pts[team=="UTA"], pts[team=="CHI"],  
+  col= c(255,234,268) , names=c("OKC","UTA","CHI"),
+  xlab = "Teams",
+  ylab = "Points",
+  main = "NBA Points Per Team",
+  ylim = c(0,27),
+  border = c(sample(200:900, 3)),
+  rectCol = c(893)
+))
+```
+
+### Basic Plot with ggplot2 ###
+I did add a boxplot on top of the violin plot to make it resemble the base r graph.
+```{r}
+ggplot(data, aes(x= team, y = pts, fill = team)) + 
+  geom_violin(trim = F, show.legend = T) + 
+  geom_boxplot(width = 0.1)
+  
+```
+
+## Strip Chart
+
+### Strip chart in base R
+
+#### Use the built-in dataset: iris to create a stripchart for the variable Sepal.Width
+
+Here we can use the `alpha()` function from the `scales` package to set an alpha (transparency) level for the color, ranging from 0 (totally transparent) to 1 (totally translucent). `method - 'jitter'` adds random noise in the y-dimension and the `jitter()` function applied to the variable being plotted adds random noise to the actual values of the variable. `amount = 0` causes that random noise to be z/50 where z is the range of the variable.
+
+```{r}
+stripchart(jitter(iris$Sepal.Width, amount = 0),
+           main = "Sepal Width Distribution",
+           xlab = "Sepal Width (cm)",
+           col= alpha("blue", 0.5),
+           pch = 19,
+           method= 'jitter')
+           
+```
+
+### Strip chart in ggplot2
+
+With ggplot2's `geom_jitter()` is a shortcut for `geom_point(position = "jitter")`. Its `width` and `height` parameters control the amount of random noise in the x and y dimensions, respectively. With ggplot2 we can set `alpha` directly without the use of any helper functions. However, with ggplot2 it is a bit tricky to make a strip chart for just one variable (without a second variable for grouping), as we need to set the y variable, set axis limits, and suppress the axis ticks and labels for the unused axis.
+
+```{r}
+ggplot(data = iris) + 
+  geom_jitter(aes(x=Sepal.Width, y=0), 
+              width = 0.05, 
+              height = 0.2, 
+              color = "blue",
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  scale_y_continuous(limits = c(-1, 1),breaks = NULL, labels = NULL) + 
+  labs(title = "Sepal Width Distribution",
+       y = NULL,
+       x = "Sepal Width (cm)")
+       
+```
+
+### Strip Chart Divided into Groups, Base R
+
+```{r}
+palette(brewer.pal(n = 3, name = "Dark2"))
+
+stripchart(Age ~ Pclass, data = titanic,
+           vertical = TRUE,
+           method = "jitter",
+           pch = 1,
+           col = 1:3,
+           main = "Titanic Passenger Age by Class",
+           xlab = "Class")
+```
+
+### Strip Chart Divided into Groups, ggplot2
+
+Here is an example where the ggplot2 plot takes more work than the base R plot. Need to use `Pclass` as a factor or manipulate the x-axis scale to make sure it only shows 1, 2, and 3. Used the `scale_color_brewer()` function to set this plot to the same RColorBrewer palette as the base R example.
+
+```{r}
+ggplot(data = titanic, aes(x = Pclass, y = Age, color = as.factor(Pclass))) +
+  geom_jitter(pch = 1, cex = 2, width = 0.12) +
+  scale_color_brewer(palette = "Dark2") +
+  theme_bw() +
+  theme(legend.position = "none") +
+  labs(title = "Titanic Passenger Age by Class",
+       x = "Class",
+       y = "Age")
+```
+
+### Enhanced Strip Chart Divided into Groups, ggplot2
+
+This is fairly easy to do with ggplot2, as `geom_jitter()` by default takes two variables as parameters. One can be the categorical group, iris species.
+
+```{r}
+ggplot(data = iris) + 
+### Add Boxplot on top of the strip plot for iris species. - used https://www.youtube.com/watch?v=mbvU8fF4eGM&t=613s as a reference
+  geom_boxplot(mapping = aes(x = Sepal.Width, y = Species, fill = Species),
+               alpha = 0.25,
+               width = 0.5,
+               show.legend = FALSE) +
+               
+  geom_jitter(aes(y=Species, x=Sepal.Width, color = Species), 
+              width = 0.05, 
+              height = 0.2,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Sepal Width Distribution by Iris Species",
+       x = "Sepal Width (cm)",
+       y = NULL) + 
+  theme_bw() +
+  theme(legend.position = "none")
+  
+```
+
+### Strip Chart with NBA Data, ggplot2
+
+Strip charts are particularly useful with small datasets. The NBA data has a small number of players per team, so let's try to use strip charts to compare the distribution of scoring on NBA teams, similar to the comparisons in the violin plot section.
+
+#### Basic Strip Chart of NBA Scoring with ggplot2
+
+```{r}
+nba_players %>% 
+  filter(TEAM %in% c("OKC", "UTA", "CHI")) %>% 
+  ggplot(aes(x =PTS, y = TEAM)) + 
+    geom_point() +
+    labs(title = "Scoring Distribution on Selected NBA Teams")
+    
+```
+
+#### More Customized Strip Chart of NBA Scoring with ggplot2
+
+```{r}
+top_ten <- nba_players %>% 
+  filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
+  group_by(TEAM) %>% 
+  arrange(desc(PTS), .by_group = TRUE) %>% 
+  mutate(rn = row_number()) %>% 
+  filter(rn <= 10)
+top_one <- nba_players %>%
+  filter(TEAM %in% c("OKC", "UTA", "CHI", "WAS")) %>% 
+  group_by(TEAM) %>%
+  filter(row_number(desc(PTS)) == 1)
+ggplot(data = top_ten, aes(x =PTS, y = TEAM)) + 
+  geom_point() +
+  scale_x_continuous(breaks = seq(5, 30, 5)) +
+  geom_text(aes(label = PLAYER), 
+            data = top_one,
+            nudge_x = 0.25,
+            angle = 90,
+            alpha = 0.5,
+            vjust = "top", 
+            hjust = "middle") +
+  labs(title = "Scoring Distribution of Top 10 Scorers") +
+  theme_bw() +
+  theme(panel.grid.major.y = element_blank()) +
+  geom_boxplot(alpha = 0,
+               linetype = 3)
+```
+
+## Strip Plot showing the distribution of a numberic variable by a categorical variable
+
+This example shows a strip plot to compare chick weights with different types of feed. 
+
+```{r}
+#in ggplot2:
+ggplot(data = chickwts) + 
+  geom_jitter(aes(y=feed, x=weight, color = feed), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Chick Weight by Feed Type",
+       x = "Chick Weight in Grams",
+       y = "Feed Type") + 
+  theme_bw() +
+  theme(legend.position = "none")
+  
+```
+
+A second example, this time using the Carbon Dioxide Uptake in Grass Plants dataset
+
+```{r}
+ggplot(data = CO2) + 
+  geom_jitter(aes(y=Treatment, x=uptake, color = Treatment), 
+              width = 0.05, 
+              height = 0.2, 
+              alpha = 0.5,
+              pch = 19,
+              cex = 2) +
+  labs(title = "Carbon Dioxide Uptake in Grass Plants by Treatment Type",
+       x = "Carbon Dioxide Uptake",
+       y = "Treatment Type") + 
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+
+## Normal Probability (QQ) Plot
+
+A quantile-quantile ("QQ") plot is used to compare an empirical distribution to a theoretical distribution by plotting the observed quantiles vs the theoretical quantiles. They are typically used to evaluate whether or not a variable is normally distributed.
+
+The built-in `rivers` dataset gives the lengths (in miles) of 141 rivers in North America, as compiled by the US Geological Survey. Let's see if the river lengths are normally distributed by creating a normal probability plot of the river lengths.
+
+### Basic QQ Plot with Normal Distribution Reference Line (Base R)
+
+Here we create a basic QQ plot in base R and add the normal distribution QQ plot as a reference line for comparison.
+
+```{r}
+qqnorm(rivers,
+       main = "Q-Q Plot of North American River Lengths")
+qqline(rivers, col = "red")
+```
+
+### Basic QQ Plot with Normal Distribution Reference Line (ggplot2)
+
+Here we produce a similar plot using ggplot2. First we need to put the river lengths in a data frame.
+
+```{r}
+rivers_df <- data.frame(length = rivers)
+```
+
+Now we make the plot. Note that the shape and size of the geom are revised to better match the base R plot.
+
+```{r}
+ggplot(rivers_df, aes(sample = length)) +
+  stat_qq(shape = 1, cex = 2) +
+  stat_qq_line(color = "red") +
+  labs(title = "Q-Q Plot of North American River Lengths",
+       x = "Theoretical Quantiles",
+       y = "Sample Quantiles") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)) # Centers title
+```
+
+## Mosaic Plot
+
+### Mosaic Plot with Base R
+
+
+
+First, we will mosaic plot of Titanic ticket class vs embarkment location using `titanic` dataset. First check to see if there is any missing data.
+
+```{r}
+table(titanic$Pclass)
+```
+
+```{r}
+table(titanic$Embarked)
+```
+
+Notice that there are two cases for which blank. We will remove those cases. Also, since `Pclass` is an integer vector it would be best to change it to a factor, and then specify the levels as a character vector. (See `?factor`)
+
+```{r}
+mask <- titanic$Embarked %in% c("C", "Q", "S")
+embarked <- titanic$Embarked[mask]
+class <- titanic$Pclass[mask]
+class <- factor(class, levels = c(1, 2, 3),
+                labels = c("First", "Second", "Third"))
+```
+
+Make the mosaic plot.
+
+```{r}
+mosaicplot(table(class, embarked),
+           main="Passenger Class by Embarkment Site",
+              xlab="Class",ylab="Embarkment Site",
+              col=c(2,3,4))
+              
+```
+
+### Mosaic Plot with ggplot2
+
+Let's make a similar mosaic plot using ggplot2. We need to use the ggmosaic package to do so.
+
+```{r}
+titanic_clean <- titanic %>% 
+  filter(Embarked %in% c("C", "Q", "S")) %>%  # Removes cases with missing data
+  mutate(
+  Embarked = factor(embarked),
+  Pclass = factor(Pclass)
+)
+titanic_m_data <- titanic_clean %>% 
+  count(Embarked, Pclass)
+```
+
+```{r}
+  ggplot(data = titanic_m_data) + 
+    geom_mosaic(aes(x = product(Pclass), fill = Embarked, weight = n)) +
+    xlab("Passenger Class") + 
+    ylab("Embarkment Site") + 
+  ggtitle("Passenger Class by Embarkment Site")
+  
+  
+```
+
+## Scatterplots
+
+### Scatterplots in Base R
+
+Creating a scatterplot in base R is simple. For this example, I used the dataset
+pennsylvania-history, which shows the history of pennsylvania's recorded covid cases
+from January to March 7. The variables of interest are positive, the number of positive
+cases, and deaths. Did the death count rise as cases grew? 
+
+First, we read the data file, pennsylvania-history.csv and store it as covidchart.
+Our x values in the plot function are covidchart$positive, and our yvalue is covidchart$death.
+Our title, as explaieid in main is "Covid Infection and Fatalities." Our x-axis is labeled Infections, for covid infections, and our y axis is labeled fatalities. Note that these fatalities are not explciitly confirmed to be from Covid, but are the overall fatality count in PA over time, each point representing a different count of infection and fatality per day.
+We then draw a regression line based on positive cases and fatalities. The regression line is colored red and the points are colored grey after the color scheme of the virus itself.
+
+```{r}
+covidchart <- read.csv("data/pennsylvania-history.csv")
+covidchart <- subset(covidchart, !is.na(positive) & !is.na(death))
+plot(covidchart$positive, covidchart$death, main = "Covid Infection and Fatalities", xlab = "Infections", ylab = "Fatalities", col = "grey")
+abline(lm(covidchart$death ~ covidchart$positive), col = "red")
+```
+
+We can see that, yes, positive cases unfortunately have a positive correlation with fatalities.
+
+## RColorBrewer in Base R
+Another way to color your plot is by using rcolorbrewer. We first have to load rcolorbrewer. Note that we will be using an example barplot instead of a scatterplot.
+
+```{r}
+dummy <- data.frame(colno = c("col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8", "col9"), colcount = c(1, 2, 3, 4, 5, 6, 7, 8, 9))
+```
+
+Then, execute this to see all the available palettes. 
+
+```{r, fig.height = 8, fig.width = 7}
+display.brewer.all()
+```
+
+To view a single palette, type
+
+display.brewer.pal(n, name)
+
+name denotes the palette you want to display, while n denotes how many colors are in that palette. For example, the following code shows you the first four colors in the Pastel1 palette. 
+
+```{r}
+display.brewer.pal(4, "Pastel1")
+```
+
+brewer.pal(n, name)
+
+returns the hex codes of the n colors in the named palette as a vector. Here we create a palette of all 9 colors in Pastel1 palette. 
+
+```{r}
+Past <- brewer.pal(9, "Pastel1")
+```
+
+From there, go back to your plot's color argument and use the following code to set the colors of the bars to the first color in the "Past" palette we made with RColorBrewer in the code chunk above. 
+
+```{r}
+barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab = "count", ylim = c(0,9), col = Past[1])
+```
+
+Alternatively, you could use the following code use every color in the palette to color the bars.
+
+```{r}
+barplot(height = dummy$colcount, names = dummy$colno, xlab = "colors", ylab = "count", ylim = c(0,9), col = Past)
+```
+
+### Scatterplots with ggplot2
+
+ggplot2 is much the same. we set covidchart as the source of our data and positive and death as our x and y values in aes(). geom_point() is called to make ggplot graph this as a scatterplot. The labs() function labels our x and y axes, and the graph overall. To add a regression line, we use geom_smooth(method = lm). 
+
+```{r, message = FALSE, warning = FALSE}
+ggplot(data = covidchart, aes(positive, death)) + geom_point(colour = "red") + labs(x = "Infections", y = "Fatalities", title = "Covid Infection and Fatalities") + geom_smooth(method = lm)
+``` 
+
+### ColorBrewer with ggplot2
+
+In order to use an RColorBrewer palette in a barplot in ggplot2, you have to first save your barplot in a variable, and then append the function scale_fill_brewer() to it, with the argument palette ="palettename" inside the function. Don't forget to add code setting "fill" equal to your x variables (i.e. your bars), otherwise you'll get a plain grey bar graph. Done correctly, code should look like this:
+
+```{r}
+ggplot(data = dummy, aes(x = colno, y = colcount, fill = colno)) + 
+  geom_bar(stat = "identity") + 
+  labs(x = "ColorNumber", y = "ColorCount", title = "Color Dummy Data") +
+  scale_fill_brewer(palette = "Pastel1")
+```
+
+## Bubble Plot
+
+### Base R Bubble Plot
+
+Base R plots require a bit finessing to get just right. 
+
+First of all, I plan to place the legend outside the plot itself so I must first change the margins. This is done with `par()` which can set graphical parameters. Within `par()`, `mar` takes a vector input of 4 numbers determining how far into the pane the plot margins should be, starting at the bottom and continuing clockwise. `xpd` takes a logical value & setting it to TRUE tells R not to clip the legend or any other insertion outside the plot bounds. `inset=c(-0.35,0)` tells R to move the legend away from the plot, outside the margin horizontally. To make the legend look a bit cleaner, use `bty='n'` to remove the box around the legend. 
+
+To set the point size in base plot, use `cex=data$variable`. In this case `cex=mtcars$disp`. For the legend, use `pt.cex=c(n1, n2, n3...nx)` for however many legend items you have. I'm choosing intervals of 100 from 100 to 400. 
+
+```{r}
+par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
+plot(mtcars$mpg, mtcars$hp, cex = mtcars$disp,
+     pch=16,
+     main = 'Miles per Gallon vs Gross Horsepower with Displacement',
+     xlab = 'miles per gallon',
+     ylab = 'gross horspower')
+legend('right', inset=c(-0.35,0),
+       legend=c('100', '200', '300', '400'),
+       title = 'Displacement\n(cu. in.)',
+       pch=16, ncol=1, pt.cex = c(100, 200, 300, 400),
+       bty = 'n')
+       
+```
+
+Yikes, it seems like the points may be a bit too large. Lets make them all smaller by dividing their values by 100 & take care not to forget about the legend points as well by changing the values for `pt.cex`. 
+
+```{r}
+par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
+plot(mtcars$mpg, mtcars$hp, cex = mtcars$disp/100,
+     pch=16,
+     main = 'Miles per Gallon vs Gross Horsepower with Displacement',
+     xlab = 'miles per gallon',
+     ylab = 'gross horspower')
+legend('right', inset=c(-0.35,0),
+       legend=c('100', '200', '300', '400'),
+       title = 'Displacement\n(cu. in.)',
+       pch=16, ncol=1, pt.cex = c(100, 200, 300, 400)/100,
+       bty = 'n')
+       
+```
+
+Better, but the points don't seem to be proportional. It seems that `cex` scales points by altering the radius of a point. This would cause the area of each consecutive point to be exponentially larger than the last when using the formula $A=πr^2$. To correct this and make the point size proportional to the area, rearrange the formula to solve for the radius that produces the desired area. $r=\sqrt{\frac{A}{π}}$
+
+Now the points are proportional in area but still too large, so I divide the areas by 5. 
+
+```{r}
+par(mar=c(4, 5, 2, 8), xpd = T) # bottom, left, top, right
+plot(mtcars$mpg, mtcars$hp, cex = sqrt(mtcars$disp/3.14)/5,
+     pch=16,
+     main = 'Miles per Gallon vs Gross Horsepower with Displacement',
+     xlab = 'miles per gallon',
+     ylab = 'gross horspower')
+legend('right', inset=c(-0.35,0),
+       legend=c('100', '200', '300', '400'),
+       title = 'Displacement\n(cu. in.)',
+       pch=16, ncol=1, pt.cex = sqrt(c(100, 200, 300, 400)/3.14)/5,
+       bty = 'n')
+      
+```
+
+Now it looks right!
+
+### Ggplot2 Bubble Plot
+
+When I need to make a plot, I usually prefer `ggplot()` over base r for its simplicity. As you can see, I was able to make a clean graph with just 5 lines of code. To show  displacement as a variable point size, you set `size=disp` within the aesthetics of ggplot. Ggplot automatically scales by area & makes the points reasonable sizes as well. Because mtcars is set as the data source, there is no need to reference the data frame for each variable. 
+
+```{r}
+ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
+  geom_point()+
+  ggtitle('Miles per Gallon vs Gross Horsepower with Displacement')+
+  labs(size = 'Displacement\n(cu. in.)', x='miles per gallon', y='gross horsepower')+
+  theme_classic()
+```
+
+## Diverging Bar Chart
+
+```{r}
+data(swiss)
+```
+
+```{r}
+#Data Preparation
+swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
+swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility
+swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
+swiss <- swiss[order(swiss$Fertility_z), ]  # sort
+swiss$`municipality` <- factor(swiss$`municipality`, levels = swiss$`municipality`)  # convert to factor to retain sorted order in plot.
+#Diverging Barplot:
+ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) + 
+  geom_bar(stat='identity', aes(fill=Fertility_type), width=.5) +
+  theme(text = element_text(size=9)) +
+  scale_fill_manual(name="Fertility", 
+                    labels = c("Above Average", "Below Average"), 
+                    values = c("above"="#00ba38", "below"="#f8766d")) + 
+  labs(title= "Divergence in the Average Fertility in Swiss Municipalities",
+       x = "Municipality",
+       y = 'Fertility') + 
+  coord_flip()
+```
+
+## Lollipop Chart
+
+### Lollipop Chart with ggplot2
+
+To make a lollipop chart with ggplot2 you can use `geom_point()` for the circle and `geom_segment()` for the stem.
+
+```{R}
+let <- data.frame(
+  x=LETTERS[1:10],
+  y=runif(10, 2, 9)
+)
+ggplot(let, aes(x=x, y=y)) +
+  geom_segment( aes(x=x, xend=x, y=0, yend=y), color="black") +
+  geom_point( size=4, color="blue", 
+              fill=alpha("purple", 0.2), alpha=.8, shape=21, stroke=4) +
+  theme_gray() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks.x = element_blank()
+  ) +
+  xlab("Student") +
+  ylab("Hours Spent Studying") +
+  ggtitle("Student Hours of Study (per Week)") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(limits = c(0, 10))
+```
+
+## Diverging Lollipop Chart
+
+Use the state data that comes with R. Let's look at state life expectancy. First, prepare the data that we will use for a couple examples.
+
+```{r}
+state_df <- data.frame(state.x77, Region=state.region, Division=state.division)
+state_df <- rownames_to_column(state_df, var="State")
+state_df$Life.Exp.Z <- 
+  (state_df$Life.Exp - mean(state_df$Life.Exp))/sd(state_df$Life.Exp)
+state_df$Above.Avg <- ifelse(state_df$Life.Exp.Z >= 0, "yes", "no")
+state_df <- state_df[order(state_df$Life.Exp.Z), ]
+state_df$State <- factor(state_df$State, levels = state_df$State)
+```
+
+Next create a simple diverging lollipop chart to highlight the difference of each state's mean life expectancy from the mean state mean life expectancy.
+
+```{r, fig.width=6.5, fig.height=7.5}
+ggplot(state_df, aes(x=State, y=Life.Exp)) + 
+  geom_point(stat='identity', fill="black", size=2)  +
+  geom_segment(aes(y = mean(Life.Exp), 
+                   x = State, 
+                   yend = Life.Exp, 
+                   xend = State), 
+               color = "black") +
+  labs(title="State Life Expectancy", 
+       subtitle="Deviation from Mean State Life Expectancy",
+       y = "Life Expectancy (Years)",
+       x = NULL) + 
+  scale_y_continuous(breaks = seq(68, 74, 1)) +
+  coord_flip()
+  
+```
+
+Now let's try to view a subset. With a smaller amount of data we can add the life expectancies as labels on the dots.
+
+```{r}
+ggplot(filter(state_df, Region == "South"), aes(x=State, y=Life.Exp.Z, label=round(Life.Exp, 1))) + 
+  geom_hline(yintercept = 0, color = "darkgray") +
+  geom_point(stat='identity', aes(col=Above.Avg), size=6)  +
+  geom_text(color="white", size=2.2) +
+  labs(y = "Standard Deviations from Mean State Life Expectancy") +
+  geom_text(aes(x = "West Virginia", 
+                y = -0.05, 
+                label = "Mean State Life Expectancy"),
+            angle = 90,
+            color = "darkgray") +
+  labs(title="Life Expectancy in the Southern States", 
+       subtitle="Compared to Average State Life Expectancy") + 
+  coord_flip() +
+  theme_bw() +
+  theme(axis.title.y=element_blank()) +
+  theme(legend.position = "none")
+```
+
+## Making pie charts in R and ggplot2
+
+### Base R
+
+Using titanic dataset.
+
+```{r}
+slices <- table(titanic$Pclass)
+## ^^ we use the table() function to get the count of each class
+lbls <- c("1st Class", "2nd Class", "3rd Class")
+pct <- round(slices/sum(slices)*100)
+lbls <- paste(lbls, pct) #this adds the percentage to the labels
+lbls <- paste(lbls,"%",sep="")
+pie(slices, labels = lbls, main = "Passenger Class Distribution", col = rainbow(length(lbls)))
+```
+
+### Pie Chart Using ggplot2
+
+```{r}
+#ClassCount <- as.data.frame(table(nums$Pclass))
+#I tried to get the data from a csv but I was genuinely unable to
+ClassCount <- data.frame(
+  Class = c("1st", "2nd", "3rd"),
+  n = c(186, 173, 355),
+  prop = c(26.1, 24.2, 49.7)
+)
+ClassCount <- ClassCount %>%
+  arrange(desc(Class)) %>%
+  mutate(lab.ypos = cumsum(prop) -0.5*prop)
+## the cumsum(prop) - 0.5*prop helps us put the labels in the center of the portion
+mycols <- rainbow(length(ClassCount$Class))
+ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
+  geom_bar(width = 1, stat = "identity", color = "black") +
+  coord_polar("y", start = 0) +
+  geom_text(aes(y = lab.ypos, label = prop), color = "black") +
+  scale_fill_manual(values = mycols) + theme_void()
+```
+
+## Chloropleth
+
+Create a chloropleth using color to show population density of European countries. First, download geojson data using the `geojson_read()` function from the `geojsonio` package. `what = "sp"` instructs the function to return the data as a `SpatialPolygonsDataFrame` type. This type contains vertices data that can be used to draw polygons, as well as additional information associated with the polygon. In this case the polygons are European countries and the associated data includes population and area data from 2005.
+
+We are using the data from "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson" stored under `spdf`
+
+```{r}
+class(spdf)
+```
+
+The `SpatialPolygonsDataFrame` is implemented as an S4 class in R, so we can extract the data attribute (data associated with the polygons) with `@`. The data attribute is a data frame. 
+
+```{r}
+spdf_data <- spdf@data %>%
+  mutate(id = row_number())
+```
+
+To use the geospatial data with ggplot we first need to transform it into a data frame using the `tidy()` function of the `broom` package. The `strtoi()` function here is converting the `id` field in the resulting dataframe to an integer, so that it is the same type as the `id` field in `spdf_data`.
+
+```{r, message = FALSE}
+spdf_tibble <- broom::tidy(spdf) %>% 
+  mutate(id = strtoi(id))
+```
+
+Merge the geospatial data with the data about the polygons (countries).
+
+```{r}
+# Make the merge
+spdf_tibble = spdf_tibble %>%
+  left_join(. , spdf_data, by="id")
+```
+
+Plot the countries, with color determined by the country's population.
+
+```{r}
+ggplot() +
+  geom_polygon(data = spdf_tibble, 
+               aes(fill = POP2005, 
+                   x = long, 
+                   y = lat, 
+                   group = group), size=0, alpha=0.9) +
+  theme_void() +
+  coord_map()
+  
+```
+
+Do the same, but use the color palette from the `viridis` package.
+
+```{r}
+ggplot() +
+  geom_polygon(data = spdf_tibble, 
+               aes(fill = POP2005, 
+                   x = long, 
+                   y = lat, 
+                   group = group )) +
+  scale_fill_viridis() +
+  labs(title = "Population") +
+  theme_void() +
+  coord_map()
+```
+
+## Mathematical Annotation in R
+
+### Examples
+
+```{r}
+x <- seq(-4, 4, len = 101)
+y <- cbind(sin(x), cos(x))
+matplot(x, y, type = "l", xaxt = "n",
+        main = expression(paste(plain(sin) * phi, "  and  ",
+                                plain(cos) * phi)),
+        ylab = expression("sin" * phi, "cos" * phi), # only 1st is taken
+        xlab = expression(paste("Phase Angle ", phi)),
+        col.main = "blue")
+axis(1, at = c(-pi, -pi/2, 0, pi/2, pi),
+     labels = expression(-pi, -pi/2, 0, pi/2, pi))
+## How to combine "math" and numeric variables :
+plot(1:10, type="n", xlab="", ylab="", main = "plot math & numbers")
+theta <- 1.23 ; mtext(bquote(hat(theta) == .(theta)))
+for(i in 2:9)
+    text(i,i+1, substitute(list(xi,eta) == group("(",list(x,y),")"),
+                           list(x=i, y=i+1)))
+## note that both of these use calls rather than expressions.
+plot(1:10, 1:10)
+text(4, 9, expression(hat(beta) == (X^t * X)^{-1} * X^t * y))
+text(4, 8.4, "expression(hat(beta) == (X^t * X)^{-1} * X^t * y)",
+     cex = .8)
+text(4, 7, expression(bar(x) == sum(frac(x[i], n), i==1, n)))
+text(4, 6.4, "expression(bar(x) == sum(frac(x[i], n), i==1, n))",
+     cex = .8)
+text(8, 5, expression(paste(frac(1, sigma*sqrt(2*pi)), " ",
+                            plain(e)^{frac(-(x-mu)^2, 2*sigma^2)})),
+     cex = 1.2)
+```
+
+## HeatMap Plot
+
+Using Phone data `L`
+```{r, message = FALSE}
+L1 <-
+  L %>%select(country,X1995,X1996,X1997,X1998,X1999,X2000,X2001,X2002,X2003,X2004,X2005,)
+L2 <-
+  L1 %>%filter(country=='Argentina'|country=='Brazil'|country=='Chile'|country=='Colombia'|country=='Portugal'|country=='Barbados'|country=='Mexico'|country=='Spain'|country=='Egypt')
+for (col in 1:ncol(L2)){
+ colnames(L2)[col] <- sub('X', '', colnames(L2)[col])
+}
+L3<-melt(L2)
+plot<-ggplot(L3, aes(variable,country,fill= value)) + geom_tile()
+plot1<- plot+xlab('Year')+
+ ylab('Country')+
+ ggtitle('Mobile Cell Phone Subs 1995-2005')+
+ labs(fill = 'Per capita subscriptions')
+plot1 + scale_fill_distiller(palette = 'Spectral')
+```
+
+### Querying data directly from USGS to use for plot
+```{r}
+# The URL used to query the USGS database 
+# includes parameters including data type, site number, and dates
+URL = 'https://waterdata.usgs.gov/usa/nwis/dv?cb_00060=on&format=rdb&site_no=03049500&referred_module=sw&period=&begin_date=1970-01-01&end_date=2020-12-31'
+# data is displayed with some extra comments so it takes a little additional processing to clean up
+d = read.delim(URL, comment.char = '#', stringsAsFactors = F)
+d=d[-1,]
+d$datetime=as.POSIXct(d$datetime)
+colnames(d)[4]='discharge'
+d$discharge = as.numeric(d$discharge)
+# creating month & year variabes for aggregation
+d$month=month(d$datetime)
+d$year=year(d$datetime)
+# aggregating discharge by month & year to return means
+aggDischarge=aggregate(discharge~month+year, d, mean)
+# plotting just by month, 1 (Jan) is at the bottom and 12 (Dec) is at the top
+# there are ways to revserse the order of scales but introducing axis labels complicates that
+# I instead am reversing the order of months and using those values for plotting 
+aggDischarge$plotMonth = abs(aggDischarge$month - 12) + 1
+```
+
+### Creating a heat map of mean daily discharge from 1970-2020
+```{r}
+ggplot(aggDischarge, aes(x=year, y=plotMonth, fill=discharge))+ 
+  geom_tile()+
+  scale_fill_viridis(discrete = F)+
+  scale_y_continuous(limits = c(0, 13), # setting limits to 12 causes the top set of tiles to go missing but increasing it to 13 includes them all
+                     breaks = seq(1, 12, 1), # one break for each month so none are skipped
+                     labels = c('Dec', 'Nov', 'Oct', 'Sep', 'Aug', 'Jul',
+                                'Jun', 'May', 'Apr', 'Mar', 'Feb', 'Jan'),
+                     expand = c(0, 0))+ # removing some empty space above the x axis and below the title
+  labs(x = 'year', y = 'month', fill = 'Mean Daily\nDischarge\ncu. ft/sec', 
+       title = 'Mean Daily Discharge of the Allegheny River at Natrona, PA')+
+  theme_classic()
+```
+
+
+### Plots side by side - gridExtra Package - grid.arrange()
+
+Resources used https://www.youtube.com/watch?v=GVWSGr4OLj8&list=PLhUoWCH9bWbxje8xauO7wagHzYJclj9cx&index=7
+
+```{r}
+x = c(1, 2, 3, 4, 5, 6, 7)
+y = c(8, 9, 10, 11, 12, 13, 14)
+data1 = data.frame(x, y)
+pointex <- ggplot(data1, aes(x = x, y = y)) +
+  geom_point() +
+  labs(x = "examplelength",
+       y = "examplewidth")
+pointex
+```
+
+```{r}
+nums = c(3, 8, 4, 5, 0.2, 0.5, 20)
+int = c(0, 3, 9, 5, 1.5, 15, 5.3)
+data2 = data.frame(nums, int)
+pointex2 <- ggplot(data2, aes(x = nums, y= int)) +
+  geom_point()+
+  labs(x="miles",
+       y="hours")
+pointex2
+```
+
+```{r}                 
+plotex <- list(pointex, pointex2)
+grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
+```
+
+## Stacked Bar plot
+Base R
+```{r}
+fishy <- read.table(text ="Butterfish Cockle Swordfish Tuna
+1 59 49 18 24 
+2 32 24 71 31", header= TRUE)
+  
+barplot(as.matrix(fishy),col=c("blue","purple"))
+```
+GGplot
+```{r}
+fish <- read.csv('data/Pescado.csv')
+names(fish)
+ggplot(fish, aes(y=Total, x=Species, fill=Sex))+
+  geom_bar(stat='identity')
+```
+
+##Hexbin Map
+
+
+Using   `spd` dataset
+```{r}
+# Bit of reformating
+spd@data = spd@data %>%
+  mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+# Show it
+plot(spd)
+```
+
+```{r}
+spd@data = spd@data %>% mutate(google_name = gsub(" \\(United States\\)", "", google_name))
+spd_fortified <- tidy(spd, region = "google_name")
+# Calculate the centroid of each hexagon to add the label:
+centers <- cbind.data.frame(data.frame(gCentroid(spd, byid=TRUE), id=spd@data$iso3166_2))
+ 
+# Now I can plot this shape easily as described before:
+ggplot() +
+  geom_polygon(data = spd_fortified, aes( x = long, y = lat, group = group), fill="skyblue", color="white") +
+  geom_text(data=centers, aes(x=x, y=y, label=id)) +
+  theme_void() +
+  coord_map()
+```
+
+
+Using `hockey` dataset
+
+```{r}
+spd_fortified <- spd_fortified %>%
+  left_join(. , hockey, by=c("id"="State")) 
+ 
+# Make a first chloropleth map
+ggplot() +
+  geom_polygon(data = spd_fortified, aes(fill =  Searches, x = long, y = lat, group = group)) +
+  geom_text(data=centers, aes(x=x, y=y, label=id)) +
+  scale_fill_gradient(trans = "log") +
+  theme_void() +
+  coord_map() + 
+  ggtitle("Google Search Popularity for Hockey by State")
+```
+
+```{r, message=FALSE, warning=FALSE, results='hide'}
+
+#Scatterplot with Line of Best Fit
+
+options(scipen=999)  # turn-off scientific notation like 1e+48
+theme_set(theme_dark())  # pre-set the bw theme.
+cardata <- as.data.frame(data(cars))
+head(cars)
+gg <- ggplot(cars, aes(x=speed, y=dist)) + 
+  geom_point(aes(col=, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) + 
+  xlim(c(0, 10)) + 
+  ylim(c(0, 25)) + 
+  labs(subtitle="Car Speed vs. Stopping Distance", 
+       y="Stopping Distance", 
+       x="Speed", 
+       title="Car Speed vs. Stopping Distance")
+
+plot(gg)
+```
+
+```{r}
+options(scipen=999)
+#this turns the scientific notation off
+theme_set(theme_bw())
+#^ this helps get a good theme for this graph
+data("midwest", package = "ggplot2")
+
+# Scatterplot with line of best fit
+gg <- ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state, size=popdensity)) + 
+  geom_smooth(method="loess", se=F) +    #this gets us the line of best fit
+  xlim(c(0, 0.1)) + 
+  ylim(c(0, 500000)) + 
+  labs(y="Population", 
+       x="Area", 
+       title="Area Vs Population", 
+       caption = "Source: midwest")
+
+plot(gg)
+```
+
+
