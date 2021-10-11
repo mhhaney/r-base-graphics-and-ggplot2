@@ -42,9 +42,8 @@ library(broom)
 library(ggsoccer)
 library(ggridges)
 library(gganimate)
-install.packages("nhlapi")
 library(nhlapi)
-library(dplyr)
+library(quantmod)
 ```
 
 ## Read in Data Files
@@ -473,6 +472,7 @@ p
 ```
 
 ## Creating Circular Bar Plot with Labels
+
 ```{r}
 
 data <- data.frame(
@@ -1363,6 +1363,42 @@ ggplot(ClassCount, aes(x = "", y = prop, fill = Class)) +
   scale_fill_manual(values = mycols) + theme_void()
 ```
 
+
+## Additional Pie Chart in Base R
+
+```{r}
+#Creating the labels and values for the data
+lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park")
+values <- c(34934, 13965, 2317, 9586, 2254, 3682)
+#Adding lines and color for the filling of the pie chart and adding the angle parameter to change the angle of each group of lines
+colpal = brewer.pal(6, "Set3")
+
+pie(values, labels=lab, main = "Pittsburgh Schools' Student Population", density = 10, 
+    angle=c(90, 45, 60, 30, 75, 20), col = colpal)
+
+```
+## Additional Pie Charts using GGPlot2
+
+```{r}
+# Creating the dataframe
+
+data <- data.frame(
+  lab <- c("Pitt", "CMU", "Chatham", "Duquesne", "Carlow", "Point Park"),
+  val <- c(34934, 13965, 2317, 9586, 2254, 3682)
+  
+)
+
+#Creating the pie chart
+s <-ggplot(data, aes(x="", y=val, fill=lab)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0) +
+#Removing grid from the background
+  theme_void() +
+  ggtitle("Pittsburgh Schools' Student Population")
+s + scale_fill_manual(values=c("#FFFF66", "#9900CC", "#000000", "#FF3300", "#0000CC", "#66CC33"))
+  
+```
+
 ## Chloropleth
 
 Create a chloropleth using color to show population density of European countries. First, download geojson data using the `geojson_read()` function from the `geojsonio` package. `what = "sp"` instructs the function to return the data as a `SpatialPolygonsDataFrame` type. This type contains vertices data that can be used to draw polygons, as well as additional information associated with the polygon. In this case the polygons are European countries and the associated data includes population and area data from 2005.
@@ -1422,6 +1458,42 @@ ggplot() +
   labs(title = "Population") +
   theme_void() +
   coord_map()
+```
+
+### Two plots side-by-side - gridExtra Package - grid.arrange()
+
+```{r}
+#I created my own random data here to use
+
+x = c(1, 2, 3, 4, 5, 6, 7)
+y = c(8, 9, 10, 11, 12, 13, 14)
+
+data1 = data.frame(x, y)
+
+pointex <- ggplot(data1, aes(x = x, y = y)) +
+  geom_point() +
+  labs(x = "examplelength",
+       y = "examplewidth")
+
+print(pointex)
+
+
+nums = c(3, 8, 4, 5, 0.2, 0.5, 20)
+int = c(0, 3, 9, 5, 1.5, 15, 5.3)
+
+data2 = data.frame(nums, int)
+
+histex <- ggplot(data2,
+                 aes(x = nums, y= int)) +
+  geom_point()+
+  labs(x="miles",
+       y="hours")
+
+print(histex)
+                 
+plotex <- list(pointex, histex)
+
+grid.arrange(grobs = plotex, ncol = 2, top= "Main Title")
 ```
 
 ## Mathematical Annotation in R
@@ -1869,5 +1941,42 @@ a <- nba_players %>%
   
 
 animate(plot = a)
+```
   
+```{r}
+
+## plotMath with random Data: Area V.S Cicumference
+
+r <- rnorm(30)
+Area <- (pi * (r)^2)
+
+circumference <- (2 * pi * r)
+
+plot(Area, circumference, 
+     type = 'p', 
+     main = ("Area V.S Circumference"),
+     
+     #expression() is used to add symbols to graph ONLY
+     
+     #expression(paste()) is used to add both text and symbol to the graph
+     xlab= expression(paste("Area = ", pi * r^2)),
+     ylab = expression(paste("Circumference = ", 2 * pi * r)),
+     
+     )
+```
+```{r}
+## candlestick chart
+### For the data I used real data from the stocks by using the library “quantmod” and I decided to go with Facebook as you know that recently and specifically on 10/4/2021 all Facebook servers went down so I used the candlestick chart to see how did that issue affected Facebook in the market.
+library("quantmod")
+
+# get the Facebook Stock data
+### So basically you get the company stock name and adjust the date. I decided to do just 3 months until the servers went down. Also, the periodicity can change but I wanted to go with daily so I can tel the difference. The chart shows that now is a great time to buy stocks.
+Facebook<-getSymbols("FB", 
+                   from = "2021-7-1", 
+                   to = "2021-10-5",
+                   periodicity = "daily",
+                   auto.assign=FALSE)
+
+chartSeries(Facebook, name="Facebook Chart")
+
 ```
