@@ -1180,17 +1180,20 @@ ggplot(mtcars, aes(x=mpg, y=hp, size=disp))+
 
 ```{r}
 data(swiss)
+str(swiss)
 ```
 
 ```{r}
-#Data Preparation
-swiss$`municipality` <- rownames(swiss)  # create new column for municipality names
-swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility
-swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # above / below avg flag
+#Data Preparation and Manipulation
+swiss$municipality <- rownames(swiss)  # create new column for municipality names
+swiss$Fertility_z <- round((swiss$Fertility - mean(swiss$Fertility))/sd(swiss$Fertility), 2)  # compute normalized fertility/z-score of the fertility, which is how far each municipality's fertility rate is from the mean fertility rate throughout Switzerland.
+swiss$Fertility_type <- ifelse(swiss$Fertility_z < 0, "below", "above")  # This ifelse statement creates the new variable Fertility_type, which is used to separate the fertility z-scores of each municipality into categories above and below the average. This variable is used to determine the color of the bars in the barplot below, with municipalities with z scores varying above and below the mean being colored to reflect their orientation.  
 swiss <- swiss[order(swiss$Fertility_z), ]  # sort
-swiss$`municipality` <- factor(swiss$`municipality`, levels = swiss$`municipality`)  # convert to factor to retain sorted order in plot.
-#Diverging Barplot:
-ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) + 
+swiss$municipality <- factor(swiss$municipality, levels = swiss$municipality)  # Converting municipality to factor to retains the sorted order of each municipality value in plot, ensuring that the plotting code treats the data in the factor correctly. The plot will reflect the municipalities in the order we want them to be in, by z-score, because we set the levels argument to swiss$municipality. 
+```
+```{r}
+#Plotting the Diverging Barplot:
+ggplot(swiss, aes(x=municipality, y=Fertility_z, label=Fertility_z)) + 
   geom_bar(stat='identity', aes(fill=Fertility_type), width=.5) +
   theme(text = element_text(size=9)) +
   scale_fill_manual(name="Fertility", 
@@ -1200,6 +1203,8 @@ ggplot(swiss, aes(x=`municipality`, y=Fertility_z, label=Fertility_z)) +
        x = "Municipality",
        y = 'Fertility') + 
   coord_flip()
+
+## The scale_fill_manual() function in this plot gives us control over the legend for our plot. The variable in our legend, Fertility, is mapped to the color fill; when using scale_fill_manual, we are able to specify the exact colors we want to use in our plot, rather than the default of using a different hue on the color wheel for each factor level. 
 ```
 
 ## Lollipop Chart
