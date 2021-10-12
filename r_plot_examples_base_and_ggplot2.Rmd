@@ -553,6 +553,21 @@ ggplot(lakehuron, aes(x=(1875:1972), y= LakeHuron)) +
   ylab("WATER LEVEL")
 ```
 
+This is another example of a time series plot, showing annual Canadian lynx trappings from 1821 through 1934.  I added a color customization and changed the theme to black white for this example as well.
+
+Additional customizationc could be done using other techniques for line plots that can be found in this document.
+
+```{r}
+LYNX <- data.frame(lynx)
+
+ggplot(LYNX, aes(x=(1821:1934), y= lynx)) +
+  geom_line( color = 2) + 
+  ggtitle("LYNX TRAPPINGS IN CANADA") +
+  xlab("") +
+  ylab("# OF TRAPPINGS") +
+  theme_bw() 
+```
+
 #### Creating a line plot with conditional coloring
 
 The first step is to get the data and create the conditional variable(s). For this plot I will use discharge data from the Youghiogheny River to visualize flood events. _What even is a flood?_ There are many ways that flooding events can be quantified, but among the simplest are to see when discharge exceeds 3 & 7 times the monthly median. Here is how to process the data for that. 
